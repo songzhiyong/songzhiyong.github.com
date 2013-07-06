@@ -4,11 +4,11 @@
   <title><![CDATA[Jerome's Blog]]></title>
   <link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
-  <updated>2013-07-06T12:52:42+08:00</updated>
+  <updated>2013-07-06T13:42:51+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
-    
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -19,7 +19,7 @@
     <updated>2013-07-06T09:47:00+08:00</updated>
     <id>http://songzhiyong.github.io/blog/2013/07/06/hello-world</id>
     <content type="html"><![CDATA[<p>This is my first Article,Hello World.
-大家好！</p>
+大家好！哈哈</p>
 ]]></content>
   </entry>
   
