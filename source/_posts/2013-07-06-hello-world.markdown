@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Hello-World"
+title: "Hello World!"
 date: 2013-07-06 09:47
 comments: true
 categories: 
 ---
-This is my first Article,Hello World.
-大家好！哈哈
+So here is my blog, this is my first Article--Hello World.
+
