@@ -10,3 +10,8 @@
 	float: right;
 	margin-right: 1.625em;
 }
+#content article .cloud li{
+  display: inline;
+  list-style: none outside none;
+  padding: 0 4px;
+}
