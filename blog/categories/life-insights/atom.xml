@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Jerome's Blog]]></title>
-  <link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: life-insights | Jerome's Blog]]></title>
+  <link href="http://songzhiyong.github.io/blog/categories/life-insights/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
   <updated>2013-07-18T22:54:42+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
@@ -19,15 +19,6 @@
     <updated>2013-07-18T22:35:00+08:00</updated>
     <id>http://songzhiyong.github.io/blog/2013/07/18/stand-up-from-depression</id>
     <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://songzhiyong.github.io/blog/2013/07/06/hello-world/"/>
-    <updated>2013-07-06T09:47:00+08:00</updated>
-    <id>http://songzhiyong.github.io/blog/2013/07/06/hello-world</id>
-    <content type="html"><![CDATA[<p>So here is my blog, this is my first Article&mdash;Hello World.</p>
 ]]></content>
   </entry>
   
