@@ -4,7 +4,7 @@ title: "从抑郁中走出来"
 date: 2013-07-18 22:35
 comments: true
 categories: life-insights
-tag: [life-insights,depression]
+tag: [Life-insights,Depression]
 ---
 Depression is a state of low mood and aversion to activity that can affect a person's thoughts, behavior, feelings and sense of well-being.Depressed people may feel sad, anxious, empty, hopeless, worried, helpless, worthless, guilty, irritable, hurt, or restless.
 
