@@ -3,6 +3,7 @@
 <head>
 	<title>Our Love Story</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="http://lovejiani.duapp.com/love/favicon.ico">
 	<style type="text/css">
 		@font-face {
 			font-family: digit;
@@ -21,8 +22,9 @@
 			<div id="code">
 				<span class="comments">/**</span><br />
 				<span class="space"/><span class="comments">* U are a designer,</span><br />
-				<span class="space"/><span class="comments">* i am a programmer,</span><br />
-				<span class="space"/><span class="comments">* so I write some code to tell you.</span><br />
+				<span class="space"/><span class="comments">* I am a programmer,</span><br />
+				<span class="space"/><span class="comments">* Encountered very kind of you,</span><br />
+				<span class="space"/><span class="comments">* So I write some code to tell you.</span><br />
 				<span class="space"/><span class="comments">*/</span><br />
 				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Song"</span>);<br />
 				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Lele"</span>);<br />
@@ -33,7 +35,8 @@
 				<span class="comments">// Since then, I miss u every day.</span><br />
 				i.miss(u);<br />
 				i.wantToTakeCareOf(u);<br />
-				<span class="comments">// I keep waiting and I miss u every day.</span><br />
+				<span class="comments">// But I thought Perhaps you don't you like me.</span><br />
+				<span class="comments">// I keep waiting and I confidence that you one day you will.</span><br />
 				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
 				<span class="keyword">while</span> (isHesitate) {<br />
 				<span class="placeholder"/>i.waitFor(u);<br />
@@ -41,7 +44,8 @@
 				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
 				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
 				}<br />
-				<span class="comments">// After you accecpted, we will live happily ever after.</span><br />
+				<span class="comments">// After you accepted, we will live happily ever after.</span><br />
+				i.takeCareOf(u);<br />
 				i.marry(u);<br />
 				i.liveHappilyWith(u);<br />
 			</div>
@@ -54,7 +58,7 @@
 					</div>
 					<div id="loveu">
 						Miss u everyday.<br/>
-						<div class="signature">- Song</div>
+						<div class="signature">-Song</div>
 					</div>
 				</div>
 			</div>
@@ -69,8 +73,8 @@
 		var offsetY = $("#loveHeart").height() / 2 - 55;
 		var together = new Date();
 		together.setFullYear(2013, 07, 18);
-		together.setHours(8);
-		together.setMinutes(30);
+		together.setHours(08);
+		together.setMinutes(0);
 		together.setSeconds(0);
 		together.setMilliseconds(0);
 		
@@ -85,6 +89,7 @@
 		    document.execCommand("stop");
 		} else {
 			setTimeout(function () {
+				adjustWordsPosition();
 				startHeartAnimation();
 			}, 5000);
 
