@@ -8,7 +8,6 @@ Array.prototype.remove = function(from, to) {
 jQuery(function ($) {
   // redirect the old bitches
   if(!Modernizr.canvas) {
-    jQuery('#tweet').html('<h1>oh noez - please get yourself a sophisticated browser like <a href="http://getfirefox.com">FireFox 3.5</a>, <a href="http://apple.com/safari">Safari</a>, <a href="http://www.opera.com/">Opera</a> or <a href="http://google.com/chrome">Chrome</a> </h1>');
   } else {
     var numParticles = 100;
     var i;
@@ -30,7 +29,6 @@ jQuery(function ($) {
     var events = [];
     var play = false;
     var focusedParticleIndex = null;
-    var theTweets = null;
     window.cps_pause = false;
 
     components = [];
@@ -266,43 +264,6 @@ jQuery(function ($) {
         my = p.mouseY;
       }
 
-    p.mousePressed = function() {
-      var d = new Date().getTime() - startedAt.getTime();
-  /*    events.push(d);
-      console.log(events); */
-      if(focusedParticleIndex != null) {
-        pixels[focusedParticleIndex].flightMode = 0;
-        pixels[focusedParticleIndex].toSize = Math.random()*10+1;
-      }
-      for(var i = 0; i<numParticles; i++ ) {
-        if(pixels[i].flightMode == 1) {
-          pixels[i].flightMode = 2;
-
-          pixels[i].toSize = 100;
-          pixels[i].toX = 200;
-          pixels[i].toY = height/2;
-
-          focusedParticleIndex = i;
-
-          var randomTweet = theTweets[Math.floor(Math.random()*theTweets.length)];
-
-          var text = randomTweet.text.replace(/http:\/\/(\S+)/, "<a href=\"http://$1\">http://$1</a>");
-          text = text.replace(/@(\S+)/, "<a href=\"http://twitter.com/$1\">@$1</a>");
-
-          //var el = jQuery('<li><div class="content bubble_' + counter + '"><p>' + text + '</p></div><div class="user"><img src="' + data.results[i].profile_image_url + '" width="48" height="48" /> <a href="http://twitter.com/' + data.results[i].from_user + '">' + data.results[i].from_user + '</a></div></li>');
-          //jQuery('#tweets').append(el);
-          //counter++;
-
-          $('#tweet').html('<h1>' + text + '</h1><strong><a href="http://twitter.com/' + randomTweet.user.screen_name + '"><img src="' + randomTweet.user.profile_image_url + '" width="20" height="20" border="0" /> ' + randomTweet.user.screen_name + '</a></strong>');
-          $('#tweet').show();
-
-          $('a').css('color', 'rgb(' + Math.floor(pixels[i].r) + ',' + Math.floor(pixels[i].g) + ',' + Math.floor(pixels[i].b) + ')');
-
-          // abort for loop
-          i = numParticles;
-        }
-      }
-    }
     p.draw=function(){
       if(window.cps_pause == false) {
         if(play) {
@@ -322,9 +283,9 @@ jQuery(function ($) {
 
     var canPlayType = $('#audio')[0].canPlayType("audio/ogg");
     if(canPlayType.match(/maybe|probably/i)) {
-      $('#audio').attr('src', 'thankyou.ogg');
+      $('#audio').attr('src', 'js/thankyou.ogg');
     } else {
-      $('#audio').attr('src', 'thankyou.mp3');
+      $('#audio').attr('src', 'js/thankyou.mp3');
     }
 
     p.init();
@@ -341,7 +302,6 @@ jQuery(function ($) {
         //   url: 'https://api.twitter.com/1.1/search/tweets.json?rpp=100&q=html5+love',
         //   dataType: 'jsonp',
         //   success: function (data) {
-        theTweets = window.twitterResponse.statuses;
 
         setTimeout(function() {
           startedAt = new Date();
@@ -358,7 +318,6 @@ jQuery(function ($) {
       //   url: 'https://api.twitter.com/1.1/search/tweets.json?rpp=100&q=html5+love',
       //   dataType: 'jsonp',
       //   success: function (data) {
-      theTweets = window.twitterResponse.statuses;
 
       setTimeout(function() {
         startedAt = new Date();
