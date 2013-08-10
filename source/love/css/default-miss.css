@@ -1,15 +1,12 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: #000;
+	background: #08080D;
 	font-size: 13px;
 	overflow: auto;
 }
 
 #mainDiv{
-	position:absolute;
-	top:0;
-	left:0;
 	width: 100%;
 	height: 100%;
 }

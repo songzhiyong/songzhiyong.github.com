@@ -12,103 +12,21 @@
 			src: url('digital-7_mono.ttf') format("truetype");
 		}
 	</style>
-	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<link href="css/default-miss.css" type="text/css" rel="stylesheet">
+	<link href="css/canvas.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/garden.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="js/particles.js"></script>
-
-	<script src="js/processing.min.js" type="text/javascript" charset="utf-8"></script>
-   
-    <script src="js/apt18.js" type="text/javascript" charset="utf-8"></script>
-
-    <style type="text/css" media="screen">
-      body {
-        background: #0000;
-        color: #aaa;
-        font-family: Helvetica, sans-serif;
-        margin:0;
-        padding:0;
-        overflow:hidden;
-      }
-
-      #stuff {
-        postion:absolute;
-        
-      }
-      #theapt {
-      	z-index: -1;
-      }
-
-      #tweet {
-        font-family:Helvetica, Arial;
-        position:absolute;
-        top:400px;
-        left:260px;
-        width:640px;
-      }
-
-      #tweet h1 {
-        display:block;
-        font-family:Helvetica, Arial;
-        font-size:40px;
-        font-weight:bold;
-        color:#fff;
-        margin:0 0 10px 0;
-        padding:0;
-      }
-
-      #tweet strong {
-        display:block;
-        font-size:16px;
-      }
-
-      #about {
-        font-size:11px;
-        position:absolute;
-        font-weight:normal;
-        bottom:20px;
-        left:20px;
-      }
-
-      #social {
-        font-size:11px;
-        position:absolute;
-        font-weight:normal;
-        bottom:13px;
-        right:20px;
-        width: 120px;
-      }
-
-      #about a {
-        color: #59cdec;
-      }
-
-      #rails-development {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        margin-left: -150px;
-        width: 300px;
-        height: 15px;
-        font-size: 12px;
-        color: #AAA;
-      }
-
-      #rails-development a {
-        color: #59cdec;
-        font-weight: bold;
-      }
-    </style>
 </head>
 
 <body>
-	<!-- <embed src="music/snow_dream.mp3" autostart="true" loop="true" hidden="true"></embed>
+	<embed src="music/snow_dream.mp3" autostart="true" loop="true" hidden="true"></embed>
 	<div id="outer">
 		<div id="canvasContainer">
 			<canvas id="mainCanvas" width="1000" height="560"></canvas>
 		</div>
-	</div> -->
+	</div>
 	<div id="mainDiv">
 		<div id="content">
 			<div id="code">
@@ -194,15 +112,5 @@
 			$("#code").typewriter();
 		}
 	</script>
-	<script src="js/modernizr-0.9.min.js"></script>
-    <canvas id="theapt" width="100" height="100"></canvas>
-<!--     <div id="tweet">
-      LOADING
-    </div> -->
-    <div id="stuff">
-      <audio id="audio">
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-    </div>
 </body>
 </html>
