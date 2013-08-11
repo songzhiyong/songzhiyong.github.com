@@ -73,7 +73,7 @@
 	var D = 2 * Math.PI,
 		f = 1E3,
 		p = 1000,
-		z = 600,
+		z = 999,
 		B = 0.96,
 		A = [],
 		o, e, n, m, q, r, x, y, u, v, w;
