@@ -283,9 +283,9 @@ jQuery(function ($) {
 
     var canPlayType = $('#audio')[0].canPlayType("audio/ogg");
     if(canPlayType.match(/maybe|probably/i)) {
-      $('#audio').attr('src', 'js/thankyou.ogg');
+      $('#audio').attr('src', 'music/snow_dream.ogg');
     } else {
-      $('#audio').attr('src', 'js/thankyou.mp3');
+      $('#audio').attr('src', 'music/snow_dream.mp3');
     }
 
     p.init();
