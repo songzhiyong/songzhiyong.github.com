@@ -7,4 +7,4 @@ categories: octopress
 tags: [Octopress , Hello world]
 ---
 So here is my blog, this is my first Article--Hello World.
-
+<!--more-->
