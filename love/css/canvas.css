@@ -4,7 +4,8 @@
 	left: 50%;
 	width: 1px;
 	height: 1px;
-	overflow: hidden;
+	overflow: visible;
+	z-index: -1;
 }		
 #canvasContainer { 
 	position: absolute;
@@ -12,6 +13,7 @@
 	height: 560px;
 	top: -280px;
 	left: -500px;
+	z-index: -1;
 }
 
 
