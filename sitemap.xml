@@ -1,10 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://songzhiyong.github.io/blog/2013/07/06/first-refused-mediation/</loc>
-        <lastmod>2013-08-13T22:21:27+08:00</lastmod>
-    </url>
-    <url>
         <loc>http://songzhiyong.github.io/blog/2013/07/06/hello-world/</loc>
         <lastmod>2013-08-13T22:21:30+08:00</lastmod>
     </url>
@@ -13,16 +9,20 @@
         <lastmod>2013-08-13T22:13:17+08:00</lastmod>
     </url>
     <url>
+        <loc>http://songzhiyong.github.io/blog/2013/08/13/first-refused-mediation/</loc>
+        <lastmod>2013-08-14T22:06:59+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://songzhiyong.github.io/about/</loc>
         <lastmod>2013-07-18T21:53:42+08:00</lastmod>
     </url>
     <url>
         <loc>http://songzhiyong.github.io/blog/archives/</loc>
-        <lastmod>2013-08-13T22:21:30+08:00</lastmod>
+        <lastmod>2013-08-14T22:06:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://songzhiyong.github.io/</loc>
-        <lastmod>2013-08-13T22:21:30+08:00</lastmod>
+        <lastmod>2013-08-14T22:06:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://songzhiyong.github.io/robots.txt</loc>
