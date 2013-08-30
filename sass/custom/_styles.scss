@@ -10,6 +10,16 @@
 	float: right;
 	margin-right: 1.625em;
 }
+.alignbottom {
+	display: inline;
+	float: bottom;
+	margin-right: 1.625em;
+}
+.aligntop {
+	display: inline;
+	float: top;
+	margin-right: 1.625em;
+}
 #content article .cloud li{
   display: inline;
   list-style: none outside none;
