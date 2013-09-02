@@ -6,9 +6,9 @@ comments: true
 categories: love
 tags: [love]
 ---
-第16天。昨晚吃饭，唱歌，回来太晚，今天早起把作业交上。昨晚hanxiao唱的这首歌差点把我唱哭，而你唱的是你的往事。
-<!--more-->
+第16天。昨晚吃饭，唱歌，回来太晚，今天早起把作业交上。昨晚hanxiao唱的这首歌差点把我唱哭，而你唱的是你的往事。<br>
 [{% img  http://31.media.tumblr.com/c47c1a00ff72c91d4f88577df3224732/tumblr_ms2w17CWkV1qgnue7o5_r1_400.jpg %}](http://31.media.tumblr.com/c47c1a00ff72c91d4f88577df3224732/tumblr_ms2w17CWkV1qgnue7o5_r1_400.jpg)<br />
+<!--more-->
 早知道爱你注定是无尽的忧郁
 我却不知该如何收回我的情意
 不能说出的故事一场美丽的相遇
