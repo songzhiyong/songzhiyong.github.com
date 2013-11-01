@@ -1,0 +1,45 @@
+<!-- rainday.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>rainyday.js demo #3</title>
+		<style media="screen">
+			body {
+				overflow: hidden;
+			}
+
+			#parent {
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			#parent img {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script src="js/rainyday.0.1.2.min.js"></script>
+		<script>
+			function run() {
+				var engine = new RainyDay({
+					element: 'background',
+					blur: 10,
+					opacity: 1,
+					fps: 30
+				});
+				engine.rain([ [0, 2, 200], [3, 3, 1] ], 100);
+			}
+		</script>
+	</head>
+	<body onload="run();">
+		<div id="parent">
+			<img id="background" alt="background" src="img/15.jpg" />
+		</div>
+	</body>
+</html>
