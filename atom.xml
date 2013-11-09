@@ -4,7 +4,7 @@
   <title><![CDATA[Jerome's Blog]]></title>
   <link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
-  <updated>2013-11-01T21:14:45+08:00</updated>
+  <updated>2013-11-09T13:40:18+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[抽离]]></title>
+    <link href="http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction/"/>
+    <updated>2013-11-06T22:35:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction</id>
+    <content type="html"><![CDATA[<p>我抽离于世界，隐居于自身。</p>
+
+<!--more-->
+
+
+<p>我抽离于世界，隐居于自身。
+我渴望生活，
+却与生活有一段距离。
+因你在生活里，但却不在生活里。
+我只能遥遥相望，绝少可以呼应。
+我不走近，不远离，
+尝得到清晰的痛苦，
+不至于痛不欲生 ，但却不能恣意纵情。
+伪装在会说话的沉默下，
+伪装在震耳欲聋的寂静中。
+不甘让你成为一种信仰，只能迎着风向前。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[所谓的QQ空间“魔力”图片]]></title>
+    <link href="http://songzhiyong.github.io/blog/2013/11/05/qqzone-magic-picture-bazzinga/"/>
+    <updated>2013-11-05T22:35:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2013/11/05/qqzone-magic-picture-bazzinga</id>
+    <content type="html"><![CDATA[<p>最近，看到不少朋友在 qq 空间上转载一些奇怪的图片，上面显示我的昵称和头像，出于好奇，当然也纯属无聊，就自己试试看。</p>
+
+<!--more-->
+
+
+<p>首先，使用 chrome 审查元素发现这张图片来源于一个 PHP 文件：<br></p>
+
+<figure class='code'><figcaption><span>Html 代码 </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://qq.sennvwu.com/qzone/do.php&quot;</span>
+</span><span class='line'><span class="na">onload=</span><span class="s">&quot;QZFL.media.reduceImage(0,400,300,{trueSrc:&#39;http:\/\/qq.sennvwu.com\/qzone\/do.php&#39;,callback:function(img,type,ew,eh,o){var _h = Math.floor(o.oh/o.k),_w = Math.floor(o.ow/o.k);if(_w&lt;=ew &amp;&amp; _h&gt;=eh){var p=img.parentNode;p.style.width=_w+&#39;px&#39;;p.style.height=_h+&#39;px&#39;;}}})&quot;</span>
+</span><span class='line'><span class="na">width=</span><span class="s">&quot;400&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>而且这个文件不是 QQ 空间自带的，这就把问题搞的简单了，肯定是 php 服务器动态生成图片，大致有了
+头绪就顺藤摸瓜吧,但很奇怪，基本这种日志源头都找不到，就算找到也不是那种效果，或者根本没有图片，仅在“个人中心”看到别人转载的图片才能看到那个效果。这是为什么呢？由于对 PHP 了解甚少，只能再往上搜索一些资料:</p>
+
+<br>
+
+
+<p><strong>PHP 中使用$_SERVER[&lsquo;HTTP_REFERER&rsquo;] 获取前一页面的 URL 地址</strong></p>
+
+<br>
+
+
+<p>这就对了，个人中心的 url 地址格式都为：</p>
+
+<figure class='code'><figcaption><span>URL 地址</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>http://user.qzone.qq.com/QQ/infocenter
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>号码自然很简单就能冲 HTTP_REFERER 中拿到了。
+那么后台是如何取到 QQ 头像、昵称等信息的呢？
+我 Google 到了一个<strong>腾讯的 WebService 接口：</strong></p>
+
+<figure class='code'><figcaption><span>腾讯的 WebService 接口</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>http://base.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=QQ
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不需要任何凭证信息即可获取 uins 指定的 QQ 号码的头像、昵称信息，返回的格式为 JSON,不过编码格式为 GBK，这个后面可能会再提到。另外上面的图片还有一个显示地理位置和，这个就比较常见了，我用的就是下面这个。</p>
+
+<figure class='code'><figcaption><span>根据 IP 获取位置信息</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>http://ip.taobao.com/service/getIpInfo.php?ip=127.0.0.1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>格式同样也是 JSON，这里就是 UTF-8 编码了。</p>
+
+<p>然后，往事具备，只欠东风，要着手写 php 代码并配置服务器了，代码就直接加完注释</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[refused 33rd day]]></title>
@@ -271,47 +356,6 @@ Good night,sweetheart!</p>
 
 
 <p>你换了工位，逃离了我显示器边缘所能映射出的那片可见区域，我不知所措，只能呆呆等着下班，帮你搬完再离开。不论你走到哪里，I&rsquo;m here,always stay here.放手？除非等你到你的婚礼，并且给你戴上戒指的人不是我。否则，下辈子也不可能。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[refused 16th day]]></title>
-    <link href="http://songzhiyong.github.io/blog/2013/08/30/refused-16th-day/"/>
-    <updated>2013-08-30T06:40:00+08:00</updated>
-    <id>http://songzhiyong.github.io/blog/2013/08/30/refused-16th-day</id>
-    <content type="html"><![CDATA[<p>第 16 天。昨晚吃饭，唱歌，回来太晚，今天早起把作业交上。昨晚 hanxiao 唱的这首歌差点把我唱哭，而你唱的是你的往事。<br>
-<a href="http://31.media.tumblr.com/c47c1a00ff72c91d4f88577df3224732/tumblr_ms2w17CWkV1qgnue7o5_r1_400.jpg"><img src="http://31.media.tumblr.com/c47c1a00ff72c91d4f88577df3224732/tumblr_ms2w17CWkV1qgnue7o5_r1_400.jpg"></a><br /></p>
-
-<!--more-->
-
-
-<p>早知道爱你注定是无尽的忧郁
-我却不知该如何收回我的情意
-不能说出的故事一场美丽的相遇
-直到你对我说你心里已被人占据
-深深深呼吸不让泪决堤我最爱的你深锁在心底
-深深深呼吸回头不看你有你的往日
-一幕幕涌上眼底心碎在扰攘的街
-我的伤悲你没发觉心碎下着雨的夜
-整个世界都在流泪雨不怕风吹梦不醒最美
-你在我心里轻轻的飞就让爱是一场不悔的沉醉
-就让我永远都学不会离别
-心碎在扰攘的街
-深深深呼吸回头不看你就让爱是一场不悔的沉醉</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[refused 15th day]]></title>
-    <link href="http://songzhiyong.github.io/blog/2013/08/28/refused-15th-day/"/>
-    <updated>2013-08-28T21:59:00+08:00</updated>
-    <id>http://songzhiyong.github.io/blog/2013/08/28/refused-15th-day</id>
-    <content type="html"><![CDATA[<p>第 15 天。我愿做花草树木，不动声色，一直在那里。</p>
-
-<!--more-->
-
-
-<p>这应该不叫暗恋了，虽然我都没有亲口对你说过：我喜欢你，现在应该叫做单恋，不过都一样，没有失恋这个说法，这让我很欣慰。在默默省察自己的时候，也会自卑，可能要你喜欢我是一种奢求，但我由心而发的爱恋你我都无法阻止，我知道，有些人一旦错过就不在，我不想错过你。</p>
 ]]></content>
   </entry>
   
