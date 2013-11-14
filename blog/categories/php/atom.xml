@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: PHP | Jerome's Blog]]></title>
+  <title><![CDATA[Category: php | Jerome's Blog]]></title>
   <link href="http://songzhiyong.github.io/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
-  <updated>2013-11-14T20:33:03+08:00</updated>
+  <updated>2013-11-14T23:09:03+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -62,9 +62,11 @@ width="400"&gt;
 ```
 格式同样也是JSON，这里就是UTF-8编码了。</p>
 
-<p>然后，往事具备，只欠东风，要着手写php代码并配置服务器了，代码就直接加贴上了
-```
-&lt;?php
+<p>然后，往事具备，只欠东风，要着手写php代码并配置服务器了，代码就直接加贴上了</p>
+
+<p>```</p>
+
+<p>&lt;?php
 //禁用错误报告
 error_reporting ( 0 );
 ////报告运行时错误
@@ -243,8 +245,9 @@ echo file_get_contents ( IMG_NO );
 
 <p>}</p>
 
-<p>```
-一直困扰我的最后一个问题就是，刚发布是有效的，可一段时间后，腾讯就把你的图片缓存到它的服务器了，然后就不动态生成图片，魔力图片也随之失效。</p>
+<p>```</p>
+
+<p>一直困扰我的最后一个问题就是，刚发布是有效的，可一段时间后，腾讯就把你的图片缓存到它的服务器了，然后就不动态生成图片，魔力图片也随之失效。</p>
 ]]></content>
   </entry>
   
