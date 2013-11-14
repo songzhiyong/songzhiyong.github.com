@@ -1,3 +1,4 @@
+2013-11-05-qqzone-magic-picture-bazzinga.markdown
 ---
 layout: post
 title: "所谓的QQ空间“魔力”图片"
@@ -191,6 +192,8 @@ if ($error) {
     header ( 'Content-Length: ' . filesize ( IMG_NO ) );
     echo file_get_contents ( IMG_NO );
 }
+
+?> 
 
 ```
 
