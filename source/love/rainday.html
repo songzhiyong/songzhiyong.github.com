@@ -4,7 +4,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>rainyday.js demo #3</title>
+		<title>Rainyday</title>
 		<style media="screen">
 			body {
 				overflow: hidden;
@@ -26,7 +26,7 @@
 		</style>
 		<script src="js/rainyday.0.1.2.min.js"></script>
 		<script>
-			function run() {
+			function run1() {
 				var engine = new RainyDay({
 					element: 'background',
 					blur: 10,
@@ -35,9 +35,20 @@
 				});
 				engine.rain([ [0, 2, 200], [3, 3, 1] ], 100);
 			}
+			function run2() {
+				var engine = new RainyDay({
+					element: 'background',
+					blur: 10,
+					opacity: 1,
+					fps: 30
+				});
+				engine.rain([ [1, 2, 8000] ]);
+				engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+			}
 		</script>
 	</head>
-	<body onload="run();">
+	<body onload="run2();">
+		<embed src="music/snow_dream.mp3" autostart="true" loop="true" hidden="true"></embed>
 		<div id="parent">
 			<img id="background" alt="background" src="img/15.jpg" />
 		</div>
