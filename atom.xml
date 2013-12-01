@@ -4,7 +4,7 @@
   <title><![CDATA[Jerome's Blog]]></title>
   <link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
-  <updated>2013-11-14T23:25:54+08:00</updated>
+  <updated>2013-12-01T22:36:35+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,98 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[《生活和我》]]></title>
+    <link href="http://songzhiyong.github.io/blog/2013/11/21/birthday/"/>
+    <updated>2013-11-21T00:55:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2013/11/21/birthday</id>
+    <content type="html"><![CDATA[<p>生命周而复始<br>
+痛苦与心绪交织<br>
+忘记了快乐的模样<br>
+以这种状态<br>
+迎接了这个日子<br>
+不胜唏嘘<br></p>
+
+<!--more-->
+
+
+<p>25 岁，尴尬着，彷徨着，迷惘着……<br>
+25 岁，或许精彩缤纷，或许犹豫徘徊，或许在倒数着生命……<br>
+25 岁，离而立还有 5 年，离生活还有多远？<br></p>
+
+<p>莫名的喜欢写些文字<br>
+但文字也如此的苍白无力<br></p>
+
+<p>从日出到月稀<br>
+就这样<br>
+浸泡于迷惘的生活中<br>
+走在尘郁幽凉的路上<br>
+享受着耳机里的声音<br>
+逃避着尘世中的喧嚣<br></p>
+
+<p>有时更喜欢深夜<br>
+或许原本就属于这里<br>
+一切都是那么平静<br>
+没有风声 <br>
+只剩震耳欲聋的寂静<br>
+没有期待 也没有失望<br>
+没有分久必合 合久必分的过程<br>
+一切都变得那么淡，无悲也无喜<br></p>
+
+<p>在这条路上<br>
+只有自己孤独的往返<br>
+似乎寻觅着什么<br>
+但突然发现 前方没路了 已似尽头<br>
+城市依然 人群如旧<br>
+激情 乐趣<br>
+似乎都在一点点从手里溜走<br></p>
+
+<p>我想 我还在似图找出自己的宿命<br>
+在这里或者在那里……<br>
+却始终未能发现<br>
+始终走不出自己的世界<br></p>
+
+<p>有时希望被别人了解<br>
+同时又不想被别人看穿<br>
+我只是…… 迷失了<br>
+我不知道该怎么做<br>
+不能前进 也并非后退<br>
+不是等待未来 仅是现在 <br>
+仅仅是存在的恐惧<br></p>
+
+<p>有时会固执的以为<br>
+透过层层迷惘的心网<br>
+可以看到了一丝若隐若现的光亮<br>
+但那光亮却越寻越远<br>
+远到是那样虚无飘渺，无处可寻<br>
+就像许多事情都是无果则终 不甚了了<br></p>
+
+<p>我总以为是自己内向和偏执的性格造成的<br>
+后来想想 其实不然 <br>
+在过去留下的一些文字里<br>
+发现自己也曾简单、也曾乐观<br>
+而现在……<br>
+真正的原因或许是精神上的麻木<br>
+和心灵的扭曲<br></p>
+
+<p>有人说，生活原本就是这样<br>
+会有荆棘密布<br>
+走过之后 或许伤痕累累<br>
+但那是成长的功勋章<br>
+似乎, 我已功勋卓著<br>
+但却未见成长<br></p>
+
+<p>如果生命可以重建<br>
+我需要走出的太多太多<br>
+真的很累<br>
+疲惫不堪<br></p>
+
+<p>似乎，我能做的只是痛定思痛<br>
+因为我还渴望生活<br>
+不管你离我有多远<br></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[抽离]]></title>
@@ -35,390 +127,6 @@
 伪装在会说话的沉默下，<br>
 伪装在震耳欲聋的寂静中。<br>
 不甘让你成为一种信仰，只能迎着风向前。<br></p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Qqzone Magic Picture Bazzinga]]></title>
-    <link href="http://songzhiyong.github.io/blog/2013/11/05/qqzone-magic-picture-bazzinga/"/>
-    <updated>2013-11-05T00:00:00+08:00</updated>
-    <id>http://songzhiyong.github.io/blog/2013/11/05/qqzone-magic-picture-bazzinga</id>
-    <content type="html"><![CDATA[<h2>2013-11-05-qqzone-magic-picture-bazzinga.markdown</h2>
-
-<p>layout: post
-title: &ldquo;所谓的 QQ 空间“魔力”图片&rdquo;
-date: 2013-11-05 22:35
-comments: true
-categories: php</p>
-
-<h2>tags: [Web,PHP] </h2>
-
-<p>最近，看到不少朋友在 qq 空间上转载一些奇怪的图片，上面显示我的昵称和头像，出于好奇，当然也纯属无聊，就自己试试看。</p>
-
-<!--more-->
-
-
-<p>首先，使用 chrome 审查元素发现这张图片来源于一个 PHP 文件：<br></p>
-
-<figure class='code'><figcaption><span>Html 代码 </span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://qq.sennvwu.com/qzone/do.php&quot;</span>
-</span><span class='line'><span class="na">onload=</span><span class="s">&quot;QZFL.media.reduceImage(0,400,300,{trueSrc:&#39;http:\/\/qq.sennvwu.com\/qzone\/do.php&#39;,callback:function(img,type,ew,eh,o){var _h = Math.floor(o.oh/o.k),_w = Math.floor(o.ow/o.k);if(_w&lt;=ew &amp;&amp; _h&gt;=eh){var p=img.parentNode;p.style.width=_w+&#39;px&#39;;p.style.height=_h+&#39;px&#39;;}}})&quot;</span>
-</span><span class='line'><span class="na">width=</span><span class="s">&quot;400&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>而且这个文件不是 QQ 空间自带的，这就把问题搞的简单了，肯定是 php 服务器动态生成图片，大致有了
-头绪就顺藤摸瓜吧,但很奇怪，基本这种日志源头都找不到，就算找到也不是那种效果，或者根本没有图片，仅在“个人中心”看到别人转载的图片才能看到那个效果。这是为什么呢？由于对 PHP 了解甚少，只能再往上搜索一些资料:</p>
-
-<br>
-
-
-<p><strong>PHP 中使用$_SERVER[&lsquo;HTTP_REFERER&rsquo;] 获取前一页面的 URL 地址</strong></p>
-
-<br>
-
-
-<p>这就对了，个人中心的 url 地址格式都为：</p>
-
-<figure class='code'><figcaption><span>URL 地址</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>http://user.qzone.qq.com/QQ/infocenter
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>号码自然很简单就能冲 HTTP_REFERER 中拿到了。
-那么后台是如何取到 QQ 头像、昵称等信息的呢？
-我 Google 到了一个<strong>腾讯的 WebService 接口：</strong></p>
-
-<figure class='code'><figcaption><span>腾讯的 WebService 接口</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>http://base.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=QQ
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>不需要任何凭证信息即可获取 uins 指定的 QQ 号码的头像、昵称信息，返回的格式为 JSON,不过编码格式为 GBK，这个后面可能会再提到。另外上面的图片还有一个显示地理位置和，这个就比较常见了，我用的就是下面这个。</p>
-
-<figure class='code'><figcaption><span>根据 IP 获取位置信息</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>http://ip.taobao.com/service/getIpInfo.php?ip=127.0.0.1
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>格式同样也是 JSON，这里就是 UTF-8 编码了。</p>
-
-<p>然后，往事具备，只欠东风，要着手写 php 代码并配置服务器了，代码就直接加贴上了</p>
-
-<figure class='code'><figcaption><span>根据 IP 获取位置信息</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-<span class='line-number'>135</span>
-<span class='line-number'>136</span>
-<span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-<span class='line-number'>149</span>
-<span class='line-number'>150</span>
-<span class='line-number'>151</span>
-<span class='line-number'>152</span>
-<span class='line-number'>153</span>
-<span class='line-number'>154</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'><span class="cp">//禁用错误报告</span>
-</span><span class='line'><span class="cp">error_reporting ( 0 );</span>
-</span><span class='line'><span class="cp">////报告运行时错误</span>
-</span><span class='line'><span class="cp">//error_reporting(E_ERROR | E_WARNING | E_PARSE);</span>
-</span><span class='line'><span class="cp">//</span>
-</span><span class='line'><span class="cp">////报告所有错误</span>
-</span><span class='line'><span class="cp">//error_reporting(E_ALL);</span>
-</span><span class='line'><span class="cp">ob_start ();</span>
-</span><span class='line'><span class="cp">header ( &#39;Content-Type: image/png&#39; );</span>
-</span><span class='line'>
-</span><span class='line'><span class="cp">define ( &#39;IMG_NO&#39;, &quot;fall_bg.png&quot; ); #刚开始显示的提示信息</span>
-</span><span class='line'><span class="cp">define ( &#39;IMG_BACKGROUND&#39;, &quot;fall.png&quot; );</span>
-</span><span class='line'><span class="cp">define ( &#39;IMG_WIDTH&#39;, 1200 );</span>
-</span><span class='line'><span class="cp">define ( &#39;IMG_HEIGHT&#39;, 300 );</span>
-</span><span class='line'><span class="cp">define ( &#39;FONT_NAME&#39;, &quot;YaHei.Consolas.1.11b.ttf&quot; ); #字体文件名</span>
-</span><span class='line'><span class="cp">define ( &#39;CACHE_PATH&#39;, rtrim ( realpath ( dirname ( __FILE__ ) ), &#39;/&#39; ) . &#39;/cache/&#39; ); #缓存目录</span>
-</span><span class='line'><span class="cp">define ( &#39;CACHE_EXPIRE&#39;, 60 * 60 ); #缓存时间，单位秒</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="cp">#(!is_dir(CACHE_PATH) &amp;&amp; is_writable(CACHE_PATH)) || die;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="cp">/*</span>
-</span><span class='line'><span class="cp">    $remote: 远程 URL</span>
-</span><span class='line'><span class="cp">    $local: 本地缓存路径</span>
-</span><span class='line'><span class="cp">    $expire: 过期时间。为-1 时，永久不更新缓存</span>
-</span><span class='line'><span class="cp">*/</span>
-</span><span class='line'><span class="cp">function load_from_cache($remote, $local, $expire = CACHE_EXPIRE, $as_path = false) {</span>
-</span><span class='line'><span class="cp">    #过滤潜在的危险字符</span>
-</span><span class='line'><span class="cp">    $local = preg_replace ( &quot;/[.\/\\\?\*\&#39;\&quot;\|\:\&lt;\&gt;]/&quot;, &quot;_&quot;, $local );</span>
-</span><span class='line'><span class="cp">    $cache = CACHE_PATH . $local;</span>
-</span><span class='line'><span class="cp">    #查找缓存</span>
-</span><span class='line'><span class="cp">    if (file_exists ( $cache ) &amp;&amp; ($expire = - 1 || filemtime ( $cache ) - time () &lt; $expire))</span>
-</span><span class='line'><span class="cp">        return $as_path ? $cache : file_get_contents ( $cache );</span>
-</span><span class='line'><span class="cp">    </span>
-</span><span class='line'><span class="cp">        #文件不存在或缓存过期，重新下载</span>
-</span><span class='line'><span class="cp">    $content = file_get_contents ( $remote );</span>
-</span><span class='line'><span class="cp">    file_put_contents ( $cache, $content );</span>
-</span><span class='line'><span class="cp">    return $as_path ? $cache : $content;</span>
-</span><span class='line'><span class="cp">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="cp">/*</span>
-</span><span class='line'><span class="cp">    返回客户端信息。</span>
-</span><span class='line'><span class="cp">*/</span>
-</span><span class='line'><span class="cp">function client_info() {</span>
-</span><span class='line'><span class="cp">    $url = &quot;http://ip.taobao.com/service/getIpInfo.php?ip=&quot;;</span>
-</span><span class='line'><span class="cp">    $ip = getIp ();</span>
-</span><span class='line'><span class="cp">    $info = explode ( &#39;&quot;&#39;, load_from_cache ( $url . $ip, $ip, - 1 ) );</span>
-</span><span class='line'><span class="cp">    $string = $info [31];</span>
-</span><span class='line'><span class="cp">    return json_decode ( &#39;&quot;&#39; . $string . &#39;&quot;&#39; );</span>
-</span><span class='line'><span class="cp">}</span>
-</span><span class='line'><span class="cp">//获取 ip</span>
-</span><span class='line'><span class="cp">function getIp() {</span>
-</span><span class='line'><span class="cp">    if (getenv ( &quot;HTTP_CLIENT_IP&quot; ) &amp;&amp; strcasecmp ( getenv ( &quot;HTTP_CLIENT_IP&quot; ), &quot;unknown&quot; )) {</span>
-</span><span class='line'><span class="cp">        $ip = getenv ( &quot;HTTP_CLIENT_IP&quot; );</span>
-</span><span class='line'><span class="cp">    } else if (getenv ( &quot;HTTP_X_FORWARDED_FOR&quot; ) &amp;&amp; strcasecmp ( getenv ( &quot;HTTP_X_FORWARDED_FOR&quot; ), &quot;unknown&quot; )) {</span>
-</span><span class='line'><span class="cp">        $ip = getenv ( &quot;HTTP_X_FORWARDED_FOR&quot; );</span>
-</span><span class='line'><span class="cp">    } else if (getenv ( &quot;REMOTE_ADDR&quot; ) &amp;&amp; strcasecmp ( getenv ( &quot;REMOTE_ADDR&quot; ), &quot;unknown&quot; )) {</span>
-</span><span class='line'><span class="cp">        $ip = getenv ( &quot;REMOTE_ADDR&quot; );</span>
-</span><span class='line'><span class="cp">    } else if (isset ( $_SERVER [&#39;REMOTE_ADDR&#39;] ) &amp;&amp; $_SERVER [&#39;REMOTE_ADDR&#39;] &amp;&amp; strcasecmp ( $_SERVER [&#39;REMOTE_ADDR&#39;], &quot;unknown&quot; )) {</span>
-</span><span class='line'><span class="cp">        $ip = $_SERVER [&#39;REMOTE_ADDR&#39;];</span>
-</span><span class='line'><span class="cp">    } else {</span>
-</span><span class='line'><span class="cp">        $ip = &quot;unknown&quot;;</span>
-</span><span class='line'><span class="cp">    }</span>
-</span><span class='line'><span class="cp">    //bae 的 ip 要特殊处理</span>
-</span><span class='line'><span class="cp">    if (strpos ( $ip, &#39;,&#39; )) {</span>
-</span><span class='line'><span class="cp">        $ipArr = explode ( &#39;,&#39;, $ip );</span>
-</span><span class='line'><span class="cp">        $ip = $ipArr [0];</span>
-</span><span class='line'><span class="cp">    }</span>
-</span><span class='line'><span class="cp">    return ($ip);</span>
-</span><span class='line'><span class="cp">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="cp">function getWishMess() {</span>
-</span><span class='line'><span class="cp">    $time = date ( &quot;H&quot; );</span>
-</span><span class='line'><span class="cp">    $mess = &quot;你好~&quot;;</span>
-</span><span class='line'><span class="cp">    if (($time &gt;= 0) &amp;&amp; ($time &lt; 4)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;夜深了，该睡了&quot;;</span>
-</span><span class='line'><span class="cp">    } else if (($time &gt;= 4) &amp;&amp; ($time &lt; 7)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;起这么早？早安&quot;;</span>
-</span><span class='line'><span class="cp">    } else if (($time &gt;= 7) &amp;&amp; ($time &lt; 12)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;上午好&quot;;</span>
-</span><span class='line'><span class="cp">    } else if (($time &gt;= 12) &amp;&amp; ($time &lt; 13)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;吃午饭咯~&quot;;</span>
-</span><span class='line'><span class="cp">    } else if (($time &gt;= 13) &amp;&amp; ($time &lt; 17)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;该午休了~&quot;;</span>
-</span><span class='line'><span class="cp">    } else if (($time &gt;= 17) &amp;&amp; ($time &lt; 18)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;下班回家~&quot;;</span>
-</span><span class='line'><span class="cp">    } else if (($time &gt;= 18) &amp;&amp; ($time &lt; 22)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;晚上好&quot;;</span>
-</span><span class='line'><span class="cp">    } else if (($time &gt;= 22) &amp;&amp; ($time &lt;= 23)) {</span>
-</span><span class='line'><span class="cp">        $mess = &quot;晚安，好梦~&quot; ;</span>
-</span><span class='line'><span class="cp">    }</span>
-</span><span class='line'><span class="cp">    return ($mess);</span>
-</span><span class='line'><span class="cp">}</span>
-</span><span class='line'><span class="cp">$referer = $_SERVER [&#39;HTTP_REFERER&#39;];</span>
-</span><span class='line'><span class="cp">#$referer = &quot;http://user.qzone.qq.com/123456789/infocenter&quot;;</span>
-</span><span class='line'>
-</span><span class='line'><span class="cp">$pattern = &quot;/http:\/\/user.qzone.qq.com\/(\d+)\/infocenter/&quot;;</span>
-</span><span class='line'><span class="cp">if (preg_match ( $pattern, $referer, $matches )) {</span>
-</span><span class='line'><span class="cp">    #获取 QQ 号码</span>
-</span><span class='line'><span class="cp">    $uin = $matches [1];</span>
-</span><span class='line'><span class="cp">    $info = explode ( &#39;&quot;&#39;, load_from_cache ( &quot;http://base.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=&quot; . $uin, $uin ) );</span>
-</span><span class='line'><span class="cp">    $avatar = $info [3];</span>
-</span><span class='line'><span class="cp">    $nickname = $info [5];</span>
-</span><span class='line'><span class="cp">    $client = client_info ();</span>
-</span><span class='line'><span class="cp">    $client=iconv(&quot;utf-8&quot;,&quot;gbk&quot;,$client);</span>
-</span><span class='line'><span class="cp">    $copyright = &quot;Just for fun, by Jerome.&quot;;</span>
-</span><span class='line'><span class="cp">    $weibo = &quot;http://weibo.com/zhiyongs&quot;;</span>
-</span><span class='line'><span class="cp">    </span>
-</span><span class='line'><span class="cp">    #重点来了，生成图片</span>
-</span><span class='line'><span class="cp">    try {</span>
-</span><span class='line'><span class="cp">        $im = imagecreatefrompng ( IMG_BACKGROUND );</span>
-</span><span class='line'><span class="cp">        </span>
-</span><span class='line'><span class="cp">        #绘制头像</span>
-</span><span class='line'><span class="cp">        $avatar_file = load_from_cache ( $avatar, $uin . &quot;.jpg&quot;, 60 * 60 * 24, true );</span>
-</span><span class='line'><span class="cp">        $im_avatar = imagecreatefromjpeg ( $avatar_file );</span>
-</span><span class='line'><span class="cp">        imagecopymerge ( $im, $im_avatar, 14, 14, 0, 0, 100, 100, 100 );</span>
-</span><span class='line'><span class="cp">        imagedestroy ( $im_avatar );</span>
-</span><span class='line'><span class="cp">        </span>
-</span><span class='line'><span class="cp">        #绘制文字</span>
-</span><span class='line'><span class="cp">        $blue = imagecolorallocate ( $im, 0, 0x33, 0xFF );</span>
-</span><span class='line'><span class="cp">        $white = imagecolorallocate ( $im, 0xFF, 0xFF, 0xFF );</span>
-</span><span class='line'><span class="cp">        $texts = array (</span>
-</span><span class='line'><span class="cp">            array (14, 140, 30, $blue, &quot;To:&quot; . $uin ),</span>
-</span><span class='line'><span class="cp">            array (16, 170, 60, $blue, $nickname . &quot;,&quot; . getWishMess () ),</span>
-</span><span class='line'><span class="cp">            array (12, 340, 80, $blue, $client ), </span>
-</span><span class='line'><span class="cp">            array (10, 320, 100, $blue, $copyright ), </span>
-</span><span class='line'><span class="cp">            array (8, 320, 115, $blue, $weibo ) );</span>
-</span><span class='line'><span class="cp">        </span>
-</span><span class='line'><span class="cp">        foreach ( $texts as $key =&gt; $value ) {</span>
-</span><span class='line'><span class="cp">            imagettftext ( $im, $value [0], 0, $value [1], $value [2], $value [3], FONT_NAME, mb_convert_encoding ( $value [4], &quot;html-entities&quot;, &quot;gbk&quot; ) ); #解决乱码问题</span>
-</span><span class='line'><span class="cp">        }</span>
-</span><span class='line'><span class="cp">        </span>
-</span><span class='line'><span class="cp">        imagepng ( $im );</span>
-</span><span class='line'><span class="cp">        imagedestroy ( $im );</span>
-</span><span class='line'><span class="cp">        </span>
-</span><span class='line'><span class="cp">        header ( &quot;Content-Length: &quot; . ob_get_length () );</span>
-</span><span class='line'><span class="cp">        ob_end_flush ();</span>
-</span><span class='line'><span class="cp">    } catch ( Exception $e ) {</span>
-</span><span class='line'><span class="cp">        </span>
-</span><span class='line'><span class="cp">        #die($e-&gt;getMessage());</span>
-</span><span class='line'><span class="cp">        $error = true;</span>
-</span><span class='line'><span class="cp">    }</span>
-</span><span class='line'><span class="cp">} else {</span>
-</span><span class='line'><span class="cp">    $error = true;</span>
-</span><span class='line'><span class="cp">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="cp">if ($error) {</span>
-</span><span class='line'><span class="cp">    header ( &#39;Content-Length: &#39; . filesize ( IMG_NO ) );</span>
-</span><span class='line'><span class="cp">    echo file_get_contents ( IMG_NO );</span>
-</span><span class='line'><span class="cp">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="cp">?&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>一直困扰我的最后一个问题就是，刚发布是有效的，可一段时间后，腾讯就把你的图片缓存到它的服务器了，然后就不动态生成图片，魔力图片也随之失效。</p>
 ]]></content>
   </entry>
   
