@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | Jerome's Blog]]></title>
   <link href="http://songzhiyong.github.io/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
-  <updated>2014-03-16T17:30:58+08:00</updated>
+  <updated>2014-06-02T23:38:28+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -21,8 +21,7 @@
     <content type="html"><![CDATA[<p>科普：火星坐标系统&mdash;国家保密插件，也叫做加密插件或者加偏或者SM模组，其实就是对真实坐标系统进行人为的加偏处理，按照几行代码的算法，将真实的坐标加密成虚假的坐标，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。而加密后的坐标也常被人称为火星坐标系统。<br>
 API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interfaces.aspx</a><br>
 使用方法： 同目录下，from.txt存放待转换GPS数据，经纬度以制表符分隔。<br>
-输出：同目录下，生成done.txt为转换好的数据。<br>
-<img src="/images/2014/03/google-maps-logo.jpg" title="google-map" alt="dissociation" /></p>
+输出：同目录下，生成done.txt为转换好的数据。<br></p>
 
 <!--more-->
 
