@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://songzhiyong.github.io/sitemap.xml 
