@@ -1,29 +1,10 @@
 {% capture category %}{% if post %}{{ post.categories | category_links | size }}{% else %}{{ page.categories | category_links | size }}{% endif %}{% endcapture %}
-
+{% unless category == '0' %}
+<div class="tags">
 {% if post %}
-		{% if post.author %}
-			{{ post.author }} 
-		{% endif %}
+	{{ post.categories | category_links }}
 {% else %}
-		{% if page.author %}
-			{{ page.author }} 
-		{% endif %}
+	{{ page.categories | category_links }}
 {% endif %}
-
-{% if category != '0' %}
-  {% if post %}
-		{% if post.author %}
-			on
-		{% else %}
-			Tagged under
-		{% endif %}
-    {{ post.categories | category_links }}
-  {% else %}
-		{% if page.author %}
-			on
-		{% else %}
-			Tagged under
-		{% endif %}
-    {{ page.categories | category_links }}
-	{% endif %}
-{% endif %}
+</div>
+{% endunless %}
