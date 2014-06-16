@@ -7,7 +7,7 @@ categories: love
 tags: [Life-insights , love]
 ---
 *我抽离于世界，隐居于自身*<br>
-![dissociation](/images/2013/11/dissociation.JPG "dissociation")
+![](/images/2013/11/large.jpg "")
 <!--more-->
 >我抽离于世界，隐居于自身。<br>
 >我渴望生活，<br>
