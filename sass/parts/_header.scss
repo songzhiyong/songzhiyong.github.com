@@ -35,9 +35,8 @@ $header-height: 30px;
 	h4{
 		margin-top:10px;
 		text-align:center;
-		color: #aaa;
 		font-weight: 100;
-		font-size: 20px;
+		font-size: 32px;
 		@media screen and (max-width: 1040px){
 			float: none;
 		}
@@ -47,7 +46,7 @@ $header-height: 30px;
 	margin-bottom: 0px;
 	float: center;
 	text-align:center;
-	margin-top: 10px;
+	margin-top: 15px;
 	@media screen and (max-width: 1040px){
 		float: none;
 		margin-left: 0;
@@ -74,8 +73,8 @@ $header-height: 30px;
 				}
 			}
 			>a{
-				padding: 18px 0;
-				margin-top: -28px;
+				padding: 38px 0;
+				margin-top: -38px;
 				&:after{
 					content: "\f078";
 					color: $color-gray03;
