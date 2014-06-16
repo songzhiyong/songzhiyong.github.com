@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Jerome's Blog]]></title>
+  <link href="http://songzhiyong.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://songzhiyong.github.io/"/>
+  <updated>2014-06-16T20:47:24+08:00</updated>
+  <id>http://songzhiyong.github.io/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World!]]></title>
+    <link href="http://songzhiyong.github.io/blog/2013/07/06/hello-world/"/>
+    <updated>2013-07-06T09:47:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2013/07/06/hello-world</id>
+    <content type="html"><![CDATA[<p>So here is my blog, this is my first Article&mdash;Hello World.</p>
+
+<!--more-->
+
+]]></content>
+  </entry>
+  
+</feed>
