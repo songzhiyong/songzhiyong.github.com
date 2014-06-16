@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-	<title><![CDATA[Jerome's Blog]]></title>
-	<link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
-	<link href="http://songzhiyong.github.io/"/>
-	<updated>2014-06-17T00:01:25+08:00</updated>
-	<id>http://songzhiyong.github.io/</id>
-	<author>
-		<name><![CDATA[Jerome Song]]></name>
-		<email><![CDATA[songzhiyong1121@gmail.com]]></email>
-	</author>
-	<generator uri="http://octopress.org/">Octopress</generator>
+  <title><![CDATA[Jerome's Blog]]></title>
+  <link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
+  <link href="http://songzhiyong.github.io/"/>
+  <updated>2014-06-17T01:00:10+08:00</updated>
+  <id>http://songzhiyong.github.io/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
-	
-	<entry>
-		
-			<title type="html"><![CDATA[I want my tears back]]></title>
-		
-		<link href="http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back/"/>
-		<updated>2014-06-02T23:25:00+08:00</updated>
-		<id>http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back</id>
-		<content type="html">
-			<![CDATA[
-				
-					<p></p>
-				
-			]]>
-			<![CDATA[<p><img src="http://songzhiyong.github.io/images/2014/06/just-done.jpg" title="just-done" alt="" /></p>
+  
+  <entry>
+    <title type="html"><![CDATA[I want my tears back]]></title>
+    <link href="http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back/"/>
+    <updated>2014-06-02T23:25:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back</id>
+    <content type="html"><![CDATA[<p><img src="http://songzhiyong.github.io/images/2014/06/just-done.jpg" title="just-done" alt="" /></p>
 
 <!--more-->
 
@@ -99,24 +91,15 @@ I want my tears back<br/>
 我要要回我的眼泪<br/>
 I want my tears back now<br/>
 我现在就要要回我的眼泪<br/></p></blockquote>
-]]>
-		</content>
-	</entry>
-	
-	<entry>
-		
-			<title type="html"><![CDATA[python批量修改火星坐标]]></title>
-		
-		<link href="http://songzhiyong.github.io/blog/2014/03/15/python-transfer-gps/"/>
-		<updated>2014-03-15T10:02:00+08:00</updated>
-		<id>http://songzhiyong.github.io/blog/2014/03/15/python-transfer-gps</id>
-		<content type="html">
-			<![CDATA[
-				
-					<p></p>
-				
-			]]>
-			<![CDATA[<p>科普：火星坐标系统&mdash;国家保密插件，也叫做加密插件或者加偏或者 SM 模组，其实就是对真实坐标系统进行人为的加偏处理，按照几行代码的算法，将真实的坐标加密成虚假的坐标，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。而加密后的坐标也常被人称为火星坐标系统。<br>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[python批量修改火星坐标]]></title>
+    <link href="http://songzhiyong.github.io/blog/2014/03/15/python-transfer-gps/"/>
+    <updated>2014-03-15T10:02:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2014/03/15/python-transfer-gps</id>
+    <content type="html"><![CDATA[<p>科普：火星坐标系统&mdash;国家保密插件，也叫做加密插件或者加偏或者 SM 模组，其实就是对真实坐标系统进行人为的加偏处理，按照几行代码的算法，将真实的坐标加密成虚假的坐标，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。而加密后的坐标也常被人称为火星坐标系统。<br>
 API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interfaces.aspx</a><br>
 使用方法： 同目录下，from.txt 存放待转换 GPS 数据，经纬度以制表符分隔。<br>
 输出：同目录下，生成 done.txt 为转换好的数据。<br></p>
@@ -192,24 +175,15 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
 </span><span class='line'><span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]>
-		</content>
-	</entry>
-	
-	<entry>
-		
-			<title type="html"><![CDATA[生活和我]]></title>
-		
-		<link href="http://songzhiyong.github.io/blog/2013/11/21/birthday/"/>
-		<updated>2013-11-21T00:55:00+08:00</updated>
-		<id>http://songzhiyong.github.io/blog/2013/11/21/birthday</id>
-		<content type="html">
-			<![CDATA[
-				
-					<p></p>
-				
-			]]>
-			<![CDATA[<p>生命周而复始<br>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[生活和我]]></title>
+    <link href="http://songzhiyong.github.io/blog/2013/11/21/birthday/"/>
+    <updated>2013-11-21T00:55:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2013/11/21/birthday</id>
+    <content type="html"><![CDATA[<p>生命周而复始<br>
 痛苦与心绪交织<br>
 忘记了快乐的模样<br>
 以这种状态<br>
@@ -293,24 +267,15 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
 <p>似乎，我能做的只是痛定思痛<br>
 因为我还渴望生活<br>
 不管你离我有多远<br></p>
-]]>
-		</content>
-	</entry>
-	
-	<entry>
-		
-			<title type="html"><![CDATA[抽离]]></title>
-		
-		<link href="http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction/"/>
-		<updated>2013-11-06T22:35:00+08:00</updated>
-		<id>http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction</id>
-		<content type="html">
-			<![CDATA[
-				
-					<p></p>
-				
-			]]>
-			<![CDATA[<p><em>我抽离于世界，隐居于自身</em><br>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[抽离]]></title>
+    <link href="http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction/"/>
+    <updated>2013-11-06T22:35:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction</id>
+    <content type="html"><![CDATA[<p><em>我抽离于世界，隐居于自身</em><br>
 <img src="http://songzhiyong.github.io/images/2013/11/large.jpg" alt="" /></p>
 
 <!--more-->
@@ -327,29 +292,19 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
 伪装在会说话的沉默下，<br>
 伪装在震耳欲聋的寂静中。<br>
 不甘让你成为一种信仰，只能迎着风向前。<br></p></blockquote>
-]]>
-		</content>
-	</entry>
-	
-	<entry>
-		
-			<title type="html"><![CDATA[Hello World!]]></title>
-		
-		<link href="http://songzhiyong.github.io/blog/2013/07/06/hello-world/"/>
-		<updated>2013-07-06T09:47:00+08:00</updated>
-		<id>http://songzhiyong.github.io/blog/2013/07/06/hello-world</id>
-		<content type="html">
-			<![CDATA[
-				
-					<p></p>
-				
-			]]>
-			<![CDATA[<p>So here is my blog, this is my first Article&mdash;Hello World.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World!]]></title>
+    <link href="http://songzhiyong.github.io/blog/2013/07/06/hello-world/"/>
+    <updated>2013-07-06T09:47:00+08:00</updated>
+    <id>http://songzhiyong.github.io/blog/2013/07/06/hello-world</id>
+    <content type="html"><![CDATA[<p>So here is my blog, this is my first Article&mdash;Hello World.</p>
 
 <!--more-->
 
-]]>
-		</content>
-	</entry>
-	
+]]></content>
+  </entry>
+  
 </feed>
