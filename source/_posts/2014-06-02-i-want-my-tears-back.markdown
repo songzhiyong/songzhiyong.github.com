@@ -6,7 +6,8 @@ comments: true
 categories: life-insights
 tags: [Life-insights]
 ---
-![](/images/2014/06/just-done.jpg "just-done")
+![](/images/2014/06/just-done.jpg "just-done")<br/>
+
 I want my tears back<br/>
 我要要回我的眼泪<br/>
 The treetops, the chimneys, the snowbed stories, winter grey<br/>
