@@ -10,7 +10,7 @@ tags: [Octopress ,python,火星坐标]
 API：  http://api.zdoz.net/interfaces.aspx<br>
 使用方法： 同目录下，from.txt存放待转换GPS数据，经纬度以制表符分隔。<br>
 输出：同目录下，生成done.txt为转换好的数据。<br>
-<!--more-->
+
 ```python
 import httplib
 import json
