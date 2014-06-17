@@ -4,7 +4,7 @@
   <title><![CDATA[Jerome's Blog]]></title>
   <link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
-  <updated>2014-06-17T13:01:59+08:00</updated>
+  <updated>2014-06-17T13:37:58+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -18,12 +18,8 @@
     <link href="http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back/"/>
     <updated>2014-06-02T23:25:00+08:00</updated>
     <id>http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back</id>
-    <content type="html"><![CDATA[<p><img src="http://songzhiyong.github.io/images/2014/06/just-done.jpg" title="just-done" alt="" /></p>
-
-<!--more-->
-
-
-<blockquote><p>I want my tears back<br/>
+    <content type="html"><![CDATA[<p><img src="http://songzhiyong.github.io/images/2014/06/just-done.jpg" title="just-done" alt="" />
+I want my tears back<br/>
 我要要回我的眼泪<br/>
 The treetops, the chimneys, the snowbed stories, winter grey<br/>
 树冠、烟囱、铺满雪的房屋、斑白的冬季<br/>
@@ -90,7 +86,7 @@ The lost in me<br/>
 I want my tears back<br/>
 我要要回我的眼泪<br/>
 I want my tears back now<br/>
-我现在就要要回我的眼泪<br/></p></blockquote>
+我现在就要要回我的眼泪<br/></p>
 ]]></content>
   </entry>
   
@@ -103,9 +99,6 @@ I want my tears back now<br/>
 API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interfaces.aspx</a><br>
 使用方法： 同目录下，from.txt 存放待转换 GPS 数据，经纬度以制表符分隔。<br>
 输出：同目录下，生成 done.txt 为转换好的数据。<br></p>
-
-<!--more-->
-
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -190,9 +183,6 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
 迎接了这个日子<br>
 不胜唏嘘<br></p>
 
-<!--more-->
-
-
 <p>25 岁，尴尬着，彷徨着，迷惘着……<br>
 25 岁，或许精彩缤纷，或许犹豫徘徊，或许在倒数着生命……<br>
 25 岁，离而立还有 5 年，离生活还有多远？<br></p>
@@ -276,12 +266,8 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
     <updated>2013-11-06T22:35:00+08:00</updated>
     <id>http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction</id>
     <content type="html"><![CDATA[<p><em>我抽离于世界，隐居于自身</em><br>
-<img src="http://songzhiyong.github.io/images/2013/11/large.jpg" title="large" alt="" /></p>
-
-<!--more-->
-
-
-<blockquote><p>我抽离于世界，隐居于自身。<br>
+<img src="http://songzhiyong.github.io/images/2013/11/large.jpg" title="large" alt="" />
+我抽离于世界，隐居于自身。<br>
 我渴望生活，<br>
 却与生活有一段距离。<br>
 因你在生活里，但却不在生活里。<br>
@@ -291,7 +277,7 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
 不至于痛不欲生 ，但却不能恣意纵情。<br>
 伪装在会说话的沉默下，<br>
 伪装在震耳欲聋的寂静中。<br>
-不甘让你成为一种信仰，只能迎着风向前。<br></p></blockquote>
+不甘让你成为一种信仰，只能迎着风向前。<br></p>
 ]]></content>
   </entry>
   
