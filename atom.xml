@@ -4,7 +4,7 @@
   <title><![CDATA[Jerome's Blog]]></title>
   <link href="http://songzhiyong.github.io/atom.xml" rel="self"/>
   <link href="http://songzhiyong.github.io/"/>
-  <updated>2014-06-17T13:37:58+08:00</updated>
+  <updated>2014-06-17T13:41:13+08:00</updated>
   <id>http://songzhiyong.github.io/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -18,8 +18,9 @@
     <link href="http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back/"/>
     <updated>2014-06-02T23:25:00+08:00</updated>
     <id>http://songzhiyong.github.io/blog/2014/06/02/i-want-my-tears-back</id>
-    <content type="html"><![CDATA[<p><img src="http://songzhiyong.github.io/images/2014/06/just-done.jpg" title="just-done" alt="" />
-I want my tears back<br/>
+    <content type="html"><![CDATA[<p><img src="http://songzhiyong.github.io/images/2014/06/just-done.jpg" title="just-done" alt="" /><br/></p>
+
+<p>I want my tears back<br/>
 我要要回我的眼泪<br/>
 The treetops, the chimneys, the snowbed stories, winter grey<br/>
 树冠、烟囱、铺满雪的房屋、斑白的冬季<br/>
@@ -266,8 +267,9 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
     <updated>2013-11-06T22:35:00+08:00</updated>
     <id>http://songzhiyong.github.io/blog/2013/11/06/moving-away-reaction</id>
     <content type="html"><![CDATA[<p><em>我抽离于世界，隐居于自身</em><br>
-<img src="http://songzhiyong.github.io/images/2013/11/large.jpg" title="large" alt="" />
-我抽离于世界，隐居于自身。<br>
+<img src="http://songzhiyong.github.io/images/2013/11/large.jpg" title="large" alt="" /><br/></p>
+
+<p>我抽离于世界，隐居于自身。<br>
 我渴望生活，<br>
 却与生活有一段距离。<br>
 因你在生活里，但却不在生活里。<br>
@@ -287,9 +289,6 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
     <updated>2013-07-06T09:47:00+08:00</updated>
     <id>http://songzhiyong.github.io/blog/2013/07/06/hello-world</id>
     <content type="html"><![CDATA[<p>So here is my blog, this is my first Article&mdash;Hello World.</p>
-
-<!--more-->
-
 ]]></content>
   </entry>
   
