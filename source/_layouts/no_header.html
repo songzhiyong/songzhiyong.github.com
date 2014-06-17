@@ -3,9 +3,8 @@
 
 
 <body>
-	<header id="header-custom" class="inner">{% include header.html %}</header>
-
-	<div id="content-custom" class="inner">{{ content | expand_urls: root_url }}</div>
+	<header id="header" class="inner">{% include header.html %}</header>
+	<div id="content" class="inner">{{ content | expand_urls: root_url }}</div>
 	<footer id="footer" class="inner">{% include footer.html %}</footer>
 	{% include after_footer.html %}
 </body>

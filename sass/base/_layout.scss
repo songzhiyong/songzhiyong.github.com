@@ -60,6 +60,10 @@ a:hover {
 .alignright{
 	float: right;
 }
+.alignright-avator{
+	float: right;
+	margin-right: 144px;
+}
 .clearfix{
 	@include pie-clearfix;
 }
