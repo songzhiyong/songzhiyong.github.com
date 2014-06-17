@@ -10,6 +10,7 @@ body{
 	font-weight: 300;
 	line-height: 1.5;
 	background: $color-background;
+	background: url(/images/noise.png);
     color: $color-gray01;
 	@media screen and (max-width: 1040px){
 		margin: 0 20px;

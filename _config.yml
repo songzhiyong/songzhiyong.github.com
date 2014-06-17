@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://songzhiyong.github.io
+url: http://ziso.me
 title: Faith, Hope, Charity 
 subtitle: Art thou weary, tender heart?
 author: Jerome Song
@@ -91,7 +91,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: jeromesong
+disqus_short_name: ziso
 disqus_show_comment_count: true
 
 # Google Analytics
