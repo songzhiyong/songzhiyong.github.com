@@ -2,7 +2,7 @@ $header-height: 50px;
 
 #header-custom{
 /*	height: $header-height;*/
-	padding: 200px 0 220px 0;
+	padding: 220px 0 400px 0;
 	width: 100%;
 	z-index: 100;
 	position: fixed;
@@ -91,18 +91,37 @@ $header-height: 50px;
 		}
 	}
 }
-#content-custom{
+/*#content-custom{
 	float: center;
 	z-index: 200;
-	width: inherit;
-	padding-left: 144px;
-	margin: 0;
+	width: 1000px;
+	margin: 0 auto;
 	background: #fff;
-	/*background: url(/images/fiber.png);*/
+	/*background: url(/images/fiber.png);
+	position:relative;
+	top: 500px;
+	bottom: -500px;
+}*/
+#content-wrap{
+	float: center;
+	z-index: 200;
+	width: 100%;
+	margin: 0 auto;
+	background: #fff;
+	/*background: url(/images/noise.png);*/
 	position:relative;
 	top: 500px;
 	bottom: -500px;
 }
+#content-bg{
+	float: center;
+	z-index: 200;
+	width: 100%;
+	margin: 0 auto;
+	background: #fff;
+	background: url(/images/noise.png);
+}
+
 #main-nav{
 	margin-bottom: 0px;
 	float: center;
