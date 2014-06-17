@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://songzhiyong.github.io/sitemap.xml 
+Sitemap: http://ziso.me/sitemap.xml 
