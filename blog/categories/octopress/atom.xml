@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-06-18T18:19:07+08:00</updated>
+  <updated>2014-06-20T00:46:30+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ziso.me/blog/2013/07/06/hello-world/"/>
     <updated>2013-07-06T09:47:00+08:00</updated>
     <id>http://ziso.me/blog/2013/07/06/hello-world</id>
-    <content type="html"><![CDATA[<p>So here is my blog, this is my first Article&mdash;Hello World.</p>
+    <content type="html"><![CDATA[<p><img src="/images/2013/07/hello_world.png" title="helloworld" alt="Hello World" /><br/></p>
 ]]></content>
   </entry>
   
