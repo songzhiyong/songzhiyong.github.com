@@ -157,6 +157,9 @@ header h1 {
   margin-left: -12px;
   margin-top: -12px;
 }
+.cd-timeline-img.cd-text {
+  background: #0ed1e7;
+}
 .cd-timeline-img.cd-picture {
   background: #75ce66;
 }
