@@ -70,6 +70,9 @@ header h1 {
   font-size: 18px;
   font-size: 1.125rem;
 }
+header h1 a:hover{
+  color: #54b982;
+}
 @media only screen and (min-width: 1170px) {
   header {
     height: 300px;
@@ -111,13 +114,10 @@ header h1 {
 .cd-timeline-block {
   position: relative;
   margin: 2em 0;
-  *zoom: 1;
-}
-.cd-timeline-block:before, .cd-timeline-block:after {
-  content: " ";
-  display: table;
 }
 .cd-timeline-block:after {
+  content: "";
+  display: table;
   clear: both;
 }
 .cd-timeline-block:first-child {
@@ -160,11 +160,14 @@ header h1 {
 .cd-timeline-img.cd-text {
   background: #0ed1e7;
 }
+.cd-timeline-img.cd-quotes {
+  background: #f0932a;
+}
 .cd-timeline-img.cd-picture {
-  background: #75ce66;
+  background: #d3583e;
 }
 .cd-timeline-img.cd-movie {
-  background: #c03b44;
+  background: #6f7a83;
 }
 .cd-timeline-img.cd-location {
   background: #f0ca45;
@@ -220,33 +223,30 @@ header h1 {
     -moz-transform: scale(1);
   }
 }
-@-o-keyframes cd-bounce-1 {
-  0% {
-    opacity: 0;
-    -o-transform: scale(0.5);
-  }
-
-  60% {
-    opacity: 1;
-    -o-transform: scale(1.2);
-  }
-
-  100% {
-    -o-transform: scale(1);
-  }
-}
 @keyframes cd-bounce-1 {
   0% {
     opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
     transform: scale(0.5);
   }
 
   60% {
     opacity: 1;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
     transform: scale(1.2);
   }
 
   100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -257,13 +257,13 @@ header h1 {
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
-  *zoom: 1;
 }
-.cd-timeline-content:before, .cd-timeline-content:after {
-  content: " ";
-  display: table;
+.cd-timeline-sign{
+  float: right;
 }
 .cd-timeline-content:after {
+  content: "";
+  display: table;
   clear: both;
 }
 .cd-timeline-content h2 {
@@ -409,33 +409,30 @@ header h1 {
     -moz-transform: translateX(0);
   }
 }
-@-o-keyframes cd-bounce-2 {
-  0% {
-    opacity: 0;
-    -o-transform: translateX(-100px);
-  }
-
-  60% {
-    opacity: 1;
-    -o-transform: translateX(20px);
-  }
-
-  100% {
-    -o-transform: translateX(0);
-  }
-}
 @keyframes cd-bounce-2 {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
     transform: translateX(-100px);
   }
 
   60% {
     opacity: 1;
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
     transform: translateX(20px);
   }
 
   100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
     transform: translateX(0);
   }
 }
@@ -469,33 +466,76 @@ header h1 {
     -moz-transform: translateX(0);
   }
 }
-@-o-keyframes cd-bounce-2-inverse {
-  0% {
-    opacity: 0;
-    -o-transform: translateX(100px);
-  }
-
-  60% {
-    opacity: 1;
-    -o-transform: translateX(-20px);
-  }
-
-  100% {
-    -o-transform: translateX(0);
-  }
-}
 @keyframes cd-bounce-2-inverse {
   0% {
     opacity: 0;
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
     transform: translateX(100px);
   }
 
   60% {
     opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
     transform: translateX(-20px);
   }
 
   100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
     transform: translateX(0);
   }
 }
+
+
+
+
+.timeline-menu{
+   z-index: 100;
+   margin: 0px;
+   visibility: hidden;
+}
+
+
+
+.logo {
+  position: absolute;
+  width: 45px;
+  height: 42px;
+  line-height: 42px;
+  color: white;
+  background: #232323;
+  display: block;
+  opacity: 0.95;
+  border-bottom: 5px solid #52a463;
+}
+.logo:hover{
+  position: absolute;
+  width: 45px;
+  height: 42px;
+  line-height: 42px;
+  color: white;
+  background: #54b982;
+  display: block;
+  opacity: 0.95;
+  border-bottom: 5px solid #52a463;
+}
+.logo > * {
+  display: block;
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+
