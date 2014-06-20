@@ -6,5 +6,6 @@ comments: true
 categories: octopress
 tags: [Octopress , Hello world]
 ---
-So here is my blog, this is my first Article--Hello World.
+![Hello World](/images/2013/07/hello_world.png "helloworld")<br/>
+
 

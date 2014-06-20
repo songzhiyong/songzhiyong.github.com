@@ -1,54 +1,5 @@
 $header-height: 50px;
 
-#header-custom{
-/*	height: $header-height;*/
-	padding: 220px 0 400px 0;
-	width: 100%;
-	z-index: 100;
-	position: fixed;
-	background-clip: border-box;
-	background-attachment: scroll;
-	background-origin: padding-box;
-	background-size: cover;
-/*	margin-bottom: 100px;*/
-	background: url(/images/header_bg.jpg);
-	line-height: $header-height;
-	@media screen and (max-width: 1040px){
-		margin-bottom: 50px;
-		height: auto;
-		position: relative;
-		padding-bottom: 10px;
-	}
-	@media screen and (max-width: 600px){
-	margin-bottom:40px;
-	}
-	a{
-		color: $color-gray01;
-		@include transition(color 0.3s);
-		&:hover{
-			color: $color-main;
-			border-bottom:none;
-		}
-	}
-	h1{
-		margin-top:15px;
-		text-align:center;
-		font-weight: bold;
-		font-size: 48px;
-		@media screen and (max-width: 1040px){
-			float: none;
-		}
-		}
-	h4{
-		margin-top:10px;
-		text-align:center;
-		font-weight: 100;
-		font-size: 32px;
-		@media screen and (max-width: 1040px){
-			float: none;
-		}
-	}
-}
 #header{
 	height: $header-height;
 	padding: 30px 0;
@@ -91,6 +42,62 @@ $header-height: 50px;
 		}
 	}
 }
+
+#header-custom{
+/*	height: $header-height;*/
+	padding: 220px 0 400px 0;
+	width: 100%;
+	z-index: 100;
+	position: fixed;
+	background-clip: border-box;
+	background-attachment: scroll;
+	background-size: cover !important;
+	-webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+/*	margin-bottom: 100px;*/
+	background: url(/images/header_bg.jpg);
+	line-height: $header-height;
+	@media screen and (max-width: 1040px){
+		margin-bottom: 50px;
+		height: auto;
+		position: relative;
+		padding-bottom: 10px;
+	}
+	@media screen and (max-width: 600px){
+	margin-bottom:40px;
+	}
+	a{
+		color: $color-gray01;
+		@include transition(color 0.3s);
+		&:hover{
+			color: $color-main;
+			border-bottom:none;
+		}
+	}
+	h1{
+		margin-top:15px;
+		text-align:center;
+		font-weight: bold;
+		font-size: 48px;
+		@media screen and (max-width: 1040px){
+			float: none;
+		}
+		}
+	h4{
+		margin-top:10px;
+		text-align:center;
+		font-weight: 100;
+		font-size: 32px;
+		@media screen and (max-width: 1040px){
+			float: none;
+		}
+	}
+}
+
+ 
+
 /*#content-custom{
 	float: center;
 	z-index: 200;
@@ -110,8 +117,8 @@ $header-height: 50px;
 	background: #fff;
 	/*background: url(/images/noise.png);*/
 	position:relative;
-	top: 500px;
-	bottom: -500px;
+	margin-top: 600px;
+	bottom:0px;
 }
 #content-bg{
 	float: center;
@@ -137,7 +144,8 @@ $header-height: 50px;
 			display: none;
 		}
 		>li{
-			margin-left: 50px;
+			margin-left: 25px;
+			margin-right: 25px;
 			@include inline-block;
 			@media screen and (max-width: 1040px){
 				margin-left: 0;
@@ -243,6 +251,106 @@ $header-height: 50px;
 			display: block;
 		}
 	}
+}
+@font-face {
+  font-family: 'fontello';
+  src: url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.eot');
+  src: url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.eot?#iefix') format('embedded-opentype'),
+       url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.woff') format('woff'),
+       url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.ttf') format('truetype'),
+       url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.svg#fontello') format('svg');
+  font-weight: normal; font-style: normal;
+}
+.screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.eot');
+  src: url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.eot?#iefix') format('embedded-opentype'),
+       url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.woff') format('woff'),
+       url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.ttf') format('truetype'),
+       url('http://css-tricks.com/examples/RoundButtons/fonts/fontello.svg#fontello') format('svg');
+  font-weight: normal; font-style: normal;
+}
+
+[class*="icon-"] {
+  font-family: 'fontello';
+  font-style: normal;
+  font-size: 1em;
+  speak: none;
+}
+
+.icon-home:after     { content: "\2302"; } 
+.icon-cog:after      { content: "\2699"; } 
+.icon-cw:after       { content: "\27f3"; } 
+.icon-location:after { content: "\e724"; } 
+
+
+
+#home-nav {
+  list-style: none;
+  text-align: center;
+  z-index: 300;
+  position: fixed;
+  
+}
+
+#home-nav li {
+  position: relative;
+  display: inline-block;
+  margin-right: -4px;
+}
+
+
+#home-nav a:link, #home-nav a:visited {
+  display: block;
+  text-decoration: none;
+  background-color: #f8f8f8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+  color: #333;
+  margin: 25px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #bbb, inset 0px 2px 3px #fff;
+  border: solid 0.5px transparent;
+}
+
+#home-nav a:before {
+  content: "";
+  display: block;
+  background: #fff;
+  border-top: 2px solid #eee;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  bottom: -8px;
+  right: -8px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: inset 0px 8px 48px #eee;
+}
+
+#home-nav a:active {
+  box-shadow: none;
+  border: solid 1px #a7a7a7;
+}
+
+#home-nav a:hover {
+  text-decoration: none;
+  color: #960d20;
+  background: #f5f5f5;
 }
 #mobile-nav{
 	display: none;

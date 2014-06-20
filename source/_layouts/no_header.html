@@ -3,7 +3,18 @@
 
 
 <body>
+	<nav id="home-nav">
+    	<ul>
+        	<li>
+         		 <a href="/">
+           	 	<span class="icon-home"></span>
+           	 	<span class="screen-reader-text">Home</span>
+         		 </a>
+      		</li>
+       </ul>
+	</nav>​
 	<header id="header" class="inner">{% include header.html %}</header>
+
 	<div id="content" class="inner">{{ content | expand_urls: root_url }}</div>
 	<footer id="footer" class="inner">{% include footer.html %}</footer>
 	{% include after_footer.html %}

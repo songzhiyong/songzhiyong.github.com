@@ -3,13 +3,24 @@
 
 
 <body>
+
 	<header id="header-custom" class="inner">{% include header.html %}</header>
+	<nav id="home-nav">
+    	<ul>
+        	<li>
+         		 <a href="#">
+           	 	<span class="icon-home"></span>
+           	 	<span class="screen-reader-text">Home</span>
+         		 </a>
+      		</li>
+       </ul>
+	</nav>​
 	<div id="content-wrap" class="inner">
 		<div id="content-bg" class="inner">
 			<div id="content" class="inner">{{ content | expand_urls: root_url }}</div>
 		</div>
+		<footer id="footer" class="inner">{% include footer.html %}</footer>
+		{% include after_footer.html %}
 	</div>
-	<footer id="footer" class="inner">{% include footer.html %}</footer>
-	{% include after_footer.html %}
 </body>
 </html>
