@@ -166,6 +166,9 @@ header h1 a:hover{
 .cd-timeline-img.cd-picture {
   background: #d3583e;
 }
+.cd-timeline-img.cd-music {
+  background: #a071be;
+}
 .cd-timeline-img.cd-movie {
   background: #6f7a83;
 }
