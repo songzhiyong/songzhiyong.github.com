@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-06-21T19:12:02+08:00</updated>
+  <updated>2014-06-24T00:07:59+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,245 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[dreamer]]></title>
+    <link href="http://ziso.me/blog/2014/06/23/dreamer/"/>
+    <updated>2014-06-23T23:47:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/06/23/dreamer</id>
+    <content type="html"><![CDATA[<p><img src="http://ziso.me/images/2014/06/lost.jpg" title="just-done" alt="" /><br/></p>
+
+<p>Seasons, my friend<br>
+Color me, so we can blend<br>
+Forbid me to go<br>
+I know so little about the wind when it blows<br>
+Dreamer, dreamer<br>
+Im walking out of your dream<br>
+Take me off that parade<br>
+And place me somewhere<br>
+In your sense of a shades<br>
+Your night shuts my door<br>
+And I will not dream anymore<br>
+See if I can pass by that waiting hand<br>
+If I can pass by that wandering man<br>
+If I can leave to get on<br>
+See that it all makes sense pretty soon<br>
+Dreamer, dreamer<br>
+Im walking out, while you go on<br>
+Dreamer, dreamer<br>
+Dreamer, dreamer<br>
+I&rsquo;ll be where I belong<br>
+Dreamer, dreamer<br>
+Dreamer, dreamer<br>
+Im walking out, while you go on<br>
+Dreamer, dreamer<br>
+But dreamers don&rsquo;t come along<br>
+Dreamer, dreamer<br>
+I&rsquo;ll be where I belong<br>
+Dreamer, dreamer<br>
+Stop me if I&rsquo;m wrong<br>
+Dreamer, dreamer<br>
+Dreamer, dreamer<br>
+Dreamer, dreamer<br>
+Dreamer, dreamer<br>
+Dreamer, dreamer<br>
+Dreamer, dreamer<br></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[redis-started]]></title>
+    <link href="http://ziso.me/blog/2014/06/23/redis-started/"/>
+    <updated>2014-06-23T23:41:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/06/23/redis-started</id>
+    <content type="html"><![CDATA[<h3>Redis installation</h3>
+
+<h5>1)Download</h5>
+
+<p>Go to the Redis Download page and find the latest stable version. Download it and unpack:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar xzf redis-*
+</span><span class='line'>cd redis-*</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>2)Compile</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>make
+</span><span class='line'>sudo make install clean</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>3)Create config:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir /etc/redis
+</span><span class='line'>cp redis.conf /etc/redis/redis.conf</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>4)Start server &amp; Connect</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>redis-server /etc/redis/redis.conf
+</span><span class='line'>
+</span><span class='line'>redis-cli</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>PhpRedis Installation</h3>
+
+<h5>1) Preparation</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install php5-dev</span></code></pre></td></tr></table></div></figure>
+
+
+<p>php5-dev provides the dev library as well as the phpize command which is required for the compiling step, if you dont install this package, you would got this error message when you start your step 2:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>No command 'phpize' found, did you mean:
+</span><span class='line'> Command 'phpize5' from package 'php5-dev' (main)
+</span><span class='line'>phpize: command not found</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>2) Get phpredis source code, should be pretty easy by running</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/nicolasff/phpredis.git</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>3) Compile and install</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd phpredis
+</span><span class='line'>phpize
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo -s make install</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>4) Enable the phpredis extension</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "extension=redis.so"&gt;/etc/php5/conf.d/redis.ini</span></code></pre></td></tr></table></div></figure>
+
+
+<p>for ubuntu PHP5.5, you should create copy this file into</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/php5/mods-available</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>5) Write a simple php script to test (running on cli would be fine if php5-cli is installed)</h5>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'>        <span class="c1">// phpredis_set.php</span>
+</span><span class='line'>        <span class="nv">$redis</span><span class="o">=</span><span class="k">new</span> <span class="nx">Redis</span><span class="p">()</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Can&#39;f load redis module.&quot;</span><span class="p">);</span>
+</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span><span class="mi">6379</span><span class="p">);</span>
+</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>you can check phpredis with command:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x"> php -r &quot;if (new Redis()==true){echo \&quot;Redis is ready!\&quot;}&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Prior to try phpredis I was using Rediska as the php redis client. I did some pretty quick and dirty benchmarking comparison and phpredis is clearly a winner here, not surprisingly because phpredis is a compiled extension written in C while Rediska is a pure php library.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php phpredis_set.php; done</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>real 0m13.072s
+user 0m6.560s
+sys 0m3.620s</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php rediska_set.php; done</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>real 0m21.035s
+user 0m12.150s
+sys 0m5.050s</p>
+
+<p>and the source code for rediska_set.php:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'>        <span class="k">require_once</span> <span class="s1">&#39;Rediska/library/Rediska.php&#39;</span><span class="p">;</span>
+</span><span class='line'>        <span class="nv">$rediska</span><span class="o">=</span><span class="k">new</span> <span class="nx">Rediska</span><span class="p">();</span>
+</span><span class='line'>        <span class="nv">$rediska</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;set_testkey&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>Python-Redis installation</h3>
+
+<h5>1)Install</h5>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo pip install redis</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo easy_install redis</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or download the source and from source</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo python setup.py install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>2)Getting started</h5>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">redis</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">StrictRedis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="bp">True</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="s">&#39;bar&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&lt;&mdash;unfinished&mdash;></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Good Day, Every Day]]></title>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: redis | Faith, Hope, Charity]]></title>
+  <link href="http://ziso.me/blog/categories/redis/atom.xml" rel="self"/>
+  <link href="http://ziso.me/"/>
+  <updated>2014-06-24T00:08:00+08:00</updated>
+  <id>http://ziso.me/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[redis-started]]></title>
+    <link href="http://ziso.me/blog/2014/06/23/redis-started/"/>
+    <updated>2014-06-23T23:41:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/06/23/redis-started</id>
+    <content type="html"><![CDATA[<h3>Redis installation</h3>
+
+<h5>1)Download</h5>
+
+<p>Go to the Redis Download page and find the latest stable version. Download it and unpack:</p>
+
+<p><code>
+tar xzf redis-*
+cd redis-*
+</code></p>
+
+<h5>2)Compile</h5>
+
+<p><code>
+make
+sudo make install clean
+</code></p>
+
+<h5>3)Create config:</h5>
+
+<p><code>
+mkdir /etc/redis
+cp redis.conf /etc/redis/redis.conf
+</code></p>
+
+<h5>4)Start server &amp; Connect</h5>
+
+<p>```
+redis-server /etc/redis/redis.conf</p>
+
+<p>redis-cli
+```</p>
+
+<h3>PhpRedis Installation</h3>
+
+<h5>1) Preparation</h5>
+
+<p><code>
+sudo apt-get install php5-dev
+</code></p>
+
+<p>php5-dev provides the dev library as well as the phpize command which is required for the compiling step, if you dont install this package, you would got this error message when you start your step 2:</p>
+
+<p><code>
+No command 'phpize' found, did you mean:
+ Command 'phpize5' from package 'php5-dev' (main)
+phpize: command not found
+</code></p>
+
+<h5>2) Get phpredis source code, should be pretty easy by running</h5>
+
+<p><code>
+git clone git://github.com/nicolasff/phpredis.git
+</code></p>
+
+<h5>3) Compile and install</h5>
+
+<p><code>
+cd phpredis
+phpize
+./configure
+make
+sudo -s make install
+</code></p>
+
+<h5>4) Enable the phpredis extension</h5>
+
+<p><code>
+echo "extension=redis.so"&gt;/etc/php5/conf.d/redis.ini
+</code>
+for ubuntu PHP5.5, you should create copy this file into</p>
+
+<p><code>
+/etc/php5/mods-available
+</code></p>
+
+<h5>5) Write a simple php script to test (running on cli would be fine if php5-cli is installed)</h5>
+
+<p>```php
+&lt;?php</p>
+
+<pre><code>    // phpredis_set.php
+    $redis=new Redis() or die("Can'f load redis module.");
+    $redis-&gt;connect('127.0.0.1',6379);
+    $redis-&gt;set('test', 'hello world');
+</code></pre>
+
+<p>```
+you can check phpredis with command:</p>
+
+<p><code>
+ php -r "if (new Redis()==true){echo \"Redis is ready!\"}"
+</code></p>
+
+<p>Prior to try phpredis I was using Rediska as the php redis client. I did some pretty quick and dirty benchmarking comparison and phpredis is clearly a winner here, not surprisingly because phpredis is a compiled extension written in C while Rediska is a pure php library.</p>
+
+<p><code>
+time for i in `seq 1 1000`; do php phpredis_set.php; done
+</code>
+real 0m13.072s
+user 0m6.560s
+sys 0m3.620s</p>
+
+<p><code>
+time for i in `seq 1 1000`; do php rediska_set.php; done
+</code>
+real 0m21.035s
+user 0m12.150s
+sys 0m5.050s</p>
+
+<p>and the source code for rediska_set.php:</p>
+
+<p>```php
+&lt;?php</p>
+
+<pre><code>    require_once 'Rediska/library/Rediska.php';
+    $rediska=new Rediska();
+    $rediska-&gt;set('set_testkey', 1);
+</code></pre>
+
+<p>```</p>
+
+<h3>Python-Redis installation</h3>
+
+<h5>1)Install</h5>
+
+<p><code>
+sudo pip install redis
+</code>
+or</p>
+
+<p><code>
+sudo easy_install redis
+</code></p>
+
+<p>or download the source and from source</p>
+
+<p>```
+sudo python setup.py install</p>
+
+<p>```</p>
+
+<h5>2)Getting started</h5>
+
+<p>```python</p>
+
+<blockquote><blockquote><blockquote><p>import redis
+r = redis.StrictRedis(host=&lsquo;localhost&rsquo;, port=6379, db=0)
+r.set(&lsquo;foo&rsquo;, &lsquo;bar&rsquo;)
+True
+r.get(&lsquo;foo&rsquo;)
+&lsquo;bar&rsquo;
+```
+&lt;&mdash;unfinished&mdash;></p></blockquote></blockquote></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
