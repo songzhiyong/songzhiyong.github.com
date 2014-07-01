@@ -63,15 +63,21 @@ header {
   height: 200px;
   line-height: 200px;
   text-align: center;
-  background: #303e49;
+ /* background: #303e49;*/
+ background: #2c4762 url('/images/background.png')
 }
 header h1 {
   color: white;
   font-size: 18px;
   font-size: 1.125rem;
 }
+header h1 a{
+  color: white;
+
+}
 header h1 a:hover{
   color: #54b982;
+   position: -34px 0px;
 }
 @media only screen and (min-width: 1170px) {
   header {
@@ -83,6 +89,7 @@ header h1 a:hover{
     font-size: 1.5rem;
   }
 }
+
 
 #cd-timeline {
   position: relative;
@@ -165,6 +172,9 @@ header h1 a:hover{
 }
 .cd-timeline-img.cd-picture {
   background: #d3583e;
+}
+.cd-timeline-img.cd-music {
+  background: #a071be;
 }
 .cd-timeline-img.cd-movie {
   background: #6f7a83;
