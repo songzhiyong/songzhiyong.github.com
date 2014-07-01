@@ -5,7 +5,7 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>Art thou weary, tender heart?  | Faith, Hope, Charity</title>
+	<title>Learn English (2)  | Faith, Hope, Charity</title>
 
 <meta name="author" content="Jerome Song"> 
 
@@ -62,8 +62,25 @@ $(document).ready(
 
 
 <body>
-
-	<header id="header-custom" class="inner"><h1><a href="/">Faith, Hope, Charity</a></h1>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<nav id="home-nav">
+    	<ul>
+        	<li>
+         		 <a href="/">
+           	 	<span class="icon-home"></span>
+           	 	<span class="screen-reader-text">Home</span>
+         		 </a>
+      		</li>
+       </ul>
+	</nav>​
+	<header id="header" class="inner"><h1><a href="/">Faith, Hope, Charity</a></h1>
 <h4>Art thou weary, tender heart?</h4>
 <nav id="main-nav"><ul>
 	<li><a href="/archives">Archive</a></li>
@@ -94,30 +111,10 @@ $(document).ready(
 
 
 </header>
-	<nav id="home-nav">
-    	<ul>
-        	<li>
-         		 <a href="#">
-           	 	<span class="icon-home"></span>
-           	 	<span class="screen-reader-text">Home</span>
-         		 </a>
-      		</li>
-       </ul>
-	</nav>​
-	<div id="content-wrap" class="inner">
-		<div id="content-bg" class="inner">
-			<div id="content" class="inner">
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/01/learn-english-2/">
-		
-			Learn English (2)</a>
-	</h2>
-	<div class="entry-content">
-		<h4>1</h4>
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Learn English (2)</h2>
+	<div class="entry-content"><h4>1</h4>
 
 <p>球星名字怎么读？&mdash;潘吉 Jenny 告诉你</p>
 
@@ -5422,10 +5419,7 @@ leftover women
 high maintenance/作</p>
 
 <p>(\d{1,2}.)</p>
-
-		
-		
-	</div>
+</div>
 
 
 <div class="meta">
@@ -5452,1013 +5446,50 @@ high maintenance/作</p>
 
 
 	
-		<span class="comments"><a href="/blog/2014/07/01/learn-english-2//index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2014/07/01/learn-english-2/#disqus_thread">Comments</a></span>
 	
 </div></article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/28/android-facebook-sdk/">
-		
-			Android:Facebook SDK</a>
-	</h2>
-	<div class="entry-content">
-		<p>The following samples are available in the SDK:</p>
-
-<ul>
-<li><h3>Basic samples</h3>
-
-<ul>
-<li><strong>ProfilePictureSample</strong>: demonstrates non-logged-in usage of the profile picture control</li>
-<li><strong>FriendPickerSample</strong>: demonstrates usage of the native friend picker to choose amongst the user&rsquo;s friends</li>
-<li><strong>PlacePickerSample</strong>: demonstrates logged-in usage of the place picker control</li>
-<li><strong>GraphAPISample</strong>: demonstrates requests to the Graph API</li>
-</ul>
-</li>
-<li><h3>Feature samples</h3>
-
-<ul>
-<li><strong>SessionLoginSample</strong>: demonstrates detailed login flow using the SDK</li>
-<li><strong>JustRequestSample</strong>: demonstrates logged-in user making single and batched Facebook API requests</li>
-<li><strong>SwitchUserSample</strong>: demonstrates an approach to allow switching between multiple users</li>
-<li><strong>AdUnitsSample and NativeAdSample</strong>: shows how to load and display ads from Facebook inside your app</li>
-</ul>
-</li>
-<li><h3>Complete samples</h3>
-
-<ul>
-<li><strong>HelloFacebookSample</strong>: an all-round sample that demonstrates profile access, status updates and photo uploading</li>
-<li><strong>Scrumptious</strong>: demonstrates the use of login, requests, pickers, picture uploads, and Open Graph publishing</li>
-<li><strong>RPS</strong>: demonstrates the use of the Native Share Dialog, Open Graph publishing, pickers, invites, and deep linking.</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>GraphObject
-</span><span class='line'>{ 
-</span><span class='line'>  graphObjectClass=GraphUser,
-</span><span class='line'>  state={
-</span><span class='line'>          "id":"510224139107412",
-</span><span class='line'>          "first_name":"Song",
-</span><span class='line'>          "timezone":8,
-</span><span class='line'>          "verified":true,
-</span><span class='line'>          "name":"Song Zhiyong",
-</span><span class='line'>          "locale":"en_US",
-</span><span class='line'>          "link":"https:\/\/www.facebook.com\/app_scoped_user_id\/510224139107412\/",
-</span><span class='line'>          "last_name":"Zhiyong",
-</span><span class='line'>          "gender":"male",
-</span><span class='line'>          "updated_time":"2014-06-14T12:30:41+0000"
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>06-28 21:32:15.103: I/User(2172): GraphObject{graphObjectClass=GraphUser, state={&ldquo;id&rdquo;:&ldquo;510224139107412&rdquo;,&ldquo;first_name&rdquo;:&ldquo;Song&rdquo;,&ldquo;birthday&rdquo;:&ldquo;11\/21\/1989&rdquo;,&ldquo;timezone&rdquo;:8,&ldquo;location&rdquo;:{&ldquo;id&rdquo;:&ldquo;106283509403187&rdquo;,&ldquo;name&rdquo;:&ldquo;Beijing&rdquo;},&ldquo;verified&rdquo;:true,&ldquo;name&rdquo;:&ldquo;Song Zhiyong&rdquo;,&ldquo;locale&rdquo;:&ldquo;en_US&rdquo;,&ldquo;link&rdquo;:&ldquo;<a href="https://www.facebook.com/app_scoped_user_id/510224139107412/">https://www.facebook.com/app_scoped_user_id/510224139107412/</a>&rdquo;,&ldquo;last_name&rdquo;:&ldquo;Zhiyong&rdquo;,&ldquo;favorite_teams&rdquo;:[{&ldquo;id&rdquo;:&ldquo;136266656430479&rdquo;,&ldquo;name&rdquo;:&ldquo;Volkswagen Motorsport&rdquo;}],&ldquo;gender&rdquo;:&ldquo;male&rdquo;,&ldquo;updated_time&rdquo;:&ldquo;2014-06-14T12:30:41+0000&rdquo;}}</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-28T18:54:00+08:00" pubdate data-updated="true">Jun 28<span>th</span>, 2014</time></div>
+	<div class="share">
 	
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="song_zhiyong">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	</script>
+	
+	
+	<!-- 将此标记放置在你希望显示+1 按钮的位置。 -->
+	<div class="g-plusone" data-size="medium" data-width="300"></div>
 
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>android</a>
-
+	<!-- 将此标记放置在最后一个 +1 按钮 标记之后。 -->
+	<script type="text/javascript">
+  	(function() {
+    	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    	po.src = 'https://apis.google.com/js/platform.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  	})();
+	</script>
+	
+	
+	<div class="fb-like" data-href="http://ziso.me/blog/2014/07/01/learn-english-2/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+	
 </div>
 
 
-	
-		<span class="comments"><a href="/blog/2014/06/28/android-facebook-sdk//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/28/learn-english-1/">
-		
-			Learn English (1)</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/2014/06/2014FIFAWorldCuplogo2-FIFA.jpg" title="the world cup" alt="2014 FIFA World Cup Logo" /><br/></p>
-
-<h3>The World Cup</h3>
-
-<ol>
-<li><p>the World Cup  世界杯</p></li>
-<li><p>Brazil  巴西</p></li>
-<li><p>soccer  足球&lt;美>  football  足球</p></li>
-<li><p>Who do you think will win the World Cup this year?  你觉得今年世界杯谁会赢？</p></li>
-<li><p>It&rsquo;s too early to call, but probably Brazil.  太早了，说不准，但很可能是巴西。</p></li>
-<li><p>They are one of the best teams in the world and they are hosting the World Cup.  巴西队是世界最好的球队之一，而且是东道主。</p></li>
-<li><p>Who do you root for?  你支持哪队？</p></li>
-<li><p>Go Brazil!  巴西加油！</p></li>
-<li><p>It&rsquo;s a big deal.  这是重要赛事。</p></li>
-<li><p>football  橄榄球</p></li>
-<li><p>to catch a game  赶上看一场球</p></li>
-<li><p>Sounds like a plan!  好极了！</p></li>
-<li><p>Brazil is hosting it.  主办国是巴西。</p></li>
-<li><p>Portuguese 葡萄牙语</p></li>
-<li><p>Brazilian  巴西语</p></li>
-<li><p>Game Matches</p>
-
-<ul>
-<li>group stage  小组赛</li>
-<li>knock out stage  淘汰赛 You lose, you out</li>
-<li>quarter finals  &frac14; 决赛</li>
-<li>semi finals  半决赛</li>
-<li>the final  总决赛</li>
-</ul>
-</li>
-<li><p>Teams</p>
-
-<ul>
-<li>goalie / goal keeper  守门员</li>
-<li>defender  后卫</li>
-<li>midfielder  中场</li>
-<li>forward / striker  前锋</li>
-<li>coach  教练</li>
-</ul>
-</li>
-<li><p>Which team do you root for?  你支持哪支球队？</p></li>
-<li><p>underdog  黑马</p></li>
-<li><p>It&rsquo;s an upset!  爆冷门！</p></li>
-<li><p>favorites  夺冠热门</p></li>
-<li><p>the home team advantage  主场优势</p></li>
-<li><p>Italy  意大利</p></li>
-<li><p>jersey  球衣</p></li>
-</ol>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-28T12:13:00+08:00" pubdate data-updated="true">Jun 28<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/english/'>english</a>
-
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/28/learn-english-1//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/26/mac-os-x-efficiency-improvement-1/">
-		
-			Mac OS X Efficiency Improvement (1)</a>
-	</h2>
-	<div class="entry-content">
-		<p>怀念 Windows 系统的 Win+D, Win+R, 或许是自己还没习惯 Mac OS, 还要继续修炼.</p>
-
-<hr />
-
-<p><strong>Command+Option+M</strong></p>
-
-<p>可以实现快速最小化当前应用程序所有窗口的目的。比如你想一下子最小化多个 Finder 窗口，就可以用该快捷键。</p>
-
-<p><strong>Command+H</strong><br></p>
-
-<p>可以实现快速隐藏当前应用程序所有窗口的目的</p>
-
-<p><strong>Command+Option+H</strong><br></p>
-
-<p>可以实现快速隐藏除当前应用程序之外所有程序窗口的目的<br></p>
-
-<p><strong>Command+Option+M+H</strong><br></p>
-
-<p>可以实现快速隐藏所有应用程序窗口的目的(按四个键，表示很不舒服)<br></p>
-
-<hr />
-
-<p>至于「系统偏好设置——通用」中勾选”连按窗口的标题栏以将窗口最小化”，然后双击窗口标题栏就可以最小化当前窗口。
-这个就更不好改了，跟 windows 正好相反。<br></p>
-
-<p>Mac 上的 CheatSheet(<a href="http://www.mediaatelier.com/CheatSheet/">http://www.mediaatelier.com/CheatSheet/</a>)还是很好用的。</p>
-
-<p>Practice makes Perfect!</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-26T23:43:00+08:00" pubdate data-updated="true">Jun 26<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/tricks/'>tricks</a>
-
+</section>
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/26/mac-os-x-efficiency-improvement-1//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/23/dreamer/">
-		
-			Dreamer</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/2014/06/lost.jpg" title="just-done" alt="" /><br/></p>
-
-<p>Seasons, my friend<br>
-Color me, so we can blend<br>
-Forbid me to go<br>
-I know so little about the wind when it blows<br>
-Dreamer, dreamer<br>
-Im walking out of your dream<br>
-Take me off that parade<br>
-And place me somewhere<br>
-In your sense of a shades<br>
-Your night shuts my door<br>
-And I will not dream anymore<br>
-See if I can pass by that waiting hand<br>
-If I can pass by that wandering man<br>
-If I can leave to get on<br>
-See that it all makes sense pretty soon<br>
-Dreamer, dreamer<br>
-Im walking out, while you go on<br>
-Dreamer, dreamer<br>
-Dreamer, dreamer<br>
-I&rsquo;ll be where I belong<br>
-Dreamer, dreamer<br>
-Dreamer, dreamer<br>
-Im walking out, while you go on<br>
-Dreamer, dreamer<br>
-But dreamers don&rsquo;t come along<br>
-Dreamer, dreamer<br>
-I&rsquo;ll be where I belong<br>
-Dreamer, dreamer<br>
-Stop me if I&rsquo;m wrong<br>
-Dreamer, dreamer<br>
-Dreamer, dreamer<br>
-Dreamer, dreamer<br>
-Dreamer, dreamer<br>
-Dreamer, dreamer<br>
-Dreamer, dreamer<br></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-23T23:47:00+08:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/life-insights/'>life-insights</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/23/dreamer//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/23/redis-started/">
-		
-			Redis-started</a>
-	</h2>
-	<div class="entry-content">
-		<h3>Redis installation</h3>
-
-<h5>1)Download</h5>
-
-<p>Go to the Redis Download page and find the latest stable version. Download it and unpack:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar xzf redis-*
-</span><span class='line'>cd redis-*</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2)Compile</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>make
-</span><span class='line'>sudo make install clean</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>3)Create config:</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir /etc/redis
-</span><span class='line'>cp redis.conf /etc/redis/redis.conf</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>4)Start server &amp; Connect</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>redis-server /etc/redis/redis.conf
-</span><span class='line'>
-</span><span class='line'>redis-cli</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>PhpRedis Installation</h3>
-
-<h5>1) Preparation</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install php5-dev</span></code></pre></td></tr></table></div></figure>
-
-
-<p>php5-dev provides the dev library as well as the phpize command which is required for the compiling step, if you dont install this package, you would got this error message when you start your step 2:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>No command 'phpize' found, did you mean:
-</span><span class='line'> Command 'phpize5' from package 'php5-dev' (main)
-</span><span class='line'>phpize: command not found</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2) Get phpredis source code, should be pretty easy by running</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/nicolasff/phpredis.git</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>3) Compile and install</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd phpredis
-</span><span class='line'>phpize
-</span><span class='line'>./configure
-</span><span class='line'>make
-</span><span class='line'>sudo -s make install</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>4) Enable the phpredis extension</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo "extension=redis.so"&gt;/etc/php5/conf.d/redis.ini</span></code></pre></td></tr></table></div></figure>
-
-
-<p>for ubuntu PHP5.5, you should create copy this file into</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/php5/mods-available</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>5) Write a simple php script to test (running on cli would be fine if php5-cli is installed)</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'>        <span class="c1">// phpredis_set.php</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">=</span><span class="k">new</span> <span class="nx">Redis</span><span class="p">()</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Can&#39;f load redis module.&quot;</span><span class="p">);</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span><span class="mi">6379</span><span class="p">);</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>you can check phpredis with command:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x"> php -r &quot;if (new Redis()==true){echo \&quot;Redis is ready!\&quot;}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Prior to try phpredis I was using Rediska as the php redis client. I did some pretty quick and dirty benchmarking comparison and phpredis is clearly a winner here, not surprisingly because phpredis is a compiled extension written in C while Rediska is a pure php library.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php phpredis_set.php; done</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>real 0m13.072s
-user 0m6.560s
-sys 0m3.620s</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php rediska_set.php; done</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>real 0m21.035s
-user 0m12.150s
-sys 0m5.050s</p>
-
-<p>and the source code for rediska_set.php:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'>        <span class="k">require_once</span> <span class="s1">&#39;Rediska/library/Rediska.php&#39;</span><span class="p">;</span>
-</span><span class='line'>        <span class="nv">$rediska</span><span class="o">=</span><span class="k">new</span> <span class="nx">Rediska</span><span class="p">();</span>
-</span><span class='line'>        <span class="nv">$rediska</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;set_testkey&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<h3>Python-Redis installation</h3>
-
-<h5>1)Install</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo pip install redis</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo easy_install redis</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or download the source and from source</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo python setup.py install</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2)Getting started</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">redis</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">StrictRedis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="bp">True</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="s">&#39;bar&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&lt;&mdash;unfinished&mdash;></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-23T23:41:00+08:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/redis/'>redis</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/23/redis-started//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/19/good-day-every-day/">
-		
-			Good Day, Every Day</a>
-	</h2>
-	<div class="entry-content">
-		<p>Sometimes, we don&rsquo;t need to understand everything. We just need to have a little faith. For everything you have missed, you have gained something else; And for everything you gain, you lose something else. It&rsquo;s about your outlook towards your life. You can either regret or rejoice. But for the rainy and cloudy, we would not enjoy the blue sky and fresh air.<br><br>
-<b>Just have a little faith! Then every day would be a good day!</b></p>
-
-<hr><br>
-
-
-<p><img src="/images/photos/2014-06-07%2013.45.28.jpg" alt="" /><br>
-<img src="/images/photos/2014-06-01%2018.54.11.jpg" alt="" /><br></p>
-
-
-		
-		<a href="/blog/2014/06/19/good-day-every-day/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-19T21:49:00+08:00" pubdate data-updated="true">Jun 19<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/life-insights/'>life-insights</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/19/good-day-every-day//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/02/i-want-my-tears-back/">
-		
-			I Want My Tears Back</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/2014/06/just-done.jpg" title="just-done" alt="" /><br/></p>
-
-<p>I want my tears back<br/>
-我要要回我的眼泪<br/>
-The treetops, the chimneys, the snowbed stories, winter grey<br/>
-树冠、烟囱、铺满雪的房屋、斑白的冬季<br/>
-Wildflowers, those meadows of heaven, wind in the wheat<br/>
-野花、那些天堂的草地、麦田里的风<br/>
-A railroad across waters, the scent of grandfatherly love<br/>
-一条跨越水域的铁路 祖父慈爱的味道<br/>
-Blue bayous, Decembers, moon through a dragonfly&rsquo;s wings<br/>
-蓝色的海湾 十二月里 月光穿越蜻蜓的翅膀<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where&rsquo;s dear Alice knocking on the door<br/>
-那个敲门的爱丽丝在哪里<br/>
-Where&rsquo;s the trapdoor that takes me there<br/>
-那个带我到那得旋转门在哪里<br/>
-Where&rsquo;s the real is shattered by a Mad Marsh Hare<br/>
-在那里现实被疯狂的野兔所粉碎<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-I want my tears back<br/>
-我要要回我的眼泪<br/>
-I want my tears back now<br/>
-我现在就要要回我的眼泪<br/>
-A ballet on a grove, still growing young all alone<br/>
-在段在片草丛上上演的芭蕾舞，仍然独自在变年轻<br/>
-A rag doll, a best friend, the voice of Mary Costa<br/>
-一个玩具娃娃，一位好友，玛丽·可思塔的声音<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where&rsquo;s dear Alice knocking on the door<br/>
-那个敲门的爱丽丝在哪里<br/>
-Where&rsquo;s the trapdoor that takes me there<br/>
-那个带我到那得旋转门在哪里<br/>
-Where&rsquo;s the real is shattered by a Mad Marsh Hare<br/>
-在那里现实被疯狂的野兔所粉碎<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-I want my tears back<br/>
-我要要回我的眼泪<br/>
-I want my tears back now<br/>
-我现在就要要回我的眼泪<br/></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-02T23:25:00+08:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/life-insights/'>life-insights</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/02/i-want-my-tears-back//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/03/15/python-transfer-gps/">
-		
-			Python批量修改火星坐标</a>
-	</h2>
-	<div class="entry-content">
-		<p>科普：火星坐标系统&mdash;国家保密插件，也叫做加密插件或者加偏或者 SM 模组，其实就是对真实坐标系统进行人为的加偏处理，按照几行代码的算法，将真实的坐标加密成虚假的坐标，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。而加密后的坐标也常被人称为火星坐标系统。<br>
-API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interfaces.aspx</a><br>
-使用方法： 同目录下，from.txt 存放待转换 GPS 数据，经纬度以制表符分隔。<br>
-输出：同目录下，生成 done.txt 为转换好的数据。<br></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">httplib</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">json</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">transGps</span><span class="p">(</span><span class="n">origin</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">host</span><span class="o">=</span><span class="s">&quot;api.zdoz.net&quot;</span>
-</span><span class='line'>    <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;/transgps.aspx?lat=&#39;</span><span class="o">+</span> <span class="n">origin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&#39;&amp;lng=&#39;</span><span class="o">+</span><span class="n">origin</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">h</span> <span class="o">=</span> <span class="n">httplib</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="n">host</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">transfered</span><span class="o">=</span><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;Lat&#39;</span><span class="p">)</span><span class="o">!=</span><span class="bp">None</span> <span class="p">:</span>
-</span><span class='line'>        <span class="n">transfered</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;Lat&#39;</span><span class="p">])</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;Lng&#39;</span><span class="p">)</span><span class="o">!=</span><span class="bp">None</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">transfered</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;Lng&#39;</span><span class="p">])</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">transfered</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">inputFile</span> <span class="o">=</span> <span class="s">&#39;from.txt&#39;</span>
-</span><span class='line'><span class="n">outputFile</span> <span class="o">=</span> <span class="s">&#39;done.txt&#39;</span>
-</span><span class='line'><span class="n">fin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">inputFile</span><span class="p">,</span> <span class="s">&#39;rU&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outputFile</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;lat</span><span class="se">\t</span><span class="s">lng</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span> <span class="p">:</span>
-</span><span class='line'>    <span class="n">transfered</span> <span class="o">=</span> <span class="n">transGps</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">transfered</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;UTF-8&#39;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">transfered</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;UTF-8&#39;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">transfered</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">transfered</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;&#39;</span>
-</span><span class='line'><span class="n">fin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'><span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-15T10:02:00+08:00" pubdate data-updated="true">Mar 15<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/python/'>python</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/03/15/python-transfer-gps//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/11/21/birthday/">
-		
-			生活和我</a>
-	</h2>
-	<div class="entry-content">
-		<p>生命周而复始<br>
-痛苦与心绪交织<br>
-忘记了快乐的模样<br>
-以这种状态<br>
-迎接了这个日子<br>
-不胜唏嘘<br></p>
-
-<p>25 岁，尴尬着，彷徨着，迷惘着……<br>
-25 岁，或许精彩缤纷，或许犹豫徘徊，或许在倒数着生命……<br>
-25 岁，离而立还有 5 年，离生活还有多远？<br></p>
-
-<p>莫名的喜欢写些文字<br>
-但文字也如此的苍白无力<br></p>
-
-<p>从日出到月稀<br>
-就这样<br>
-浸泡于迷惘的生活中<br>
-走在尘郁幽凉的路上<br>
-享受着耳机里的声音<br>
-逃避着尘世中的喧嚣<br></p>
-
-<p>有时更喜欢深夜<br>
-或许原本就属于这里<br>
-一切都是那么平静<br>
-没有风声 <br>
-只剩震耳欲聋的寂静<br>
-没有期待 也没有失望<br>
-没有分久必合 合久必分的过程<br>
-一切都变得那么淡，无悲也无喜<br></p>
-
-<p>在这条路上<br>
-只有自己孤独的往返<br>
-似乎寻觅着什么<br>
-但突然发现 前方没路了 已似尽头<br>
-城市依然 人群如旧<br>
-激情 乐趣<br>
-似乎都在一点点从手里溜走<br></p>
-
-<p>我想 我还在似图找出自己的宿命<br>
-在这里或者在那里……<br>
-却始终未能发现<br>
-始终走不出自己的世界<br></p>
-
-<p>有时希望被别人了解<br>
-同时又不想被别人看穿<br>
-我只是…… 迷失了<br>
-我不知道该怎么做<br>
-不能前进 也并非后退<br>
-不是等待未来 仅是现在 <br>
-仅仅是存在的恐惧<br></p>
-
-<p>有时会固执的以为<br>
-透过层层迷惘的心网<br>
-可以看到了一丝若隐若现的光亮<br>
-但那光亮却越寻越远<br>
-远到是那样虚无飘渺，无处可寻<br>
-就像许多事情都是无果则终 不甚了了<br></p>
-
-<p>我总以为是自己内向和偏执的性格造成的<br>
-后来想想 其实不然 <br>
-在过去留下的一些文字里<br>
-发现自己也曾简单、也曾乐观<br>
-而现在……<br>
-真正的原因或许是精神上的麻木<br>
-和心灵的扭曲<br></p>
-
-<p>有人说，生活原本就是这样<br>
-会有荆棘密布<br>
-走过之后 或许伤痕累累<br>
-但那是成长的功勋章<br>
-似乎, 我已功勋卓著<br>
-但却未见成长<br></p>
-
-<p>如果生命可以重建<br>
-我需要走出的太多太多<br>
-真的很累<br>
-疲惫不堪<br></p>
-
-<p>似乎，我能做的只是痛定思痛<br>
-因为我还渴望生活<br>
-不管你离我有多远<br></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-21T00:55:00+08:00" pubdate data-updated="true">Nov 21<span>st</span>, 2013</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/life-insights/'>life-insights</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2013/11/21/birthday//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-<nav id="pagenavi">
-    
-    
-        <a href="/blog/page/2/" class="next">Next</a>
-    
-    <div class="center"><a href="/archives">Blog Archives</a></div>
-</nav></div>
-		</div>
-		<footer id="footer" class="inner">Copyright &copy; 2014
+	<footer id="footer" class="inner">Copyright &copy; 2014
 
     Jerome Song
 
 <br>
 Powered by Octopress.
 </footer>
-		<script src="/javascripts/slash.js"></script>
+	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -6471,7 +5502,10 @@ Powered by Octopress.
       var disqus_shortname = 'ziso';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ziso.me/blog/2014/07/01/learn-english-2/';
+        var disqus_url = 'http://ziso.me/blog/2014/07/01/learn-english-2/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -6501,6 +5535,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 
 
-	</div>
 </body>
 </html>
