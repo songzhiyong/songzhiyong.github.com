@@ -1,0 +1,46 @@
+* + table {
+ border-collapse:collapse;
+ border-spacing:0;
+ border-color:#999;
+}
+* + table tr:nth-of-type(2n){
+  background:#F7FDFA
+}
+* + table tr:nth-of-type(odd){
+  background:#D2E4FC
+}
+
+* + table th, * + table td {
+  border-width:1px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+* + table td {
+  border-style:solid;
+  font-weight:bold;
+  border-width: 1px;
+  border-color: #000;
+  text-align: left;
+}
+* + table th {
+  border-style:solid;
+  font-weight:bold;
+  border-width: 1px;
+  border-color: #000;
+  text-align: center;
+  color: #fff;
+  background: #26ADE4;
+}
+
+
+* + table th[align="left"], * + table td[align="left"] {
+  text-align:left;
+}
+
+* + table th[align="right"], * + table td[align="right"] {
+  text-align:right;
+}
+
+* + table th[align="center"], * + table td[align="center"] {
+  text-align:center;
+}
