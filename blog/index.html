@@ -120,6 +120,273 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong-%3Czhuan-%3E/">
+		
+			[转] Layout Inflation不能这么用</a>
+	</h2>
+	<div class="entry-content">
+		<p>转自：<a href="http://blog.jobbole.com/72156/">http://blog.jobbole.com/72156/</a></p>
+
+<p>Layout inflation 在 Android 上下文环境下转换 XML 文件成 View 结构对象的时候需要用到。</p>
+
+<p>LayoutInflater 这个对象在 Android 的 SDK 中很常见，但是你绝对没想到竟然能够找到一个使用误区。说不定你的 App 里就是这么用的！如果你在写 APP 的时候像如下代码一样使用 LayoutInflater 的话：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">my_layout</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>请你继续读完这篇文章，稍后我会解释为什么这样做不对。</p>
+
+<h3>认识 LayoutInflater</h3>
+
+<p>首先看一下 LayoutInflater 的工作原理，有两个重载的版本可以使用：</p>
+
+<p>inflate(int resource, ViewGroup root) 和 inflate(int resource, ViewGroup root, boolean attachToRoot)</p>
+
+<p>第一个参数指出要载入的布局文件资源，第二个参数指出视图结构中载入的布局将要放入的根视图。如果有第三个参数，那么它用来决定是否把载入后的视图绑定到给出的根视图中。</p>
+
+<p>最后两个参数可能会导致一些问题。如果使用两个参数的版本，Layoutinflater 会自动尝试把载入的视图绑定到给定的根视图对象中。但是，如果你传递 null，系统就不会尝试绑定操作了，否则应用程序就崩溃了。</p>
+
+<p>很多开发者会这样做，认为传递 null 作为根视图就可以禁用绑定操作了。很多时候很多开发者甚至不知道还有三个参数的 Layoutinflater 版本的存在，如果这么做的话，也会同时禁用了根视图的一个很重要的函数……但是之前我没有研究过。</p>
+
+<h3>框架中的示例</h3>
+
+<p>现在我们来仔细看看 Android 框架关于动态载入布局的场景。</p>
+
+<p>Adapter 是最常用的场景，我们经常需要使用 LayoutInflater 来自定义 ListView（通过重写 getView()方法），具体的方法签名是这样的：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Fragment 也会用到 inflation 操作，通过 onCreateView()方法创建 view 的时候会用到。这个方法的签名是这样的：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">onCreateView</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不知你有没有注意到这一点，每次 Framework 需要你去载入一个布局文件时，都会传入一个 ViewGroup 参数（最后需要绑定到的根视图），如果 Layoutinflater 设为自动绑定到根视图的话，会抛出一个异常。</p>
+
+<p>所以你想想看，如果我做绑定操作的话，为什么要给你一个 ViewGroup 参数呢？事实证明父视图在这个 inflation 操作过程中是很重要的，它会计算被载入的 XML 在根元素中的 LayoutParams，如果传入 null 话，就等于是告诉框架“我不知道载入的 View 要放到哪个父视图中”。</p>
+
+<p>问题在于，android:layout_xxx 属性会在父视图对象中被重新计算，结果就是所有你定义的 LayoutParams 都会被忽略掉（因为没有已知的父视图对象）。然后你就纳闷“为什么框架会忽略掉我自己定义的布局属性呢？还是去 StackOverFlow 上看看，提一个 bug 吧”。</p>
+
+<p>如果没有设置 LayoutParams，那么最终 ViewGroup 也会给你生成一个默认的属性，幸运的话（很多时候），这些默认的设置正好和你在 XML 文件中定义的一样……所以你就察觉不到其实已经出现问题了。</p>
+
+<h3>应用案例</h3>
+
+<p>你敢说你没有在应用中碰到过这样的场景吗？看看下面的代码，为 Listview 简单地载入一个布局文件：</p>
+
+<p>R.layout.item_row</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;?android:attr/listPreferredItemHeight&quot;</span>
+</span><span class='line'>    <span class="na">android:gravity=</span><span class="s">&quot;center_vertical&quot;</span>
+</span><span class='line'>    <span class="na">android:orientation=</span><span class="s">&quot;horizontal&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;TextView</span>
+</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/text1&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+</span><span class='line'>        <span class="na">android:paddingRight=</span><span class="s">&quot;15dp&quot;</span>
+</span><span class='line'>        <span class="na">android:text=</span><span class="s">&quot;Text1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;TextView</span>
+</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/text2&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;0dp&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_weight=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'>        <span class="na">android:text=</span><span class="s">&quot;Text2&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里我们想把高度设置为固定高度，上面把它设为当前主题下的推荐高度……看似很合理。</p>
+
+<p>但是，当我们这样载入布局文件的时候，就不对了：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="n">View</span> <span class="nf">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">convertView</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">convertView</span> <span class="o">=</span> <span class="n">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">item_row</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">convertView</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后结果就变成这样了：</p>
+
+<p><img src="/images/2014/07/image-1.png" alt="" /><br/></p>
+
+<p>为什么设定的固定高度不起作用？这是因为你没有把所有子 View 的高都设为固定高度，只需要把根视图的高设置成 wrap_content 就可以了。不需要知道为什么会这样（你可以吐槽一下 Google 为什么这么处理！）。</p>
+
+<p>而如果这样载入布局的话就没有问题：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="n">View</span> <span class="nf">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">convertView</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">convertView</span> <span class="o">=</span> <span class="n">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">item_row</span><span class="o">,</span> <span class="n">parent</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">convertView</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这样我们就得到了想要的结果：</p>
+
+<p><img src="/images/2014/07/image-2.png" alt="" /><br/></p>
+
+<h3>任何规则都有例外</h3>
+
+<p>当然，也有需要在载入布局的时候指定 null 作为父布局对象，但这种情况非常少。一个典型的例子就是为 AlertDialog 中载入一个自定义布局。看看下面的例子，使用和上面一样的 XML 布局文件来作为对话框的布局：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">AlertDialog</span><span class="o">.</span><span class="na">Builder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AlertDialog</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</span><span class='line'><span class="n">View</span> <span class="n">content</span> <span class="o">=</span> <span class="n">LayoutInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">item_row</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">builder</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&quot;My Dialog&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">builder</span><span class="o">.</span><span class="na">setView</span><span class="o">(</span><span class="n">content</span><span class="o">);</span>
+</span><span class='line'><span class="n">builder</span><span class="o">.</span><span class="na">setPositiveButton</span><span class="o">(</span><span class="s">&quot;OK&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</span><span class='line'><span class="n">builder</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里的问题就是，AlertDialog.Builder 支持自定义布局，但是 setView()方法不提供带有布局文件作为参数的版本，所以只能先手动载入 XML 布局文件。由于最终会进入到对话框里面，不会接触到根布局（事实上这时候还没有根布局），所以我们也操作不了布局文件的最终父视图对象，当然也就不能用于载入使用了。事实证明，这些都是无关紧要的，因为 AlertDialog 会擦除布局上的所有 Layoutparams 然后替换为 match_parent。</p>
+
+<p>所以，下次使用 inflate()函数时，如果还想输入 null 应该停下来想一想“我真的不知道它该放到哪里吗？”</p>
+
+<p>最后，你应该想想两个参数的 inflate()版本作为一个便捷的使用方式，可以忽略第三个参数（默认为 true），但是不要想着为了方便而传递一个 null 却忽略了第三个参数会默认是 false。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-05T15:27:00+08:00" pubdate data-updated="true">Jul 5<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong-%3Czhuan-%3E//blog/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/05/python-notes/">
+		
+			Python Notes</a>
+	</h2>
+	<div class="entry-content">
+		<iframe src="//www.slideshare.net/slideshow/embed_code/3881323" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/hongqn/qcon2010-3881323" title="Python 于 Web 2.0 网站的应用 - QCon Beijing 2010" target="_blank">Python 于 Web 2.0 网站的应用 &ndash; QCon Beijing 2010</a> </strong> from <strong><a href="http://www.slideshare.net/hongqn" target="_blank">Qiangning Hong</a></strong> </div></p>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/6442300" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/wilhelmshen/py-art" title="Python 编程艺术" target="_blank">Python 编程艺术</a> </strong> from <strong><a href="http://www.slideshare.net/wilhelmshen" target="_blank">wilhelmshen</a></strong> </div></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-05T13:42:00+08:00" pubdate data-updated="true">Jul 5<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/python/'>python</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/05/python-notes//blog/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/07/04/smile-in-english/">
 		
 			Smile in English</a>
@@ -1098,169 +1365,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/06/28/android-facebook-sdk//blog/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/28/learn-english-1/">
-		
-			Learn English (1)</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/2014/06/2014FIFAWorldCuplogo2-FIFA.jpg" title="the world cup" alt="2014 FIFA World Cup Logo" /><br/></p>
-
-<h3>The World Cup</h3>
-
-<ol>
-<li><p>the World Cup  世界杯</p></li>
-<li><p>Brazil  巴西</p></li>
-<li><p>soccer  足球&lt;美>  football  足球</p></li>
-<li><p>Who do you think will win the World Cup this year?  你觉得今年世界杯谁会赢？</p></li>
-<li><p>It&rsquo;s too early to call, but probably Brazil.  太早了，说不准，但很可能是巴西。</p></li>
-<li><p>They are one of the best teams in the world and they are hosting the World Cup.  巴西队是世界最好的球队之一，而且是东道主。</p></li>
-<li><p>Who do you root for?  你支持哪队？</p></li>
-<li><p>Go Brazil!  巴西加油！</p></li>
-<li><p>It&rsquo;s a big deal.  这是重要赛事。</p></li>
-<li><p>football  橄榄球</p></li>
-<li><p>to catch a game  赶上看一场球</p></li>
-<li><p>Sounds like a plan!  好极了！</p></li>
-<li><p>Brazil is hosting it.  主办国是巴西。</p></li>
-<li><p>Portuguese 葡萄牙语</p></li>
-<li><p>Brazilian  巴西语</p></li>
-<li><p>Game Matches</p>
-
-<ul>
-<li>group stage  小组赛</li>
-<li>knock out stage  淘汰赛 You lose, you out</li>
-<li>quarter finals  &frac14; 决赛</li>
-<li>semi finals  半决赛</li>
-<li>the final  总决赛</li>
-</ul>
-</li>
-<li><p>Teams</p>
-
-<ul>
-<li>goalie / goal keeper  守门员</li>
-<li>defender  后卫</li>
-<li>midfielder  中场</li>
-<li>forward / striker  前锋</li>
-<li>coach  教练</li>
-</ul>
-</li>
-<li><p>Which team do you root for?  你支持哪支球队？</p></li>
-<li><p>underdog  黑马</p></li>
-<li><p>It&rsquo;s an upset!  爆冷门！</p></li>
-<li><p>favorites  夺冠热门</p></li>
-<li><p>the home team advantage  主场优势</p></li>
-<li><p>Italy  意大利</p></li>
-<li><p>jersey  球衣</p></li>
-</ol>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-28T12:13:00+08:00" pubdate data-updated="true">Jun 28<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/english/'>english</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/28/learn-english-1//blog/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/26/mac-os-x-efficiency-improvement-1/">
-		
-			Mac OS X Efficiency Improvement (1)</a>
-	</h2>
-	<div class="entry-content">
-		<p>怀念 Windows 系统的 Win+D, Win+R, 或许是自己还没习惯 Mac OS, 还要继续修炼.</p>
-
-<hr />
-
-<p><strong>Command+Option+M</strong></p>
-
-<p>可以实现快速最小化当前应用程序所有窗口的目的。比如你想一下子最小化多个 Finder 窗口，就可以用该快捷键。</p>
-
-<p><strong>Command+H</strong><br></p>
-
-<p>可以实现快速隐藏当前应用程序所有窗口的目的</p>
-
-<p><strong>Command+Option+H</strong><br></p>
-
-<p>可以实现快速隐藏除当前应用程序之外所有程序窗口的目的<br></p>
-
-<p><strong>Command+Option+M+H</strong><br></p>
-
-<p>可以实现快速隐藏所有应用程序窗口的目的(按四个键，表示很不舒服)<br></p>
-
-<hr />
-
-<p>至于「系统偏好设置——通用」中勾选”连按窗口的标题栏以将窗口最小化”，然后双击窗口标题栏就可以最小化当前窗口。
-这个就更不好改了，跟 windows 正好相反。<br></p>
-
-<p>Mac 上的 CheatSheet(<a href="http://www.mediaatelier.com/CheatSheet/">http://www.mediaatelier.com/CheatSheet/</a>)还是很好用的。</p>
-
-<p>Practice makes Perfect!</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-26T23:43:00+08:00" pubdate data-updated="true">Jun 26<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/tricks/'>tricks</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/26/mac-os-x-efficiency-improvement-1//blog/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
