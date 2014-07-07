@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-07T12:11:01+08:00</updated>
+  <updated>2014-07-08T00:06:52+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[转] Layout Inflation不能这么用]]></title>
-    <link href="http://ziso.me/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong-%3Czhuan-%3E/"/>
+    <link href="http://ziso.me/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong/"/>
     <updated>2014-07-05T15:27:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong-<zhuan-></id>
+    <id>http://ziso.me/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong</id>
     <content type="html"><![CDATA[<p>转自：<a href="http://blog.jobbole.com/72156/">http://blog.jobbole.com/72156/</a></p>
 
 <p>Layout inflation在Android上下文环境下转换XML文件成View结构对象的时候需要用到。</p>
