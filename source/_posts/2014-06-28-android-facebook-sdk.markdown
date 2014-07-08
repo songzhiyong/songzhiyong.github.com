@@ -44,4 +44,5 @@ GraphObject
 			"updated_time":"2014-06-14T12:30:41+0000"
 	}
 }
-```06-28 21:32:15.103: I/User(2172): GraphObject{graphObjectClass=GraphUser, state={"id":"510224139107412","first_name":"Song","birthday":"11\/21\/1989","timezone":8,"location":{"id":"106283509403187","name":"Beijing"},"verified":true,"name":"Song Zhiyong","locale":"en_US","link":"https:\/\/www.facebook.com\/app_scoped_user_id\/510224139107412\/","last_name":"Zhiyong","favorite_teams":[{"id":"136266656430479","name":"Volkswagen Motorsport"}],"gender":"male","updated_time":"2014-06-14T12:30:41+0000"}}
+```
+<unfinished>

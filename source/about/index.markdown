@@ -4,7 +4,6 @@ title: "About Me"
 #date: 2012-02-06 16:59
 comments: false
 sharing: true
-footer: true
 ---
    
 <!-- ![](/images/photos/profile.jpg "profile") -->
@@ -16,8 +15,6 @@ footer: true
 Twitter: [@song_zhiyong](https://twitter.com/#!/song_zhiyong)
 
 Weibo: [@zhiyongs](http://weibo.com/zhiyongs)
-
-Facebook: 
 
 
 

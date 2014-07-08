@@ -5,27 +5,17 @@ date: 2014-07-01 13:23
 comments: true
 categories: english
 ---
+
+<潘吉Jenny告诉你> , just jot down history! 
+
+
 ####1
 
 球星名字怎么读？--潘吉Jenny告诉你
 
-
-
 同学们！世界杯至今大家熬夜看了几场球？
 
 哪个球员是你的男神？你知道你的男神名字的正确发音吗？
-
-赶快听听今天的节目吧！
-
-世界杯特惠：世界杯期间OpenLanguage一年期所有语种包时输入
-"
-WORLDCUP
-"
-即享8折优惠！
-
- 
-
- 
 
 - pull an all-nighter  熬夜
 
@@ -86,23 +76,13 @@ WORLDCUP
 - Gianluigi Buffon  吉安路易吉·布冯
 
  
-
-
-
-
-
+<!-- more -->
 
 ####2
 
-
-
 世界杯球迷--潘吉Jenny告诉你
 
-
-
 世界杯正在巴西如火如荼地进行ing。不论你是不是球迷，四年一次的热烈气氛和精彩比赛都会感染你。今天的课程两个球迷就要告诉你他们怎么庆祝世界杯！Ole!
-
- 
 
 - the World Cup  世界杯
 
@@ -133,27 +113,11 @@ WORLDCUP
  
 
 
-
-
-
-
 ####3
-
-
 
 世界杯开战！--潘吉Jenny告诉你
 
-
-
 2014年巴西世界杯开战几日，许多同学已经熬夜看了好几场。看比赛不免要讨论专业的足球术语，你知道怎么用地道的英语讨论足球吗？
-
-你支持哪支球队呢？你看好哪支球队呢？现在起至1/4决赛之前(7月5日前)留言预测冠军球队，赢一个月OpenLanguage英语课程！
-
-世界杯特惠：世界杯期间OpenLanguage一年期所有语种包时输入
-"
-WORLDCUP
-"
-即享8折优惠！
 
 - World Cup  世界杯
 
@@ -198,27 +162,11 @@ WORLDCUP
 - jersey  球衣
 
 
-
-
-
-
 ####4
-
-
 
 美国血拼一族！--潘吉Jenny告诉你
 
-
-
 很多出过国的朋友都有在国外血拼的经历，还有什么比把大包小包的满足感沉甸甸的拎在手上的感觉更好的呢？但是你知道“购物狂”的英语怎么说吗？今天我们的节目就要来和你聊聊在美国血拼的TIPS！
-
-另外现在购买OpenLanguage也有优惠哦！只要在购买时输入
-"
-gaosuni
-"
-就可以享受9折优惠，获得完整英语学习体验，一年只要600元！Why wait? Start learning today!
-
- 
 
 - Coco Chanel  香奈儿
 
@@ -272,23 +220,13 @@ gaosuni
 
 - tax return  退税
 
-
-
-
-
-
 ####5
 
-
-
 儿童节快乐！--潘吉Jenny告诉你
-
-
 
 六一国际儿童节有多国际化呢？美国人有六一儿童节吗？美国人怎么看六一儿童节呢？赶快听听今天的节目吧！
 
  
-
 - Children's Day  儿童节
 
 - commercialization  商业化
@@ -308,17 +246,9 @@ gaosuni
 - inner kid  心中的小孩
 
 
-
-
-
-
 ####6
 
-
-
 美国阵亡将士纪念日--潘吉Jenny告诉你
-
-
 
 美国阵亡将士纪念日（Memorial Day，原名纪念日，或悼念日）是美国的一个纪念日，悼念在各战争中阵亡的美军官兵。每年5月的最后一个星期一全美都会放假一天，以纪念阵亡的将士。但是真正的美国人都是怎么过这个节的呢？赶快听听今天的课程吧！
 
@@ -336,7 +266,7 @@ gaosuni
 
 - I’m going to the Indianapolis 5- Stacey’s parents live there and her dad loves going to stock car races.
 
-我要去印第安納波利斯500英里比赛。Stacey的父母住在那儿，她爸爸很爱看赛车。
+	我要去印第安納波利斯500英里比赛。Stacey的父母住在那儿，她爸爸很爱看赛车。
 
 - stock car  赛车
 
@@ -350,24 +280,9 @@ gaosuni
 
 - I forgot what the holiday is for.  我忘了为什么有这个假期。
 
- 
-
- 
-
- 
-
-
-
-
-
-
 ####7
 
-
-
 Overweight Luggage--潘吉Jenny告诉你
-
-
 
 满头大汗赶到机场，结果托运行李的时候发现超重了！！！
 
@@ -376,17 +291,9 @@ Overweight Luggage--潘吉Jenny告诉你
 你也可以留言告诉我们你有没有在机场发生过这样的囧事哦！
 
 
-
-
-
-
 ####8
 
-
-
 见面礼仪--潘吉Jenny告诉你
-
-
 
 中外礼仪不同的很大一部分是见面时候的礼仪。
 
@@ -419,17 +326,9 @@ Overweight Luggage--潘吉Jenny告诉你
  
 
 
-
-
-
-
 ####9
 
-
-
 Buying a Gift--潘吉Jenny告诉你
-
-
 
 中国人结婚都是收红包收到手酸，那外国人结婚呢？如果你的外国朋友请你去参加他们的婚礼，你应该送什么好呢？快听听今天的节目吧！
 
@@ -449,7 +348,7 @@ Buying a Gift--潘吉Jenny告诉你
 
 - save the date 留出日子
 
--Here, it says, 
+- Here, it says, 
 "
 Registered at Bath and Barn.
 "
@@ -461,13 +360,11 @@ That means your friends have made a list of all the gifts they hope to receive. 
 
 我还要给我的客户买点礼物。他们在那里也会列礼品单吗？
 
--No, not for business gifts! Registries are for getting married, having a baby and decorating a home. For business gifts, you have to be very careful. Giving an expensive gift might seem to be a bribe.
+- No, not for business gifts! Registries are for getting married, having a baby and decorating a home. For business gifts, you have to be very careful. Giving an expensive gift might seem to be a bribe.
 
 不是不是，不是给商务往来送礼的！婚礼礼单是为新人，准妈妈，和装修房子准备的。商务送礼的话必须非常谨慎，送太贵重的可能会有行贿之嫌。
 
--
-&
- Usually, inviting a client to a meal or giving a client tickets to a special event is safe.
+- Usually, inviting a client to a meal or giving a client tickets to a special event is safe.
 
 通常，请客户吃顿饭或是送他们一些特殊场合的门票是保守之选。
 
@@ -475,26 +372,18 @@ That means your friends have made a list of all the gifts they hope to receive. 
 
 你看，我在网上找到了Lance and Laura的结婚礼单！单子上有不少可以选择呢，你想买哪个？
 
--Too bad, someone has already bought the clock! You should select another gift on the list. Here you see the items still available.
+- Too bad, someone has already bought the clock! You should select another gift on the list. Here you see the items still available.
 
 真不巧，已经有人买下这个闹钟了！你要从单子上重新选一个礼物。这里是可选的项目。
 
--Then I will buy these crystal candlestick holders. They're lovely.
+- Then I will buy these crystal candlestick holders. They're lovely.
 
 那我买这些水晶烛台吧，他们很好看。
 
 
-
-
-
-
 ####10
 
-
-
 Tesla电动车--潘吉Jenny告诉你
-
-
 
 你知道时下最神秘最热门的Tesla电动车吗？这款新型的汽车的创始人Elon Musk也是现实版的钢铁侠哦！你对Elon Musk或Tesla电动车知道多少呢？都来留言告诉我们吧！
 
@@ -535,17 +424,9 @@ Tesla电动车--潘吉Jenny告诉你
 - car dealership  汽车经销商
 
 
-
-
-
-
 ####11
 
-
-
 毕业舞会-潘吉Jenny告诉你
-
-
 
 美国高中的毕业舞会是每个美国人青春懵懂记忆中最出彩的一笔，大家知道是为什么吗？赶快听听今天的课程吧！ 
 
@@ -619,19 +500,11 @@ prom queen 舞会国王
 - tanning 人工晒黑
 
 
-
-
-
-
 ####12
-
-
 
 权利的游戏
 &
 广告狂人--潘吉Jenny告诉你
-
-
 
 今天我们要讲讲目前大热的两步美剧《广告狂人》和《权利的游戏》！他们为什么这么火呢？听听我们今天的节目！或者留言告诉我们你最爱的美剧吧！
 
@@ -712,17 +585,9 @@ GAME OF THRONES
  
 
 
-
-
-
-
 ####13
 
-
-
 Last Day at Work--潘吉Jenny告诉你
-
-
 
 离职总是让人喜忧参半。无论你是另谋高就还是圆满退休都是一件光荣的事，但是这些可爱的同事你是舍不得的最大原因。今天我们有一位同事要离职，在离职之前她有些话想要对大家说…
 
@@ -736,11 +601,11 @@ Last Day at Work--潘吉Jenny告诉你
 
 - She has led the creative team with determination, optimism and perseverance.
 
-她带领的创意团队态度坚决、积极主动、坚持不懈。
+	她带领的创意团队态度坚决、积极主动、坚持不懈。
 
 - She has brought an ample amount of innovative ideas, and has always thought outside of the box for new ways of improving our products and services.
 
-她带来了许多原创点子，总是可以跳出思维定势，用新的方法来提升我们产品和服务质量。
+	她带来了许多原创点子，总是可以跳出思维定势，用新的方法来提升我们产品和服务质量。
 
 - ample  很多
 
@@ -748,43 +613,43 @@ Last Day at Work--潘吉Jenny告诉你
 
 - We’ll truly miss her as a colleague, a friend, and an inspiration to us all.
 
-我们会很想念她，作为同事、朋友及我们的灵感。
+	我们会很想念她，作为同事、朋友及我们的灵感。
 
 - Thanks you so much Chris for the compliments!  谢谢你的夸奖Chris！
 
 - During my time at James and Morrison, I’ve worked with some of the most brilliant people I’ve ever met.
 
-我在James and Morrison公司任职期间，我和许多最聪明的人一起共事。
+	我在James and Morrison公司任职期间，我和许多最聪明的人一起共事。
 
 - These are people who love their jobs and have worked hard to get to where they are now.
 
-这些人热爱自己的工作，为自己的目标不断奋斗，取得今天的成就。
+	这些人热爱自己的工作，为自己的目标不断奋斗，取得今天的成就。
 
 -  These people are diligent and motivating, and I will miss them.
 
-这些人睿智又有干劲，我会想念他们的。
+	这些人睿智又有干劲，我会想念他们的。
 
 - I have a bittersweet feeling about leaving today. I have worked here for so long that I can’t imagine working anywhere else.
 
-今天我离开这里，心里感到五味陈杂。我在这里干了这么长时间，很难想象要到别的地方去工作的情形。
+	今天我离开这里，心里感到五味陈杂。我在这里干了这么长时间，很难想象要到别的地方去工作的情形。
 
 - bittersweet 喜忧参半的
 
 - I’d also like to give a special thanks to Tim. You’re a stellar director and the best mentor anyone could ever ask for.
 
-我还想特别感谢一下Tim。你对任何人来说都是个优秀的总监和最好的导师。
+	我还想特别感谢一下Tim。你对任何人来说都是个优秀的总监和最好的导师。
 
 - All the advice you’ve given me has really helped me grow my skill sets and achieve the next stage of my career.
 
-你给我的建议帮我提升了专业技能，登上事业的下一个高峰。
+	你给我的建议帮我提升了专业技能，登上事业的下一个高峰。
 
 - Thank you to Greg, Stacy and Janice for all their hard work and dedication.
 
-谢谢你Greg，Stacy，Janice，谢谢你们辛勤的工作和付出。
+	谢谢你Greg，Stacy，Janice，谢谢你们辛勤的工作和付出。
 
 - It has been a pleasure working with you guys! And of course I’d like to wish Tina all the luck in the world. She'll be taking over my work from now.
 
-能和你们共事是我的荣幸！当然我要祝Tina一切顺利。她从今往后会接替我的工作。
+	能和你们共事是我的荣幸！当然我要祝Tina一切顺利。她从今往后会接替我的工作。
 
 - put me on the spot  赶鸭子上架
 
@@ -793,24 +658,11 @@ Last Day at Work--潘吉Jenny告诉你
  
 
 
-
-
-
-
 ####14
-
-
 
 预测美国大学篮球比赛，赢巴菲特10亿美金奖金--潘吉Jenny告诉你
 
-
-
-2014年的NCAA国大学篮球联盟已经开战！每逢“疯狂3月(March Madness)”，包括美国总统奥巴马在内的全美球迷和媒体都热衷于猜测最终的比赛结果，而这样疯狂的猜想在今年演绎到了极致。巴菲特出10亿美金吸引更多人来进行预测！
-
-
-
-
-- March Madness  疯狂三月
+2014年的NCAA国大学篮球联盟已经开战！每逢“疯狂3月(March Madness)”，包括美国总统奥巴马在内的全美球迷和媒体都热衷于猜测最终的比赛结果，而这样疯狂的猜想在今年演绎到了极致。巴菲特出10亿美金吸引更多人来进行预测！- March Madness  疯狂三月
 
 - March Madness is when the NCAA College Basketball Tournament takes place.
 
@@ -847,17 +699,9 @@ Last Day at Work--潘吉Jenny告诉你
  
 
 
-
-
-
-
 ####15
 
-
-
 美国第一夫人访华--潘吉Jenny告诉你
-
-
 
 米歇尔·奥巴马近日携女儿们访华，看看我们今天的节目了解这位第一夫人的身世背景吧！
 
@@ -916,17 +760,9 @@ Malia Obama  萨沙·奥巴马
  
 
 
-
-
-
-
 ####16
 
-
-
 潘吉Jenny告诉你--马航MH370到底去哪儿了？
-
-
 
 马航MH370至失联以来牵动无数人的心。各国也出动救援力量希望尽快找到失联飞机的下落。这期节目的目的是交给你最基本的相关词句，让你能自己看到外媒报道。同时我们再次祈祷尽快找到失联客机，还原真相。 
 - missing flight  失联航班
@@ -976,17 +812,9 @@ Malia Obama  萨沙·奥巴马
 - flight attendant  乘务员
 
 
-
-
-
-
 ####17
 
-
-
 潘吉Jenny告诉你--来自星星的你
-
-
 
 今天的节目是一期特别篇，我们要聊聊日前大热韩剧《来自星星的你》！今天的特别节目我们要教你两句汉语防身！什么？防身？对啊，遇到欧巴就上啊！ 
 - 안녕하세요 (annyeonghaseyo)  你好！
@@ -996,17 +824,9 @@ Malia Obama  萨沙·奥巴马
 - 
 
 
-
-
-
-
 ####18
 
-
-
 潘吉Jenny告诉你--纸牌屋
-
-
 
 目前大卫·芬奇(David Fincher)操刀为Netflix制作的大热原创美剧《纸牌屋》(House of Cards)广受追捧，剧中凯文·史派西(Kevin Spacey)主演一个冷血无情的美国国会议员及与他同样野心勃勃的妻子在华盛顿高层当中「运作权力」的故事。今天我们节目就来和大家聊聊剧中涉及到的美国国会知识，坐稳听好了哦！ 
 - Nice to have you back.  欢迎回来。
@@ -1031,7 +851,7 @@ Malia Obama  萨沙·奥巴马
 
 - They are saying that TV is becoming bigger and more important than movies.  他们说电视剧变得越来越重要，甚至超过了电影。
 
--golden age of television  电视行业的黄金时代
+- golden age of television  电视行业的黄金时代
 
 - David Fincher  大卫·芬奇
 
@@ -1076,17 +896,9 @@ Malia Obama  萨沙·奥巴马
  
 
 
-
-
-
-
 ####19
 
-
-
 潘吉Jenny告诉你--Valentines's Day
-
-
 
 玫瑰是红色的，紫罗兰是蓝色的...情人节快到了，你准备好了吗？看看今天课程中的主人公为他的女朋友准备了什么！如果你和你的爱人过情人节，用英语留言告诉我们你们是怎么度过这浪漫的一天的吧！ 
 - Valentines's Day  (2月14日)情人节
@@ -1118,17 +930,9 @@ Malia Obama  萨沙·奥巴马
 - white chocolate  白巧克力
 
 
-
-
-
-
 ####20
 
-
-
 潘吉Jenny告诉你--在美国买房
-
-
 
 中国高房价买不起房，美国的情况怎么样呢？听听今天的节目，看看美国买房和中国买房有什么不同吧！ 
 - buying property  买房
@@ -1170,17 +974,9 @@ Malia Obama  萨沙·奥巴马
  
 
 
-
-
-
-
 ####21
 
-
-
 潘吉Jenny告诉你--家用电器
-
-
 
 家用电器是每个家庭都离不开的日常用品。这些随处可见的小东西的英文怎么讲你会吗？如果要到国外生活一定要学会一些基本的家用电器及其相关的表达方法哦！听听今天的节目告诉我们你想给家里新增哪个家用电器吧！ 
 - home appliances  家用电器
@@ -1246,17 +1042,9 @@ Malia Obama  萨沙·奥巴马
 - power strip  接线板
 
 
-
-
-
-
 ####22
 
-
-
 新春贺喜 潘吉Jenny告诉你特别节目
-
-
 
 马年马上学英语！过年、学习两不误！赶快收听
 "
@@ -1276,17 +1064,9 @@ Malia Obama  萨沙·奥巴马
 - The Year of the Horse 马年 
 
 
-
-
-
-
 ####23
 
-
-
 潘吉Jenny告诉你--纸牌游戏
-
-
 
 我们之前的节目说了桌游，今天我们要来谈谈纸牌游戏。你会用英语打牌吗？你最喜欢的纸牌游戏是什么呢？赶快留言告诉我们吧！ 
 - Some of these are famous gambling games, and some of them are just for fun.  有些是著名的赌博游戏，有些就是好玩而已。
@@ -1316,8 +1096,6 @@ Bridge  桥牌
 Five Stud Poker / Show Hand  梭哈
 
 - suits  花色  (two black suits and two red suits  两黑两红四种花色)
-
-
 hearts  红桃
 diamonds  方块
 clubs  梅花
@@ -1326,8 +1104,6 @@ spades  黑桃
 - one deck of cards  一盒牌
 
 - poker
-
-
 K(King)  国王
 Q(Queen)  王后
 J(Jack)  杰克
@@ -1341,17 +1117,9 @@ Joker  怪
 - poker chips  筹码
 
 
-
-
-
-
 ####24
 
-
-
 潘吉Jenny告诉你--桌游
-
-
 
 桌游是很多人都喜欢的和朋友分享时光增进感情的工具。我们今天要来讲讲最火爆的的十款桌游，有几款是你玩过的呢？你最喜欢哪款游戏呢？赶快留言告诉我们吧！
 不知道这些桌游是什么样的请点击下面链接：
@@ -1411,17 +1179,9 @@ TOP 1 Chess  国际象棋
 - Chinese chess  中国象棋 
 
 
-
-
-
-
 ####25
 
-
-
 潘吉Jenny告诉你--加利福尼亚
-
-
 
 今天我们的代班主持Jason要和Jenny聊聊他的家乡California加利福尼亚州。你对加州有什么印象？有什么了解？都可以留言和们讨论哦！ 
 - California  加利福尼亚州
@@ -1486,17 +1246,9 @@ SouCal  南加州  (Los Angeles 洛杉矶, San Diego 圣地亚哥)
 - It's pretty here too though. It's pretty in different ways.  这里也很美啊，美的方式不同罢了。
 
 
-
-
-
-
 ####26
 
-
-
 潘吉Jenny告诉你--老外怎么学语言？
-
-
 
 同学们学了十几年英语对学语言有什么学经了吗？我们今天请到OpenLanguage一位能说八国语言的美国同事来和我们聊聊他的学习方法，说不定对你的英语学习也能有一些启发哦！
 学小语种的同学们赶快留言告诉我们你在学什么语言，或是准备学什么语言吧！ 
@@ -1539,8 +1291,6 @@ SouCal  南加州  (Los Angeles 洛杉矶, San Diego 圣地亚哥)
 - Hispanic population  西班牙裔的人口
 
 -
-
-
 Mexican (Central American) Spanish  拉美地区的西班牙语
 European Spanish  西班牙的西班牙语
 
@@ -1557,17 +1307,9 @@ European Spanish  西班牙的西班牙语
  
 
 
-
-
-
-
 ####27
 
-
-
 潘吉Jenny告诉你--新年新气象！
-
-
 
 新年新气象！大家新的一年又有什么计划和打算呢？新手机？新工作？新女友？啊....大家在新的一年有什么新气象呢？赶快留言告诉我们吧！新！年！快！乐！ 
 - New Year's resolution  新年新气象
@@ -1593,17 +1335,9 @@ European Spanish  西班牙的西班牙语
 - Eat on the go.  边走边吃。
 
 
-
-
-
-
 ####28
 
-
-
 潘吉Jenny告诉你--Merry Christmas！
-
-
 
 圣诞快乐！我们今天来看看John的家里是怎么过圣诞节的吧！如果你家也过圣诞节，那就留言告诉我们你是什么庆祝的吧！ 
 - warm and fuzzy  温暖的毛茸茸的
@@ -1669,17 +1403,9 @@ what presents am I going to get?
 - If you're Jewish, then on Christmas you go to have Chinese food.  如果你是犹太人，圣诞节你就去吃中餐。
 
 
-
-
-
-
 ####29
 
-
-
 潘吉Jenny告诉你--Health Food
-
-
 
 每天保持健康的饮食习惯很重要，对自己的饮食习惯负责也是对你的健康生活负责。今天我们的节目就要和大家看看如何健康饮食少吃垃圾食品！ 
 - Ok, darling, I got some pizzas, potato chips, hot dogs and lots of cheese!  哦，亲爱的，我买了披萨，薯片，热狗加大份芝士！
@@ -1711,17 +1437,9 @@ what presents am I going to get?
 - In the States, eating right is expensive.  在美国，健康饮食会很贵。
 
 
-
-
-
-
 ####30
 
-
-
 潘吉Jenny告诉你--美国的穷人与富人
-
-
 
 今天我们要讲讲美国的贫富差距！不要以为美国人都很有钱，美国也是有普通老百姓的。贫富差距这个问题在美国很突出，我们来看看美国人自己是怎么说的吧！ 
 - inequality  不平等，不均衡
@@ -1751,17 +1469,9 @@ what presents am I going to get?
  
 
 
-
-
-
-
 ####31
 
-
-
 潘吉Jenny告诉你--MBA商学院排名TOP10
-
-
 
 《经济学家》杂志近期评出2013年排名前20的商学院，我们今天要来讲讲其中排名前十的学校！有计划要读MBA的同学留意收听这次的节目啦！ 
 - The Economist  《经济学家》杂志
@@ -1803,17 +1513,9 @@ NO. 1 The University of Chicago Booth School of Business  (美国芝加哥)芝
 - faculty  教职工
 
 
-
-
-
-
 ####32
 
-
-
 潘吉Jenny告诉你--At the Airport
-
-
 
 去机场的经历有时候会很紧张，手上拿着机票和行李还要找到你乘坐的航线！今天的课程我们会教你如何用英语托运行李，询问空乘人员你乘坐的航线在哪登机等等！祝您旅途愉快！ 
 - check  托运
@@ -1841,17 +1543,9 @@ NO. 1 The University of Chicago Booth School of Business  (美国芝加哥)芝
 - You charge an arm and a leg! 你们收的也太多了！
 
 
-
-
-
-
 ####33
 
-
-
 潘吉Jenny告诉你--美国人吃什么？
-
-
 
 中国人都知道美国人吃东西饭量大，东西油，他们推崇的“快餐文化”一度影响许多中国的年轻人。今天我们要来看看美国人自己是怎么看待自己的快餐文化的，赶快听听今天的节目吧！ 
 - We have very big portions in the US, especially compared to China and other places in the world.  
@@ -1909,17 +1603,9 @@ NO. 1 The University of Chicago Booth School of Business  (美国芝加哥)芝
  
 
 
-
-
-
-
 ####34
 
-
-
 潘吉Jenny告诉你--美国人看什么电视？
-
-
 
 很多中国人都热衷于追美剧，心想遇到老美有话题可聊啊。可大部分时候美国人对你说的那些不太熟悉，那他们平时看什么电视呢？今天我们就要亲自来问问美国人！ 
 - Indeed. Everyone's watching 'em.  没错，每个人都在看。
@@ -1971,36 +1657,28 @@ NO. 1 The University of Chicago Booth School of Business  (美国芝加哥)芝
 - reality TV shows  真人秀
 
 - You'll have to wait for the next episode.  下期节目再见！
-
-
 -------------------------------------------------------------------------------
 NETWORKS  美国五家最大的公共电视台：
-CBS 哥伦比亚广播公司 (Columbia Broadcasting System)
-ABC 美国广播公司 (American Broadcasting Company)
-NBC 美国全国广播公司 (National Broadcasting Corporation)
-FOX 福克斯广播公司 (Fox Broadcasting Corporation)
-CW 哥伦比亚及华纳兄弟联合电视网 (The CW Television Network)
+
+	- CBS 哥伦比亚广播公司 (Columbia Broadcasting System)
+	- ABC 美国广播公司 (American Broadcasting Company)
+	- NBC 美国全国广播公司 (National Broadcasting Corporation)
+	- FOX 福克斯广播公司 (Fox Broadcasting Corporation)
+	- CW 哥伦比亚及华纳兄弟联合电视网 (The CW Television Network)
 
 CABLE  最受观众青睐的收费台：
-HBO 家庭影院频道 (Home Box Office)
-AMC 美国经典电影有线电视台 (American Movie Classics)
-TNT 特纳电视网 (Turner Network Television)
-Showtime 娱乐时间电视网 (Showtime Networks Inc)
+
+	- HBO 家庭影院频道 (Home Box Office)
+	- AMC 美国经典电影有线电视台 (American Movie Classics)
+	- TNT 特纳电视网 (Turner Network Television)
+	- Showtime 娱乐时间电视网 (Showtime Networks Inc)
 
 -------------------------------------------------------------------------------
-
-
-
-
 
 
 ####35
 
-
-
 潘吉Jenny告诉你-Will You Be Free Tonight?
-
-
 
 光棍节还没“脱光”的同学们，今天潘吉和Jenny要教你怎么“快速脱光”。今天的节目请未满16岁的同学在家长的指导下收听；已经“脱光”的同学可以留言告诉我们你是怎么认识你的另一半的！ 
 - one-night stand  一夜情
@@ -2030,17 +1708,9 @@ Showtime 娱乐时间电视网 (Showtime Networks Inc)
 - sleazy  猥琐的
 
 
-
-
-
-
 ####36
 
-
-
 潘吉Jenny告诉你--在美国开车
-
-
 
 在美国如果没有车你是寸步难行的，所以很多去美国的朋友会租车自己开。但是开车时用到很多英语的词你都知道怎么说吗？比如怎么描述“我的车被追尾了/被擦了一下
 "
@@ -2114,17 +1784,9 @@ Showtime 娱乐时间电视网 (Showtime Networks Inc)
  
 
 
-
-
-
-
 ####37
 
-
-
 潘吉Jenny告诉你--秋季时尚
-
-
 
 不知不觉又到一年秋季，这么浪漫的季节我们要来聊一聊秋装的各种英文说法。今天的节目里还提到了中国人秋冬必备的棉毛裤/秋裤的英文说法，绝对不是me more cool，是什么呢？赶快来听听今天的节目吧！ 
 - fall fashion  秋季时尚
@@ -2176,17 +1838,9 @@ Showtime 娱乐时间电视网 (Showtime Networks Inc)
 - windbreaker  防风夹克
 
 
-
-
-
-
 ####38
 
-
-
 潘吉Jenny告诉你--美国政府停摆
-
-
 
 2013年美国政府停摆正在进行中，即国会无法通过足够的预算案的情况下，美国政府关闭一些政府机构，暂时停止提供“非必要服务”，相关的政府雇员停发工资以减少开支。本次停摆从10月1日开始，停摆的主要原因是共和党控制的众议院与民主党控制的奥巴马医改(Obama Care)上的分歧。对于此次停摆，你怎么看？ 
 - government shutdown  政府停摆
@@ -2270,19 +1924,11 @@ Showtime 娱乐时间电视网 (Showtime Networks Inc)
 - Hang in there!  坚持住！
 
 
-
-
-
-
 ####39
-
-
 
 潘吉Jenny告诉你--Word 
 &
 Excel
-
-
 
 Word和Excel是办公室常用的软件，但是有些时候要和国外同事沟通板式或是格式问题的时候却不知道怎么用英文来讲。
 今天潘吉和Jenny告诉你了之后，你就能熟练掌握Word和Excel的英语用法啦！ 
@@ -2345,17 +1991,9 @@ Excel表格:
 - formula  公式
 
 
-
-
-
-
 ####40
 
-
-
 潘吉Jenny告诉你--Baking A Cake
-
-
 
 烘焙蛋糕对有些人来说可能看起来非常复杂，但实际上却可以非常简单。今天潘吉Jenny不但要教你学英语，还要教你做蛋糕！如果你家有烤箱的话，听完今天的节目就开始动手做个蛋糕吧！ 
 - bake 烘焙
@@ -2393,17 +2031,9 @@ Excel表格:
  
 
 
-
-
-
-
 ####41
 
-
-
 潘吉Jenny告诉你--Road Trip
-
-
 
 马上要到中秋国庆长假了，很多人都有自驾游出行的计划。今天潘吉和Jenny就要带你开车出游，做好目的地攻略、加满油箱、准备好零食，我们上路吧！嗯...不过我们今天对话中的人好像忘记了意见很重要的事.... 
 - munchies  零食
@@ -2443,17 +2073,9 @@ Excel表格:
  
 
 
-
-
-
-
 ####42
 
-
-
 潘吉Jenny告诉你--开会礼仪
-
-
 
 中西方的职场文化也有很大的不同，很明显的一点就体现在开会的时候：如果你在一家外企工作，开会的时候千万要神经绷紧了，如果你在下面玩玩手机打打瞌睡那可是会有大麻烦的。怎样才能在开会的时候表现得专业又敬业呢？赶快听听今天的节目吧！ 
 - meeting etiquette  开会礼仪
@@ -2477,8 +2099,6 @@ Excel表格:
 - scrum (usually used in technology companies)  项目例会 
 
 - Before the Meeting 会议开始前: Prepare for It (Prep Work)  准备工作
-
-
 Agenda  会议议程
 Presentation  专题演讲
 Handouts  讲义
@@ -2486,8 +2106,6 @@ Handouts  讲义
 - If you call a meeting, then you have to send out the agenda, but also make sure you don't invite people that don't need to come to the meeting.  如果你要召开会议，是要把会议议程发出去，还要确保你不要请不需要参加会议的人来。
 
 - In the Meeting 会议期间: 
-
-
 Take notes  记些笔记
 Look serious  严肃对待
 
@@ -2520,17 +2138,9 @@ Send a summary, if you called the meeting, including action items.  (如果你�
  
 
 
-
-
-
-
 ####43
 
-
-
 潘吉Jenny告诉你--一万句的感谢
-
-
 
 同学们肯定知道
 "
@@ -2610,17 +2220,9 @@ Also, after you've learned these, if you watch like American TV shows, you'll de
 当然，你学过这些之后再看美剧，肯定会听到这些用法。
 
 
-
-
-
-
 ####44
 
-
-
 潘吉Jenny告诉你--不同地区的美国人
-
-
 
 美国人是什么样的？你觉得美国人是什么样的？今天潘吉和Jenny要和你聊聊人们不同地区的美国人的刻板印象，比如纽约人、加州人、南方人或是西部牛仔都是怎样的？留言告诉我们你对美国人的印象是什么吧！ 
 - stereotype  模式化的印象
@@ -2698,17 +2300,9 @@ simple, traditional, nice
 - And their police ride horses. I think that's pretty funny.  而且他们的警察还骑马，这个太搞笑了。
 
 
-
-
-
-
 ####45
 
-
-
 潘吉Jenny告诉你--孕期指南
-
-
 
 妈妈怀孕总是让周围的人都兴奋不已，许多第一次怀孕的妈妈可能会特别紧张不知所措。今天我们要来看看怀孕期间会用到哪些英文词句，和你的海外朋友分享喜悦的同时也别忘了留言告诉我们关于你的宝宝的点点滴滴哦！祝你生个大胖娃娃！:D 
 - being pregnant  怀孕
@@ -2754,24 +2348,14 @@ simple, traditional, nice
 - formula  婴儿食品
 
 
-
-
-
-
 ####46
 
-
-
 潘吉Jenny告诉你--色拉
-
-
 
 中国人对于色拉的印象就是正餐前的一堆草，没有烧过又要像马吃草一样把它们咽下去。但其实色拉的种类有很多有些真的很好吃！听了今天的节目，希望下次你再点色拉的时候能选择你喜欢的色拉，Enjoy！ 
 - salad dressing  色拉上的调料
 
 - caesar salad  凯撒色拉
-
-
 lettuce  生菜
 chicken breast  鸡胸肉
 crispy bacon pieces 脆培根片
@@ -2780,8 +2364,6 @@ anchovies  凤尾鱼
 caesar dressing  凯撒调料
 
 - cobb salad  科布色拉  (Cobb salad has lots of different things in it. 科布色拉里面的料很足。)
-
-
 chicken/turkey breast  鸡胸肉/火鸡胸肉
 egg  蛋
 bacon  培根
@@ -2803,8 +2385,6 @@ But usually, they're like, they're in rows right? But then when you eat it, it a
 Coleslaw is made with cabbage.  卷心菜色拉是卷心菜做的。
 
 It has cabbage, and carrots, sweet dressing.  它里面有卷心菜、胡萝卜、甜的色拉酱。
-
-
 cabbage  卷心菜
 carrot  胡萝卜
 sweet dressing  甜的色拉调料 (mayonnaise  美乃滋色拉酱, white vinegar  白醋)
@@ -2817,8 +2397,6 @@ Coleslaw has many ways to make it; it's a traditional salad in the States.  卷
 So a greek salad always has olives, and feta cheese...
 
 所以说希腊色拉里面通常就有黑橄榄，菲达芝士...
-
-
 olives  黑橄榄
 feta cheese  菲达芝士
 onion  洋葱
@@ -2835,22 +2413,16 @@ Depending on what salad dressing you use, it could be very healthy or not so hea
 这要看你用的色拉调料是什么，可以是很健康的，也可能不太健康。
 
 - Dressing  色拉调料
-
-
 ranch dressing  牧场调料
 
 Anyway, ranch dressing is a white salad dressing. It's creamy, it's a little bit sour, it has garlic in it, and onion, and butter milk.
 
 总之，牧场调料是一种白色的色拉调料。奶油味很重，有点酸酸的，里面有大蒜、洋葱、和脱脂乳。
-
-
 caesar dressing  凯撒调料
 
 Thousand island dressing is just ketchup and mayonnaise with a little bit of pickles in it.
 
 千岛酱就是番茄酱加美乃滋酱在放点酱瓜在里面啊。
-
-
 blue cheese dressing  蓝芝士酱
 Italian dressing  意大利调料
 French dressing  法国调料
@@ -2864,8 +2436,6 @@ miso dressing  味噌调料
 These are cold. But the patato or the pasta is cooked.  这些都是冷的，但是土豆和通心粉都是烧熟的。
 
 - Asian salad  亚洲色拉
-
-
 lettuce  生菜
 baby spinach leaves  菠菜叶
 mandarin orange  橘子
@@ -2877,17 +2447,9 @@ sweet dressing  甜的调料
 - You don't want your salad swimming in your salad dressing.  你不想你的菜都能在色拉酱里游起来了吧。
 
 
-
-
-
-
 ####47
 
-
-
 潘吉Jenny告诉你--出国旅游网站指南
-
-
 
 现在越来越多的朋友出国旅游也选择不跟团的自由行，但是订酒店机票以及做攻略都是一件很令人头疼的事。今天潘吉Jenny要告诉你一些计划出国自由行非常有用的网站，希望大家出行愉快哦！ 
 Booking.com  订酒店的网站
@@ -2951,17 +2513,9 @@ Let's recap real quick, what were those services that you listed?
 我们快速总结一下，你列了哪些网站？ 
 
 
-
-
-
-
 ####48
 
-
-
 潘吉Jenny告诉你--英语俱乐部组织者采访
-
-
 
 今天我们节目请来了我们第一位成功组织OpenLanguage英语俱乐部的组织者，贾婧同学！今天的节目我们就要来聊一聊我们为什么要办俱乐部活动、怎么办俱乐部的活动。到目前为止我们已经有好几个地方的活动组织起来了，大家如果感兴趣可以去https://openlanguage.com/meetups查看更多详情！期待大家的加入！ 
 - Nice to have you on the show, Jia Jing!  很高兴请你做客我们的节目，贾婧。
@@ -2989,17 +2543,9 @@ Let's recap real quick, what were those services that you listed?
 - Keep us posted.  有情况及时告诉我们。
 
 
-
-
-
-
 ####49
 
-
-
 潘吉Jenny告诉你--Presentation技巧
-
-
 
 在外企工作很多时候都要用英语做presentation(专题演讲)，而很多时候presentation的质量不仅关乎到业务的成功与否，在很多老板眼里也是个人能力的一种体现。今天我们要来看看用英文做presentation要注意哪些细节，很多时候不仅仅是语言上的代沟哦！ 
 - presentation  专题演讲
@@ -3033,8 +2579,6 @@ Let's recap real quick, what were those services that you listed?
 所以有时候用一些图片，有时候用图形或图表。
 
 - Presentation Zen  《演说之禅》
-
-
 
 - engaging  能与观众互动的
 
@@ -3105,17 +2649,9 @@ Answer)
 - Don't print it if
 
 
-
-
-
-
 ####50
 
-
-
 潘吉Jenny告诉你--芝士就是力量！
-
-
 
 中国人常说的“芝士”、“奶酪”、“起司”都是来自英语的“cheese”哦！cheese的种类有很多，在超市选购或是餐厅点餐的时候要特别注意，不要不明就里乱点一通点到自己不爱吃的那就太浪费啦！ 
 - cheese lover  爱芝士的人
@@ -3217,17 +2753,9 @@ No. 8  blue cheese  蓝波芝士
 - Bon appétit!  祝你好胃口！
 
 
-
-
-
-
 ####51
 
-
-
 潘吉Jenny告诉你--美式BBQ
-
-
 
 今天潘吉和Jenny要来说说美国人最爱的烧烤！特别是美国南部的德州，更是BBQ的典范！今天我们就来看看美国人一般都是怎么是烧烤的！等不及了，口水都留下来了！！！ 
 - BBQ=barbecue  烧烤
@@ -3267,17 +2795,9 @@ No. 8  blue cheese  蓝波芝士
 - Cuz it's HOT!  因为很热/辣！
 
 
-
-
-
-
 ####52
 
-
-
 潘吉Jenny告诉你--签合同
-
-
 
 又到一年毕业季，各位同学的工作都找好了吗？或是今年的新劳动合同签好了吗？劳动签约不是一件容易的事儿，要面对薪资福利奖金待遇的问题，怎么和用人单位不伤和气的拿到自己想要的权利呢？赶快听听今天的节目吧！ 
 - contract negotiation  合同协商
@@ -3339,17 +2859,9 @@ No. 8  blue cheese  蓝波芝士
  
 
 
-
-
-
-
 ####53
 
-
-
 潘吉Jenny告诉你--美国人究竟赚多少钱?
-
-
 
 我们之前一直说和老外聊天的时候有一个很禁忌很私人的问题，那就是你不能问老外“你赚多少钱？” 有人说美国农民都赚的比中国白领多；有人说美国经济垮啦每个人都欠了一屁股债。那美国人究竟转多少钱呢？今天潘吉Jenny告诉你！ 
 - misunderstanding  误解
@@ -3381,8 +2893,6 @@ No. 8  blue cheese  蓝波芝士
 - Liberal Arts  文科
 
 - Tax  税
-
-
 income tax  个人所得税  
 state tax  州税
 federal tax  联邦税
@@ -3404,32 +2914,20 @@ If you're in California, maybe not. Sorry. ;)   不过如果你在加州，这�
 - best-paying job  最高薪的职业
 
 - Because in medicine, there are so many kinds of specialists.  因为在医疗界，有许多不同的专家。
-
-
 radiologist  放射科医生: $300,000-$500,000
 anaesthesiologist  麻醉师
 pediatrician  儿科医生
 
 - Richest guys are:
-
-
 investment banker  投资银行家
 entrepreneur  企业家
 
 - It's complicated.  太复杂了很难说清啊。
 
 
-
-
-
-
 ####54
 
-
-
 潘吉Jenny告诉你-Small Talk
-
-
 
 许多人遇到外国人的时候就感觉自己十几年英语白读了，不是语言上的问题，只是除了工作上的必要沟通私底下就不知道说什么才好。今天潘吉和Jenny要和你聊聊和老外small talk的时候要注意些什么，聊什么话题最好？
 
@@ -3445,18 +2943,12 @@ entrepreneur  企业家
 - work  工作
 
 - weekend plans  周末计划
-
-
 How was your weekend?  周末过得怎么样？
 Do you have any plans for the weekend?  周末有什么计划？
-
-
 It was fine/great.  挺不错的。
 Nothing special.  没什么特别的。
 
 - Personal Life
-
-
 Are you seeing/dating anyone?  你现在有男/女朋友吗？
 How are your kids?  你孩子怎么样？
 
@@ -3465,8 +2957,6 @@ How are your kids?  你孩子怎么样？
 - Sports
 &
 Events  体育运动
-
-
 college basketball/football  大学篮球/橄榄球联赛
 live music  现场音乐
 
@@ -3475,8 +2965,6 @@ live music  现场音乐
 - look it up  查一查
 
 - Taboo  禁忌
-
-
 politics  政治
 religion  宗教信仰
 
@@ -3485,17 +2973,9 @@ religion  宗教信仰
  
 
 
-
-
-
-
 ####55
 
-
-
 潘吉Jenny告诉你--端午节
-
-
 
 端午节是中国传统的节假日之一，除了赛龙舟包粽子你还能想到什么活动呢？今年小长假去了哪些好玩的地方吗？还是宅家休息呢？都来告诉我们你的端午是怎么过的吧！ 
 - Dragon Boat Festival  端午节
@@ -3525,17 +3005,9 @@ religion  宗教信仰
  
 
 
-
-
-
-
 ####56
 
-
-
 潘吉Jenny告诉你--OpenLanguage英语俱乐部召集组织者
-
-
 
 OpenLanguage英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 http://openlanguage.com/meetups/start 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 meetup@openlanguage.com 报名吧！ 
 如果你有意愿成为OpenLanguage英语俱乐部的组织者，请发送邮件到meetup@openlanguage.com，留下您的姓名，电话及所在城市。活动的组织者会有丰厚的奖品及优惠等你拿哦！
@@ -3548,8 +3020,6 @@ OpenLanguage英语俱乐部开展至今已经举办过几次活动，但都局�
 "
 的问题了，老外们都把那些问题的答案倒背如流啦！(大家可以猜一猜T恤上回答的都是哪些问题  :D ) 还能聊什么？29号的英语俱乐部告诉你哦！
 
-
-
 大家也可以关注一下我们的活动信息: 
 
 微博: http://weibo.com/2702117280/
@@ -3561,17 +3031,9 @@ OpenLanguage英语俱乐部开展至今已经举办过几次活动，但都局�
  
 
 
-
-
-
-
 ####57
 
-
-
 潘吉Jenny告诉你--送礼
-
-
 
 中国向来都对送礼有颇多讲究，那老外送礼又有什么讲究呢？今天潘吉和Jenny和你聊一聊在不同场合你最适合送什么样的礼物给你的外国朋友。你一般都送什么礼物给你的朋友呢？赶快留言告诉我们吧！ 
 - gift-giving occasion  送礼的场合
@@ -3601,17 +3063,9 @@ birthday  生日
  
 
 
-
-
-
-
 ####58
 
-
-
 潘吉Jenny告诉你--我们结婚啦！
-
-
 
 我们今天的节目要和大家聊一聊结婚这个大喜事！中西方结婚的风俗习惯差别巨大，如果你想办一个西式的婚礼，或是你有外国的朋友要结婚了，你知道这些必须的结婚步骤吗？还有什么问题都可以留言来问我们哦！ 
 - getting married  结婚  (I'm getting married! 我要结婚啦!)
@@ -3665,17 +3119,9 @@ plain  普通的指环)
  
 
 
-
-
-
-
 ####59
 
-
-
 潘吉Jenny告诉你--用户采访Tony
-
-
 
 许多同学除了收听我们潘吉Jenny告诉你脱口秀之外，还用OpenLanguage的课程学习更多更完整的课程。但是怎么才能获得最完整的的学习体验呢？除了收听课程之外我们还有录音对比及上传作业功能！这些功能能让你在短时间内迅速提升口语水平哦！ 
 - sophomore year  大二
@@ -3695,8 +3141,6 @@ plain  普通的指环)
 - daily routine  日常习惯
 
 - American TV shows  美剧
-
-
 X-Factor  (美国真人秀节目)X音素
 2 Broke Girls  破产女孩
 
@@ -3717,24 +3161,14 @@ X-Factor  (美国真人秀节目)X音素
  
 
 
-
-
-
-
 ####60
 
-
-
 潘吉Jenny告诉你--甜品
-
-
 
 美国人是出了名的爱甜食，那今天潘吉和Jenny就要和大家聊聊甜点。你知道怎么用英语说这些甜点的名字吗？你最爱的甜点是什么呢？都赶紧留言告诉我们吧！ 
 - dessert  甜品
 
 - Pies 派
-
-
 cherry pie  樱桃派  (seasonal  季节性比较强的)
 apple pie  苹果派  (an American classic  传统美国食品)
 pecan pie  核桃派  
@@ -3746,8 +3180,6 @@ key lime pie  青柠派
 - crust  派皮
 
 - Cookies  饼干
-
-
 chocolate chip cookies  巧克力豆饼干
 sugar cookies  白糖饼干
 butter cookies  黄油饼干
@@ -3756,8 +3188,6 @@ peanut butter cookies  花生酱饼干
  
 
 - Cakes  蛋糕
-
-
 brownie  布朗尼蛋糕  (make from scratch  从头做起，不用半成的材料全部自己做   mix  混合物)
 chocolate lava cake  巧克力熔岩蛋糕
 tiramisu  提拉米苏
@@ -3765,33 +3195,18 @@ finger biscuits  手指饼干 (usually Americans say
 "
 ladyfingers
 "
-)
-
-
-
-
-- soufflé  舒芙蕾
+)- soufflé  舒芙蕾
 
 - Ice Cream  冰淇淋
-
-
 sundae  圣代
 banana split  香蕉船冰淇淋
 
  
 
 
-
-
-
-
 ####61
 
-
-
 潘吉Jenny告诉你--雅安加油！
-
-
 
 北京时间2013年4月20日8时02分我国四川省雅安市芦山县发生-0级地震。在这里我们希望同学们和我们一起为雅安祈福，希望所有的痛苦和灾难都能尽快过去，我们与雅安人民同在，雅安加油！ 
 - natural disaster  自然灾害
@@ -3823,17 +3238,9 @@ banana split  香蕉船冰淇淋
 - rebuild  灾后重建
 
 
-
-
-
-
 ####62
 
-
-
 潘吉Jenny告诉你--新主持Lisa
-
-
 
 今天潘吉Jenny告诉你的节目要隆重介绍我们OpenLanguage英语的新主持人Lisa！从今年的4月1号开始大家就听到了我们课程中的新声音的加入，这就是我们来自美国的Lisa！希望我们的主持团队给大家学英语增添更多乐趣啊！加油！ 
 - Nebraska  (美国)内布拉斯加州
@@ -3861,17 +3268,9 @@ banana split  香蕉船冰淇淋
 - bilingual  双语的
 
 
-
-
-
-
 ####63
 
-
-
 潘吉Jenny告诉你--英语考试
-
-
 
 在中国学英语很痛苦的另一个原因是因为我们从小到大都有考不完的试。不过也有考证狂人以此为了手握一大把的证书。你考过什么试呢？你有什么证书呢？今天潘吉和Jenny要来和大家聊聊这个让人又爱又恨的话题。大家有什么问题也可以留言问我们哦！祝大家考试顺利！ 
 - SAT (Scholastic Aptitude Test)  学术能力评估测试
@@ -3893,38 +3292,20 @@ banana split  香蕉船冰淇淋
 - TEM (Test for English Major)  本科英语专业考试
 
 
-
-
-
-
 ####64
 
-
-
 Elementary-Welcoming a New Neighbor
-
-
 
 来自OpenLanguage英语的福利课程。听一下吧！如果喜欢，别忘了注册openlanguage.com邮箱或下载我们的App了解完整英语学习服务。 
 在中国，乔迁之喜往往用鞭炮庆祝。但在美国，搬来了新邻居，你可要带上礼物去欢迎。要带什么礼物呢？赶快听听课程吧！
 
 
-
-
-
-
 ####65
-
-
 
 潘吉Jenny告诉你--鞋子
 
-
-
 今天要讲到Jenny最爱的话题：鞋！不过男生们别担心，John也会谈谈男生穿的鞋子哦！你最爱穿什么鞋呢？你鞋柜里最多的鞋款是什么呢？你爱穿什么牌子的鞋子呢？你的脚多大码呢？都来留言告诉我们吧！ 
 - Men's Shoes  男士鞋
-
-
 sneakers / cross trainers  运动鞋
 running shoes  跑鞋
 dress shoes  / leather shoes  皮鞋
@@ -3934,8 +3315,6 @@ boots  靴子  (hiking boots  登山靴   cowboy boots  牛仔靴)
  
 
 - Women's Shoes  女士鞋
-
-
 high heels / heels  高跟鞋
 stilettos  尖头细高跟鞋
 pumps  圆头高跟鞋
@@ -3958,17 +3337,9 @@ UGGS  雪地靴
  
 
 
-
-
-
-
 ####66
 
-
-
 潘吉Jenny告诉你--复活节快乐！
-
-
 
 复活节到啦！你知道复活节具体是什么时候吗？你知道复活节要干什么吗？赶快听听潘吉和Jenny讲复活节的习俗，告诉我们你在复活节有什么特别的活动吧！ 
 - Easter  复活节
@@ -3998,17 +3369,9 @@ UGGS  雪地靴
  
 
 
-
-
-
-
 ####67
 
-
-
 潘吉Jenny告诉你--办公用品
-
-
 
 我们一天有8个小时的工作时间，办公用品就是你工作的好伙伴。知道这些不起眼的办公用品英语怎么说吗？没有想过吗？赶快听听今天的节目吧！ 
 - office supplies  办公用品
@@ -4040,17 +3403,9 @@ UGGS  雪地靴
  
 
 
-
-
-
-
 ####68
 
-
-
 潘吉Jenny告诉你--英文数字
-
-
 
 用英文说数字一直是很多同学头痛的问题，今天的节目我们要教给大家一些记英文数字的技巧。当然要学到熟能生巧，一定要靠大家勤学苦练，听完节目赶快拿出自己的账本开始练习吧！ 
 Tips:
@@ -4094,17 +3449,9 @@ Memorize the population of China is -3 billion.  记住中国人口是13亿。
  
 
 
-
-
-
-
 ####69
 
-
-
 潘吉Jenny告诉你--美剧推荐
-
-
 
 我们之前做过两期关于美剧的节目，今天我们给大家推荐了几部很好看且适合学英语的美剧，大家可以寓教于乐，学习最地道的口语哦！你看过那些美剧？最爱哪一部？最喜欢哪个角色？都来留言告诉我们吧！ 
 
@@ -4146,17 +3493,9 @@ House of Cards  纸牌屋
 - current time  现代剧
 
 
-
-
-
-
 ####70
 
-
-
 潘吉Jenny告诉你--十二星座
-
-
 
 很多同学都对十二星座颇有研究，那你知道怎么用英语和别人讨论星座吗？赶快听听今天的节目，并告诉我们你最喜欢的星座，或是你和哪个星座不合吧！ 
 - horoscopes  占星术，星座
@@ -4166,8 +3505,6 @@ House of Cards  纸牌屋
 - What's your sign?  你是什么星座的？
 
 - Zodiac 十二星座:
-
-
 Aquarius  水瓶座
 Pisces  双鱼座
 Aries  白羊座
@@ -4192,24 +3529,14 @@ Capricorn  摩羯座
  
 
 
-
-
-
-
 ####71
 
-
-
 潘吉Jenny告诉你--老外眼中的中国菜
-
-
 
 今天我们又要聊吃啦！今天我们要聊一聊老外们最爱
 &
 最怕的中国菜，如果你有外国朋友来看你，要带他们吃什么既能体现中国的好客之道又不会把他们吓到呢？你和老外吃饭有没有遇过好玩或是尴尬的事呢？赶快留言告诉我们吧！ 
 最怕的菜：
-
-
 stinky tofu  臭豆腐 (smell weird and stinky  闻起来又臭又怪)
 intestines  内脏 (liver 肝)
 weird body parts  奇怪的身体部分 (chicken feet  鸡脚爪, ears 耳朵, brain 脑子)
@@ -4228,8 +3555,6 @@ baijiu  白酒
  
 
 最爱的菜
-
-
 kung pao chicken宫保鸡丁  
 鱼香肉丝/茄子 (eggplants 茄子)
 松鼠鱼 (breaded and deep-fried inside out fish)
@@ -4250,17 +3575,9 @@ Bon appetit!  祝你好胃口！
  
 
 
-
-
-
-
 ####72
 
-
-
 潘吉Jenny告诉你--关爱老人
-
-
 
 中国是个家庭观念很强的国家，五代同堂共进一家向来都是公认的天伦之乐。在美国的老人和中国一样吗？他们是不希望儿女担心还是也需要子女的照顾呢？听听今天潘吉Jenny告诉你吧！ 
 - independent  独立的
@@ -4278,17 +3595,9 @@ Bon appetit!  祝你好胃口！
 - burden  负担
 
 
-
-
-
-
 ####73
 
-
-
 Intermediate Lesson--Celebrating Chinese New Year
-
-
 
 今天的课非常应景, 我们会教你如何描述怎么过春节。吃喝玩乐打麻将，一切欢乐尽在今天的免费课程中。想要开始完整英语学习，请下载OpenLanguage app或前往www.openlanguage.com了解。Happy Chinese New Year! 
 Chinese New Year/春节
@@ -4306,17 +3615,9 @@ the year of the snake/蛇年  
  
 
 
-
-
-
-
 ####74
 
-
-
 潘吉Jenny告诉你--蛇年新禧！
-
-
 
 一晃眼过了元旦之后终于迎来了我们中国人的传统农历新年啦！对中国年感兴趣的老外越来越多，要怎么用英语和外国友人讲解中国年的传统习俗和文化呢？潘吉Jenny告诉你！ 
 - CNY=Chinese New Year  中国农历新年
@@ -4354,17 +3655,9 @@ the year of the snake/蛇年  
 - underwear  内衣
 
 
-
-
-
-
 ####75
 
-
-
 潘吉Jenny告诉你--创造语言环境
-
-
 
 今天潘吉Jenny告诉你的节目做了一集特辑来解答我们一位忠实用户提出的问题：许多学英语的同学想要通过增加说英语的机会来提高自己的英语水平，而创造说英语的环境尤为重要，特别是在国内学英语的同学。那怎么才能有效的创造语言环境呢？赶快听听吧！ 
 - Set your mind to it!  态度决定一切！
@@ -4380,17 +3673,9 @@ the year of the snake/蛇年  
 - No magical moment.  不会一步登天  
 
 
-
-
-
-
 ####76
 
-
-
 潘吉Jenny告诉你--2012新收录词汇
-
-
 
 语言都是不断变化的，许多非常口语或来自网络的词都渐渐受到了认可。那2012年Webster英语字典里新收录了那些
 "
@@ -4402,8 +3687,6 @@ the year of the snake/蛇年  
 "
 呢？这些词汇你都知道是什么意思吗？今天潘吉和Jenny就要告诉你最新鲜的英语词汇！ 
 New words in the Webster dictionary for 2012  2012年韦伯斯特大字典中收录的新词
-
-
 aha moment  突然明白了一件事
 sexting  发暧昧短信
 bucket list  死前想做的事   (kick the bucket  翘辫子)
@@ -4421,17 +3704,9 @@ man cave  男人的私人空间
 tipping point  临界点
 
 
-
-
-
-
 ####77
 
-
-
 潘吉Jenny告诉你--留学美国(高中)
-
-
 
 我们之前说过留学英国的话题，但是也有很多同学想去美国留学。如果你正在准备出国考试或是申请学校，或只是有去美国留学的想法，你都不能错过这期节目哦！有关留学的问题也赶快给我们留言吧！ 
 - PhD in Psychology  心理学博士
@@ -4457,8 +3732,6 @@ senior  高四
     suburban Boston  波士顿城郊
 
 - prep school (preparatory school)  私立学校
-
-
 - private school  (美国)私立学校
 
     public school  (美国)公立学校
@@ -4486,17 +3759,9 @@ senior  高四
 - diversity  多元化
 
 
-
-
-
-
 ####78
 
-
-
 潘吉Jenny告诉你--啤酒种类
-
-
 
 上期节目我们讨论了如何正确的选择葡萄酒，这期节目是爱喝啤酒的同学们的福音。潘吉和Jenny要和你谈谈如何选择啤酒，你爱喝什么啤酒呢？赶快留言告诉我们吧！ 
 - Lager  窖藏啤酒
@@ -4546,17 +3811,9 @@ What do you have on tap?
 - beer belly  啤酒肚
 
 
-
-
-
-
 ####79
 
-
-
 潘吉Jenny告诉你--Going To The Bakery
-
-
 
 在面包房面对形形色色琳琅满目的面包蛋糕究竟该怎么选择？今天EnglishPod中国要教你怎么在面包房买到自己需要的面包，赶快听听吧！ 
 - sliced  切片
@@ -4582,17 +3839,9 @@ What do you have on tap?
 - bagel  硬面包圈
 
 
-
-
-
-
 ####80
 
-
-
 潘吉Jenny告诉你--Lending Money
-
-
 
 欠债还钱天经地义，这是人人都知道的规矩。如果你借钱不还那就不要怪别人下次不相信你了！赶快看看今天的课程里的主人公有没有借到钱吧！完整系统学习课程请至http://openlanguage.com，换种方法，潘吉Jenny每天陪你学英语。 
 - repay  还钱
@@ -4606,17 +3855,9 @@ What do you have on tap?
 - trust  相信
 
 
-
-
-
-
 ####81
 
-
-
 潘吉Jenny告诉你--挑选红酒
-
-
 
 相信很多同学都有面对葡萄酒手足无措的经历，因为葡萄酒的品种和产地那么多那么杂，而葡萄酒也不一定是越贵越好。怎么样才能选对一款适合自己的葡萄酒呢？你爱喝什么葡萄酒呢？赶快留言告诉我们吧！ 
 - red wine  红葡萄酒
@@ -4624,8 +3865,6 @@ What do you have on tap?
     white wine  白葡萄酒
 
 - Types of Red Wine:
-
-
 Cabernet Sauvignon  解百纳/赤霞珠
 Merlot  梅洛
 Shiraz  西拉
@@ -4635,8 +3874,6 @@ Port  波特
  
 
 - Types of White Wine:
-
-
 Chardonnay  霞多丽/莎当妮
 Sauvignon Blanc  长相思
 Pinot Grigio  灰比诺
@@ -4645,18 +3882,9 @@ Riesling  雷司令
  
 
 - Other Wines
-
-
 Moscato  莫斯卡托甜白
 Rosé  桃红葡萄酒
-Champagne  香槟
-
-
-
-
-- Producing Areas:
-
-
+Champagne  香槟- Producing Areas:
 Bordeaux  波尔多
 Burgundy  勃艮第
 Napa 
@@ -4672,17 +3900,9 @@ New Zealand  新西兰
 - wine tasting tour  试酒之旅
 
 
-
-
-
-
 ####82
 
-
-
 潘吉Jenny告诉你--在英语课上用EnglishPod中国！
-
-
 
 EnglishPod中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长Lily和学生。赶快了解一下他们是如何运用EnglishPod中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打400-012-3381或发邮件至support@openlanguage.com了解详情。 
 - internalize  真正掌握知识
@@ -4698,17 +3918,9 @@ EnglishPod中国最近开始和一些英语学校合作，为他们提供好用�
 - We learn the language to the level of our needs.  实际语言需求决定了我们学习的程度。
 
 
-
-
-
-
 ####83
 
-
-
 潘吉Jenny告诉你--英文名怎么取？
-
-
 
 中国人的创造力近来似乎都用在了起名字上，我们之前的节目抨击了各种滑稽搞怪的英文名，应粉丝们的要求今天我们要来说说什么样的英文名应该怎么取。对自己英文名不满意的同学可以到babycenter.com去看看最流行的英语名字哦！ 
 Top baby names  最流行的小孩名字
@@ -4724,33 +3936,17 @@ Boys' name: Aiden, Jackson, Ethan
  
 
 
-
-
-
-
 ####84
 
-
-
 潘吉Jenny教英语--Mobile Phone Plan
-
-
 
 这是一个免费的EnglishPod中国课程音频，让你更好地了解我们的产品。如果你想使用配套辅助教材，如课文、注解及扩展练习，请下载OpenLanguage苹果、Android客户端或前往www.openlanguage.com了解付费订阅包。 
 你用什么手机？哪家电信公司？又签了怎样的套餐呢？今天的EnglishPod中国课程就要教你如何找到一个最适合自己的手机套餐。
 
 
-
-
-
-
 ####85
 
-
-
 潘吉Jenny告诉你--新年好！
-
-
 
 嘿，大家！Happy New Year！2012年就这样过去了，我们一起迎来了崭新的2013年。新的一年里你有什么新的目标？今年你的New Year's Resolutions是什么呢？赶快留言告诉我们吧！ 
 - New Year's Eve  新年前夜
@@ -4778,17 +3974,9 @@ Boys' name: Aiden, Jackson, Ethan
 - New Year's Resolutions  新年新气象，新目标
 
 
-
-
-
-
 ####86
 
-
-
 潘吉Jenny告诉你--圣诞快乐！
-
-
 
 耶！！！一年一度的圣诞节又到咯！在这个对于北美及大部分欧洲地区来说最重要的节日之际我们就要告诉你有关圣诞节的一切故事！大朋友小朋友们，别光忙着拆礼物！抽空和潘吉Jenny一起学英语哦！And we wish you MERRY CHRISTMAS!!! 
 - Christmas Eve (Dec. 24th)  圣诞夜(12月24号)
@@ -4828,24 +4016,14 @@ Boys' name: Aiden, Jackson, Ethan
  
 
 
-
-
-
-
 ####87
 
-
-
 潘吉Jenny告诉你--世界末日特辑
-
-
 
 有多少同学是相信世界末日的？这次EnglishPod中国要为大家做一期特辑，请来办公室里不同国家的同事谈谈他们对2012世界末日传言的看法。当然，如果过了2012你还活着，不要忘记到我们网站继续学习英语，因为没有前进动力的日子才是真正的末日哦！ 
 听力提示：
 
 Questions:
-
-
 Do you belive in Doomsday?  你相信世界末日吗？
 What are you going to do on 21st?  你21号要做什么？
 What are you going to do if you're still alive the next day?  如果第二天起来你还活着你会怎么办？
@@ -4903,17 +4081,9 @@ What are you going to do if you're still alive the next day?  如果第二天�
  
 
 
-
-
-
-
 ####88
 
-
-
 潘吉Jenny告诉你--增加词汇量
-
-
 
 今天潘吉和Jenny要和大家讲讲怎么正确的学单词，提高自己的词汇量，并把这些词汇运用到平时的生活对话中。看看你的学习方法对了吗？ 
 Vocabulary alone is not enough!!!  光有词汇量是不够的！
@@ -4921,8 +4091,6 @@ Vocabulary alone is not enough!!!  光有词汇量是不够的！
  
 
 Tips:
-
-
 Learn high-frequency vocabulary.  高频词汇
 Always learn in context.  在语境中学习
 Set up a realistic target.  制定合理的目标
@@ -4935,17 +4103,9 @@ Write down the ones you think you can use.  记下你觉得你用得到的内�
 siren  小魔女(希腊神话中的女海妖)
 
 
-
-
-
-
 ####89
 
-
-
 潘吉Jenny教英语--Making an Appointment
-
-
 
 所有EnglishPod中国的同学都很忙：要忙工作忙家庭，还要兼顾学习！今天的课程你将会学到怎么用地道的英语预约会面，表达你很忙。本次课程会教你怎么说你没办法与某人见面....只是以防万一。更多系统课程请至OpenLanguage网站http://openlanguage.com 
 - arrange  安排
@@ -4971,17 +4131,9 @@ siren  小魔女(希腊神话中的女海妖)
 - expat  外派海外的人
 
 
-
-
-
-
 ####90
 
-
-
 潘吉Jenny告诉你--温柔地拒绝你
-
-
 
 很多同学在生活中都遇到过很难或是不知道怎么拒绝别人的情况，今天潘吉和Jenny要教你几句温柔地拒绝别的黄金佳句以备你不时之需。赶快来听听吧！ 
 Scenario 1: Sales/Charity Phone Calls
@@ -5005,17 +4157,9 @@ Scenario 3: Got Invited to Church
 I'm not comfortable with that now.  我现在还不想信教。
 
 
-
-
-
-
 ####91
 
-
-
 潘吉Jenny教英语--College Life
-
-
 
 人生最美好的时光不外乎大学时代了！尽管要为了各种考试忙的焦头烂额不过各种丰富的课外活动确实最精彩的。今天我们就要来看看美国大学的生活是什么样的！赶快学习今天这课吧！更多系统课程请查看OpenLanguage网站 http://openlanguage.com 
 - orientation  培训
@@ -5041,24 +4185,14 @@ I'm not comfortable with that now.  我现在还不想信教。
 - pre-law  法学预科
 
 
-
-
-
-
 ####92
 
-
-
 潘吉Jenny告诉你--正式邮件写法
-
-
 
 许多外企的同学在工作中不免要用英语给同事给客户写邮件，但是这些英语邮件要怎么写才即正式又有礼貌让你看起来很专业呢？看看今天潘吉和Jenny教你怎么做到Polite
 &
 Professional吧！ 
 邮件开头：
-
-
 Dear XXX,  亲爱的XXX,
 Dear team, / Dear all,  大家,
 To whom it may concern,  写给相关负责人,
@@ -5067,8 +4201,6 @@ Dear support team,  亲爱的客服人员,
  
 
 邮件内容：
-
-
 I'm writing to tell you....  我写邮件给你是想告诉你你....
 Please find the document/photos/XXX attached.  请查看附件里的文件/照片/XXX。
 I look forward to hearing from you (soon).  期待(尽快)听到您的回复。
@@ -5076,23 +4208,13 @@ I look forward to hearing from you (soon).  期待(尽快)听到您的回复。
  
 
 邮件结尾：
-
-
 Best regards,  祝好,
 Sincerely,  真挚的,
 
 
-
-
-
-
 ####93
 
-
-
 潘吉Jenny教英语--Cut It Out
-
-
 
 每个办公室都有，至少有一个讨人厌的同事。而这种人往往还不会意识到自己有多烦人！今天我们EnglishPod中国就要和这种人打交道，还要告诉TA别再来烦我了！更多系统课程请查看OpenLanguage网站 http://openlanguage.com 
 - cut that out  停止(做某事)
@@ -5120,17 +4242,9 @@ Sincerely,  真挚的,
 - keep the noise down  声音小一点
 
 
-
-
-
-
 ####94
 
-
-
 潘吉Jenny告诉你--感恩节特辑
-
-
 
 每年11月的第四个星期四是美国的感恩节Thanksgiving Day，隆重程度仅次于圣诞节。今天我们就来给大家说一说感恩节的由来和习俗吧！ 
 - Thanksgiving Day  感恩节
@@ -5162,17 +4276,9 @@ How do you celebrate Thanksgiving/Christmas?
 - Black Friday  黑色星期五
 
 
-
-
-
-
 ####95
 
-
-
 潘吉Jenny告诉你--美食专场
-
-
 
 相信很多同学都自封
 "
@@ -5222,17 +4328,9 @@ How do you celebrate Thanksgiving/Christmas?
 - gourmet  美食家
 
 
-
-
-
-
 ####96
 
-
-
 潘吉Jenny告诉你--常用符号
-
-
 
 很多同学在外国同事报自己的用户名或是邮箱地址的时候很头疼，因为他们的地址里有下划线之类的各种符号，这个用英语要怎么说呀？而且这些符号的出现频率远远高于你的想象，平时不注意，到用的时候就傻眼了吧？赶快和潘吉Jenny一起学学最常见的符号表达吧！ 
 - 星号键 * asterisk / star
@@ -5274,24 +4372,14 @@ How do you celebrate Thanksgiving/Christmas?
  
 
 
-
-
-
-
 ####97
 
-
-
 潘吉Jenny告诉你--NBA篮球赛
-
-
 
 这一次潘吉和Jenny要和大家说说男生们的最爱：NBA篮球联赛！还记得那些熬夜看球的日子吗？看了球要怎么和外国同事讨论昨天精彩的球赛呢？看看今天的节目里东西部各球队的说法，并留言告诉我们你支持的球队吧！ 
 - NBA(National Basketball Association)  美职联(全美职业篮球联盟)
 
 - Eastern Conference  东部球队
-
-
 Boston Celtics  波士顿凯尔特人队
 Brooklyn Nets  布鲁克林网队
 New York Knicks  纽约 尼克斯队
@@ -5306,14 +4394,7 @@ Atlanta Hawks  亚特兰大老鹰队
 Charlotte Bobcats  夏洛特山猫队
 Miami Heat  迈阿密热火队
 Orlando Magic  奥兰多魔术队
-Washington Wizards  华盛顿奇才队
-
-
-
-
-- Western Conference  西部球队
-
-
+Washington Wizards  华盛顿奇才队- Western Conference  西部球队
 Dallas Mavericks  达拉斯小牛队
 Houston Rockets  休斯敦火箭队
 Memphis Grizzlies  孟菲斯灰熊队
@@ -5331,17 +4412,9 @@ Phoenix Suns  菲尼克斯(凤凰城)太阳队
 Sacramento Kings  萨克拉门托国王队
 
 
-
-
-
-
 ####98
 
-
-
 潘吉Jenny告诉你--介绍朋友
-
-
 
 在各种聚会或是派对上最容易遇到熟人，但是这个熟人正在和TA的朋友相谈盛欢，要怎么加入他们？怎么让你的朋友介绍你给TA的朋友认识？或者怎么毛遂自荐去和某个大人物搭上话？今天潘吉和Jenny要给你上一节社交课！Are you ready to reach out？ 
 - Have you met....  你见过...吗？
@@ -5367,17 +4440,9 @@ Dave, have you met Sally?
  
 
 
-
-
-
-
 ####99
 
-
-
 潘吉Jenny告诉你--美国大选
-
-
 
 四年一度的美国大选昨天刚刚敲定奥巴马连任，潘吉和Jenny就要和你聊聊这最新鲜的话题。那么到底美国的选举人制度是怎么样的呢？美国总统是怎么产生的呢？赶快听听今天的节目！再次恭喜奥巴马总统成功连任！！！ 
 - presidential election / general election  (美国)总统大选
@@ -5411,17 +4476,9 @@ Dave, have you met Sally?
 - inauguration  就职典礼
 
 
-
-
-
-
 ####100
 
-
-
 潘吉Jenny告诉你--恋爱语言
-
-
 
 马上要双十一
 "
@@ -5499,17 +4556,9 @@ I think we need to break up.
  
 
 
-
-
-
-
 ####101
 
-
-
 潘吉Jenny告诉你--留学英国
-
-
 
 今天潘吉和Jenny应广大即将去英国留学的同学要求，为大家做了一集留学特辑。看看留学英国除了要克服学业的压力还有那些生活上的问题需要注意。我们也会给大家一些建议，要去英国留学的同学们千万不要错过咯！ 
 - sheffield accent  谢菲尔德口音 (和曼彻斯特口音比较接近)
@@ -5535,17 +4584,9 @@ I think we need to break up.
 - Britsh accent  英式口音 / American accent  美式口音
 
 
-
-
-
-
 ####102
 
-
-
 潘吉Jenny告诉你--万圣节
-
-
 
 十月的尾声我们要迎来一个对美国人的重要节日--万圣节！而现在万圣节已经成为全世界爱玩爱Party的年轻人一年一度的盛装派对了！今年你要打扮成什么样子呢？赶快留言告诉我们吧！ 
 - Halloween  万圣节
@@ -5569,17 +4610,9 @@ I think we need to break up.
 - Trick or treat?  不给糖就捣乱！
 
 
-
-
-
-
 ####103
 
-
-
 潘吉Jenny告诉你--时尚品牌
-
-
 
 今天应广大听众的要求做一期有关美国时尚品牌的节目，并不是Channel, D
 &
@@ -5587,24 +4620,15 @@ G, Valentino这类一线大牌而是更适合我们平时穿着的大众品牌�
 - Fashion label  时尚品牌
 
 - association  
-
-
 preppy  学院风
 girly  少女风
 
  
 
 - GAP旗下三大品牌：
-
-
 GAP  
 Banana Republic  
-Old Navy
-
-
-
-
-- J.Crew  
+Old Navy- J.Crew  
 
 - Ralph Lauren  拉夫劳伦  旗下分为Polo by Ralph Lauren和Ralph Lauren两大品牌  
 
@@ -5627,17 +4651,9 @@ F)  
 - Seven Jeans
 
 
-
-
-
-
 ####104
 
-
-
 潘吉Jenny告诉你--十一黄金周
-
-
 
 每年下半年都有个全中国人都翘首以盼的长假--国庆黄金周。2012年的国庆黄金周又巧遇传统的中秋小长假，于是我们就有了8天的假期。马上就要放假的心情是多么令人激动！只是这个放假的算法每次都算不清楚....7+3=8? 
 - the October Holiday / the National Day Holiday  十一黄金周/国庆长假
@@ -5659,17 +4675,9 @@ F)  
 - Independence Day  美国独立日(美国国庆)   (Only 1 day! So stop complaining Chinese people. :D)
 
 
-
-
-
-
 ####105
 
-
-
 潘吉Jenny告诉你--你好吗？
-
-
 
 翻开小学课本第一课韩梅梅和李雷的经典开场白就是：
 "
@@ -5703,17 +4711,9 @@ I'm fine, thank you, and you?
  
 
 
-
-
-
-
 ####106
 
-
-
 潘吉Jenny告诉你--实用缩写
-
-
 
 很多同学在经常被老外聊天或是Facebook上五花八门的网络首字母缩写留言搞得一头雾水，那哪些缩写即常见又实用呢？赶快听听我们今天的节目然后用缩写告诉我们你的想法吧！更多EnglishPod中国的课程可至http://openlangauge.com上收听哦！ 
 - popular acronyms  常用的首字母缩写
@@ -5745,17 +4745,9 @@ I'm fine, thank you, and you?
 - KIT (keep in touch)  保持联系
 
 
-
-
-
-
 ####107
 
-
-
 中级课程--Coffee Break
-
-
 
 下午两三点的时候最容易昏昏欲睡。是时候来点咖啡因醒醒脑了！但是办公室没有咖啡，怎么办？今天的课我们就要学学怎么弄到你要的咖啡、点心、小食.....别光顾着吃哦，顺便学点英语吧！ 
 - make a coffee run  (去店里)买咖啡
@@ -5777,17 +4769,9 @@ I'm fine, thank you, and you?
 - make an ice cream run  (去店里)买冰淇淋
 
 
-
-
-
-
 ####108
 
-
-
 初级课程--Calling in Sick
-
-
 
 一觉醒来忽然感觉浑身不舒服？怎么办？给老板打个电话请假吧！这节课EnglishPod中国就要教你怎么和你的外籍老板请病假。 
 - coming down with  得病
@@ -5813,17 +4797,9 @@ I'm fine, thank you, and you?
 - get well soon  早日康复
 
 
-
-
-
-
 ####109
 
-
-
 潘吉Jenny告诉你--身体部位
-
-
 
 从小我们就知道怎么用英语说我们身上的部位，比如说头啊、手啊、脚啊....但是总有一些容易让人忽略却很重要的部位，你知道在英语里怎么表达吗？赶快听听我们今天的节目吧！ 
 - body parts  身体部位
@@ -5837,8 +4813,6 @@ I'm fine, thank you, and you?
 - cheeks  脸颊
 
 - fingers  手指
-
-
 thumb  大拇指
 the index finger  食指
 the middle finger  中指
@@ -5850,8 +4824,6 @@ the pinky finger  小指
 - pinky swear  拉钩(上吊一百年不许变.....)
 
 - Joints  关节
-
-
 elbow  手肘
 wrist  手腕
 knee  膝盖
@@ -5864,17 +4836,9 @@ ankle  脚踝(huái)
 - hips  胯
 
 
-
-
-
-
 ####110
 
-
-
 初级课程--Will You Be Free Tonight?
-
-
 
 工作里生活中社交是蛮重要的，和同事的关系，上下级的关系，客户的关系，供应商的关系等等一切都是人与人的关系。那么，如果你想约心仪的女生出去要怎么问一下她什么时候有空哦！ 
 - swamped  非常忙碌的
@@ -5890,24 +4854,14 @@ ankle  脚踝(huái)
 - show him around  带他到处玩玩
 
 
-
-
-
-
 ####111
-
-
 
 潘吉Jenny告诉你--搭讪招数
 
-
-
-今天我们的节目要和大家讨论一个劲爆的话题: 在酒吧里男人们常用的老土搭讪的招数！虽然现代社会科技文化飞速发展，但男人们在酒吧泡妞的招数还是老一套！有没有点创意啊？今天我们就要来看看酒吧里那些被男人们用烂了的好词好句！ 
+今天我们的节目要和大家讨论一个劲爆的话题: 在酒吧里男人们常用的老土搭讪的招数！虽然现代社会科技文化飞速发展，	但男人们在酒吧泡妞的招数还是老一套！有没有点创意啊？今天我们就要来看看酒吧里那些被男人们用烂了的好词好句！ 
 - cliche  陈词滥调
 
 - pickup lines  搭讪常用语句
-
-
 Don't I know you from somewhere?  我是不是在哪里见过你？
 Do you come here often?  你常来这里吗？
 Is this seat taken?  这里有人坐吗？
@@ -5918,17 +4872,9 @@ What's a nice girl like you doing in a place like this?  你这么优雅的女�
  
 
 
-
-
-
-
 ####112
 
-
-
 初级课程--Where Should We Eat？
-
-
 
 随着西方文化的传播，中国人的“食”文化里面也渐渐融入了来自异国他乡的风味美食。今天的课程就要来聊一聊如何推荐餐馆，你将会学到许多有用的英语词汇来帮助你描述以及评价一个餐馆。 
 - lighter  比较清淡
@@ -5950,17 +4896,9 @@ What's a nice girl like you doing in a place like this?  你这么优雅的女�
 - not all that crazy about  不是那么喜欢
 
 
-
-
-
-
 ####113
 
-
-
 潘吉Jenny告诉你--海关移民
-
-
 
 现在出国的人越来越多，出差旅游的，求学移民的都少不了要过海关。今天潘吉和Jenny就要以去美国为例和你聊聊过海关时候要注意的一些细节。要出国的同学们注意收听了哟！也可以到新浪微博我们的官方账号 EnglishPod中国 来给我们留言你感兴趣的话题哦！ 
 - immigration officer  移民官
@@ -5982,17 +4920,9 @@ What's a nice girl like you doing in a place like this?  你这么优雅的女�
  
 
 
-
-
-
-
 ####114
 
-
-
 初级课程--What's your name again?
-
-
 
 初次见面没听清对方的名字，或是再次见面一下子想不起对方的名字都有点尴尬。赶快听听今天的课程教你怎么化解这个尴尬的局面吧！ 
 - How's it going?  你好吗?/你怎么样?
@@ -6012,17 +4942,9 @@ What's a nice girl like you doing in a place like this?  你这么优雅的女�
 - acquaintance  熟人
 
 
-
-
-
-
 ####115
 
-
-
 中级课程--You're Fired!
-
-
 
 希望我们今天的课程内容你在现实生活中永远不会听到。因为今天有人要被炒鱿鱼啦！同时，如果你是老板的话，也可以来看看怎么炒别人鱿鱼哦！ 
 - preoccupied  心不在焉
@@ -6040,17 +4962,9 @@ What's a nice girl like you doing in a place like this?  你这么优雅的女�
 - let you go  解雇你
 
 
-
-
-
-
 ####116
 
-
-
 潘吉Jenny告诉你--音乐类型
-
-
 
 爱音乐的人在哪里？这一期潘吉Jenny要和你聊一聊各种音乐的类型。你是朋克范？还是摇滚迷？喜欢大众口味的流行乐？还是非主流或小清新？独爱一枝还是大小通吃？赶快给我们留言你最爱的乐队或歌手告诉我们吧！ 
 - music genres  音乐类型
@@ -6082,17 +4996,9 @@ B  节奏蓝调  (Beyonce / Rihanna)
  
 
 
-
-
-
-
 ####117
 
-
-
 潘吉Jenny告诉你--超级英雄
-
-
 
 每个人小时候都幻想过成为电视或电影中的拥有超能力的超级英雄拯救世界。现在可能还想成为超级英雄，但可能是因为那些香车美女和无数闪耀的光环吧。今天潘吉和Jenny就要和大家谈谈那些让人敬仰崇拜的超级英雄。你心中的超级英雄又是谁呢？给我们留言告诉我们吧！ 
 - super heroes  超级英雄
@@ -6100,16 +5006,12 @@ B  节奏蓝调  (Beyonce / Rihanna)
 - comic books  漫画书
 
 - DC Comics  DC漫画公司
-
-
 Superman  超人
 Batman  蝙蝠侠
 
  
 
 - Mavel Comics  奇迹漫画公司
-
-
 Spiderman  蜘蛛侠
 Ironman  钢铁侠
 The Hulk  绿巨人
@@ -6125,17 +5027,9 @@ Catwoman  猫女
  
 
 
-
-
-
-
 ####118
 
-
-
 初级课程--Office Gossip
-
-
 
 每个人都会遇到几个喜欢八卦的人，在办公室里同事之间八卦好像特别严重。这节课里我们要听听两个同事八卦另一个马上要升职的同事。好劲爆啊！ 
 - rumor  谣言
@@ -6153,17 +5047,9 @@ Catwoman  猫女
 - celebrity gossip  明星八卦
 
 
-
-
-
-
 ####119
 
-
-
 潘吉Jenny告诉你--健身
-
-
 
 每个人都想拥有完美的身材，周末到健身房挥汗如雨一下感觉整个人都神清气爽。你爱健身吗？赶快来和潘吉Jenny分享一下你的健身经历吧！ 
 - go to the gym  去健身
@@ -6195,17 +5081,9 @@ Catwoman  猫女
  
 
 
-
-
-
-
 ####120
 
-
-
 初级课程--A Promotion and a New Guy
-
-
 
 在你和很久没见的朋友再见面的时候你该说什么好呢？你可以试试用一些今天课程中学到的新词避免尴尬。如果他们问你为什么你的英语这么地道进步的这么快的时候，不要忘记告诉他们：我在EnglishPod中国学习英语！ 
 - same old same old  老样子
@@ -6219,17 +5097,9 @@ Catwoman  猫女
 - split / break up  分手
 
 
-
-
-
-
 ####121
 
-
-
 初级课程--New Friends in Shanghai
-
-
 
 没话题可聊了？或者你不知道和隔壁新来邻居要聊什么？在今天的课程里EnglishPod中国就要教你如何打破僵局和别人聊天，不管对方是谁哦！ 
 - get-together  聚会
@@ -6243,17 +5113,9 @@ Catwoman  猫女
 - reunion  团聚
 
 
-
-
-
-
 ####122
 
-
-
 潘吉Jenny告诉你--租房子
-
-
 
 去海外留学移民的同学们有一个共同的让人头疼的问题--租房子。看看今天Jenny和John就要和你聊聊租房子有关的词汇哦！ 
 - apartment  公寓
@@ -6279,17 +5141,9 @@ Catwoman  猫女
  
 
 
-
-
-
-
 ####123
 
-
-
 潘吉Jenny告诉你--伦敦奥运
-
-
 
 时下最火热的话题不过伦敦奥运了，4年一度的奥运盛会每次都是人们讨论的焦点。看看今天潘吉和Jenny教你怎么讨论奥运，然后去和你的老外朋友讨论吧！ 
 - the Olympics (the Olympic Games)  奥运会
@@ -6321,17 +5175,9 @@ Catwoman  猫女
 - medal count  奖牌排行榜
 
 
-
-
-
-
 ####124
 
-
-
 中级课程--At the Airport
-
-
 
 去机场的经历有时候会让人很紧张，手上拿着机票和行李还要找到你乘坐的航线！今天的课程我们会教你如何用英语托运行李，询问空乘人员你乘坐的航线在哪登机等等！祝您旅途愉快！ 
 - pieces  件
@@ -6349,17 +5195,9 @@ Catwoman  猫女
 - check luggage  托运行李
 
 
-
-
-
-
 ####125
 
-
-
 初级课程--My New Boyfriend
-
-
 
 EnglishPod中国的课程总是充满了爱，今天的课程我们要和大家讨论约会。赶快收听本课学习如何描述你的约会，告诉你的朋友他或她长得有多帅多美。你也可以学习一些用英语描述长相的词。这次的神秘约会对象是谁呢？赶快来看看吧！ 
 - good-looking  长相好的
@@ -6381,17 +5219,9 @@ EnglishPod中国的课程总是充满了爱，今天的课程我们要和大家�
 - handsome  英俊的
 
 
-
-
-
-
 ####126
 
-
-
 潘吉Jenny告诉你--耶鲁高材生来了(part 2)！
-
-
 
 今天和Jenny一起坐在录音室的又是耶鲁的高材生Alec李克。上次的特辑我们采访了Alec如何考入美国Ivy League常春藤名校，今天我们要来问问Alec丰富多彩的校园生活哦！ 
 - Ivy League  常春藤名校
@@ -6411,17 +5241,9 @@ EnglishPod中国的课程总是充满了爱，今天的课程我们要和大家�
 - network  人际关系
 
 
-
-
-
-
 ####127
 
-
-
 初级课程--Asking for Time Off
-
-
 
 今天我们的课程要讨论请假，但是我们的假期不多！这一课我们要学习怎么礼貌的向你的老板提出请假，学习有一些有用的词组帮助你请到假！ 
 - have a second  有时间
@@ -6437,17 +5259,9 @@ EnglishPod中国的课程总是充满了爱，今天的课程我们要和大家�
 - notify  通知
 
 
-
-
-
-
 ####128
 
-
-
 潘吉Jenny告诉你--小费
-
-
 
 对于大部分中国人来说付小费是在国外最让人头疼的事情之一。给多少小费？什么时候给小费？给的太多心疼，给的太少小气。今天潘吉和Jenny就要和你聊聊怎么给小费最恰当得体，又显得你很了解美国的文化。 
 - over-tip  小费给太多  /  under-tip  小费给太少
@@ -6479,17 +5293,9 @@ EnglishPod中国的课程总是充满了爱，今天的课程我们要和大家�
 - cheap  小气
 
 
-
-
-
-
 ####129
 
-
-
 潘吉Jenny告诉你--辛普森一家
-
-
 
 今天我们和大家聊聊美国人钟爱的文化，也是一部电视剧--辛普森一家！从1989年就开始播出的辛普森一家可能比我们有些听众的年龄都大，那它在美国深受欢迎经久不衰的原因是什么呢？赶快收听今天的节目吧！ 
 - The Simpsons  辛普森一家
@@ -6515,17 +5321,9 @@ when he made a mistake. 
     Maggie  是一个永远长不大的孩子。尽管许多年明显的过去了(有许多关于圣诞节的情节)，辛普森一家人却没有变老。
 
 
-
-
-
-
 ####130
 
-
-
 初级课程--Will You be My Girlfriend?
-
-
 
 你请了朋友赴约，现在时机到了。你等这个机会等了很久了，你想告诉她你的感受，告诉她你对她
 "
@@ -6547,17 +5345,9 @@ when he made a mistake. 
 - ask out  约某人出来
 
 
-
-
-
-
 ####131
 
-
-
 潘吉Jenny告诉你--欧洲杯
-
-
 
 最近欧洲杯进行的如火如荼！男人们讨论的除了足球还是足球。你是欧洲杯超级球迷吗？你支持哪支球队呢？听完节目给我们留言吧！ 
 - The Euro-Cup(The European Championship)  欧洲杯
@@ -6583,17 +5373,9 @@ when he made a mistake. 
 - game fixing  操控比赛
 
 
-
-
-
-
 ####132
 
-
-
 初级课程--Family Barbecue
-
-
 
 户外烧烤野餐会--BBQ是国外，特别是美国家庭非常流行的聚会形式。一般在院子里架起一个烧烤架，放上一些啤酒，聚会的气氛就自然出来了！看看今天的课程我们要怎么准备美味的Barbecue餐会吧！ 
 - barbecue  烧烤野餐会
@@ -6613,32 +5395,16 @@ when he made a mistake. 
 - napkins  餐巾纸
 
 
-
-
-
-
 ####133
 
-
-
 潘吉Jenny告诉你--耶鲁高材生来了(part 1)！
-
-
 
 今天是一集特别节目。Jenny的搭档不是潘吉，而是美国小伙儿Alec(李克)。他是耶鲁大学2年级的学生，今年暑假在EnglishPod中国实习。Jenny会问问Alec怎么才能上耶鲁呢？对于常春藤(Ivy League)学府好奇向往的你，千万别错过今天的节目！
 
 
-
-
-
-
 ####134
 
-
-
 潘吉Jenny告诉你--做蛋方法
-
-
 
 哈哈，今天潘吉和Jenny要和大家讨论美食，我们要讨论一个非常严肃的话题：蛋！外国人喜欢吃brunch，而brunch上最常见的食物就是蛋，而煎蛋的方式真是五花八门花样繁多，那你要怎么和别人表达
 "
@@ -6686,17 +5452,9 @@ when he made a mistake. 
 - tea egg  茶叶蛋
 
 
-
-
-
-
 ####135
 
-
-
 初级课程--Ordering Pasta
-
-
 
 你喜欢吃意大利面吗？你知道那么多花样繁多的意大利面都有怎样性感的名字吗？赶快收听今天的课程，我们要教你用最地道的英语在意大利餐厅点单，这样下次你再去的时候就不会对着菜单干瞪眼啦！ 
 - recommendations  推荐
@@ -6724,17 +5482,9 @@ when he made a mistake. 
 - cuisine  料理
 
 
-
-
-
-
 ####136
 
-
-
 潘吉Jenny告诉你--美式和英式英语的区别：名词
-
-
 
 美式英语和英式英语到底有什么区别呢？除了发音不同以外，很多用词都不同哦！今天的潘吉Jenny告诉你就要和大家讨论这个有趣的话题。但这这次的节目我们先说说名词在英联邦国家和北美国家的不同说法吧！ 
 - 足球：soccer(美)  football(英)
@@ -6762,17 +5512,9 @@ when he made a mistake. 
 - rubber: 安全套(美)  橡皮(英)
 
 
-
-
-
-
 ####137
 
-
-
 初级课程--Coffee Shop in Seattle
-
-
 
 喝咖啡是非常私人的事情。每个人对于咖啡喝咖啡饮品的口味都不同。在西雅图，人们非常喜欢咖啡以至于有时他们在点咖啡的独特方式有时候会让人摸不着头脑！ 看看本次课程是怎么解释的吧！ 
 - double  双份的
@@ -6802,17 +5544,9 @@ when he made a mistake. 
 - caffeine  咖啡因
 
 
-
-
-
-
 ####138
 
-
-
 潘吉Jenny告诉你--智能手机和平板电脑
-
-
 
 大家好，今天我们要和大家讨论一下智能手机！现在很多人都有智能手机和平板电脑，那你知道这些词用英文应该怎么说呢？另外，听完这期的
 "
@@ -6838,17 +5572,9 @@ when he made a mistake. 
 免费下载EnglishPod中国iPad客户端。Android手机、平板电脑用户可以去这里下载客户端。
 
 
-
-
-
-
 ####139
 
-
-
 初级课程 -- It's My Treat
-
-
 
 中国人懂礼数，也爱面子。在餐馆里，时常上演一桌人抢着付帐的场景。今天Jenny和John要告诉你，怎么用英语描述你想要买单的理由。另外请注意：AA制在英文里不是AA，也不是Go Dutch哦！到底怎么说呢？赶快听今天的课吧！ 
 - altogether  一起
@@ -6870,17 +5596,9 @@ when he made a mistake. 
 - mess up/screw up  弄糟
 
 
-
-
-
-
 ####140
 
-
-
 初级课程--Happy Hour
-
-
 
 本课的内容是关于全世界最受欢迎的饮料：啤酒！我们会教你一些关于啤酒的有用的词，并教你如何用地道的英语点啤酒。干杯！ 
 - pint  品脱
@@ -6912,17 +5630,9 @@ when he made a mistake. 
  
 
 
-
-
-
-
 ####141
 
-
-
 潘吉Jenny告诉你 -- 面试技巧
-
-
 
 上次的节目我们讨论了写简历的技巧，那面试的时候要注意什么呢？今天我们就来讨论一下吧。 
 - interview  面试
@@ -6938,17 +5648,9 @@ when he made a mistake. 
 - set your cell phone to silent  把手机设静音
 
 
-
-
-
-
 ####142
 
-
-
 潘吉Jenny告诉你--写英文简历
-
-
 
 你会用英语写简历吗？你知道写简历的大忌吗？如果你现在准备找工作或正在找工作一定不能错过这期的节目！ 
 - resume/CV 简历
@@ -6960,17 +5662,9 @@ when he made a mistake. 
 - cover letter/求职信
 
 
-
-
-
-
 ####143
 
-
-
 潘吉Jenny告诉你--用英文点菜
-
-
 
 你爱吃西餐吗？你看得懂英文菜单吗？你知道如何用英文点菜吗？今天潘吉和Jenny就要告诉你西餐里前菜、主菜、甜品英文怎么说，还有吃西餐的小贴士。
 
@@ -6997,17 +5691,9 @@ dessert/甜品
 share/分享
 
 
-
-
-
-
 ####144
 
-
-
 潘吉Jenny告诉你 -- 美剧
-
-
 
 你爱看美剧吗？你看美剧学英语吗？你知道什么美剧对你的英语学习有帮助吗？今天潘吉和Jenny就要和你谈谈时下最火最热最有用的学习英语的美剧。赶快收听吧！ 
 - comedy  喜剧
@@ -7029,17 +5715,9 @@ share/分享
 - reality TV  真人秀
 
 
-
-
-
-
 ####145
 
-
-
 初级课程－We Need a Bigger Budget
-
-
 
 外企员工和国外的总部沟通存在很多障碍。在这课里，你能学到如何向总部解释为什么中国分部需要更多的预算。学会用数据，调研结果，和地道专业的商务英语来向你的上司要更多的预算！ 
 - cultivate 培养
@@ -7061,17 +5739,9 @@ share/分享
 - loan 贷款
 
 
-
-
-
-
 ####146
 
-
-
 潘吉Jenny告诉你－5大最容易读错的品牌英语名
-
-
 
 Skype、Nike、UGG...你会怎么读这些大名鼎鼎的品牌呢？如果你觉得Skype是skypi, UGG是U.G.G,那么你真得听听今天的节目。潘吉、Jenny会总结5个最容易读错的品牌名，并告诉大家正确的发音。 
 5大误读品牌：
@@ -7087,17 +5757,9 @@ Skype、Nike、UGG...你会怎么读这些大名鼎鼎的品牌呢？如果你�
 - Skype
 
 
-
-
-
-
 ####147
 
-
-
 初级课程--Debit and Credit Cards Abroad
-
-
 
 当今全球化的现状下，带着大笔的当地现金和笨重的旅行支票消费的时代将要结束了。越来越多的自动取款机和国际商人扩大了信用卡和借记卡的市场。但是你怎么能肯定你的卡可以在你旅行的地方可以使用呢？赶快收听今天的课程学习如何在海外拉卡消费吧！ 
 debit card   借记卡
@@ -7111,17 +5773,9 @@ Mastercard   万事达卡
 Unionpay   银联
 
 
-
-
-
-
 ####148
 
-
-
 潘吉Jenny告诉你－All about women!
-
-
 
 EnglishPod的中英文双语脱口秀。每周四，听潘吉、Jenny跟你分享你不得不知的英语窍门和欧美职场文化。 
 三八妇女节，我们送上女人特集。今天，潘吉、Jenny会告诉你怎么说我们身边的女人们：嗲女、剩女、作女、宅女......
@@ -7137,7 +5791,5 @@ leftover women
 "
 /剩女 
 high maintenance/作
-
-
 (\d{1,2}\.)
 

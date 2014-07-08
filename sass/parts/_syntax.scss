@@ -14,7 +14,6 @@ $solar-violet:    #6c71c4 !default;
 $solar-blue:      #268bd2 !default;
 $solar-cyan:      #2aa198 !default;
 $solar-green:     #859900 !default;
-
 $solarized: light !default;
 
 @if $solarized == light {
@@ -36,9 +35,10 @@ $solarized: light !default;
   $base1:   $_base01;
   $base2:   $_base02;
   $base3:   $_base03;
+ 
 }
 
-$pre-bg: $color-gray04;
+$pre-bg: rgb(30,31,41);
 $pre-border: $color-gray03;
 
 article{
@@ -48,6 +48,7 @@ article{
 		font-family: $font-mono;
 	}
 	code{
+		color: rgb(255,89,187);
 		font-size: 0.9em;
 		padding: 1px 3px;
 		margin: 0 3px;
@@ -71,7 +72,7 @@ article{
 }
 
 figure.code{
-	background: #ebebeb;
+	background: $pre-bg;
 	border: 1px solid $pre-border;
 	margin-top: 10px;
 	padding: 5px 15px;
@@ -105,9 +106,10 @@ figure.code{
 		overflow-x: auto;
 	}
 	.line-numbers{
-		border-right: 1px solid $pre-border;
+		border-right: 2px solid #18ee88;
 		font-family: $font-mono;
 		padding-right: 15px;
+		color: rgb(125,125,125);
 		text-align: right;
 	}
 	table{
@@ -206,7 +208,7 @@ figure.code, .gist-highlight{
 	}
 	/* Keyword */
 	.o {
-		color:$base1 !important;
+		color:rgb(125,125,125) !important;
 		font-weight: bold !important;
 	}
 	/* Operator */

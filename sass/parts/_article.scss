@@ -130,20 +130,21 @@ article{
 			border: none;
 		}
 		table{
-			background: #ebebeb;
+			background: rgba(247,247,247,0);
 			border: 1px solid $color-gray03;
 			border-spacing: 0;
 			margin-top: 10px;
 			th{
-				background: $color-gray03;
-				padding: 0 15px;
+				background: #26ADE4;
+				padding: 5px;
+				text-align: center;
 			}
 			td{
-				text-align: center;
+				text-align: left;
 			}
 			tr{
 				&:nth-of-type(2n){
-					background: #d5d5d5;
+					background: #F7FDFA;
 				}
 			}
 		}
