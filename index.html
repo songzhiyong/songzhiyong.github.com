@@ -114,6 +114,274 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/07/11/android-application-class-being-called-twice/">
+		
+			Android Application Class Being Called Twice</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice">http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice</a></p>
+
+<p>Yes if you used android:process then you have it running in a separate process, so when the service starts a new process is started for it and thus a new Application object for that process needs to be created.</p>
+
+<p>But there is a more fundamental problem &mdash; it is just not right for an Application object to start one of its services. It is important that you don&rsquo;t confuse Application with how you may think of an &ldquo;application&rdquo; in another OS. The Application object does not drive the app. It is just a global of state for the app in that process. In fact, the Application object is completely superfluous &mdash; you never need one to right an Android application. Generally I actually recommend that people don&rsquo;t use it. It is more likely to cause trouble than anything else.</p>
+
+<p>Another way to put this: what really defines an application is its collection of activity, service, receiver, and provider tags. Those are what are &ldquo;launched.&rdquo; All an Application is, is something that is created as part of initializing an application&rsquo;s process. It has no lifecycle of its own, it is just there to serve the other real components in the app.</p>
+
+<p>So just ignore Application when designing your app; it will reduce confusion. (In its place, I prefer to use global singletons for such state.)</p>
+
+<p>Also as a general rule, I recommend not using android:process. There are certainly some uses for it, but the vast majority of the time it is not needed and just makes an application use more RAM, less efficient, and harder to write (since you can&rsquo;t take advantage of globals in a single process). It should be obvious to you if you reach a place where there is actually a good reason to use android:process.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-11T17:50:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/11/android-application-class-being-called-twice//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/11/git-cheatsheet/">
+		
+			Git Cheatsheet</a>
+	</h2>
+	<div class="entry-content">
+		
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-11T11:57:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/11/git-cheatsheet//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/11/learn-english-4/">
+		
+			Learn English (4)</a>
+	</h2>
+	<div class="entry-content">
+		<h4>1</h4>
+
+<p>很多出国留学的同学在毕业之前面临的一个很大的问题就是：是留在国外还是回到国内？</p>
+
+<p>今天我们的节目请到了一位海归 Vivian 来谈谈她当时的择业经历。</p>
+
+<p>如果有任何海归找工作的问题都欢迎给我们留言哦！</p>
+
+<ol>
+<li><p>returnee  海归</p></li>
+<li><p>Ireland  爱尔兰</p></li>
+<li><p>accent  口音</p></li>
+<li><p>foundation program  预科</p></li>
+<li><p>major  专业</p></li>
+<li><p>marketing  市场营销</p></li>
+<li><p>homesick  想家，乡愁</p></li>
+<li><p>job hunting  找工作</p></li>
+<li><p>resume  简历</p></li>
+<li><p>job site  招聘网站</p></li>
+<li><p>cover letter  求职信</p></li>
+<li><p>proactive  积极主动</p></li>
+<li><p>corporate communication  企业传播</p></li>
+<li><p>internal  内部的</p></li>
+<li><p>receptionist  前台</p></li>
+</ol>
+
+
+<p> </p>
+
+<h4>2</h4>
+
+<p>美国独立日&mdash;潘吉 Jenny 告诉你</p>
+
+<p>你知道美国国庆时几月几号吗？你知道美国国庆为什么叫“独立日”吗？你知道，美国人怎么庆祝国庆吗？赶快听听今天的节目吧！</p>
+
+<p> </p>
+
+<ol>
+<li><p>Independence Day  独立日</p></li>
+<li><p>4th of July  7 月 4 号</p></li>
+<li><p>I&rsquo;m glad you could make it.  你能来我真是太高兴了。</p></li>
+</ol>
+
+
+<p>4. I&rsquo;ve never been to a celebration for the 4th of July.</p>
+
+<pre><code>我从来没有参加过 7 月 4 日的庆祝活动。
+</code></pre>
+
+<p>5. national holiday  国定假日</p>
+
+<ol>
+<li>the founding fathers  建国元勋</li>
+</ol>
+
+
+<p>7. the Declaration of Independence  《独立宣言》</p>
+
+<ol>
+<li><p>Independence Day is a national holiday to remember when the founding fathers of the United States signed the Declaration of Independence to separate from Great Britain.</p>
+
+<p> 真的吗？独立日这个全国假日是为了纪念美国的建国元勋签署《独立宣言》，从大不列颠独立的事件。</p></li>
+</ol>
+
+
+<p>9. parade  游行</p>
+
+<p>10. picnic  野餐</p>
+
+<p>11. fireworks display  烟火表演</p>
+
+<p>12. I&rsquo;m looking forward to seeing that.  我很期待见识这一切。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-11T10:33:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/english/'>english</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/11/learn-english-4//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot/">
+		
+			QUICK SURROUND WITH (TRY/CATCH, if ELSE..)</a>
+	</h2>
+	<div class="entry-content">
+		<p>When you want to catch exceptions thrown by some code fragment, select it in the
+editor, press</p>
+
+<blockquote><p>Ctrl+Alt+T</p></blockquote>
+
+<p>(Code | Surround With) and choose try / catch. The catch blocks for all the exceptions thrown inside the block will be generated automatically.</p>
+
+<p>You can customize the bodies of the generated catch blocks on the Code tab of File | Settings | File Templates.</p>
+
+<p>Use other items in the list to surround with other constructs.<br/></p>
+
+<p><img src="/images/2014/07/surround.png" alt="" /><br/></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-08T12:05:00+08:00" pubdate data-updated="true">Jul 8<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong/">
 		
 			[转] Layout Inflation不能这么用</a>
@@ -917,6 +1185,14 @@ $(document).ready(
 <td> 在应用程序中的窗口间切换</td>
 </tr>
 <tr>
+<td>Ctrl + Tab                  </td>
+<td> 同一个应用程序中的页面或工作空间切换</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Tab          </td>
+<td> 同上，反方向</td>
+</tr>
+<tr>
 <td>Ctrl + Shift + power        </td>
 <td> 关闭显示器</td>
 </tr>
@@ -1012,6 +1288,14 @@ $(document).ready(
 <td>Cmd + Shift + F          </td>
 <td> 全局查找</td>
 </tr>
+<tr>
+<td>Cmd + R                  </td>
+<td> 查找替换</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+L               </td>
+<td> 格式化代码</td>
+</tr>
 </tbody>
 </table>
 
@@ -1058,10 +1342,11 @@ $(document).ready(
 			高效的使用Google</a>
 	</h2>
 	<div class="entry-content">
-		<p><img src="/images/2014/07/how-to-use-google.jpg" alt="" /><br/></p>
+		<p><img src="/images/2014/07/thumb_google.jpeg" alt="" /><br/></p>
+
 
 		
-		
+		<a href="/blog/2014/07/03/how-use-google-efficiently/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -1090,327 +1375,6 @@ $(document).ready(
 
 	
 		<span class="comments"><a href="/blog/2014/07/03/how-use-google-efficiently//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/03/learn-english-3/">
-		
-			Learn English (3)</a>
-	</h2>
-	<div class="entry-content">
-		<p>很多工作一段时间的人都想通过读 MBA 来开拓自己的职业生涯，做到高级管理层职位。</p>
-
-<ol>
-<li><p>MBA (Master Of Business Administration)  工商管理学硕士</p></li>
-<li><p>broaden your prospective  拓展你的未来</p></li>
-<li><p>case study  案例分析</p></li>
-<li><p>networks  人脉</p></li>
-<li><p>EMBA (Executive Master Of Business Administration)  高级管理人员工商管理硕士</p></li>
-<li><p>soft skill  软能力</p></li>
-<li><p>leadership development  领导力发展</p></li>
-<li><p>C level  领导层</p></li>
-<li><p>alumni  校友会</p></li>
-<li><p>deadline  最后期限</p></li>
-<li><p>application  申请表</p></li>
-</ol>
-
-
-<hr />
-
-<ul>
-<li>alma mater  母校</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-03T10:29:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/english/'>english</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/03/learn-english-3//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/02/13-best-php-frameworks/">
-		
-			13个最佳php框架</a>
-	</h2>
-	<div class="entry-content">
-		<p>创建应用程序是一个复杂且耗时的过程，如果开发者能利用好框架，那么就可以在一个统一的结构基础上通过重用通用组件和模块来快速地做好项目。省掉创建通用组件的时间和人力，软件开发者可以把更多的时间投入到具体的项目上去，这样开发者就能专注于开发高质量的代码。</p>
-
-<p>现在，我们就来介绍 13 个最佳 PHP 框架来帮助开发者建立互操作或灵活的应用。</p>
-
-<ol>
-<li><p><a href="http://laravel.com/">Laravel</a></p>
-
-<p> 这是一款简洁、“优雅”的 PHP 开发框架，可谓是为 WEB 艺术家创造的。它可以让开发者从面条一样杂乱的代码中得到解脱，轻松构建一个完美的网络应用程序，且使得每行代码都简洁、富于表达力。Laravel 自带了强大的 Eloquent ORM 和迁移工具，能够完美地与 MySQL、Postgres、SQL Server 和 SQLite 协同工作。Laravel 从开始就将测试作为重点功能，提供灵活的 IoC 容器、集成 PHPUnit 的测试工具。更方便的是 Laravel 适应所有级别的开发工作。</p></li>
-<li><p>CodeIgniter</p>
-
-<p> CodeIgniter 是一个基于 MVC 模式、小巧但功能强大的 PHP 框架，作为一个简单而“优雅”的工具包，它可以为 PHP 程序员建立功能完善的 Web 应用程序。如果你是一名使用共享主机，且为客户所要求的期限而烦恼的开发人员，如果你已经厌倦了那些傻大笨粗的框架，那么 CodeIgniter 就是你所需要的。CodeIgniter 几乎 0 配置、不需坚守限制性编码规则、不需使用命令行，并广泛兼容标准主机上的各种 PHP 版本和配置，有着清晰、完善的文档。</p></li>
-</ol>
-
-
-
-		
-		<a href="/blog/2014/07/02/13-best-php-frameworks/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-02T01:08:00+08:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/php/'>php</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/02/13-best-php-frameworks//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/01/learn-english-2/">
-		
-			Learn English (2)</a>
-	</h2>
-	<div class="entry-content">
-		<p>&lt;潘吉 Jenny 告诉你> , just jot down history!</p>
-
-<h4>1</h4>
-
-<p>球星名字怎么读？&mdash;潘吉 Jenny 告诉你</p>
-
-<p>同学们！世界杯至今大家熬夜看了几场球？</p>
-
-<p>哪个球员是你的男神？你知道你的男神名字的正确发音吗？</p>
-
-<ul>
-<li><p>pull an all-nighter  熬夜</p></li>
-<li><p>soccer fan  球迷</p></li>
-<li><p>World Cup fan  世界杯球迷</p></li>
-<li><p>nicknames  昵称，绰号</p></li>
-<li><p>Portugal  葡萄牙</p></li>
-<li><p>Christiano Ronaldo  克里斯蒂亚诺·罗纳尔多(C 罗)</p></li>
-<li><p>Brazilian Portuguese  巴西葡萄牙语</p></li>
-<li><p>striker  前锋</p></li>
-<li><p>Neymar  内马尔</p></li>
-<li><p>Top Scorer List  射手榜</p></li>
-<li><p>Luis Suarez  路易斯·苏亚雷斯(苏神)</p></li>
-<li><p>He&rsquo;s the one that bites someone.  他就是咬人的那个。</p></li>
-<li><p>Uruguay  乌拉圭</p></li>
-<li><p>sneaky  偷偷摸摸的</p></li>
-<li><p>cheap  赖皮</p></li>
-<li><p>Mario Balotelli  马里奥·巴洛特利(巴神)</p></li>
-<li><p>stands out  出众的</p></li>
-<li><p>Argentina  阿根廷</p></li>
-<li><p>Lionel Messi  梅西</p></li>
-<li><p>messy  混乱的</p></li>
-<li><p>the Netherlands  荷兰</p></li>
-<li><p>Arjen Robben  阿尔杨·鲁本</p></li>
-<li><p>Robin van Persie  范佩西</p></li>
-<li><p>hat-trick  帽子戏法</p></li>
-<li><p>Thomas Muller  托马斯·穆勒</p></li>
-<li><p>veteran player  老将</p></li>
-<li><p>Andrea Pirlo  安德烈亚·皮尔洛</p></li>
-<li><p>goalie  门将</p></li>
-<li><p>Gianluigi Buffon  吉安路易吉·布冯</p></li>
-</ul>
-
-
-<p> </p>
-
-
-		
-		<a href="/blog/2014/07/01/learn-english-2/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-01T13:23:00+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/english/'>english</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/01/learn-english-2//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/28/android-facebook-sdk/">
-		
-			Android:Facebook SDK</a>
-	</h2>
-	<div class="entry-content">
-		<p>The following samples are available in the SDK:</p>
-
-<ul>
-<li><h3>Basic samples</h3>
-
-<ul>
-<li><strong>ProfilePictureSample</strong>: demonstrates non-logged-in usage of the profile picture control</li>
-<li><strong>FriendPickerSample</strong>: demonstrates usage of the native friend picker to choose amongst the user&rsquo;s friends</li>
-<li><strong>PlacePickerSample</strong>: demonstrates logged-in usage of the place picker control</li>
-<li><strong>GraphAPISample</strong>: demonstrates requests to the Graph API</li>
-</ul>
-</li>
-<li><h3>Feature samples</h3>
-
-<ul>
-<li><strong>SessionLoginSample</strong>: demonstrates detailed login flow using the SDK</li>
-<li><strong>JustRequestSample</strong>: demonstrates logged-in user making single and batched Facebook API requests</li>
-<li><strong>SwitchUserSample</strong>: demonstrates an approach to allow switching between multiple users</li>
-<li><strong>AdUnitsSample and NativeAdSample</strong>: shows how to load and display ads from Facebook inside your app</li>
-</ul>
-</li>
-<li><h3>Complete samples</h3>
-
-<ul>
-<li><strong>HelloFacebookSample</strong>: an all-round sample that demonstrates profile access, status updates and photo uploading</li>
-<li><strong>Scrumptious</strong>: demonstrates the use of login, requests, pickers, picture uploads, and Open Graph publishing</li>
-<li><strong>RPS</strong>: demonstrates the use of the Native Share Dialog, Open Graph publishing, pickers, invites, and deep linking.</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>GraphObject
-</span><span class='line'>{ 
-</span><span class='line'>  graphObjectClass=GraphUser,
-</span><span class='line'>  state={
-</span><span class='line'>          "id":"510224139107412",
-</span><span class='line'>          "first_name":"Song",
-</span><span class='line'>          "timezone":8,
-</span><span class='line'>          "verified":true,
-</span><span class='line'>          "name":"Song Zhiyong",
-</span><span class='line'>          "locale":"en_US",
-</span><span class='line'>          "link":"https:\/\/www.facebook.com\/app_scoped_user_id\/510224139107412\/",
-</span><span class='line'>          "last_name":"Zhiyong",
-</span><span class='line'>          "gender":"male",
-</span><span class='line'>          "updated_time":"2014-06-14T12:30:41+0000"
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p><unfinished></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-28T18:54:00+08:00" pubdate data-updated="true">Jun 28<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>android</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/28/android-facebook-sdk//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

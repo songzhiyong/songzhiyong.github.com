@@ -124,6 +124,351 @@ $(document).ready(
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
           <article>
+  <h2><a href="/blog/2014/07/11/android-application-class-being-called-twice/">Android Application Class Being Called Twice</a></h2>
+  
+  <p>
+    <p><a href="http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice">http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice</a></p>
+
+
+
+
+<p>Yes if you used android:process then you have it running in a separate process, so when the service starts a new process is started for it and thus a new Application object for that process needs to be created.</p>
+
+
+
+
+<p>But there is a more fundamental problem &mdash; it is just not right for an Application object to start one of its services. It is important that you don&rsquo;t confuse Application with how you may think of an &ldquo;application&rdquo; in another OS. The Application object does not drive the app. It is just a global of state for the app in that process. In fact, the Application object is completely superfluous &mdash; you never need one to right an Android application. Generally I actually recommend that people don&rsquo;t use it. It is more likely to cause trouble than anything else.</p>
+
+
+
+
+<p>Another way to put this: what really defines an application is its collection of activity, service, receiver, and provider tags. Those are what are &ldquo;launched.&rdquo; All an Application is, is something that is created as part of initializing an application&rsquo;s process. It has no lifecycle of its own, it is just there to serve the other real components in the app.</p>
+
+
+
+
+<p>So just ignore Application when designing your app; it will reduce confusion. (In its place, I prefer to use global singletons for such state.)</p>
+
+
+
+
+<p>Also as a general rule, I recommend not using android:process. There are certainly some uses for it, but the vast majority of the time it is not needed and just makes an application use more RAM, less efficient, and harder to write (since you can&rsquo;t take advantage of globals in a single process). It should be obvious to you if you reach a place where there is actually a good reason to use android:process.</p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-11T17:50:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/07/11/git-cheatsheet/">Git Cheatsheet</a></h2>
+  
+  <p>
+    
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-11T11:57:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/07/11/learn-english-4/">Learn English (4)</a></h2>
+  
+  <p>
+    <h4>1</h4>
+
+
+
+
+<p>很多出国留学的同学在毕业之前面临的一个很大的问题就是：是留在国外还是回到国内？</p>
+
+
+
+
+<p>今天我们的节目请到了一位海归 Vivian 来谈谈她当时的择业经历。</p>
+
+
+
+
+<p>如果有任何海归找工作的问题都欢迎给我们留言哦！</p>
+
+
+
+
+<ol>
+<li><p>returnee  海归</p></li>
+<li><p>Ireland  爱尔兰</p></li>
+<li><p>accent  口音</p></li>
+<li><p>foundation program  预科</p></li>
+<li><p>major  专业</p></li>
+<li><p>marketing  市场营销</p></li>
+<li><p>homesick  想家，乡愁</p></li>
+<li><p>job hunting  找工作</p></li>
+<li><p>resume  简历</p></li>
+<li><p>job site  招聘网站</p></li>
+<li><p>cover letter  求职信</p></li>
+<li><p>proactive  积极主动</p></li>
+<li><p>corporate communication  企业传播</p></li>
+<li><p>internal  内部的</p></li>
+<li><p>receptionist  前台</p></li>
+</ol>
+
+
+
+
+<p> </p>
+
+
+
+
+<h4>2</h4>
+
+
+
+
+<p>美国独立日&mdash;潘吉 Jenny 告诉你</p>
+
+
+
+
+<p>你知道美国国庆时几月几号吗？你知道美国国庆为什么叫“独立日”吗？你知道，美国人怎么庆祝国庆吗？赶快听听今天的节目吧！</p>
+
+
+
+
+<p> </p>
+
+
+
+
+<ol>
+<li><p>Independence Day  独立日</p></li>
+<li><p>4th of July  7 月 4 号</p></li>
+<li><p>I&rsquo;m glad you could make it.  你能来我真是太高兴了。</p></li>
+</ol>
+
+
+
+
+<p>4. I&rsquo;ve never been to a celebration for the 4th of July.</p>
+
+
+
+
+<pre><code>我从来没有参加过 7 月 4 日的庆祝活动。
+</code></pre>
+
+
+
+
+<p>5. national holiday  国定假日</p>
+
+
+
+
+<ol>
+<li>the founding fathers  建国元勋</li>
+</ol>
+
+
+
+
+<p>7. the Declaration of Independence  《独立宣言》</p>
+
+
+
+
+<ol>
+<li><p>Independence Day is a national holiday to remember when the founding fathers of the United States signed the Declaration of Independence to separate from Great Britain.</p>
+
+<p> 真的吗？独立日这个全国假日是为了纪念美国的建国元勋签署《独立宣言》，从大不列颠独立的事件。</p></li>
+</ol>
+
+
+
+
+<p>9. parade  游行</p>
+
+
+
+
+<p>10. picnic  野餐</p>
+
+
+
+
+<p>11. fireworks display  烟火表演</p>
+
+
+
+
+<p>12. I&rsquo;m looking forward to seeing that.  我很期待见识这一切。</p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-11T10:33:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/english/'>english</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot/">QUICK SURROUND WITH (TRY/CATCH, if ELSE..)</a></h2>
+  
+  <p>
+    <p>When you want to catch exceptions thrown by some code fragment, select it in the
+editor, press</p>
+
+
+
+
+<blockquote><p>Ctrl+Alt+T</p></blockquote>
+
+
+
+
+<p>(Code | Surround With) and choose try / catch. The catch blocks for all the exceptions thrown inside the block will be generated automatically.</p>
+
+
+
+
+<p>You can customize the bodies of the generated catch blocks on the Code tab of File | Settings | File Templates.</p>
+
+
+
+
+<p>Use other items in the list to surround with other constructs.<br/></p>
+
+
+
+
+<p><img src="/images/2014/07/surround.png" alt="" /><br/></p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-08T12:05:00+08:00" pubdate data-updated="true">Jul 8<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
   <h2><a href="/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong/">[转] Layout Inflation不能这么用</a></h2>
   
   <p>
@@ -1106,6 +1451,14 @@ $(document).ready(
 <td> 在应用程序中的窗口间切换</td>
 </tr>
 <tr>
+<td>Ctrl + Tab                  </td>
+<td> 同一个应用程序中的页面或工作空间切换</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Tab          </td>
+<td> 同上，反方向</td>
+</tr>
+<tr>
 <td>Ctrl + Shift + power        </td>
 <td> 关闭显示器</td>
 </tr>
@@ -1211,6 +1564,14 @@ $(document).ready(
 <td>Cmd + Shift + F          </td>
 <td> 全局查找</td>
 </tr>
+<tr>
+<td>Cmd + R                  </td>
+<td> 查找替换</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+L               </td>
+<td> 格式化代码</td>
+</tr>
 </tbody>
 </table>
 
@@ -1256,7 +1617,9 @@ $(document).ready(
   <h2><a href="/blog/2014/07/03/how-use-google-efficiently/">高效的使用Google</a></h2>
   
   <p>
-    <p><img src="/images/2014/07/how-to-use-google.jpg" alt="" /><br/></p>
+    <p><img src="/images/2014/07/thumb_google.jpeg" alt="" /><br/></p>
+
+
 
 
   </p>
@@ -1285,6 +1648,8 @@ $(document).ready(
 
   </span>
 
+  
+    <a class="full-article-link pull-right" rel="full-article" href="/blog/2014/07/03/how-use-google-efficiently/">Read on &rarr;</a>
   
 </article>
 

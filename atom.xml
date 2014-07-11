@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-08T01:43:22+08:00</updated>
+  <updated>2014-07-11T19:25:26+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,134 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android Application class being called twice]]></title>
+    <link href="http://ziso.me/blog/2014/07/11/android-application-class-being-called-twice/"/>
+    <updated>2014-07-11T17:50:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/11/android-application-class-being-called-twice</id>
+    <content type="html"><![CDATA[<p><a href="http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice">http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice</a></p>
+
+<p>Yes if you used android:process then you have it running in a separate process, so when the service starts a new process is started for it and thus a new Application object for that process needs to be created.</p>
+
+<p>But there is a more fundamental problem &mdash; it is just not right for an Application object to start one of its services. It is important that you don&rsquo;t confuse Application with how you may think of an &ldquo;application&rdquo; in another OS. The Application object does not drive the app. It is just a global of state for the app in that process. In fact, the Application object is completely superfluous &mdash; you never need one to right an Android application. Generally I actually recommend that people don&rsquo;t use it. It is more likely to cause trouble than anything else.</p>
+
+<p>Another way to put this: what really defines an application is its collection of activity, service, receiver, and provider tags. Those are what are &ldquo;launched.&rdquo; All an Application is, is something that is created as part of initializing an application&rsquo;s process. It has no lifecycle of its own, it is just there to serve the other real components in the app.</p>
+
+<p>So just ignore Application when designing your app; it will reduce confusion. (In its place, I prefer to use global singletons for such state.)</p>
+
+<p>Also as a general rule, I recommend not using android:process. There are certainly some uses for it, but the vast majority of the time it is not needed and just makes an application use more RAM, less efficient, and harder to write (since you can&rsquo;t take advantage of globals in a single process). It should be obvious to you if you reach a place where there is actually a good reason to use android:process.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Cheatsheet]]></title>
+    <link href="http://ziso.me/blog/2014/07/11/git-cheatsheet/"/>
+    <updated>2014-07-11T11:57:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/11/git-cheatsheet</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn English (4)]]></title>
+    <link href="http://ziso.me/blog/2014/07/11/learn-english-4/"/>
+    <updated>2014-07-11T10:33:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/11/learn-english-4</id>
+    <content type="html"><![CDATA[<h4>1</h4>
+
+<p>很多出国留学的同学在毕业之前面临的一个很大的问题就是：是留在国外还是回到国内？</p>
+
+<p>今天我们的节目请到了一位海归 Vivian 来谈谈她当时的择业经历。</p>
+
+<p>如果有任何海归找工作的问题都欢迎给我们留言哦！</p>
+
+<ol>
+<li><p>returnee  海归</p></li>
+<li><p>Ireland  爱尔兰</p></li>
+<li><p>accent  口音</p></li>
+<li><p>foundation program  预科</p></li>
+<li><p>major  专业</p></li>
+<li><p>marketing  市场营销</p></li>
+<li><p>homesick  想家，乡愁</p></li>
+<li><p>job hunting  找工作</p></li>
+<li><p>resume  简历</p></li>
+<li><p>job site  招聘网站</p></li>
+<li><p>cover letter  求职信</p></li>
+<li><p>proactive  积极主动</p></li>
+<li><p>corporate communication  企业传播</p></li>
+<li><p>internal  内部的</p></li>
+<li><p>receptionist  前台</p></li>
+</ol>
+
+
+<p> </p>
+
+<h4>2</h4>
+
+<p>美国独立日&mdash;潘吉 Jenny 告诉你</p>
+
+<p>你知道美国国庆时几月几号吗？你知道美国国庆为什么叫“独立日”吗？你知道，美国人怎么庆祝国庆吗？赶快听听今天的节目吧！</p>
+
+<p> </p>
+
+<ol>
+<li><p>Independence Day  独立日</p></li>
+<li><p>4th of July  7 月 4 号</p></li>
+<li><p>I&rsquo;m glad you could make it.  你能来我真是太高兴了。</p></li>
+</ol>
+
+
+<p>4. I&rsquo;ve never been to a celebration for the 4th of July.</p>
+
+<pre><code>我从来没有参加过 7 月 4 日的庆祝活动。
+</code></pre>
+
+<p>5. national holiday  国定假日</p>
+
+<ol>
+<li>the founding fathers  建国元勋</li>
+</ol>
+
+
+<p>7. the Declaration of Independence  《独立宣言》</p>
+
+<ol>
+<li><p>Independence Day is a national holiday to remember when the founding fathers of the United States signed the Declaration of Independence to separate from Great Britain.</p>
+
+<p> 真的吗？独立日这个全国假日是为了纪念美国的建国元勋签署《独立宣言》，从大不列颠独立的事件。</p></li>
+</ol>
+
+
+<p>9. parade  游行</p>
+
+<p>10. picnic  野餐</p>
+
+<p>11. fireworks display  烟火表演</p>
+
+<p>12. I&rsquo;m looking forward to seeing that.  我很期待见识这一切。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[QUICK SURROUND WITH (TRY/CATCH, IF ELSE..)]]></title>
+    <link href="http://ziso.me/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot/"/>
+    <updated>2014-07-08T12:05:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot</id>
+    <content type="html"><![CDATA[<p>When you want to catch exceptions thrown by some code fragment, select it in the
+editor, press</p>
+
+<blockquote><p>Ctrl+Alt+T</p></blockquote>
+
+<p>(Code | Surround With) and choose try / catch. The catch blocks for all the exceptions thrown inside the block will be generated automatically.</p>
+
+<p>You can customize the bodies of the generated catch blocks on the Code tab of File | Settings | File Templates.</p>
+
+<p>Use other items in the list to surround with other constructs.<br/></p>
+
+<p><img src="http://ziso.me/images/2014/07/surround.png" alt="" /><br/></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[[转] Layout Inflation不能这么用]]></title>
@@ -676,6 +804,14 @@
 <td> 在应用程序中的窗口间切换</td>
 </tr>
 <tr>
+<td>Ctrl + Tab                  </td>
+<td> 同一个应用程序中的页面或工作空间切换</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Tab          </td>
+<td> 同上，反方向</td>
+</tr>
+<tr>
 <td>Ctrl + Shift + power        </td>
 <td> 关闭显示器</td>
 </tr>
@@ -771,6 +907,14 @@
 <td>Cmd + Shift + F          </td>
 <td> 全局查找</td>
 </tr>
+<tr>
+<td>Cmd + R                  </td>
+<td> 查找替换</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+L               </td>
+<td> 格式化代码</td>
+</tr>
 </tbody>
 </table>
 
@@ -782,7 +926,12 @@
     <link href="http://ziso.me/blog/2014/07/03/how-use-google-efficiently/"/>
     <updated>2014-07-03T18:28:00+08:00</updated>
     <id>http://ziso.me/blog/2014/07/03/how-use-google-efficiently</id>
-    <content type="html"><![CDATA[<p><img src="http://ziso.me/images/2014/07/how-to-use-google.jpg" alt="" /><br/></p>
+    <content type="html"><![CDATA[<p><img src="http://ziso.me/images/2014/07/thumb_google.jpeg" alt="" /><br/></p>
+
+<!-- more -->
+
+
+<p><img src="http://ziso.me/images/2014/07/how-to-use-google.jpg" alt="" /><br/></p>
 ]]></content>
   </entry>
   
@@ -3447,7 +3596,7 @@ entrepreneur  企业家</p></li>
 
 <p>许多人遇到外国人的时候就感觉自己十几年英语白读了，不是语言上的问题，只是除了工作上的必要沟通私底下就不知道说什么才好。今天潘吉和 Jenny 要和你聊聊和老外 small talk 的时候要注意些什么，聊什么话题最好？</p>
 
-<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#109;&#101;&#101;&#116;&#x75;&#112;&#64;&#x6f;&#112;&#101;&#x6e;&#x6c;&#97;&#x6e;&#x67;&#x75;&#97;&#103;&#x65;&#46;&#99;&#111;&#x6d;">&#109;&#x65;&#101;&#116;&#117;&#x70;&#64;&#x6f;&#112;&#x65;&#x6e;&#108;&#97;&#110;&#x67;&#x75;&#97;&#x67;&#101;&#x2e;&#x63;&#x6f;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
+<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x6d;&#101;&#x65;&#x74;&#x75;&#112;&#64;&#x6f;&#x70;&#101;&#x6e;&#108;&#x61;&#x6e;&#103;&#117;&#x61;&#x67;&#x65;&#x2e;&#99;&#111;&#109;">&#109;&#101;&#x65;&#116;&#117;&#112;&#x40;&#111;&#x70;&#x65;&#x6e;&#x6c;&#97;&#x6e;&#x67;&#x75;&#x61;&#103;&#101;&#x2e;&#x63;&#x6f;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
 &ndash; awkward  尴尬</p>
 
 <ul>
@@ -3519,7 +3668,7 @@ religion  宗教信仰</p></li>
 
 <p>潘吉 Jenny 告诉你&mdash;OpenLanguage 英语俱乐部召集组织者</p>
 
-<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x6d;&#101;&#x65;&#x74;&#117;&#x70;&#x40;&#111;&#112;&#x65;&#x6e;&#108;&#x61;&#x6e;&#103;&#117;&#97;&#103;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#x6d;&#x65;&#101;&#x74;&#x75;&#112;&#x40;&#x6f;&#x70;&#x65;&#110;&#108;&#x61;&#110;&#x67;&#x75;&#97;&#103;&#x65;&#46;&#99;&#111;&#109;</a> 报名吧！
+<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#109;&#101;&#x65;&#116;&#117;&#x70;&#64;&#111;&#x70;&#101;&#x6e;&#x6c;&#x61;&#110;&#103;&#117;&#x61;&#x67;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x6d;&#101;&#101;&#116;&#117;&#112;&#64;&#x6f;&#x70;&#101;&#110;&#x6c;&#97;&#x6e;&#x67;&#117;&#x61;&#x67;&#101;&#46;&#99;&#111;&#109;</a> 报名吧！
 如果你有意愿成为 OpenLanguage 英语俱乐部的组织者，请发送邮件到 meetup@openlanguage.com，留下您的姓名，电话及所在城市。活动的组织者会有丰厚的奖品及优惠等你拿哦！</p>
 
 <p>独乐乐不如众乐乐，OpenLanguage 英语俱乐部六月活动将于于 6 月 29 号(周六)在上海举办，主题即为“Small Talk 和老外闲话聊聊”，你可以自己前来，或带上你的好友一起前来！</p>
@@ -4326,7 +4475,7 @@ New Zealand  新西兰</li>
 
 <p>潘吉 Jenny 告诉你&mdash;在英语课上用 EnglishPod 中国！</p>
 
-<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x73;&#117;&#112;&#x70;&#x6f;&#114;&#x74;&#64;&#x6f;&#112;&#x65;&#110;&#x6c;&#97;&#110;&#103;&#117;&#97;&#x67;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#x73;&#117;&#112;&#x70;&#111;&#x72;&#116;&#x40;&#111;&#x70;&#101;&#x6e;&#x6c;&#97;&#110;&#103;&#117;&#x61;&#103;&#x65;&#46;&#99;&#111;&#109;</a> 了解详情。
+<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x73;&#117;&#x70;&#x70;&#111;&#114;&#116;&#64;&#x6f;&#x70;&#101;&#x6e;&#108;&#x61;&#110;&#x67;&#x75;&#x61;&#x67;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#x40;&#x6f;&#112;&#x65;&#x6e;&#108;&#x61;&#110;&#x67;&#117;&#97;&#103;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a> 了解详情。
 &ndash; internalize  真正掌握知识</p>
 
 <ul>
@@ -6522,206 +6671,6 @@ I want my tears back<br/>
 我要要回我的眼泪<br/>
 I want my tears back now<br/>
 我现在就要要回我的眼泪<br/></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[python批量修改火星坐标]]></title>
-    <link href="http://ziso.me/blog/2014/03/15/python-transfer-gps/"/>
-    <updated>2014-03-15T10:02:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/03/15/python-transfer-gps</id>
-    <content type="html"><![CDATA[<p>科普：火星坐标系统&mdash;国家保密插件，也叫做加密插件或者加偏或者 SM 模组，其实就是对真实坐标系统进行人为的加偏处理，按照几行代码的算法，将真实的坐标加密成虚假的坐标，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。而加密后的坐标也常被人称为火星坐标系统。<br>
-API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interfaces.aspx</a><br>
-使用方法： 同目录下，from.txt 存放待转换 GPS 数据，经纬度以制表符分隔。<br>
-输出：同目录下，生成 done.txt 为转换好的数据。<br></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">httplib</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">json</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">transGps</span><span class="p">(</span><span class="n">origin</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">host</span><span class="o">=</span><span class="s">&quot;api.zdoz.net&quot;</span>
-</span><span class='line'>    <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;/transgps.aspx?lat=&#39;</span><span class="o">+</span> <span class="n">origin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s">&#39;&amp;lng=&#39;</span><span class="o">+</span><span class="n">origin</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">h</span> <span class="o">=</span> <span class="n">httplib</span><span class="o">.</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="n">host</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">transfered</span><span class="o">=</span><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;Lat&#39;</span><span class="p">)</span><span class="o">!=</span><span class="bp">None</span> <span class="p">:</span>
-</span><span class='line'>        <span class="n">transfered</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;Lat&#39;</span><span class="p">])</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;Lng&#39;</span><span class="p">)</span><span class="o">!=</span><span class="bp">None</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">transfered</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;Lng&#39;</span><span class="p">])</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">transfered</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">inputFile</span> <span class="o">=</span> <span class="s">&#39;from.txt&#39;</span>
-</span><span class='line'><span class="n">outputFile</span> <span class="o">=</span> <span class="s">&#39;done.txt&#39;</span>
-</span><span class='line'><span class="n">fin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">inputFile</span><span class="p">,</span> <span class="s">&#39;rU&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outputFile</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;lat</span><span class="se">\t</span><span class="s">lng</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span> <span class="p">:</span>
-</span><span class='line'>    <span class="n">transfered</span> <span class="o">=</span> <span class="n">transGps</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">transfered</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;UTF-8&#39;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">transfered</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;UTF-8&#39;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">transfered</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">transfered</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&#39;&#39;</span>
-</span><span class='line'><span class="n">fin</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'><span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[生活和我]]></title>
-    <link href="http://ziso.me/blog/2013/11/21/birthday/"/>
-    <updated>2013-11-21T00:55:00+08:00</updated>
-    <id>http://ziso.me/blog/2013/11/21/birthday</id>
-    <content type="html"><![CDATA[<p>生命周而复始<br>
-痛苦与心绪交织<br>
-忘记了快乐的模样<br>
-以这种状态<br>
-迎接了这个日子<br>
-不胜唏嘘<br></p>
-
-<p>25 岁，尴尬着，彷徨着，迷惘着……<br>
-25 岁，或许精彩缤纷，或许犹豫徘徊，或许在倒数着生命……<br>
-25 岁，离而立还有 5 年，离生活还有多远？<br></p>
-
-<p>莫名的喜欢写些文字<br>
-但文字也如此的苍白无力<br></p>
-
-<p>从日出到月稀<br>
-就这样<br>
-浸泡于迷惘的生活中<br>
-走在尘郁幽凉的路上<br>
-享受着耳机里的声音<br>
-逃避着尘世中的喧嚣<br></p>
-
-<p>有时更喜欢深夜<br>
-或许原本就属于这里<br>
-一切都是那么平静<br>
-没有风声 <br>
-只剩震耳欲聋的寂静<br>
-没有期待 也没有失望<br>
-没有分久必合 合久必分的过程<br>
-一切都变得那么淡，无悲也无喜<br></p>
-
-<p>在这条路上<br>
-只有自己孤独的往返<br>
-似乎寻觅着什么<br>
-但突然发现 前方没路了 已似尽头<br>
-城市依然 人群如旧<br>
-激情 乐趣<br>
-似乎都在一点点从手里溜走<br></p>
-
-<p>我想 我还在似图找出自己的宿命<br>
-在这里或者在那里……<br>
-却始终未能发现<br>
-始终走不出自己的世界<br></p>
-
-<p>有时希望被别人了解<br>
-同时又不想被别人看穿<br>
-我只是…… 迷失了<br>
-我不知道该怎么做<br>
-不能前进 也并非后退<br>
-不是等待未来 仅是现在 <br>
-仅仅是存在的恐惧<br></p>
-
-<p>有时会固执的以为<br>
-透过层层迷惘的心网<br>
-可以看到了一丝若隐若现的光亮<br>
-但那光亮却越寻越远<br>
-远到是那样虚无飘渺，无处可寻<br>
-就像许多事情都是无果则终 不甚了了<br></p>
-
-<p>我总以为是自己内向和偏执的性格造成的<br>
-后来想想 其实不然 <br>
-在过去留下的一些文字里<br>
-发现自己也曾简单、也曾乐观<br>
-而现在……<br>
-真正的原因或许是精神上的麻木<br>
-和心灵的扭曲<br></p>
-
-<p>有人说，生活原本就是这样<br>
-会有荆棘密布<br>
-走过之后 或许伤痕累累<br>
-但那是成长的功勋章<br>
-似乎, 我已功勋卓著<br>
-但却未见成长<br></p>
-
-<p>如果生命可以重建<br>
-我需要走出的太多太多<br>
-真的很累<br>
-疲惫不堪<br></p>
-
-<p>似乎，我能做的只是痛定思痛<br>
-因为我还渴望生活<br>
-不管你离我有多远<br></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[抽离]]></title>
-    <link href="http://ziso.me/blog/2013/11/06/moving-away-reaction/"/>
-    <updated>2013-11-06T22:35:00+08:00</updated>
-    <id>http://ziso.me/blog/2013/11/06/moving-away-reaction</id>
-    <content type="html"><![CDATA[<p><img src="http://ziso.me/images/2013/11/large.jpg" title="large" alt="" /><br/></p>
-
-<p>抽离于世界，隐居于自身。<br>
-渴望生活，<br>
-却与生活有一段距离。<br>
-因你在生活里，但却不在生活里。<br>
-只能遥遥相望，绝少可以呼应。<br>
-不走近，不远离，<br>
-尝得到清晰的痛苦，<br>
-不至于痛不欲生 ，但却不能恣意纵情。<br>
-伪装在会说话的沉默下，<br>
-伪装在震耳欲聋的寂静中。<br>
-不甘让你成为一种信仰，只能迎着风向前。<br></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://ziso.me/blog/2013/07/06/hello-world/"/>
-    <updated>2013-07-06T09:47:00+08:00</updated>
-    <id>http://ziso.me/blog/2013/07/06/hello-world</id>
-    <content type="html"><![CDATA[<p><img src="http://ziso.me/images/2013/07/hello_world.png" title="helloworld" alt="Hello World" /><br/></p>
 ]]></content>
   </entry>
   

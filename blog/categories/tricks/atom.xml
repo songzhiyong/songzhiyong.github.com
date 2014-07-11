@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-08T01:43:22+08:00</updated>
+  <updated>2014-07-11T19:25:26+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[QUICK SURROUND WITH (TRY/CATCH, IF ELSE..)]]></title>
+    <link href="http://ziso.me/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot/"/>
+    <updated>2014-07-08T12:05:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot</id>
+    <content type="html"><![CDATA[<p>When you want to catch exceptions thrown by some code fragment, select it in the
+editor, press</p>
+
+<blockquote><p>Ctrl+Alt+T</p></blockquote>
+
+<p>(Code | Surround With) and choose try / catch. The catch blocks for all the exceptions thrown inside the block will be generated automatically.</p>
+
+<p>You can customize the bodies of the generated catch blocks on the Code tab of File | Settings | File Templates.</p>
+
+<p>Use other items in the list to surround with other constructs.<br/></p>
+
+<p><img src="/images/2014/07/surround.png" alt="" /><br/></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mac OS X Efficiency Improvement (2)]]></title>
@@ -182,6 +202,14 @@
 <td> 在应用程序中的窗口间切换</td>
 </tr>
 <tr>
+<td>Ctrl + Tab                  </td>
+<td> 同一个应用程序中的页面或工作空间切换</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Tab          </td>
+<td> 同上，反方向</td>
+</tr>
+<tr>
 <td>Ctrl + Shift + power        </td>
 <td> 关闭显示器</td>
 </tr>
@@ -277,6 +305,14 @@
 <td>Cmd + Shift + F          </td>
 <td> 全局查找</td>
 </tr>
+<tr>
+<td>Cmd + R                  </td>
+<td> 查找替换</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+L               </td>
+<td> 格式化代码</td>
+</tr>
 </tbody>
 </table>
 
@@ -288,7 +324,12 @@
     <link href="http://ziso.me/blog/2014/07/03/how-use-google-efficiently/"/>
     <updated>2014-07-03T18:28:00+08:00</updated>
     <id>http://ziso.me/blog/2014/07/03/how-use-google-efficiently</id>
-    <content type="html"><![CDATA[<p><img src="/images/2014/07/how-to-use-google.jpg" alt="" /><br/></p>
+    <content type="html"><![CDATA[<p><img src="/images/2014/07/thumb_google.jpeg" alt="" /><br/></p>
+
+<!-- more -->
+
+
+<p><img src="/images/2014/07/how-to-use-google.jpg" alt="" /><br/></p>
 ]]></content>
   </entry>
   
