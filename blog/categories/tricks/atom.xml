@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-11T19:25:26+08:00</updated>
+  <updated>2014-07-12T17:45:23+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,125 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 2 Plugin - Text Pastry]]></title>
+    <link href="http://ziso.me/blog/2014/07/12/sublime-text-plugin-text-pastry/"/>
+    <updated>2014-07-12T16:27:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/12/sublime-text-plugin-text-pastry</id>
+    <content type="html"><![CDATA[<p>新技能get</p>
+
+<p>关于Sublime Text2 的简洁优雅，不做赘述。</p>
+
+<p><a href="https://github.com/duydao/Text-Pastry">Text-Pastry</a>让Sublime Text 2 如虎添翼。</p>
+
+<h3>DEMO1</h3>
+
+<h4>From:</h4>
+
+<p><code>
+aaa
+bbb
+ccc
+ddd
+eee
+</code></p>
+
+<h4>To:</h4>
+
+<p><code>
+1. aaa
+2. bbb
+3. ccc
+4. ddd
+5. eee
+</code></p>
+
+<h4>TODO</h4>
+
+<ol>
+<li>选中多行</li>
+<li>CMD+SHIFT+L（Mac）进入多行编辑模式</li>
+<li>把多个光标同时移动到每行的最前面</li>
+<li>CMD+ALT+T  进入Text Pastry命令输入模式</li>
+<li>选择 \i 回车</li>
+<li>1-5的标号已经加上，输入.+空格</li>
+<li>DONE</li>
+</ol>
+
+
+<h3>DEMO2</h3>
+
+<h4>From:</h4>
+
+<p>```json
+{
+  &ldquo;apps&rdquo;: [</p>
+
+<pre><code>{ 
+  "bundle_id": "com.htc.fm",
+  "app_name": "FM 收音机"
+},
+{
+  "bundle_id": "com.htc.android.mail",
+  "app_name": "邮件"
+},
+{
+  "bundle_id": "com.qq.qcloud",
+  "app_name": "微云"
+}
+</code></pre>
+
+<p>  ]
+}
+```</p>
+
+<h4>To:</h4>
+
+<p>```json
+{
+  &ldquo;apps&rdquo;: [</p>
+
+<pre><code>{ 
+  "uuid": "c9e968cc-d122-4162-a502-874cdcfa470c",
+  "bundle_id": "com.htc.fm",
+  "app_name": "FM 收音机"
+},
+{ 
+  "uuid": "4fba9716-29bf-4c06-b22e-75d59622703f",
+  "bundle_id": "com.htc.android.mail",
+  "app_name": "邮件"
+},
+{ 
+  "uuid": "6c3f911a-318b-4aad-82d6-c5f183d8ca00",
+  "bundle_id": "com.qq.qcloud",
+  "app_name": "微云"
+}
+</code></pre>
+
+<p>  ]
+}
+```</p>
+
+<h4>TODO</h4>
+
+<p>目测在每个数据里面加个uuid这种需求不会在代码外去实现 :）
+但类似的应该会有，如何秒杀是关键。如果够熟练，估计只需十几秒，即使有上百条数据</p>
+
+<ol>
+<li>CMD+F 搜索 &ldquo;bundle_id"，少量也可CMD+D</li>
+<li>ALT+ENTER 选中所有”bundle_id“，并进入多行同时编辑模式</li>
+<li>CMD+SHIFT+ENTER 在改行上面插入一空行，多行同时输入"uuid": &ldquo;&rdquo;,让光标在"&ldquo;中</li>
+<li>CMD+ALT+T  进入Text Pastry命令输入模式</li>
+<li>选择 \uuid(old)或uuid(new) 回车</li>
+<li>uuid已经加上，一直末尾,输入,</li>
+<li>DONE</li>
+</ol>
+
+
+<p><a href="https://github.com/duydao/Text-Pastry#readme">More Info from github</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[QUICK SURROUND WITH (TRY/CATCH, IF ELSE..)]]></title>
@@ -286,6 +405,22 @@ editor, press</p>
 </thead>
 <tbody>
 <tr>
+<td>Double Shift             </td>
+<td> Search Everywhere</td>
+</tr>
+<tr>
+<td>Cmd Shift O              </td>
+<td> Open a File by name</td>
+</tr>
+<tr>
+<td>Cmd + E                  </td>
+<td> Recent Files</td>
+</tr>
+<tr>
+<td>Cmd + up                 </td>
+<td> Open Navigation Bar</td>
+</tr>
+<tr>
 <td>Cmd + H                  </td>
 <td> Hierarchy Class</td>
 </tr>
@@ -310,8 +445,16 @@ editor, press</p>
 <td> 查找替换</td>
 </tr>
 <tr>
-<td>Ctrl+Alt+L               </td>
+<td>Cmd + Alt + L            </td>
 <td> 格式化代码</td>
+</tr>
+<tr>
+<td>Cmd + Shift + U          </td>
+<td> 切换大小写</td>
+</tr>
+<tr>
+<td>Alt + Shift + left/right </td>
+<td> 选择范围扩大一个word</td>
 </tr>
 </tbody>
 </table>

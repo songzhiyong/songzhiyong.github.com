@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-11T19:25:26+08:00</updated>
+  <updated>2014-07-12T17:45:23+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,162 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 2 Plugin - Text Pastry]]></title>
+    <link href="http://ziso.me/blog/2014/07/12/sublime-text-plugin-text-pastry/"/>
+    <updated>2014-07-12T16:27:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/12/sublime-text-plugin-text-pastry</id>
+    <content type="html"><![CDATA[<p>新技能 get</p>
+
+<p>关于 Sublime Text2 的简洁优雅，不做赘述。</p>
+
+<p><a href="https://github.com/duydao/Text-Pastry">Text-Pastry</a> 让 Sublime Text 2 如虎添翼。</p>
+
+<h3>DEMO1</h3>
+
+<h4>From:</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>aaa
+</span><span class='line'>bbb
+</span><span class='line'>ccc
+</span><span class='line'>ddd
+</span><span class='line'>eee</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>To:</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1. aaa
+</span><span class='line'>2. bbb
+</span><span class='line'>3. ccc
+</span><span class='line'>4. ddd
+</span><span class='line'>5. eee</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>TODO</h4>
+
+<ol>
+<li>选中多行</li>
+<li>CMD+SHIFT+L（Mac）进入多行编辑模式</li>
+<li>把多个光标同时移动到每行的最前面</li>
+<li>CMD+ALT+T  进入 Text Pastry 命令输入模式</li>
+<li>选择 \i 回车</li>
+<li>1-5 的标号已经加上，输入.+空格</li>
+<li>DONE</li>
+</ol>
+
+
+<h3>DEMO2</h3>
+
+<h4>From:</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nt">&quot;apps&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.fm&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;FM 收音机&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.android.mail&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;邮件&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.qq.qcloud&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;微云&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>To:</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nt">&quot;apps&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;c9e968cc-d122-4162-a502-874cdcfa470c&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.fm&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;FM 收音机&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;4fba9716-29bf-4c06-b22e-75d59622703f&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.android.mail&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;邮件&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;6c3f911a-318b-4aad-82d6-c5f183d8ca00&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.qq.qcloud&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;微云&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>TODO</h4>
+
+<p>目测在每个数据里面加个 uuid 这种需求不会在代码外去实现 :）
+但类似的应该会有，如何秒杀是关键。如果够熟练，估计只需十几秒，即使有上百条数据</p>
+
+<ol>
+<li>CMD+F 搜索 &ldquo;bundle_id&#8221;，少量也可 CMD+D</li>
+<li>ALT+ENTER 选中所有”bundle_id“，并进入多行同时编辑模式</li>
+<li>CMD+SHIFT+ENTER 在改行上面插入一空行，多行同时输入&#8221;uuid&#8221;: &ldquo;&rdquo;,让光标在&#8221;&ldquo;中</li>
+<li>CMD+ALT+T  进入 Text Pastry 命令输入模式</li>
+<li>选择 \uuid(old)或 uuid(new) 回车</li>
+<li>uuid 已经加上，一直末尾,输入,</li>
+<li>DONE</li>
+</ol>
+
+
+<p><a href="https://github.com/duydao/Text-Pastry#readme">More Info from github</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Android Application class being called twice]]></title>
@@ -29,15 +185,6 @@
 <p>So just ignore Application when designing your app; it will reduce confusion. (In its place, I prefer to use global singletons for such state.)</p>
 
 <p>Also as a general rule, I recommend not using android:process. There are certainly some uses for it, but the vast majority of the time it is not needed and just makes an application use more RAM, less efficient, and harder to write (since you can&rsquo;t take advantage of globals in a single process). It should be obvious to you if you reach a place where there is actually a good reason to use android:process.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Git Cheatsheet]]></title>
-    <link href="http://ziso.me/blog/2014/07/11/git-cheatsheet/"/>
-    <updated>2014-07-11T11:57:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/11/git-cheatsheet</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
@@ -888,6 +1035,22 @@ editor, press</p>
 </thead>
 <tbody>
 <tr>
+<td>Double Shift             </td>
+<td> Search Everywhere</td>
+</tr>
+<tr>
+<td>Cmd Shift O              </td>
+<td> Open a File by name</td>
+</tr>
+<tr>
+<td>Cmd + E                  </td>
+<td> Recent Files</td>
+</tr>
+<tr>
+<td>Cmd + up                 </td>
+<td> Open Navigation Bar</td>
+</tr>
+<tr>
 <td>Cmd + H                  </td>
 <td> Hierarchy Class</td>
 </tr>
@@ -912,8 +1075,16 @@ editor, press</p>
 <td> 查找替换</td>
 </tr>
 <tr>
-<td>Ctrl+Alt+L               </td>
+<td>Cmd + Alt + L            </td>
 <td> 格式化代码</td>
+</tr>
+<tr>
+<td>Cmd + Shift + U          </td>
+<td> 切换大小写</td>
+</tr>
+<tr>
+<td>Alt + Shift + left/right </td>
+<td> 选择范围扩大一个 word</td>
 </tr>
 </tbody>
 </table>
@@ -3596,7 +3767,7 @@ entrepreneur  企业家</p></li>
 
 <p>许多人遇到外国人的时候就感觉自己十几年英语白读了，不是语言上的问题，只是除了工作上的必要沟通私底下就不知道说什么才好。今天潘吉和 Jenny 要和你聊聊和老外 small talk 的时候要注意些什么，聊什么话题最好？</p>
 
-<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x6d;&#101;&#x65;&#x74;&#x75;&#112;&#64;&#x6f;&#x70;&#101;&#x6e;&#108;&#x61;&#x6e;&#103;&#117;&#x61;&#x67;&#x65;&#x2e;&#99;&#111;&#109;">&#109;&#101;&#x65;&#116;&#117;&#112;&#x40;&#111;&#x70;&#x65;&#x6e;&#x6c;&#97;&#x6e;&#x67;&#x75;&#x61;&#103;&#101;&#x2e;&#x63;&#x6f;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
+<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x6d;&#x65;&#101;&#x74;&#117;&#112;&#x40;&#x6f;&#x70;&#x65;&#110;&#x6c;&#x61;&#110;&#103;&#117;&#97;&#103;&#101;&#46;&#x63;&#111;&#109;">&#109;&#101;&#x65;&#116;&#117;&#112;&#x40;&#111;&#x70;&#101;&#110;&#108;&#x61;&#x6e;&#x67;&#117;&#97;&#x67;&#x65;&#46;&#99;&#x6f;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
 &ndash; awkward  尴尬</p>
 
 <ul>
@@ -3668,7 +3839,7 @@ religion  宗教信仰</p></li>
 
 <p>潘吉 Jenny 告诉你&mdash;OpenLanguage 英语俱乐部召集组织者</p>
 
-<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#109;&#101;&#x65;&#116;&#117;&#x70;&#64;&#111;&#x70;&#101;&#x6e;&#x6c;&#x61;&#110;&#103;&#117;&#x61;&#x67;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x6d;&#101;&#101;&#116;&#117;&#112;&#64;&#x6f;&#x70;&#101;&#110;&#x6c;&#97;&#x6e;&#x67;&#117;&#x61;&#x67;&#101;&#46;&#99;&#111;&#109;</a> 报名吧！
+<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x6d;&#101;&#x65;&#116;&#117;&#112;&#64;&#111;&#112;&#x65;&#110;&#108;&#x61;&#x6e;&#x67;&#x75;&#97;&#103;&#101;&#x2e;&#99;&#111;&#109;">&#109;&#x65;&#101;&#x74;&#117;&#x70;&#x40;&#x6f;&#x70;&#101;&#x6e;&#x6c;&#97;&#x6e;&#103;&#117;&#x61;&#x67;&#x65;&#x2e;&#x63;&#111;&#x6d;</a> 报名吧！
 如果你有意愿成为 OpenLanguage 英语俱乐部的组织者，请发送邮件到 meetup@openlanguage.com，留下您的姓名，电话及所在城市。活动的组织者会有丰厚的奖品及优惠等你拿哦！</p>
 
 <p>独乐乐不如众乐乐，OpenLanguage 英语俱乐部六月活动将于于 6 月 29 号(周六)在上海举办，主题即为“Small Talk 和老外闲话聊聊”，你可以自己前来，或带上你的好友一起前来！</p>
@@ -4475,7 +4646,7 @@ New Zealand  新西兰</li>
 
 <p>潘吉 Jenny 告诉你&mdash;在英语课上用 EnglishPod 中国！</p>
 
-<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x73;&#117;&#x70;&#x70;&#111;&#114;&#116;&#64;&#x6f;&#x70;&#101;&#x6e;&#108;&#x61;&#110;&#x67;&#x75;&#x61;&#x67;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#x40;&#x6f;&#112;&#x65;&#x6e;&#108;&#x61;&#110;&#x67;&#117;&#97;&#103;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a> 了解详情。
+<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#115;&#x75;&#112;&#112;&#x6f;&#114;&#x74;&#64;&#111;&#112;&#101;&#x6e;&#108;&#x61;&#110;&#103;&#x75;&#x61;&#x67;&#101;&#46;&#99;&#x6f;&#x6d;">&#115;&#x75;&#112;&#112;&#x6f;&#x72;&#x74;&#x40;&#x6f;&#x70;&#x65;&#110;&#x6c;&#97;&#110;&#x67;&#x75;&#x61;&#103;&#x65;&#46;&#99;&#x6f;&#x6d;</a> 了解详情。
 &ndash; internalize  真正掌握知识</p>
 
 <ul>
