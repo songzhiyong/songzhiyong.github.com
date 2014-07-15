@@ -124,6 +124,444 @@ $(document).ready(
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
           <article>
+  <h2><a href="/blog/2014/07/14/aloe-blacc-hello-world/">Aloe Blacc - Hello World</a></h2>
+  
+  <p>
+    <p><img src="/images/2014/07/aleo-blacc-hello-world.jpg" title="hello world" alt="HELLO WORLD" /><br/></p>
+
+
+
+
+<p>[Verse]</p>
+
+
+
+
+<p>Hello world, it\&rsquo;s nice to meet you</p>
+
+
+
+
+<p>I\&rsquo;ve been waiting for this moment all my life</p>
+
+
+
+
+<p>Hello world, the past is over</p>
+
+
+
+
+<p>It\&rsquo;s time for us to come together and make the future right</p>
+
+
+
+
+<p>[Pre-Chorus]</p>
+
+
+
+
+<p>I had an epiphany one night</p>
+
+
+
+
+<p>Looking at the endless star-filled sky</p>
+
+
+
+
+<p>[Chorus]</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>Seven billion stars</p>
+
+
+
+
+<p>(We are we are we are we are)</p>
+
+
+
+
+<p>(We are we are we are we are)</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>[Verse]</p>
+
+
+
+
+<p>Hello world, the sun is rising</p>
+
+
+
+
+<p>It doesn\&rsquo;t matter who you are, the sun still sets the same</p>
+
+
+
+
+<p>Hello world, undivided</p>
+
+
+
+
+<p>Don\&rsquo;t matter if you win or lose, it</p>
+
+
+
+
+<p>[Chorus]</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>Seven billion stars</p>
+
+
+
+
+<p>(We are we are we are we are)</p>
+
+
+
+
+<p>(We are we are we are we are)</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+
+
+<p>[Bridge]</p>
+
+
+
+
+<p>From the sky to the sea to the air that we breathe</p>
+
+
+
+
+<p>To the depths of the earth to the stars</p>
+
+
+
+
+<p>The world is ours, all ours</p>
+
+
+
+
+<p>The world is ours, all ours</p>
+
+
+
+
+<p>[Chorus]</p>
+
+
+
+
+<p>(We are we are we are we are)</p>
+
+
+
+
+<p>(We are we are we are we are)</p>
+
+
+
+
+<p>The world is ours</p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-14T14:13:00+08:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/life-insights/'>life-insights</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/07/14/gradle-build-tips/">Gradle Build Tips</a></h2>
+  
+  <p>
+    <p>I&rsquo;m lazy. Hopefully you are too. Here&rsquo;s two small conveniences for the Gradle build system you might find useful:</p>
+
+
+
+
+<p>Decomposed Version Name and Code</p>
+
+
+
+
+<p>Break up your version into its logical components and manage them separately. Stop wondering if you&rsquo;ve bumped the version code correctly or updated the version name properly.</p>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def versionMajor = 3
+</span><span class='line'>def versionMinor = 0
+</span><span class='line'>def versionPatch = 0
+</span><span class='line'>def versionBuild = 0 // bump for dogfood builds, public betas, etc.
+</span><span class='line'>
+</span><span class='line'>android {
+</span><span class='line'>  defaultConfig {
+</span><span class='line'>    versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+</span><span class='line'>    versionName &ldquo;${versionMajor}.${versionMinor}.${versionPatch}&rdquo;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></p>
+
+<p>If you have more than 10 patch or minor versions you have other problems. 10 builds? Unlikely, but we&rsquo;ve got a whole int32 to work with here so why not&hellip;</p>
+
+
+
+
+<p>A More Useful BuildConfig</p>
+
+
+
+
+<p>Build config is FINALLY ours to add to. Leverage it for constant information that might otherwise require a Context to obtain.</p>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def gitSha() {
+</span><span class='line'>  return &lsquo;git rev-parse &mdash;short HEAD&rsquo;.execute().text.trim()
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>def buildTime() {
+</span><span class='line'>  def df = new SimpleDateFormat(&ldquo;yyyy-MM-dd&rsquo;T'HH:mm'Z'&rdquo;)
+</span><span class='line'>  df.setTimeZone(TimeZone.getTimeZone(&ldquo;UTC&rdquo;))
+</span><span class='line'>  return df.format(new Date())
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>android {
+</span><span class='line'>  defaultConfig {
+</span><span class='line'>    buildConfig &ldquo;&rdquo;&ldquo;\
+</span><span class='line'>      public static final String GIT_SHA = &rdquo;${gitSha()}&ldquo;;
+</span><span class='line'>      public static final String BUILD_TIME = &rdquo;${buildTime()}&ldquo;;
+</span><span class='line'>    &rdquo;&ldquo;&rdquo;
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></p>
+
+<p>And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Let&rsquo;s get more utility into it! Vote @ <a href="http://b.android.com/59302">http://b.android.com/59302</a></p>
+
+
+
+
+<p>Since Gadle 1.9</p>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> buildConfigField &ldquo;String&rdquo; , &ldquo;GIT_SHA&rdquo; ,&ldquo;\&rdquo;${gitSha()}\&ldquo;&rdquo;
+</span><span class='line'> buildConfigField &ldquo;String&rdquo;,&ldquo;BUILD_TIME&rdquo;,&ldquo;\&rdquo;${buildTime()}\&ldquo;&rdquo;</span></code></pre></td></tr></table></div></figure></p>
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-14T10:42:00+08:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/07/13/android-photoshop-export/">Android Photoshop Export</a></h2>
+  
+  <p>
+    <p>[脑补一下]：
+1. 什么是 Photoshop Action？
+[答]：Photoshop Action 是从 Photoshop 4.0 开始出现的，它就好比是 Dos 里面的批处理文件，或者 Word 中的宏。它可以把 Photoshop 中每一个操作步骤记录下来然后反复使用，或者存成独立的文件供大家分享。</p>
+
+
+
+
+<ol>
+<li>如何安装及使用 Photoshop Action？
+[答]：打开 Photoshop，选中“窗口—动作”菜单，打开选中“动作”面板。</li>
+</ol>
+
+
+
+
+<p>Here we go! 下载下面两个任意一个 action 脚本，基本一样，只是一个从小到大，一个从大到小。
+<a href="http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/">http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/</a></p>
+
+
+
+
+<p><a href="http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/">http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/</a></p>
+
+
+
+
+<p>双击导入到 photoshop, 窗口-动作，找到刚刚导入的 Action,运行即可。</p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-13T02:04:00+08:00" pubdate data-updated="true">Jul 13<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
   <h2><a href="/blog/2014/07/12/sublime-text-plugin-text-pastry/">Sublime Text 2 Plugin - Text Pastry</a></h2>
   
   <p>

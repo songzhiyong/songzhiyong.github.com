@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-12T18:15:42+08:00</updated>
+  <updated>2014-07-15T10:41:00+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,95 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Gradle build Tips]]></title>
+    <link href="http://ziso.me/blog/2014/07/14/gradle-build-tips/"/>
+    <updated>2014-07-14T10:42:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/14/gradle-build-tips</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m lazy. Hopefully you are too. Here&rsquo;s two small conveniences for the Gradle build system you might find useful:</p>
+
+<p>Decomposed Version Name and Code</p>
+
+<p>Break up your version into its logical components and manage them separately. Stop wondering if you&rsquo;ve bumped the version code correctly or updated the version name properly.
+```</p>
+
+<pre><code>def versionMajor = 3
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = 0 // bump for dogfood builds, public betas, etc.
+
+android {
+  defaultConfig {
+    versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+    versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+  }
+}
+</code></pre>
+
+<p>```
+If you have more than 10 patch or minor versions you have other problems. 10 builds? Unlikely, but we&rsquo;ve got a whole int32 to work with here so why not&hellip;</p>
+
+<p>A More Useful BuildConfig</p>
+
+<p>Build config is FINALLY ours to add to. Leverage it for constant information that might otherwise require a Context to obtain.
+```</p>
+
+<pre><code>def gitSha() {
+  return 'git rev-parse --short HEAD'.execute().text.trim()
+}
+
+def buildTime() {
+  def df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'")
+  df.setTimeZone(TimeZone.getTimeZone("UTC"))
+  return df.format(new Date())
+}
+
+android {
+  defaultConfig {
+    buildConfig """\
+      public static final String GIT_SHA = "${gitSha()}";
+      public static final String BUILD_TIME = "${buildTime()}";
+    """
+  }
+}
+</code></pre>
+
+<p>```
+And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Let&rsquo;s get more utility into it! Vote @ <a href="http://b.android.com/59302">http://b.android.com/59302</a></p>
+
+<p>Since Gadle 1.9</p>
+
+<p><code>
+ buildConfigField "String" , "GIT_SHA" ,"\"${gitSha()}\""
+ buildConfigField "String","BUILD_TIME","\"${buildTime()}\""
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android Photoshop export]]></title>
+    <link href="http://ziso.me/blog/2014/07/13/android-photoshop-export/"/>
+    <updated>2014-07-13T02:04:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/13/android-photoshop-export</id>
+    <content type="html"><![CDATA[<p>[脑补一下]：
+1. 什么是Photoshop Action？
+[答]：Photoshop Action是从Photoshop 4.0开始出现的，它就好比是Dos里面的批处理文件，或者Word中的宏。它可以把Photoshop中每一个操作步骤记录下来然后反复使用，或者存成独立的文件供大家分享。</p>
+
+<ol>
+<li>如何安装及使用Photoshop Action？
+[答]：打开Photoshop，选中“窗口—动作”菜单，打开选中“动作”面板。</li>
+</ol>
+
+
+<p>Here we go! 下载下面两个任意一个action脚本，基本一样，只是一个从小到大，一个从大到小。
+<a href="http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/">http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/</a></p>
+
+<p><a href="http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/">http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/</a></p>
+
+<p>双击导入到photoshop, 窗口-动作，找到刚刚导入的Action,运行即可。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Android Application class being called twice]]></title>
@@ -299,68 +388,6 @@ xmlns:sdk="http://schemas.android.com/sdk/android/repository/2"&gt;
 <p>修改完成以后，通过浏览器访问 <code>http://IP-address:port/repository.xml</code>，确认是否 OK。确认以后，打开 Android SDK and AVD Manager，点击左侧 Available Packages，选择 “Add Add-on Sites” 填入URL，接下来的安装就不费口舌了。完成以后，你可以在 sdk 下的 add-ons 目录下看到刚刚安装的 add-on。</p>
 
 <p>捎带提一下，应用开发方面使用该 add-on 时，调整工程的 Project Build Target 设定即可。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android:Facebook SDK]]></title>
-    <link href="http://ziso.me/blog/2014/06/28/android-facebook-sdk/"/>
-    <updated>2014-06-28T18:54:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/06/28/android-facebook-sdk</id>
-    <content type="html"><![CDATA[<p>The following samples are available in the SDK:</p>
-
-<ul>
-<li><h3>Basic samples</h3>
-
-<ul>
-<li><strong>ProfilePictureSample</strong>: demonstrates non-logged-in usage of the profile picture control</li>
-<li><strong>FriendPickerSample</strong>: demonstrates usage of the native friend picker to choose amongst the user&rsquo;s friends</li>
-<li><strong>PlacePickerSample</strong>: demonstrates logged-in usage of the place picker control</li>
-<li><strong>GraphAPISample</strong>: demonstrates requests to the Graph API</li>
-</ul>
-</li>
-<li><h3>Feature samples</h3>
-
-<ul>
-<li><strong>SessionLoginSample</strong>: demonstrates detailed login flow using the SDK</li>
-<li><strong>JustRequestSample</strong>: demonstrates logged-in user making single and batched Facebook API requests</li>
-<li><strong>SwitchUserSample</strong>: demonstrates an approach to allow switching between multiple users</li>
-<li><strong>AdUnitsSample and NativeAdSample</strong>: shows how to load and display ads from Facebook inside your app</li>
-</ul>
-</li>
-<li><h3>Complete samples</h3>
-
-<ul>
-<li><strong>HelloFacebookSample</strong>: an all-round sample that demonstrates profile access, status updates and photo uploading</li>
-<li><strong>Scrumptious</strong>: demonstrates the use of login, requests, pickers, picture uploads, and Open Graph publishing</li>
-<li><strong>RPS</strong>: demonstrates the use of the Native Share Dialog, Open Graph publishing, pickers, invites, and deep linking.</li>
-</ul>
-</li>
-</ul>
-
-
-<p>```
-GraphObject
-{</p>
-
-<pre><code>graphObjectClass=GraphUser,
-state={
-        "id":"510224139107412",
-        "first_name":"Song",
-        "timezone":8,
-        "verified":true,
-        "name":"Song Zhiyong",
-        "locale":"en_US",
-        "link":"https:\/\/www.facebook.com\/app_scoped_user_id\/510224139107412\/",
-        "last_name":"Zhiyong",
-        "gender":"male",
-        "updated_time":"2014-06-14T12:30:41+0000"
-}
-</code></pre>
-
-<p>}
-```
-<unfinished></p>
 ]]></content>
   </entry>
   

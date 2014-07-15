@@ -114,6 +114,583 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease/">
+		
+			Android SDK Add-on Configure, Compile and Relelease</a>
+	</h2>
+	<div class="entry-content">
+		<p>转自：<a href="http://www.poemcode.net/2010/09/android-sdk-addon/">http://www.poemcode.net/2010/09/android-sdk-addon/</a></p>
+
+<p>SDK Add-on 是一个比较小众的话题，一是通常厂商不会公开自己的 add-on，二是即便公开了，应用开发者也很少使用。所以通常是厂商自己的技术团队自娱自乐，框架团队抽取公用的控件，制成一个 add-on，然后公布给自家的应用程序开发团队。</p>
+
+<p>由于是小众的，所以网络中关于这方面的资料比较少。这几天由于工作原因，我有幸接触到 Add-on，因此把这方面的知识进行了汇总，整理成如下内容。这些知识来自于我对 sample 示例的理解，并经过项目实践验证，我竭力保证无误，但差错之处也可能存在，如发现，请指正。</p>
+
+<p>以下内容将分成若个步骤：</p>
+
+<ol>
+<li>添加模块；</li>
+<li>添加资源文件；</li>
+<li>加入编译脚本；</li>
+<li>发布；</li>
+</ol>
+
+
+<p>在阅读下面内容前，先假设是对 $ANDROID_HOME/device/sample 进行修改。</p>
+
+<h4>一、添加模块（Add Module）</h4>
+
+<p>在自己 <em>product-name</em> 目录下建立 frameworks 文件夹，从 sample 中拷贝 Android.mk 文件到 frameworks。</p>
+
+<p>依照 sample 的方式，在 frameworks 路径下，建立 PlatformLibrary 文件夹，再次从 sample/frameworks 中拷贝 Android.mk 文件，并将其中的 LOCAL_MODULE 和 LOCAL_DROIDDOC_OPTIONS 修改为自己中意的名字。–这里值得注意的是，LOCAL_MODULE 变量被定义两次，第一次是 library，第二次是 document。</p>
+
+<p>依照 sample/frameworks/com.example.android.platform_library.xml 的形式创建自己的 XML 文件，文件名称、XML 内容中 name 和 file 保持和 LOCAL_MODULE(library) 一致。</p>
+
+<p>完成上述操作之后，建立 java 文件夹，并将自己创建的源文件（java）放入到其中，这里不再赘述。</p>
+
+<h4>二、添加 Overlay(Add Resoruce)</h4>
+
+<p>代码中可能需要访问图片、字符串等资源，但是这些在原有的 Android 中没有，因此需要想办法自行加入，Android 对此提供了两种方式。</p>
+
+<p>第一种就是直接在 $ANDROID_HOME/framework/base/core/res/res 下进行操作，添加文件，追加字符串。这种方式虽然简单，但是破坏了原有的“纯洁性”，因此不予推荐，在第三节修改编译脚本中我采用了第二种方式。</p>
+
+<p>第二种方式就是使用 overlay。在 product-name 目录下建立 overlay 文件夹，依照 framework 的结构建立各级目录，例如想添加图片，可以先依次建立 base/core/res/res/drawable，然后将图片置于其中，同样可以建立 layout 等文件夹。</p>
+
+<p>如果要添加字符串或者 style 资源，就要稍微复杂一点，需要使用 add-resource 来让系统“明白”新添加的内容。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='XML'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;resources</span> <span class="na">xmlns:xliff=</span><span class="s">&quot;urn:oasis:names:tc:xliff:document:1.2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;add-resource</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="na">name=</span><span class="s">&quot;numwheel_year&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="c">&lt;!-- Strings for number wheel --&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&quot;numwheel_year&quot;</span><span class="nt">&gt;</span>年<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'><span class="nt">&lt;/resources&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果没有 add-resource，则会遇到这样的信息：</p>
+
+<p>完了以后，就可以用使用 <code>com.android.internal.R</code> 来访问这些资源了。</p>
+
+<h4>三、加入编译脚本（Add build script）</h4>
+
+<p>在自己 product-name 目录下建立 sdk_addon 文件夹，并依照 sample/sdk_addon 分别拷贝 manifest.xml 和 hardware.xml，注意 manifest.xml 中的内容必须要根据之前第一步的变更同步修改。</p>
+
+<p>接下来最关键，也是最容易出错的环节到了，那就是修改自己 product 的 mk 文件，需要修改 PRODUCT_PACKAGES、PRODUCT_COPY_FILES、DEVICE_PACKAGE_OVERLAYS 的值，定义 PRODUCT_SDK_ADDON_NAME、PRODUCT_SDK_ADDON_COPY_FILES、PRODUCT_SDK_ADDON_COPY_MODULES 和 PRODUCT_SDK_ADDON_DOC_MODULE。修改和定义的区别就在于，前者使用”+=”，后者使用“:=”。这些变量的值可以参照 sample 示例。</p>
+
+<p>由于 sample 的示例中没有出现 DEVICE_PACKAGE_OVERLAYS，所以我这里特别解释一下它的作用，除了刚才为 add-on 增加资源以外，它还起到的作用就是替换掉原来的 framework 中的资源，比如图片等等，惟一的要求就是必须建立和原来图片位置相同的路径。和 add-on 不同的是，如果你是替换原来资源，那么是不用 add-resource 的。DEVICE_PACKAGE_OVERLAYS 的值就是 overlay 文件夹的路径，不包含 $ANDROID_HOME，到 overlay 一级即可。</p>
+
+<p>完成了修改以后，使用 make PRODUCT-product-name-sdk_addon 进行编译。当然也可以直接执行 make sdk_addon，但是需要注意在此之前，你需要使用 chooseproduct 指定 product-name。执行完毕以后，会得到一个 zip 文件，这个就是 add-on 了。</p>
+
+<h4>四、发布（Relase）</h4>
+
+<p>完成上面的环节以后，剩下临门一脚了。所谓发布，就是通过诸如 HTTPD 一类的 HTTP SERVER 将资源公布出去。从 <a href="http://httpd.apache.org">http://httpd.apache.org</a> 下载 httpd，如何安装以及修改监听端口可参看其 document，在此不予赘述。</p>
+
+<p>现在把刚才生成的 zip 文件，放置到 htdoc 目录下。并且创建一个 repository.xml，其内容和形式参看
+<a href="https://dl-ssl.google.com/android/repository/repository.xml">https://dl-ssl.google.com/android/repository/repository.xml</a> ，我把它删减一下得到以下内容：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='XML'><span class='line'><span class="nt">&lt;sdk:sdk-repository</span>
+</span><span class='line'>    <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+</span><span class='line'>    <span class="na">xmlns:sdk=</span><span class="s">&quot;http://schemas.android.com/sdk/android/repository/2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;sdk:add-on&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:name&gt;</span>Google APIs<span class="nt">&lt;/sdk:name&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:api-level&gt;</span>3<span class="nt">&lt;/sdk:api-level&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:vendor&gt;</span>Google Inc.<span class="nt">&lt;/sdk:vendor&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:revision&gt;</span>03<span class="nt">&lt;/sdk:revision&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:description&gt;</span>Android + Google APIs<span class="nt">&lt;/sdk:description&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:desc-url&gt;</span>http://developer.android.com/<span class="nt">&lt;/sdk:desc-url&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:uses-license</span> <span class="na">ref=</span><span class="s">&quot;android-sdk-license&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:archives&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;sdk:archive</span> <span class="na">os=</span><span class="s">&quot;any&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:size&gt;</span>34908058<span class="nt">&lt;/sdk:size&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:checksum</span> <span class="na">type=</span><span class="s">&quot;sha1&quot;</span><span class="nt">&gt;</span>1f92abf3a76be66ae8032257fc7620acbd2b2e3a<span class="nt">&lt;/sdk:checksum&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:url&gt;</span>google_apis-3-r03.zip<span class="nt">&lt;/sdk:url&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;/sdk:archive&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/sdk:archives&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:libs&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;sdk:lib&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:name&gt;</span>com.google.android.maps<span class="nt">&lt;/sdk:name&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:description&gt;</span>API for Google Maps.<span class="nt">&lt;/sdk:description&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;/sdk:lib&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/sdk:libs&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/sdk:add-on&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;sdk:license</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;android-sdk-license&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        This is the Android Software Development Kit License Agreement.
+</span><span class='line'>    <span class="nt">&lt;/sdk:license&gt;</span>
+</span><span class='line'><span class="nt">&lt;/sdk:sdk-repository&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接下来的事情，就是替换掉里面的 Google 信息为自己，大部分可以从它们的名称中理解其含义，例如 size 是指文件大小，你可以使用 ls –l 来查看文件大小。checksum 则要麻烦一些，执行 sha1sum ZIP.zip，即使用 sha1 对刚才生成 zip 文件生成校验码。</p>
+
+<p>修改完成以后，通过浏览器访问 <code>http://IP-address:port/repository.xml</code>，确认是否 OK。确认以后，打开 Android SDK and AVD Manager，点击左侧 Available Packages，选择 “Add Add-on Sites” 填入 URL，接下来的安装就不费口舌了。完成以后，你可以在 sdk 下的 add-ons 目录下看到刚刚安装的 add-on。</p>
+
+<p>捎带提一下，应用开发方面使用该 add-on 时，调整工程的 Project Build Target 设定即可。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-04T10:07:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/04/mac-os-x-efficiency-improvement-2/">
+		
+			Mac OS X Efficiency Improvement (2)</a>
+	</h2>
+	<div class="entry-content">
+		<p>输入特殊符号：</p>
+
+<table>
+<thead>
+<tr>
+<th>描述(Desc)        </th>
+<th> 按键（Key）           </th>
+<th>符号(Sign)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>版权符号:       </td>
+<td> Option + G            </td>
+<td> © </td>
+</tr>
+<tr>
+<td>人民币符号:        </td>
+<td> Option + Y            </td>
+<td> ¥ </td>
+</tr>
+<tr>
+<td>商标符号:       </td>
+<td> Option + 2            </td>
+<td> ™ </td>
+</tr>
+<tr>
+<td>已经注册的商标:  </td>
+<td> Option + R            </td>
+<td> ® </td>
+</tr>
+<tr>
+<td>苹果（Apple）符号 </td>
+<td> Option + Shift + K    </td>
+<td> </td>
+</tr>
+<tr>
+<td>Command 符号      </td>
+<td> ⌘ + ⌥ + t             </td>
+<td> 字符集</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>数学符号：</p>
+
+<table>
+<thead>
+<tr>
+<th>描述(Desc)        </th>
+<th>       按键（Key）         </th>
+<th> 符号(Sign)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>约等于           </td>
+<td>Option + X                 </td>
+<td>  ≈ </td>
+</tr>
+<tr>
+<td>度数              </td>
+<td>Shift + Option + 8         </td>
+<td>  ° </td>
+</tr>
+<tr>
+<td>除号              </td>
+<td>Option + /                 </td>
+<td>  ÷ </td>
+</tr>
+<tr>
+<td>无穷              </td>
+<td>Option + 5                 </td>
+<td>  ∞</td>
+</tr>
+<tr>
+<td>大于等于            </td>
+<td>Option + ,                 </td>
+<td>  ≤ </td>
+</tr>
+<tr>
+<td>小于等于            </td>
+<td>Option + .                 </td>
+<td>  ≥</td>
+</tr>
+<tr>
+<td>不等于           </td>
+<td>Option + =                 </td>
+<td>  ≠ </td>
+</tr>
+<tr>
+<td>圆周率           </td>
+<td>Option + P                 </td>
+<td>  π </td>
+</tr>
+<tr>
+<td>加减              </td>
+<td>Shift + Option +           </td>
+<td>  ±</td>
+</tr>
+<tr>
+<td>开方              </td>
+<td>Option + V                 </td>
+<td>  √ </td>
+</tr>
+<tr>
+<td>求和符号            </td>
+<td>Option + W                 </td>
+<td>  ∑</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>截图：</p>
+
+<table>
+<thead>
+<tr>
+<th>按键（Key）                 </th>
+<th>   描述(Desc)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command + Shift + 3         </td>
+<td>   截取整个屏幕，并保存图片到桌面 </td>
+</tr>
+<tr>
+<td>Command + Shift + 4         </td>
+<td>   自定义截图大小，按下 Space 键\n，可以选择窗口截图</td>
+</tr>
+<tr>
+<td>Command + Ctrl + Shift + 3  </td>
+<td>   可以将截图保存至剪切板</td>
+</tr>
+<tr>
+<td>Command + Ctrl + Shift + 4  </td>
+<td>   同上</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>全局：</p>
+
+<table>
+<thead>
+<tr>
+<th>按键(Key)                 </th>
+<th>  描述(Desc)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command + Tab               </td>
+<td> 在应用程序间切换</td>
+</tr>
+<tr>
+<td>Command + `                 </td>
+<td> 在应用程序中的窗口间切换</td>
+</tr>
+<tr>
+<td>Ctrl + Tab                  </td>
+<td> 同一个应用程序中的页面或工作空间切换</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Tab          </td>
+<td> 同上，反方向</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + power        </td>
+<td> 关闭显示器</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Sublime Text 2</p>
+
+<table>
+<thead>
+<tr>
+<th>key                      </th>
+<th>  function </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alt+Cmd+N</strong>            </td>
+<td> 窗  口  分  成  N  栏</td>
+</tr>
+<tr>
+<td><strong>Cmd+k,b</strong>              </td>
+<td> toogle side bar</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Shift+k</strong>         </td>
+<td> 删除行</td>
+</tr>
+<tr>
+<td><strong>Ctrl+F</strong>&ndash;>Alt+Enter    </td>
+<td> find &ndash;>find all</td>
+</tr>
+<tr>
+<td>Cmd+p                    </td>
+<td>  文件定位</td>
+</tr>
+<tr>
+<td>Cmd+;                    </td>
+<td>  词语定位 #</td>
+</tr>
+<tr>
+<td>Cmd+r                    </td>
+<td>  函数定位 @</td>
+</tr>
+<tr>
+<td>Cmd+g                    </td>
+<td>  行号定位 :</td>
+</tr>
+<tr>
+<td>Cmd+Shift+V              </td>
+<td>  粘贴并格式化</td>
+</tr>
+<tr>
+<td>Cmd+K+U                  </td>
+<td>  大写</td>
+</tr>
+<tr>
+<td>Cmd+K+L                  </td>
+<td>  小写</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Android Studio</p>
+
+<table>
+<thead>
+<tr>
+<th>key                      </th>
+<th>  function </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Double Shift             </td>
+<td> Search Everywhere</td>
+</tr>
+<tr>
+<td>Cmd Shift O              </td>
+<td> Open a File by name</td>
+</tr>
+<tr>
+<td>Cmd + E                  </td>
+<td> Recent Files</td>
+</tr>
+<tr>
+<td>Cmd + up                 </td>
+<td> Open Navigation Bar</td>
+</tr>
+<tr>
+<td>Cmd + H                  </td>
+<td> Hierarchy Class</td>
+</tr>
+<tr>
+<td>Cmd + D                  </td>
+<td> 复制选中区域</td>
+</tr>
+<tr>
+<td>Cmd + O                  </td>
+<td> 打开 Class</td>
+</tr>
+<tr>
+<td>Cmd + Shift +up/down     </td>
+<td> 更换位置 </td>
+</tr>
+<tr>
+<td>Cmd + Shift + F          </td>
+<td> 全局查找</td>
+</tr>
+<tr>
+<td>Cmd + R                  </td>
+<td> 查找替换</td>
+</tr>
+<tr>
+<td>Cmd + Alt + L            </td>
+<td> 格式化代码</td>
+</tr>
+<tr>
+<td>Cmd + Shift + U          </td>
+<td> 切换大小写</td>
+</tr>
+<tr>
+<td>Alt + Shift + left/right </td>
+<td> 选择范围扩大一个 word</td>
+</tr>
+</tbody>
+</table>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-04T00:34:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/04/mac-os-x-efficiency-improvement-2//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/03/how-use-google-efficiently/">
+		
+			高效的使用Google</a>
+	</h2>
+	<div class="entry-content">
+		<p><img src="/images/2014/07/thumb_google.jpeg" alt="" /><br/></p>
+
+
+		
+		<a href="/blog/2014/07/03/how-use-google-efficiently/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-03T18:28:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/03/how-use-google-efficiently//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/07/03/learn-english-3/">
 		
 			Learn English (3)</a>
@@ -671,400 +1248,6 @@ Dreamer, dreamer<br></p>
 
 	
 		<span class="comments"><a href="/blog/2014/06/23/dreamer//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/23/redis-started/">
-		
-			Redis-started</a>
-	</h2>
-	<div class="entry-content">
-		<h3>Redis installation</h3>
-
-<h5>1)Download</h5>
-
-<p>Go to the Redis Download page and find the latest stable version. Download it and unpack:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar xzf redis-*
-</span><span class='line'>cd redis-*</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2)Compile</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>make
-</span><span class='line'>sudo make install clean</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>3)Create config:</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir /etc/redis
-</span><span class='line'>cp redis.conf /etc/redis/redis.conf</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>4)Start server &amp; Connect</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>redis-server /etc/redis/redis.conf
-</span><span class='line'>
-</span><span class='line'>redis-cli</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>PhpRedis Installation</h3>
-
-<h5>1) Preparation</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install php5-dev</span></code></pre></td></tr></table></div></figure>
-
-
-<p>php5-dev provides the dev library as well as the phpize command which is required for the compiling step, if you dont install this package, you would got this error message when you start your step 2:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>No command 'phpize' found, did you mean:
-</span><span class='line'> Command 'phpize5' from package 'php5-dev' (main)
-</span><span class='line'>phpize: command not found</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2) Get phpredis source code, should be pretty easy by running</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/nicolasff/phpredis.git</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>3) Compile and install</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd phpredis
-</span><span class='line'>phpize
-</span><span class='line'>./configure
-</span><span class='line'>make
-</span><span class='line'>sudo -s make install</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>4) Enable the phpredis extension</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo "extension=redis.so"&gt;/etc/php5/conf.d/redis.ini</span></code></pre></td></tr></table></div></figure>
-
-
-<p>for ubuntu PHP5.5, you should create copy this file into</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/php5/mods-available</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>5) Write a simple php script to test (running on cli would be fine if php5-cli is installed)</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'>        <span class="c1">// phpredis_set.php</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">=</span><span class="k">new</span> <span class="nx">Redis</span><span class="p">()</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Can&#39;f load redis module.&quot;</span><span class="p">);</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span><span class="mi">6379</span><span class="p">);</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>you can check phpredis with command:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x"> php -r &quot;if (new Redis()==true){echo \&quot;Redis is ready!\&quot;}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Prior to try phpredis I was using Rediska as the php redis client. I did some pretty quick and dirty benchmarking comparison and phpredis is clearly a winner here, not surprisingly because phpredis is a compiled extension written in C while Rediska is a pure php library.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php phpredis_set.php; done</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>real 0m13.072s
-user 0m6.560s
-sys 0m3.620s</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php rediska_set.php; done</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>real 0m21.035s
-user 0m12.150s
-sys 0m5.050s</p>
-
-<p>and the source code for rediska_set.php:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'>        <span class="k">require_once</span> <span class="s1">&#39;Rediska/library/Rediska.php&#39;</span><span class="p">;</span>
-</span><span class='line'>        <span class="nv">$rediska</span><span class="o">=</span><span class="k">new</span> <span class="nx">Rediska</span><span class="p">();</span>
-</span><span class='line'>        <span class="nv">$rediska</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;set_testkey&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<h3>Python-Redis installation</h3>
-
-<h5>1)Install</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo pip install redis</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo easy_install redis</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or download the source and from source</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo python setup.py install</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2)Getting started</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">redis</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">StrictRedis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="bp">True</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="s">&#39;bar&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&lt;&mdash;unfinished&mdash;></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-23T23:41:00+08:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/redis/'>redis</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/23/redis-started//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/19/good-day-every-day/">
-		
-			Good Day, Every Day</a>
-	</h2>
-	<div class="entry-content">
-		<p>Sometimes, we don&rsquo;t need to understand everything. We just need to have a little faith. For everything you have missed, you have gained something else; And for everything you gain, you lose something else. It&rsquo;s about your outlook towards your life. You can either regret or rejoice. But for the rainy and cloudy, we would not enjoy the blue sky and fresh air.<br><br>
-<b>Just have a little faith! Then every day would be a good day!</b></p>
-
-<hr><br>
-
-
-<p><img src="/images/photos/2014-06-07%2013.45.28.jpg" alt="" /><br>
-<img src="/images/photos/2014-06-01%2018.54.11.jpg" alt="" /><br></p>
-
-
-		
-		<a href="/blog/2014/06/19/good-day-every-day/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-19T21:49:00+08:00" pubdate data-updated="true">Jun 19<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/life-insights/'>life-insights</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/19/good-day-every-day//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/06/02/i-want-my-tears-back/">
-		
-			I Want My Tears Back</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/2014/06/just-done.jpg" title="just-done" alt="" /><br/></p>
-
-<p>I want my tears back<br/>
-我要要回我的眼泪<br/>
-The treetops, the chimneys, the snowbed stories, winter grey<br/>
-树冠、烟囱、铺满雪的房屋、斑白的冬季<br/>
-Wildflowers, those meadows of heaven, wind in the wheat<br/>
-野花、那些天堂的草地、麦田里的风<br/>
-A railroad across waters, the scent of grandfatherly love<br/>
-一条跨越水域的铁路 祖父慈爱的味道<br/>
-Blue bayous, Decembers, moon through a dragonfly&rsquo;s wings<br/>
-蓝色的海湾 十二月里 月光穿越蜻蜓的翅膀<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where&rsquo;s dear Alice knocking on the door<br/>
-那个敲门的爱丽丝在哪里<br/>
-Where&rsquo;s the trapdoor that takes me there<br/>
-那个带我到那得旋转门在哪里<br/>
-Where&rsquo;s the real is shattered by a Mad Marsh Hare<br/>
-在那里现实被疯狂的野兔所粉碎<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-I want my tears back<br/>
-我要要回我的眼泪<br/>
-I want my tears back now<br/>
-我现在就要要回我的眼泪<br/>
-A ballet on a grove, still growing young all alone<br/>
-在段在片草丛上上演的芭蕾舞，仍然独自在变年轻<br/>
-A rag doll, a best friend, the voice of Mary Costa<br/>
-一个玩具娃娃，一位好友，玛丽·可思塔的声音<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where&rsquo;s dear Alice knocking on the door<br/>
-那个敲门的爱丽丝在哪里<br/>
-Where&rsquo;s the trapdoor that takes me there<br/>
-那个带我到那得旋转门在哪里<br/>
-Where&rsquo;s the real is shattered by a Mad Marsh Hare<br/>
-在那里现实被疯狂的野兔所粉碎<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-I want my tears back<br/>
-我要要回我的眼泪<br/>
-I want my tears back now<br/>
-我现在就要要回我的眼泪<br/></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-02T23:25:00+08:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/life-insights/'>life-insights</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/06/02/i-want-my-tears-back//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

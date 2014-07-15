@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-12T18:15:23+08:00</updated>
+  <updated>2014-07-15T10:41:00+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,208 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Aloe Blacc - Hello World ]]></title>
+    <link href="http://ziso.me/blog/2014/07/14/aloe-blacc-hello-world/"/>
+    <updated>2014-07-14T14:13:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/14/aloe-blacc-hello-world</id>
+    <content type="html"><![CDATA[<p><img src="http://ziso.me/images/2014/07/aleo-blacc-hello-world.jpg" title="hello world" alt="HELLO WORLD" /><br/></p>
+
+<p>[Verse]</p>
+
+<p>Hello world, it\&rsquo;s nice to meet you</p>
+
+<p>I\&rsquo;ve been waiting for this moment all my life</p>
+
+<p>Hello world, the past is over</p>
+
+<p>It\&rsquo;s time for us to come together and make the future right</p>
+
+<p>[Pre-Chorus]</p>
+
+<p>I had an epiphany one night</p>
+
+<p>Looking at the endless star-filled sky</p>
+
+<p>[Chorus]</p>
+
+<p>The world is ours</p>
+
+<p>The world is ours</p>
+
+<p>The world is ours</p>
+
+<p>Seven billion stars</p>
+
+<p>(We are we are we are we are)</p>
+
+<p>(We are we are we are we are)</p>
+
+<p>The world is ours</p>
+
+<p>[Verse]</p>
+
+<p>Hello world, the sun is rising</p>
+
+<p>It doesn\&rsquo;t matter who you are, the sun still sets the same</p>
+
+<p>Hello world, undivided</p>
+
+<p>Don\&rsquo;t matter if you win or lose, it</p>
+
+<p>[Chorus]</p>
+
+<p>The world is ours</p>
+
+<p>The world is ours</p>
+
+<p>The world is ours</p>
+
+<p>Seven billion stars</p>
+
+<p>(We are we are we are we are)</p>
+
+<p>(We are we are we are we are)</p>
+
+<p>The world is ours</p>
+
+<p>[Bridge]</p>
+
+<p>From the sky to the sea to the air that we breathe</p>
+
+<p>To the depths of the earth to the stars</p>
+
+<p>The world is ours, all ours</p>
+
+<p>The world is ours, all ours</p>
+
+<p>[Chorus]</p>
+
+<p>(We are we are we are we are)</p>
+
+<p>(We are we are we are we are)</p>
+
+<p>The world is ours</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gradle build Tips]]></title>
+    <link href="http://ziso.me/blog/2014/07/14/gradle-build-tips/"/>
+    <updated>2014-07-14T10:42:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/14/gradle-build-tips</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m lazy. Hopefully you are too. Here&rsquo;s two small conveniences for the Gradle build system you might find useful:</p>
+
+<p>Decomposed Version Name and Code</p>
+
+<p>Break up your version into its logical components and manage them separately. Stop wondering if you&rsquo;ve bumped the version code correctly or updated the version name properly.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def versionMajor = 3
+</span><span class='line'>def versionMinor = 0
+</span><span class='line'>def versionPatch = 0
+</span><span class='line'>def versionBuild = 0 // bump for dogfood builds, public betas, etc.
+</span><span class='line'>
+</span><span class='line'>android {
+</span><span class='line'>  defaultConfig {
+</span><span class='line'>    versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+</span><span class='line'>    versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you have more than 10 patch or minor versions you have other problems. 10 builds? Unlikely, but we&rsquo;ve got a whole int32 to work with here so why not&hellip;</p>
+
+<p>A More Useful BuildConfig</p>
+
+<p>Build config is FINALLY ours to add to. Leverage it for constant information that might otherwise require a Context to obtain.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def gitSha() {
+</span><span class='line'>  return 'git rev-parse --short HEAD'.execute().text.trim()
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>def buildTime() {
+</span><span class='line'>  def df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'")
+</span><span class='line'>  df.setTimeZone(TimeZone.getTimeZone("UTC"))
+</span><span class='line'>  return df.format(new Date())
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>android {
+</span><span class='line'>  defaultConfig {
+</span><span class='line'>    buildConfig """\
+</span><span class='line'>      public static final String GIT_SHA = "${gitSha()}";
+</span><span class='line'>      public static final String BUILD_TIME = "${buildTime()}";
+</span><span class='line'>    """
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Let&rsquo;s get more utility into it! Vote @ <a href="http://b.android.com/59302">http://b.android.com/59302</a></p>
+
+<p>Since Gadle 1.9</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> buildConfigField "String" , "GIT_SHA" ,"\"${gitSha()}\""
+</span><span class='line'> buildConfigField "String","BUILD_TIME","\"${buildTime()}\""</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android Photoshop export]]></title>
+    <link href="http://ziso.me/blog/2014/07/13/android-photoshop-export/"/>
+    <updated>2014-07-13T02:04:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/13/android-photoshop-export</id>
+    <content type="html"><![CDATA[<p>[脑补一下]：
+1. 什么是 Photoshop Action？
+[答]：Photoshop Action 是从 Photoshop 4.0 开始出现的，它就好比是 Dos 里面的批处理文件，或者 Word 中的宏。它可以把 Photoshop 中每一个操作步骤记录下来然后反复使用，或者存成独立的文件供大家分享。</p>
+
+<ol>
+<li>如何安装及使用 Photoshop Action？
+[答]：打开 Photoshop，选中“窗口—动作”菜单，打开选中“动作”面板。</li>
+</ol>
+
+
+<p>Here we go! 下载下面两个任意一个 action 脚本，基本一样，只是一个从小到大，一个从大到小。
+<a href="http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/">http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/</a></p>
+
+<p><a href="http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/">http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/</a></p>
+
+<p>双击导入到 photoshop, 窗口-动作，找到刚刚导入的 Action,运行即可。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sublime Text 2 Plugin - Text Pastry]]></title>
@@ -3766,7 +3968,7 @@ entrepreneur  企业家</p></li>
 
 <p>许多人遇到外国人的时候就感觉自己十几年英语白读了，不是语言上的问题，只是除了工作上的必要沟通私底下就不知道说什么才好。今天潘吉和 Jenny 要和你聊聊和老外 small talk 的时候要注意些什么，聊什么话题最好？</p>
 
-<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#109;&#101;&#101;&#116;&#117;&#112;&#64;&#x6f;&#x70;&#x65;&#x6e;&#108;&#x61;&#x6e;&#103;&#117;&#97;&#103;&#x65;&#46;&#99;&#111;&#x6d;">&#109;&#x65;&#101;&#x74;&#x75;&#x70;&#64;&#x6f;&#112;&#101;&#110;&#108;&#x61;&#110;&#x67;&#117;&#x61;&#103;&#101;&#x2e;&#x63;&#x6f;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
+<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x6d;&#101;&#x65;&#116;&#x75;&#112;&#x40;&#x6f;&#x70;&#101;&#x6e;&#x6c;&#x61;&#x6e;&#x67;&#117;&#x61;&#x67;&#101;&#46;&#x63;&#x6f;&#x6d;">&#109;&#x65;&#101;&#116;&#117;&#x70;&#64;&#x6f;&#x70;&#101;&#110;&#x6c;&#x61;&#x6e;&#x67;&#117;&#97;&#x67;&#x65;&#x2e;&#99;&#111;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
 &ndash; awkward  尴尬</p>
 
 <ul>
@@ -3838,7 +4040,7 @@ religion  宗教信仰</p></li>
 
 <p>潘吉 Jenny 告诉你&mdash;OpenLanguage 英语俱乐部召集组织者</p>
 
-<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#109;&#x65;&#101;&#x74;&#117;&#x70;&#64;&#111;&#x70;&#101;&#110;&#x6c;&#x61;&#x6e;&#x67;&#117;&#97;&#x67;&#101;&#46;&#99;&#x6f;&#x6d;">&#109;&#101;&#101;&#116;&#117;&#x70;&#x40;&#111;&#x70;&#101;&#110;&#108;&#97;&#110;&#x67;&#117;&#x61;&#x67;&#101;&#46;&#99;&#111;&#x6d;</a> 报名吧！
+<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#x6d;&#x65;&#x65;&#x74;&#x75;&#x70;&#x40;&#x6f;&#112;&#101;&#110;&#x6c;&#x61;&#x6e;&#103;&#117;&#97;&#103;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x6d;&#x65;&#101;&#x74;&#x75;&#112;&#x40;&#x6f;&#112;&#101;&#110;&#x6c;&#x61;&#x6e;&#103;&#x75;&#97;&#103;&#x65;&#x2e;&#99;&#111;&#x6d;</a> 报名吧！
 如果你有意愿成为 OpenLanguage 英语俱乐部的组织者，请发送邮件到 meetup@openlanguage.com，留下您的姓名，电话及所在城市。活动的组织者会有丰厚的奖品及优惠等你拿哦！</p>
 
 <p>独乐乐不如众乐乐，OpenLanguage 英语俱乐部六月活动将于于 6 月 29 号(周六)在上海举办，主题即为“Small Talk 和老外闲话聊聊”，你可以自己前来，或带上你的好友一起前来！</p>
@@ -4645,7 +4847,7 @@ New Zealand  新西兰</li>
 
 <p>潘吉 Jenny 告诉你&mdash;在英语课上用 EnglishPod 中国！</p>
 
-<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x73;&#x75;&#x70;&#x70;&#111;&#x72;&#116;&#x40;&#111;&#x70;&#x65;&#110;&#108;&#x61;&#110;&#x67;&#x75;&#x61;&#103;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#x73;&#x75;&#x70;&#112;&#x6f;&#114;&#x74;&#64;&#111;&#x70;&#x65;&#110;&#108;&#x61;&#x6e;&#103;&#x75;&#97;&#x67;&#x65;&#x2e;&#x63;&#111;&#109;</a> 了解详情。
+<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#115;&#x75;&#x70;&#112;&#111;&#114;&#116;&#64;&#x6f;&#112;&#101;&#x6e;&#108;&#97;&#x6e;&#103;&#x75;&#x61;&#x67;&#101;&#46;&#x63;&#111;&#x6d;">&#x73;&#x75;&#112;&#x70;&#x6f;&#114;&#x74;&#x40;&#x6f;&#112;&#x65;&#110;&#108;&#x61;&#110;&#103;&#117;&#97;&#x67;&#101;&#46;&#99;&#111;&#x6d;</a> 了解详情。
 &ndash; internalize  真正掌握知识</p>
 
 <ul>
@@ -6533,314 +6735,6 @@ Dreamer, dreamer<br>
 Dreamer, dreamer<br>
 Dreamer, dreamer<br>
 Dreamer, dreamer<br></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[redis-started]]></title>
-    <link href="http://ziso.me/blog/2014/06/23/redis-started/"/>
-    <updated>2014-06-23T23:41:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/06/23/redis-started</id>
-    <content type="html"><![CDATA[<h3>Redis installation</h3>
-
-<h5>1)Download</h5>
-
-<p>Go to the Redis Download page and find the latest stable version. Download it and unpack:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tar xzf redis-*
-</span><span class='line'>cd redis-*</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2)Compile</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>make
-</span><span class='line'>sudo make install clean</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>3)Create config:</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir /etc/redis
-</span><span class='line'>cp redis.conf /etc/redis/redis.conf</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>4)Start server &amp; Connect</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>redis-server /etc/redis/redis.conf
-</span><span class='line'>
-</span><span class='line'>redis-cli</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>PhpRedis Installation</h3>
-
-<h5>1) Preparation</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install php5-dev</span></code></pre></td></tr></table></div></figure>
-
-
-<p>php5-dev provides the dev library as well as the phpize command which is required for the compiling step, if you dont install this package, you would got this error message when you start your step 2:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>No command 'phpize' found, did you mean:
-</span><span class='line'> Command 'phpize5' from package 'php5-dev' (main)
-</span><span class='line'>phpize: command not found</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2) Get phpredis source code, should be pretty easy by running</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/nicolasff/phpredis.git</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>3) Compile and install</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd phpredis
-</span><span class='line'>phpize
-</span><span class='line'>./configure
-</span><span class='line'>make
-</span><span class='line'>sudo -s make install</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>4) Enable the phpredis extension</h5>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo "extension=redis.so"&gt;/etc/php5/conf.d/redis.ini</span></code></pre></td></tr></table></div></figure>
-
-
-<p>for ubuntu PHP5.5, you should create copy this file into</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/php5/mods-available</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>5) Write a simple php script to test (running on cli would be fine if php5-cli is installed)</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'>        <span class="c1">// phpredis_set.php</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">=</span><span class="k">new</span> <span class="nx">Redis</span><span class="p">()</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Can&#39;f load redis module.&quot;</span><span class="p">);</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span><span class="mi">6379</span><span class="p">);</span>
-</span><span class='line'>        <span class="nv">$redis</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;hello world&#39;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>you can check phpredis with command:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x"> php -r &quot;if (new Redis()==true){echo \&quot;Redis is ready!\&quot;}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Prior to try phpredis I was using Rediska as the php redis client. I did some pretty quick and dirty benchmarking comparison and phpredis is clearly a winner here, not surprisingly because phpredis is a compiled extension written in C while Rediska is a pure php library.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php phpredis_set.php; done</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>real 0m13.072s
-user 0m6.560s
-sys 0m3.620s</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">time for i in `seq 1 1000`; do php rediska_set.php; done</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>real 0m21.035s
-user 0m12.150s
-sys 0m5.050s</p>
-
-<p>and the source code for rediska_set.php:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'>        <span class="k">require_once</span> <span class="s1">&#39;Rediska/library/Rediska.php&#39;</span><span class="p">;</span>
-</span><span class='line'>        <span class="nv">$rediska</span><span class="o">=</span><span class="k">new</span> <span class="nx">Rediska</span><span class="p">();</span>
-</span><span class='line'>        <span class="nv">$rediska</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;set_testkey&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<h3>Python-Redis installation</h3>
-
-<h5>1)Install</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo pip install redis</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo easy_install redis</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or download the source and from source</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">sudo python setup.py install</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h5>2)Getting started</h5>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">redis</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">StrictRedis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="bp">True</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="s">&#39;bar&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&lt;&mdash;unfinished&mdash;></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Good Day, Every Day]]></title>
-    <link href="http://ziso.me/blog/2014/06/19/good-day-every-day/"/>
-    <updated>2014-06-19T21:49:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/06/19/good-day-every-day</id>
-    <content type="html"><![CDATA[<p>Sometimes, we don&rsquo;t need to understand everything. We just need to have a little faith. For everything you have missed, you have gained something else; And for everything you gain, you lose something else. It&rsquo;s about your outlook towards your life. You can either regret or rejoice. But for the rainy and cloudy, we would not enjoy the blue sky and fresh air.<br><br>
-<b>Just have a little faith! Then every day would be a good day!</b></p>
-
-<hr><br>
-
-
-<p><img src="http://ziso.me/images/photos/2014-06-07%2013.45.28.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-01%2018.54.11.jpg" alt="" /><br></p>
-
-<!-- more -->
-
-
-<p><img src="http://ziso.me/images/photos/2014-06-03%2016.15.50.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-06%2013.39.55.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-06%2018.09.45.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-06%2019.00.31.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-07%2010.08.34.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-08%2019.25.49.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-13%2017.00.55.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-15%2019.00.40.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-17%2015.56.08.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-18%2014.19.31.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-18%2019.37.19.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-18%2020.35.15.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-18%2020.37.02.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-18%2020.37.10.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-18%2020.37.16.jpg" alt="" /><br>
-<img src="http://ziso.me/images/photos/2014-06-20%2013.14.33.jpg" alt="" /><br></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[I want my tears back]]></title>
-    <link href="http://ziso.me/blog/2014/06/02/i-want-my-tears-back/"/>
-    <updated>2014-06-02T23:25:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/06/02/i-want-my-tears-back</id>
-    <content type="html"><![CDATA[<p><img src="http://ziso.me/images/2014/06/just-done.jpg" title="just-done" alt="" /><br/></p>
-
-<p>I want my tears back<br/>
-我要要回我的眼泪<br/>
-The treetops, the chimneys, the snowbed stories, winter grey<br/>
-树冠、烟囱、铺满雪的房屋、斑白的冬季<br/>
-Wildflowers, those meadows of heaven, wind in the wheat<br/>
-野花、那些天堂的草地、麦田里的风<br/>
-A railroad across waters, the scent of grandfatherly love<br/>
-一条跨越水域的铁路 祖父慈爱的味道<br/>
-Blue bayous, Decembers, moon through a dragonfly&rsquo;s wings<br/>
-蓝色的海湾 十二月里 月光穿越蜻蜓的翅膀<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where&rsquo;s dear Alice knocking on the door<br/>
-那个敲门的爱丽丝在哪里<br/>
-Where&rsquo;s the trapdoor that takes me there<br/>
-那个带我到那得旋转门在哪里<br/>
-Where&rsquo;s the real is shattered by a Mad Marsh Hare<br/>
-在那里现实被疯狂的野兔所粉碎<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-I want my tears back<br/>
-我要要回我的眼泪<br/>
-I want my tears back now<br/>
-我现在就要要回我的眼泪<br/>
-A ballet on a grove, still growing young all alone<br/>
-在段在片草丛上上演的芭蕾舞，仍然独自在变年轻<br/>
-A rag doll, a best friend, the voice of Mary Costa<br/>
-一个玩具娃娃，一位好友，玛丽·可思塔的声音<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where&rsquo;s dear Alice knocking on the door<br/>
-那个敲门的爱丽丝在哪里<br/>
-Where&rsquo;s the trapdoor that takes me there<br/>
-那个带我到那得旋转门在哪里<br/>
-Where&rsquo;s the real is shattered by a Mad Marsh Hare<br/>
-在那里现实被疯狂的野兔所粉碎<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-Where is the wonder where&rsquo;s the awe<br/>
-那些奇迹 那些惊愕在哪里<br/>
-Where are the sleepless nights I used to live for<br/>
-那些我曾度过无眠的夜在哪里<br/>
-Before the years take me<br/>
-在岁月带离我之前<br/>
-I wish to see<br/>
-我希望能看见<br/>
-The lost in me<br/>
-迷失了的自己<br/>
-I want my tears back<br/>
-我要要回我的眼泪<br/>
-I want my tears back now<br/>
-我现在就要要回我的眼泪<br/></p>
 ]]></content>
   </entry>
   
