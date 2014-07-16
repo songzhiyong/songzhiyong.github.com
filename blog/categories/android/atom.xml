@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-15T10:41:00+08:00</updated>
+  <updated>2014-07-16T17:03:32+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,153 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android Launcher Notes 1]]></title>
+    <link href="http://ziso.me/blog/2014/07/15/android-launcher-notes-1/"/>
+    <updated>2014-07-15T21:14:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/15/android-launcher-notes-1</id>
+    <content type="html"><![CDATA[<h4>1. 入口</h4>
+
+<p>```java
+ public void onReceive(Context context, Intent data) {</p>
+
+<pre><code>    //接受程序创建shortcut的广播
+    if (!ACTION_INSTALL_SHORTCUT.equals(data.getAction())) {
+        return;
+    }
+    Intent intent = data.getParcelableExtra(Intent.EXTRA_SHORTCUT_INTENT);
+    if (intent == null) {
+        return;
+    }
+    // This name is only used for comparisons and notifications, so fall back to activity name
+    // if not supplied
+    String name = data.getStringExtra(Intent.EXTRA_SHORTCUT_NAME);
+    if (name == null) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            ActivityInfo info = pm.getActivityInfo(intent.getComponent(), 0);
+            name = info.loadLabel(pm).toString();
+        } catch (PackageManager.NameNotFoundException nnfe) {
+            return;
+        }
+    }
+    // Queue the item up for adding if launcher has not loaded properly yet
+    boolean launcherNotLoaded = LauncherModel.getCellCountX() &lt;= 0 ||
+            LauncherModel.getCellCountY() &lt;= 0;
+    PendingInstallShortcutInfo info = new PendingInstallShortcutInfo(data, name, intent);
+    if (mUseInstallQueue || launcherNotLoaded) {
+        //进入队列
+        mInstallQueue.add(info);
+    } else {
+        //创建
+        processInstallShortcut(context, info);
+    }
+}
+</code></pre>
+
+<p>```</p>
+
+<h4>2. 处理快捷方式Info,并创建</h4>
+
+<p>```java</p>
+
+<p>private static void processInstallShortcut(Context context,</p>
+
+<pre><code>        PendingInstallShortcutInfo pendingInfo) {
+    String spKey = LauncherApplication.getSharedPreferencesKey();
+    SharedPreferences sp = context.getSharedPreferences(spKey, Context.MODE_PRIVATE);
+    final Intent data = pendingInfo.data;
+    final Intent intent = pendingInfo.launchIntent;
+    final String name = pendingInfo.name;
+    // Lock on the app so that we don't try and get the items while apps are being added
+    LauncherApplication app = (LauncherApplication) context.getApplicationContext();
+    final int[] result = {INSTALL_SHORTCUT_SUCCESSFUL};
+    boolean found = false;
+    synchronized (app) {
+        final ArrayList&lt;ItemInfo&gt; items = LauncherModel.getItemsInLocalCoordinates(context);
+        final boolean exists = LauncherModel.shortcutExists(context, name, intent);
+        // Try adding to the workspace screens incrementally, starting at the default or center
+        // screen and alternating between +1, -1, +2, -2, etc. (using ~ ceil(i/2f)*(-1)^(i-1))
+        final int screen = Launcher.DEFAULT_SCREEN;
+        for (int i = 0; i &lt; (2 * Launcher.SCREEN_COUNT) + 1 &amp;&amp; !found; ++i) {
+            int si = screen + (int) ((i / 2f) + 0.5f) * ((i % 2 == 1) ? 1 : -1);
+            if (0 &lt;= si &amp;&amp; si &lt; Launcher.SCREEN_COUNT) {
+                found = installShortcut(context, data, items, name, intent, si, exists, sp,
+                        result);
+            }
+        }
+    }
+    // We only report error messages (duplicate shortcut or out of space) as the add-animation
+    // will provide feedback otherwise
+    if (!found) {
+        if (result[0] == INSTALL_SHORTCUT_NO_SPACE) {
+            Toast.makeText(context, context.getString(R.string.completely_out_of_space),
+                    Toast.LENGTH_SHORT).show();
+        } else if (result[0] == INSTALL_SHORTCUT_IS_DUPLICATE) {
+            Toast.makeText(context, context.getString(R.string.shortcut_duplicate, name),
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+private static boolean installShortcut(Context context, Intent data, ArrayList&lt;ItemInfo&gt; items,
+        String name, Intent intent, final int screen, boolean shortcutExists,
+        final SharedPreferences sharedPrefs, int[] result) {
+    //寻找位置
+    ...
+                // Update the Launcher db更新数据库
+                LauncherApplication app = (LauncherApplication) context.getApplicationContext();
+                ShortcutInfo info = app.getModel().addShortcut(context, data,
+                        LauncherSettings.Favorites.CONTAINER_DESKTOP, screen,
+                        tmpCoordinates[0], tmpCoordinates[1], true);
+    ...         
+    return false;
+}
+</code></pre>
+
+<p>```</p>
+
+<h4>3. LauncherModel.addShortcut(&hellip;) &mdash;&ndash;>  addItemToDatabase(&hellip; notify=true)</h4>
+
+<h4>4. LauncherApplication   ContentObserver  onChange(&hellip;)</h4>
+
+<p>```java</p>
+
+<pre><code>    mModel.resetLoadedState(false, true);
+    mModel.startLoaderFromBackground();
+</code></pre>
+
+<p>```</p>
+
+<h4>5. LauncherModel</h4>
+
+<p>```java
+ /<em>*
+   * When the launcher is in the background, it&rsquo;s possible for it to miss
+   * paired configuration changes. So whenever we trigger the loader from the
+   * background tell the launcher that it needs to re-run the loader when it
+   * comes back instead of doing it now.
+   </em>/
+  public void startLoaderFromBackground() {</p>
+
+<pre><code>...
+</code></pre>
+
+<p>  }
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dexguard Encrypt Asset File]]></title>
+    <link href="http://ziso.me/blog/2014/07/15/dexguard-encrypt-asset-file/"/>
+    <updated>2014-07-15T14:54:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/15/dexguard-encrypt-asset-file</id>
+    <content type="html"><![CDATA[<p>-encryptassetfiles [file_filter]</p>
+
+<p>Specifies the Android asset files that should be encrypted. Asset files are stored in the assets directory and can contain any data. The obfuscation step can automatically encrypt them and make sure they are decrypted on the fly at run-time. In order for this to work, the asset files must be streamed and their names must be hard-coded. This means that your code must invoke the AsssetManager as follows: open(&ldquo;MyAssetFile&rdquo;). Your configuration can then specify &ldquo;-encryptassetfiles assets/MyAssetFile&rdquo;. Only applicable when obfuscating Android code.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Gradle build Tips]]></title>
@@ -83,18 +230,27 @@ And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Le
     <link href="http://ziso.me/blog/2014/07/13/android-photoshop-export/"/>
     <updated>2014-07-13T02:04:00+08:00</updated>
     <id>http://ziso.me/blog/2014/07/13/android-photoshop-export</id>
-    <content type="html"><![CDATA[<p>[脑补一下]：
-1. 什么是Photoshop Action？
-[答]：Photoshop Action是从Photoshop 4.0开始出现的，它就好比是Dos里面的批处理文件，或者Word中的宏。它可以把Photoshop中每一个操作步骤记录下来然后反复使用，或者存成独立的文件供大家分享。</p>
+    <content type="html"><![CDATA[<p>[脑补一下]：</p>
 
 <ol>
-<li>如何安装及使用Photoshop Action？
-[答]：打开Photoshop，选中“窗口—动作”菜单，打开选中“动作”面板。</li>
+<li>什么是Photoshop Action？</li>
 </ol>
 
 
-<p>Here we go! 下载下面两个任意一个action脚本，基本一样，只是一个从小到大，一个从大到小。
-<a href="http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/">http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/</a></p>
+<p>[答]：Photoshop Action是从Photoshop 4.0开始出现的，它就好比是Dos里面的批处理文件，或者Word中的宏。它可以把Photoshop中每一个操作步骤记录下来然后反复使用，或者存成独立的文件供大家分享。</p>
+
+<ol>
+<li>如何安装及使用Photoshop Action？</li>
+</ol>
+
+
+<p>[答]：打开Photoshop，选中“窗口—动作”菜单，打开选中“动作”面板。</p>
+
+<p>Here we go!</p>
+
+<p>下载下面两个任意一个action脚本，基本一样，只是一个从小到大，一个从大到小。</p>
+
+<p><a href="http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/">http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/</a></p>
 
 <p><a href="http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/">http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/</a></p>
 
@@ -118,276 +274,6 @@ And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Le
 <p>So just ignore Application when designing your app; it will reduce confusion. (In its place, I prefer to use global singletons for such state.)</p>
 
 <p>Also as a general rule, I recommend not using android:process. There are certainly some uses for it, but the vast majority of the time it is not needed and just makes an application use more RAM, less efficient, and harder to write (since you can&rsquo;t take advantage of globals in a single process). It should be obvious to you if you reach a place where there is actually a good reason to use android:process.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[转] Layout Inflation不能这么用]]></title>
-    <link href="http://ziso.me/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong/"/>
-    <updated>2014-07-05T15:27:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/05/layout-inflationbu-neng-zhe-yao-yong</id>
-    <content type="html"><![CDATA[<p>转自：<a href="http://blog.jobbole.com/72156/">http://blog.jobbole.com/72156/</a></p>
-
-<p>Layout inflation在Android上下文环境下转换XML文件成View结构对象的时候需要用到。</p>
-
-<p>LayoutInflater这个对象在Android的SDK中很常见，但是你绝对没想到竟然能够找到一个使用误区。说不定你的App里就是这么用的！如果你在写APP的时候像如下代码一样使用LayoutInflater的话：</p>
-
-<p><code>java
-inflater.inflate(R.layout.my_layout, null);
-</code></p>
-
-<p>请你继续读完这篇文章，稍后我会解释为什么这样做不对。</p>
-
-<h3>认识LayoutInflater</h3>
-
-<p>首先看一下LayoutInflater的工作原理，有两个重载的版本可以使用：</p>
-
-<p>inflate(int resource, ViewGroup root) 和 inflate(int resource, ViewGroup root, boolean attachToRoot)</p>
-
-<p>第一个参数指出要载入的布局文件资源，第二个参数指出视图结构中载入的布局将要放入的根视图。如果有第三个参数，那么它用来决定是否把载入后的视图绑定到给出的根视图中。</p>
-
-<p>最后两个参数可能会导致一些问题。如果使用两个参数的版本，Layoutinflater会自动尝试把载入的视图绑定到给定的根视图对象中。但是，如果你传递null，系统就不会尝试绑定操作了，否则应用程序就崩溃了。</p>
-
-<p>很多开发者会这样做，认为传递null作为根视图就可以禁用绑定操作了。很多时候很多开发者甚至不知道还有三个参数的Layoutinflater版本的存在，如果这么做的话，也会同时禁用了根视图的一个很重要的函数……但是之前我没有研究过。</p>
-
-<h3>框架中的示例</h3>
-
-<p>现在我们来仔细看看Android框架关于动态载入布局的场景。</p>
-
-<p>Adapter是最常用的场景，我们经常需要使用LayoutInflater来自定义ListView（通过重写getView()方法），具体的方法签名是这样的：</p>
-
-<p><code>java
-getView(int position, View convertView, ViewGroup parent)
-</code></p>
-
-<p>Fragment也会用到inflation操作，通过onCreateView()方法创建view的时候会用到。这个方法的签名是这样的：</p>
-
-<p><code>java
-onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-</code></p>
-
-<p>不知你有没有注意到这一点，每次Framework需要你去载入一个布局文件时，都会传入一个ViewGroup参数（最后需要绑定到的根视图），如果Layoutinflater设为自动绑定到根视图的话，会抛出一个异常。</p>
-
-<p>所以你想想看，如果我做绑定操作的话，为什么要给你一个ViewGroup参数呢？事实证明父视图在这个inflation操作过程中是很重要的，它会计算被载入的XML在根元素中的LayoutParams，如果传入null话，就等于是告诉框架“我不知道载入的View要放到哪个父视图中”。</p>
-
-<p>问题在于，android:layout_xxx属性会在父视图对象中被重新计算，结果就是所有你定义的LayoutParams都会被忽略掉（因为没有已知的父视图对象）。然后你就纳闷“为什么框架会忽略掉我自己定义的布局属性呢？还是去StackOverFlow上看看，提一个bug吧”。</p>
-
-<p>如果没有设置LayoutParams，那么最终ViewGroup也会给你生成一个默认的属性，幸运的话（很多时候），这些默认的设置正好和你在XML文件中定义的一样……所以你就察觉不到其实已经出现问题了。</p>
-
-<h3>应用案例</h3>
-
-<p>你敢说你没有在应用中碰到过这样的场景吗？看看下面的代码，为Listview简单地载入一个布局文件：</p>
-
-<p>R.layout.item_row</p>
-
-<p>```xml
-&lt;LinearLayout xmlns:android=&ldquo;<a href="http://schemas.android.com/apk/res/android">http://schemas.android.com/apk/res/android</a>&rdquo;</p>
-
-<pre><code>android:layout_width="match_parent"
-android:layout_height="?android:attr/listPreferredItemHeight"
-android:gravity="center_vertical"
-android:orientation="horizontal"&gt;
-&lt;TextView
-    android:id="@+id/text1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingRight="15dp"
-    android:text="Text1" /&gt;
-&lt;TextView
-    android:id="@+id/text2"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="Text2" /&gt;
-</code></pre>
-
-<p></LinearLayout>
-```</p>
-
-<p>这里我们想把高度设置为固定高度，上面把它设为当前主题下的推荐高度……看似很合理。</p>
-
-<p>但是，当我们这样载入布局文件的时候，就不对了：</p>
-
-<p>```java
-public View getView(int position, View convertView, ViewGroup parent) {</p>
-
-<pre><code>if (convertView == null) {
-    convertView = inflate(R.layout.item_row, null);
-}
-
-return convertView;
-</code></pre>
-
-<p>}
-```</p>
-
-<p>然后结果就变成这样了：</p>
-
-<p><img src="/images/2014/07/image-1.png" alt="" /><br/></p>
-
-<p>为什么设定的固定高度不起作用？这是因为你没有把所有子View的高都设为固定高度，只需要把根视图的高设置成wrap_content就可以了。不需要知道为什么会这样（你可以吐槽一下Google为什么这么处理！）。</p>
-
-<p>而如果这样载入布局的话就没有问题：</p>
-
-<p>```java
-public View getView(int position, View convertView, ViewGroup parent) {</p>
-
-<pre><code>if (convertView == null) {
-    convertView = inflate(R.layout.item_row, parent, false);
-}
-
-return convertView;
-</code></pre>
-
-<p>}
-```</p>
-
-<p>这样我们就得到了想要的结果：</p>
-
-<p><img src="/images/2014/07/image-2.png" alt="" /><br/></p>
-
-<h3>任何规则都有例外</h3>
-
-<p>当然，也有需要在载入布局的时候指定null作为父布局对象，但这种情况非常少。一个典型的例子就是为AlertDialog中载入一个自定义布局。看看下面的例子，使用和上面一样的XML布局文件来作为对话框的布局：</p>
-
-<p>```java
-AlertDialog.Builder builder = new AlertDialog.Builder(context);
-View content = LayoutInflater.from(context).inflate(R.layout.item_row, null);</p>
-
-<p>builder.setTitle(&ldquo;My Dialog&rdquo;);
-builder.setView(content);
-builder.setPositiveButton(&ldquo;OK&rdquo;, null);
-builder.show();
-```</p>
-
-<p>这里的问题就是，AlertDialog.Builder支持自定义布局，但是setView()方法不提供带有布局文件作为参数的版本，所以只能先手动载入XML布局文件。由于最终会进入到对话框里面，不会接触到根布局（事实上这时候还没有根布局），所以我们也操作不了布局文件的最终父视图对象，当然也就不能用于载入使用了。事实证明，这些都是无关紧要的，因为AlertDialog会擦除布局上的所有Layoutparams然后替换为match_parent。</p>
-
-<p>所以，下次使用inflate()函数时，如果还想输入null应该停下来想一想“我真的不知道它该放到哪里吗？”</p>
-
-<p>最后，你应该想想两个参数的inflate()版本作为一个便捷的使用方式，可以忽略第三个参数（默认为true），但是不要想着为了方便而传递一个null却忽略了第三个参数会默认是false。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android SDK Add-on Configure, Compile and Relelease]]></title>
-    <link href="http://ziso.me/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease/"/>
-    <updated>2014-07-04T10:07:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease</id>
-    <content type="html"><![CDATA[<p>转自：<a href="http://www.poemcode.net/2010/09/android-sdk-addon/">http://www.poemcode.net/2010/09/android-sdk-addon/</a></p>
-
-<p>SDK Add-on 是一个比较小众的话题，一是通常厂商不会公开自己的add-on，二是即便公开了，应用开发者也很少使用。所以通常是厂商自己的技术团队自娱自乐，框架团队抽取公用的控件，制成一个 add-on，然后公布给自家的应用程序开发团队。</p>
-
-<p>由于是小众的，所以网络中关于这方面的资料比较少。这几天由于工作原因，我有幸接触到 Add-on，因此把这方面的知识进行了汇总，整理成如下内容。这些知识来自于我对 sample 示例的理解，并经过项目实践验证，我竭力保证无误，但差错之处也可能存在，如发现，请指正。</p>
-
-<p>以下内容将分成若个步骤：</p>
-
-<ol>
-<li>添加模块；</li>
-<li>添加资源文件；</li>
-<li>加入编译脚本；</li>
-<li>发布；</li>
-</ol>
-
-
-<p>在阅读下面内容前，先假设是对 $ANDROID_HOME/device/sample 进行修改。</p>
-
-<h4>一、添加模块（Add Module）</h4>
-
-<p>在自己 <em>product-name</em> 目录下建立 frameworks 文件夹，从 sample 中拷贝 Android.mk 文件到 frameworks。</p>
-
-<p>依照 sample 的方式，在 frameworks 路径下，建立 PlatformLibrary 文件夹，再次从 sample/frameworks 中拷贝 Android.mk 文件，并将其中的 LOCAL_MODULE 和 LOCAL_DROIDDOC_OPTIONS 修改为自己中意的名字。–这里值得注意的是，LOCAL_MODULE 变量被定义两次，第一次是 library，第二次是 document。</p>
-
-<p>依照 sample/frameworks/com.example.android.platform_library.xml 的形式创建自己的 XML 文件，文件名称、XML 内容中 name 和 file 保持和 LOCAL_MODULE(library) 一致。</p>
-
-<p>完成上述操作之后，建立 java 文件夹，并将自己创建的源文件（java）放入到其中，这里不再赘述。</p>
-
-<h4>二、添加 Overlay(Add Resoruce)</h4>
-
-<p>代码中可能需要访问图片、字符串等资源，但是这些在原有的 Android 中没有，因此需要想办法自行加入，Android 对此提供了两种方式。</p>
-
-<p>第一种就是直接在 $ANDROID_HOME/framework/base/core/res/res 下进行操作，添加文件，追加字符串。这种方式虽然简单，但是破坏了原有的“纯洁性”，因此不予推荐，在第三节修改编译脚本中我采用了第二种方式。</p>
-
-<p>第二种方式就是使用 overlay。在 product-name 目录下建立 overlay 文件夹，依照 framework 的结构建立各级目录，例如想添加图片，可以先依次建立 base/core/res/res/drawable，然后将图片置于其中，同样可以建立 layout 等文件夹。</p>
-
-<p>如果要添加字符串或者 style 资源，就要稍微复杂一点，需要使用 add-resource 来让系统“明白”新添加的内容。</p>
-
-<p>```XML
-&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;utf-8&rdquo;?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"></p>
-
-<pre><code>&lt;add-resource type="string" name="numwheel_year" /&gt;
-&lt;!-- Strings for number wheel --&gt;
-&lt;string name="numwheel_year"&gt;年&lt;/string&gt;
-</code></pre>
-
-<p></resources></p>
-
-<p>```</p>
-
-<p>如果没有 add-resource，则会遇到这样的信息：</p>
-
-<p>完了以后，就可以用使用 <code>com.android.internal.R</code> 来访问这些资源了。</p>
-
-<h4>三、加入编译脚本（Add build script）</h4>
-
-<p>在自己 product-name 目录下建立 sdk_addon 文件夹，并依照 sample/sdk_addon 分别拷贝 manifest.xml 和 hardware.xml，注意 manifest.xml 中的内容必须要根据之前第一步的变更同步修改。</p>
-
-<p>接下来最关键，也是最容易出错的环节到了，那就是修改自己 product 的 mk 文件，需要修改 PRODUCT_PACKAGES、PRODUCT_COPY_FILES、DEVICE_PACKAGE_OVERLAYS 的值，定义 PRODUCT_SDK_ADDON_NAME、PRODUCT_SDK_ADDON_COPY_FILES、PRODUCT_SDK_ADDON_COPY_MODULES和PRODUCT_SDK_ADDON_DOC_MODULE。修改和定义的区别就在于，前者使用”+=”，后者使用“:=”。这些变量的值可以参照sample示例。</p>
-
-<p>由于 sample 的示例中没有出现 DEVICE_PACKAGE_OVERLAYS，所以我这里特别解释一下它的作用，除了刚才为 add-on 增加资源以外，它还起到的作用就是替换掉原来的framework中的资源，比如图片等等，惟一的要求就是必须建立和原来图片位置相同的路径。和 add-on 不同的是，如果你是替换原来资源，那么是不用 add-resource 的。DEVICE_PACKAGE_OVERLAYS 的值就是 overlay 文件夹的路径，不包含 $ANDROID_HOME，到 overlay 一级即可。</p>
-
-<p>完成了修改以后，使用 make PRODUCT-product-name-sdk_addon 进行编译。当然也可以直接执行 make sdk_addon，但是需要注意在此之前，你需要使用 chooseproduct 指定 product-name。执行完毕以后，会得到一个 zip 文件，这个就是 add-on 了。</p>
-
-<h4>四、发布（Relase）</h4>
-
-<p>完成上面的环节以后，剩下临门一脚了。所谓发布，就是通过诸如 HTTPD 一类的 HTTP SERVER 将资源公布出去。从 <a href="http://httpd.apache.org">http://httpd.apache.org</a> 下载 httpd，如何安装以及修改监听端口可参看其 document，在此不予赘述。</p>
-
-<p>现在把刚才生成的 zip 文件，放置到 htdoc 目录下。并且创建一个 repository.xml，其内容和形式参看
-<a href="https://dl-ssl.google.com/android/repository/repository.xml">https://dl-ssl.google.com/android/repository/repository.xml</a> ，我把它删减一下得到以下内容：</p>
-
-<p>```XML
-&lt;sdk:sdk-repository</p>
-
-<pre><code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns:sdk="http://schemas.android.com/sdk/android/repository/2"&gt;
-
-&lt;sdk:add-on&gt;
-    &lt;sdk:name&gt;Google APIs&lt;/sdk:name&gt;
-    &lt;sdk:api-level&gt;3&lt;/sdk:api-level&gt;
-    &lt;sdk:vendor&gt;Google Inc.&lt;/sdk:vendor&gt;
-    &lt;sdk:revision&gt;03&lt;/sdk:revision&gt;
-    &lt;sdk:description&gt;Android + Google APIs&lt;/sdk:description&gt;
-    &lt;sdk:desc-url&gt;http://developer.android.com/&lt;/sdk:desc-url&gt;
-    &lt;sdk:uses-license ref="android-sdk-license" /&gt;
-    &lt;sdk:archives&gt;
-        &lt;sdk:archive os="any"&gt;
-            &lt;sdk:size&gt;34908058&lt;/sdk:size&gt;
-            &lt;sdk:checksum type="sha1"&gt;1f92abf3a76be66ae8032257fc7620acbd2b2e3a&lt;/sdk:checksum&gt;
-            &lt;sdk:url&gt;google_apis-3-r03.zip&lt;/sdk:url&gt;
-        &lt;/sdk:archive&gt;
-    &lt;/sdk:archives&gt;
-    &lt;sdk:libs&gt;
-        &lt;sdk:lib&gt;
-            &lt;sdk:name&gt;com.google.android.maps&lt;/sdk:name&gt;
-            &lt;sdk:description&gt;API for Google Maps.&lt;/sdk:description&gt;
-        &lt;/sdk:lib&gt;
-    &lt;/sdk:libs&gt;
-&lt;/sdk:add-on&gt;
-
-&lt;sdk:license type="text" id="android-sdk-license"&gt;
-    This is the Android Software Development Kit License Agreement.
-&lt;/sdk:license&gt;
-</code></pre>
-
-<p>&lt;/sdk:sdk-repository></p>
-
-<p>```</p>
-
-<p>接下来的事情，就是替换掉里面的 Google 信息为自己，大部分可以从它们的名称中理解其含义，例如 size 是指文件大小，你可以使用ls –l来查看文件大小。checksum 则要麻烦一些，执行 sha1sum ZIP.zip，即使用 sha1 对刚才生成 zip 文件生成校验码。</p>
-
-<p>修改完成以后，通过浏览器访问 <code>http://IP-address:port/repository.xml</code>，确认是否 OK。确认以后，打开 Android SDK and AVD Manager，点击左侧 Available Packages，选择 “Add Add-on Sites” 填入URL，接下来的安装就不费口舌了。完成以后，你可以在 sdk 下的 add-ons 目录下看到刚刚安装的 add-on。</p>
-
-<p>捎带提一下，应用开发方面使用该 add-on 时，调整工程的 Project Build Target 设定即可。</p>
 ]]></content>
   </entry>
   
