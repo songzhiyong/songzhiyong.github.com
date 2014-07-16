@@ -52,7 +52,10 @@ Command + Ctrl + Shift + 4 	|	同上
 ----------------------------|---------------
 Command + Tab          		| 在应用程序间切换
 Command + `					| 在应用程序中的窗口间切换
+Ctrl + Tab                  | 同一个应用程序中的页面或工作空间切换
+Ctrl + Shift + Tab          | 同上，反方向
 Ctrl + Shift + power		| 关闭显示器
+
 
 
 
@@ -77,8 +80,22 @@ Android Studio
 
 key                      | 	function 
 -------------------------|---------------
+Double Shift             | Search Everywhere
+Cmd Shift O              | Open a File by name
+Cmd + E                  | Recent Files
+Cmd + up                 | Open Navigation Bar
 Cmd + H 				 | Hierarchy Class
 Cmd + D 				 | 复制选中区域
 Cmd + O                  | 打开Class
 Cmd + Shift +up/down     | 更换位置	
 Cmd + Shift + F 		 | 全局查找
+Cmd + R                  | 查找替换
+Cmd + Alt + L            | 格式化代码
+Cmd + Shift + U          | 切换大小写
+Alt + Shift + left/right | 选择范围扩大一个word
+
+
+
+
+
+
