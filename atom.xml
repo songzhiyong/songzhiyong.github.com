@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-16T18:51:16+08:00</updated>
+  <updated>2014-07-17T22:26:58+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,237 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[[转]Java(Android) 线程池]]></title>
+    <link href="http://ziso.me/blog/2014/07/17/zhuan-java-android-threadpool/"/>
+    <updated>2014-07-17T11:05:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/17/zhuan-java-android-threadpool</id>
+    <content type="html"><![CDATA[<p>转自:<a href="http://www.trinea.cn/android/java-android-thread-pool/">http://www.trinea.cn/android/java-android-thread-pool/</a></p>
+
+<p>介绍 new Thread 的弊端及 Java 四种线程池的使用，对 Android 同样适用。本文是基础篇，后面会分享下线程池一些高级功能。</p>
+
+<h3>1、new Thread 的弊端</h3>
+
+<p>执行一个异步任务你还只是如下 new Thread 吗？</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="c1">// TODO Auto-generated method stub</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>那你就 out 太多了，new Thread 的弊端如下：
+&ndash; a. 每次 new Thread 新建对象性能差。
+&ndash; b. 线程缺乏统一管理，可能无限制新建线程，相互之间竞争，及可能占用过多系统资源导致死机或 oom。
+&ndash; c. 缺乏更多功能，如定时执行、定期执行、线程中断。
+相比 new Thread，Java 提供的四种线程池的好处在于：
+&ndash; a. 重用存在的线程，减少对象创建、消亡的开销，性能佳。
+&ndash; b. 可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。
+&ndash; c. 提供定时执行、定期执行、单线程、并发数控制等功能。</p>
+
+<h3>2、Java 线程池</h3>
+
+<p>Java 通过 Executors 提供四种线程池，分别为：
+&ndash; newCachedThreadPool 创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</p>
+
+<ul>
+<li><p>newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。</p></li>
+<li><p>newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。</p></li>
+<li><p>newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。</p></li>
+</ul>
+
+
+<h4>(1). newCachedThreadPool</h4>
+
+<p>创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。示例代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">ExecutorService</span> <span class="n">cachedThreadPool</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newCachedThreadPool</span><span class="o">();</span>
+</span><span class='line'><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">final</span> <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span><span class='line'>    <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">index</span> <span class="o">*</span> <span class="mi">1000</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">cachedThreadPool</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nd">@Override</span>
+</span><span class='line'>        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">index</span><span class="o">);</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">});</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>线程池为无限大，当执行第二个任务时第一个任务已经完成，会复用执行第一个任务的线程，而不用每次新建线程。</p>
+
+<h4>(2). newFixedThreadPool</h4>
+
+<p>创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。示例代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">ExecutorService</span> <span class="n">fixedThreadPool</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newFixedThreadPool</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+</span><span class='line'><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">final</span> <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span><span class='line'>    <span class="n">fixedThreadPool</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nd">@Override</span>
+</span><span class='line'>        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>            <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">index</span><span class="o">);</span>
+</span><span class='line'>                <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">2000</span><span class="o">);</span>
+</span><span class='line'>            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// TODO Auto-generated catch block</span>
+</span><span class='line'>                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>            <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">});</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因为线程池大小为 3，每个任务输出 index 后 sleep 2 秒，所以每两秒打印 3 个数字。
+定长线程池的大小最好根据系统资源进行设置。如 Runtime.getRuntime().availableProcessors()。可参考 PreloadDataCache。</p>
+
+<h4>(3) newScheduledThreadPool</h4>
+
+<p>创建一个定长线程池，支持定时及周期性任务执行。延迟执行示例代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">ScheduledExecutorService</span> <span class="n">scheduledThreadPool</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newScheduledThreadPool</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</span><span class='line'><span class="n">scheduledThreadPool</span><span class="o">.</span><span class="na">schedule</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;delay 3 seconds&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">},</span> <span class="mi">3</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>表示延迟 3 秒执行。</p>
+
+<p>定期执行示例代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">scheduledThreadPool</span><span class="o">.</span><span class="na">scheduleAtFixedRate</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;delay 1 seconds, and excute every 3 seconds&quot;</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">},</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>表示延迟 1 秒后每 3 秒执行一次。
+ScheduledExecutorService 比 Timer 更安全，功能更强大，后面会有一篇单独进行对比。</p>
+
+<h4>(4)、newSingleThreadExecutor</h4>
+
+<p>创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。示例代码如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">ExecutorService</span> <span class="n">singleThreadExecutor</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newSingleThreadExecutor</span><span class="o">();</span>
+</span><span class='line'><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="kd">final</span> <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span><span class='line'>    <span class="n">singleThreadExecutor</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nd">@Override</span>
+</span><span class='line'>        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>            <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">index</span><span class="o">);</span>
+</span><span class='line'>                <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">2000</span><span class="o">);</span>
+</span><span class='line'>            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// TODO Auto-generated catch block</span>
+</span><span class='line'>                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>            <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">});</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>结果依次输出，相当于顺序执行各个任务。
+现行大多数 GUI 程序都是单线程的。Android 中单线程可用于数据库操作，文件操作，应用批量安装，应用批量删除等不适合并发但可能 IO 阻塞性及影响 UI 线程响应的操作。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Got it]]></title>
@@ -4396,7 +4627,7 @@ entrepreneur  企业家</p></li>
 
 <p>许多人遇到外国人的时候就感觉自己十几年英语白读了，不是语言上的问题，只是除了工作上的必要沟通私底下就不知道说什么才好。今天潘吉和 Jenny 要和你聊聊和老外 small talk 的时候要注意些什么，聊什么话题最好？</p>
 
-<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x6d;&#x65;&#x65;&#x74;&#117;&#x70;&#x40;&#111;&#x70;&#x65;&#110;&#108;&#x61;&#110;&#103;&#x75;&#x61;&#103;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#109;&#x65;&#101;&#x74;&#x75;&#x70;&#64;&#111;&#112;&#x65;&#x6e;&#x6c;&#x61;&#110;&#x67;&#x75;&#x61;&#103;&#x65;&#46;&#x63;&#111;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
+<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#109;&#x65;&#x65;&#116;&#x75;&#x70;&#x40;&#x6f;&#x70;&#101;&#110;&#x6c;&#97;&#x6e;&#x67;&#x75;&#x61;&#x67;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x6d;&#x65;&#x65;&#116;&#x75;&#112;&#64;&#111;&#112;&#x65;&#110;&#108;&#97;&#x6e;&#x67;&#x75;&#x61;&#x67;&#x65;&#46;&#99;&#x6f;&#x6d;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
 &ndash; awkward  尴尬</p>
 
 <ul>
@@ -4468,7 +4699,7 @@ religion  宗教信仰</p></li>
 
 <p>潘吉 Jenny 告诉你&mdash;OpenLanguage 英语俱乐部召集组织者</p>
 
-<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x6d;&#101;&#x65;&#x74;&#x75;&#x70;&#64;&#x6f;&#x70;&#x65;&#110;&#108;&#97;&#x6e;&#103;&#x75;&#97;&#103;&#x65;&#46;&#99;&#x6f;&#109;">&#109;&#x65;&#x65;&#116;&#x75;&#x70;&#64;&#111;&#112;&#x65;&#x6e;&#x6c;&#97;&#110;&#103;&#117;&#x61;&#x67;&#101;&#x2e;&#x63;&#111;&#109;</a> 报名吧！
+<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#109;&#101;&#x65;&#x74;&#117;&#x70;&#64;&#111;&#x70;&#101;&#x6e;&#x6c;&#x61;&#x6e;&#x67;&#117;&#x61;&#103;&#101;&#46;&#99;&#111;&#x6d;">&#x6d;&#x65;&#x65;&#x74;&#117;&#112;&#64;&#111;&#x70;&#101;&#110;&#108;&#97;&#x6e;&#103;&#x75;&#97;&#x67;&#101;&#46;&#99;&#111;&#x6d;</a> 报名吧！
 如果你有意愿成为 OpenLanguage 英语俱乐部的组织者，请发送邮件到 meetup@openlanguage.com，留下您的姓名，电话及所在城市。活动的组织者会有丰厚的奖品及优惠等你拿哦！</p>
 
 <p>独乐乐不如众乐乐，OpenLanguage 英语俱乐部六月活动将于于 6 月 29 号(周六)在上海举办，主题即为“Small Talk 和老外闲话聊聊”，你可以自己前来，或带上你的好友一起前来！</p>
@@ -5275,7 +5506,7 @@ New Zealand  新西兰</li>
 
 <p>潘吉 Jenny 告诉你&mdash;在英语课上用 EnglishPod 中国！</p>
 
-<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#115;&#117;&#x70;&#x70;&#111;&#114;&#116;&#x40;&#111;&#112;&#101;&#110;&#108;&#97;&#110;&#103;&#117;&#97;&#x67;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x73;&#x75;&#x70;&#112;&#111;&#x72;&#x74;&#64;&#x6f;&#112;&#101;&#110;&#x6c;&#97;&#x6e;&#x67;&#x75;&#x61;&#x67;&#x65;&#x2e;&#99;&#x6f;&#109;</a> 了解详情。
+<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x73;&#117;&#112;&#112;&#x6f;&#114;&#x74;&#x40;&#x6f;&#112;&#x65;&#x6e;&#108;&#97;&#110;&#x67;&#x75;&#97;&#103;&#x65;&#46;&#99;&#x6f;&#x6d;">&#115;&#117;&#112;&#x70;&#111;&#x72;&#x74;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#108;&#97;&#110;&#x67;&#117;&#97;&#103;&#x65;&#46;&#99;&#111;&#x6d;</a> 了解详情。
 &ndash; internalize  真正掌握知识</p>
 
 <ul>
@@ -6950,81 +7181,6 @@ leftover women
 /剩女
 high maintenance/作
 (\d{1,2}.)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android:Facebook SDK]]></title>
-    <link href="http://ziso.me/blog/2014/06/28/android-facebook-sdk/"/>
-    <updated>2014-06-28T18:54:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/06/28/android-facebook-sdk</id>
-    <content type="html"><![CDATA[<p>The following samples are available in the SDK:</p>
-
-<ul>
-<li><h3>Basic samples</h3>
-
-<ul>
-<li><strong>ProfilePictureSample</strong>: demonstrates non-logged-in usage of the profile picture control</li>
-<li><strong>FriendPickerSample</strong>: demonstrates usage of the native friend picker to choose amongst the user&rsquo;s friends</li>
-<li><strong>PlacePickerSample</strong>: demonstrates logged-in usage of the place picker control</li>
-<li><strong>GraphAPISample</strong>: demonstrates requests to the Graph API</li>
-</ul>
-</li>
-<li><h3>Feature samples</h3>
-
-<ul>
-<li><strong>SessionLoginSample</strong>: demonstrates detailed login flow using the SDK</li>
-<li><strong>JustRequestSample</strong>: demonstrates logged-in user making single and batched Facebook API requests</li>
-<li><strong>SwitchUserSample</strong>: demonstrates an approach to allow switching between multiple users</li>
-<li><strong>AdUnitsSample and NativeAdSample</strong>: shows how to load and display ads from Facebook inside your app</li>
-</ul>
-</li>
-<li><h3>Complete samples</h3>
-
-<ul>
-<li><strong>HelloFacebookSample</strong>: an all-round sample that demonstrates profile access, status updates and photo uploading</li>
-<li><strong>Scrumptious</strong>: demonstrates the use of login, requests, pickers, picture uploads, and Open Graph publishing</li>
-<li><strong>RPS</strong>: demonstrates the use of the Native Share Dialog, Open Graph publishing, pickers, invites, and deep linking.</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>GraphObject
-</span><span class='line'>{ 
-</span><span class='line'>  graphObjectClass=GraphUser,
-</span><span class='line'>  state={
-</span><span class='line'>          "id":"510224139107412",
-</span><span class='line'>          "first_name":"Song",
-</span><span class='line'>          "timezone":8,
-</span><span class='line'>          "verified":true,
-</span><span class='line'>          "name":"Song Zhiyong",
-</span><span class='line'>          "locale":"en_US",
-</span><span class='line'>          "link":"https:\/\/www.facebook.com\/app_scoped_user_id\/510224139107412\/",
-</span><span class='line'>          "last_name":"Zhiyong",
-</span><span class='line'>          "gender":"male",
-</span><span class='line'>          "updated_time":"2014-06-14T12:30:41+0000"
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p><unfinished></p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-16T18:51:16+08:00</updated>
+  <updated>2014-07-17T22:26:58+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,167 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[[转]Java(Android) 线程池]]></title>
+    <link href="http://ziso.me/blog/2014/07/17/zhuan-java-android-threadpool/"/>
+    <updated>2014-07-17T11:05:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/17/zhuan-java-android-threadpool</id>
+    <content type="html"><![CDATA[<p>转自:<a href="http://www.trinea.cn/android/java-android-thread-pool/">http://www.trinea.cn/android/java-android-thread-pool/</a></p>
+
+<p>介绍new Thread的弊端及Java四种线程池的使用，对Android同样适用。本文是基础篇，后面会分享下线程池一些高级功能。</p>
+
+<h3>1、new Thread的弊端</h3>
+
+<p>执行一个异步任务你还只是如下new Thread吗？
+```java
+new Thread(new Runnable() {</p>
+
+<pre><code>@Override
+public void run() {
+    // TODO Auto-generated method stub
+}
+</code></pre>
+
+<p>}).start();
+```
+那你就out太多了，new Thread的弊端如下：
+&ndash; a. 每次new Thread新建对象性能差。
+&ndash; b. 线程缺乏统一管理，可能无限制新建线程，相互之间竞争，及可能占用过多系统资源导致死机或oom。
+&ndash; c. 缺乏更多功能，如定时执行、定期执行、线程中断。
+相比new Thread，Java提供的四种线程池的好处在于：
+&ndash; a. 重用存在的线程，减少对象创建、消亡的开销，性能佳。
+&ndash; b. 可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。
+&ndash; c. 提供定时执行、定期执行、单线程、并发数控制等功能。</p>
+
+<h3>2、Java 线程池</h3>
+
+<p>Java通过Executors提供四种线程池，分别为：
+&ndash; newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</p>
+
+<ul>
+<li><p>newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。</p></li>
+<li><p>newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。</p></li>
+<li><p>newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。</p></li>
+</ul>
+
+
+<h4>(1). newCachedThreadPool</h4>
+
+<p>创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。示例代码如下：
+```java
+ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+for (int i = 0; i &lt; 10; i++) {</p>
+
+<pre><code>final int index = i;
+try {
+    Thread.sleep(index * 1000);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+
+cachedThreadPool.execute(new Runnable() {
+
+    @Override
+    public void run() {
+        System.out.println(index);
+    }
+});
+</code></pre>
+
+<p>}
+```
+线程池为无限大，当执行第二个任务时第一个任务已经完成，会复用执行第一个任务的线程，而不用每次新建线程。</p>
+
+<h4>(2). newFixedThreadPool</h4>
+
+<p>创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。示例代码如下：
+```java
+ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
+for (int i = 0; i &lt; 10; i++) {</p>
+
+<pre><code>final int index = i;
+fixedThreadPool.execute(new Runnable() {
+
+    @Override
+    public void run() {
+        try {
+            System.out.println(index);
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+});
+</code></pre>
+
+<p>}
+```
+因为线程池大小为3，每个任务输出index后sleep 2秒，所以每两秒打印3个数字。
+定长线程池的大小最好根据系统资源进行设置。如Runtime.getRuntime().availableProcessors()。可参考PreloadDataCache。</p>
+
+<h4>(3) newScheduledThreadPool</h4>
+
+<p>创建一个定长线程池，支持定时及周期性任务执行。延迟执行示例代码如下：
+```java
+ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
+scheduledThreadPool.schedule(new Runnable() {</p>
+
+<pre><code>@Override
+public void run() {
+    System.out.println("delay 3 seconds");
+}
+</code></pre>
+
+<p>}, 3, TimeUnit.SECONDS);
+```
+表示延迟3秒执行。</p>
+
+<p>定期执行示例代码如下：
+```java
+scheduledThreadPool.scheduleAtFixedRate(new Runnable() {</p>
+
+<pre><code>@Override
+public void run() {
+    System.out.println("delay 1 seconds, and excute every 3 seconds");
+}
+</code></pre>
+
+<p>}, 1, 3, TimeUnit.SECONDS);
+```
+表示延迟1秒后每3秒执行一次。
+ScheduledExecutorService比Timer更安全，功能更强大，后面会有一篇单独进行对比。</p>
+
+<h4>(4)、newSingleThreadExecutor</h4>
+
+<p>创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。示例代码如下：
+```java
+ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
+for (int i = 0; i &lt; 10; i++) {</p>
+
+<pre><code>final int index = i;
+singleThreadExecutor.execute(new Runnable() {
+
+    @Override
+    public void run() {
+        try {
+            System.out.println(index);
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+});
+</code></pre>
+
+<p>}
+```
+结果依次输出，相当于顺序执行各个任务。
+现行大多数GUI程序都是单线程的。Android中单线程可用于数据库操作，文件操作，应用批量安装，应用批量删除等不适合并发但可能IO阻塞性及影响UI线程响应的操作。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Android Launcher Notes 1]]></title>
@@ -255,25 +416,6 @@ And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Le
 <p><a href="http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/">http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/</a></p>
 
 <p>双击导入到photoshop, 窗口-动作，找到刚刚导入的Action,运行即可。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android Application class being called twice]]></title>
-    <link href="http://ziso.me/blog/2014/07/11/android-application-class-being-called-twice/"/>
-    <updated>2014-07-11T17:50:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/11/android-application-class-being-called-twice</id>
-    <content type="html"><![CDATA[<p><a href="http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice">http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice</a></p>
-
-<p>Yes if you used android:process then you have it running in a separate process, so when the service starts a new process is started for it and thus a new Application object for that process needs to be created.</p>
-
-<p>But there is a more fundamental problem &mdash; it is just not right for an Application object to start one of its services. It is important that you don&rsquo;t confuse Application with how you may think of an &ldquo;application&rdquo; in another OS. The Application object does not drive the app. It is just a global of state for the app in that process. In fact, the Application object is completely superfluous &mdash; you never need one to right an Android application. Generally I actually recommend that people don&rsquo;t use it. It is more likely to cause trouble than anything else.</p>
-
-<p>Another way to put this: what really defines an application is its collection of activity, service, receiver, and provider tags. Those are what are &ldquo;launched.&rdquo; All an Application is, is something that is created as part of initializing an application&rsquo;s process. It has no lifecycle of its own, it is just there to serve the other real components in the app.</p>
-
-<p>So just ignore Application when designing your app; it will reduce confusion. (In its place, I prefer to use global singletons for such state.)</p>
-
-<p>Also as a general rule, I recommend not using android:process. There are certainly some uses for it, but the vast majority of the time it is not needed and just makes an application use more RAM, less efficient, and harder to write (since you can&rsquo;t take advantage of globals in a single process). It should be obvious to you if you reach a place where there is actually a good reason to use android:process.</p>
 ]]></content>
   </entry>
   
