@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-07-25T09:55:57+08:00</updated>
+  <updated>2014-07-30T10:48:25+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android UI Thread &amp; work Thread]]></title>
+    <link href="http://ziso.me/blog/2014/07/25/android-ui-thread-and-work-thread/"/>
+    <updated>2014-07-25T10:37:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/07/25/android-ui-thread-and-work-thread</id>
+    <content type="html"><![CDATA[<p>Using <code>wait()</code> and <code>notifyAll()</code> to make UI thread and work thread work one by one</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">new</span> <span class="nf">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>          <span class="nd">@Override</span>
+</span><span class='line'>          <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>            <span class="kd">synchronized</span> <span class="o">(</span><span class="n">lock</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>              <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>                <span class="kd">final</span> <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</span><span class='line'>                <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">//on some condition, update UI on UI thread with handler</span>
+</span><span class='line'>                  <span class="n">handler</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>                    <span class="nd">@Override</span>
+</span><span class='line'>                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>                      <span class="kd">synchronized</span> <span class="o">(</span><span class="n">lock</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;ui&quot;</span> <span class="o">+</span> <span class="n">index</span><span class="o">);</span>
+</span><span class='line'>                        <span class="n">lock</span><span class="o">.</span><span class="na">notifyAll</span><span class="o">();</span>
+</span><span class='line'>                      <span class="o">}</span>
+</span><span class='line'>                    <span class="o">}</span>
+</span><span class='line'>                  <span class="o">});</span>
+</span><span class='line'>                  <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>                    <span class="n">lock</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span><span class='line'>                  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                  <span class="o">}</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">&quot;work&quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+</span><span class='line'>              <span class="o">}</span>
+</span><span class='line'>            <span class="o">}</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>        <span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[[转]Java(Android) 线程池]]></title>
@@ -432,225 +498,6 @@ ScheduledExecutorService 比 Timer 更安全，功能更强大，后面会有一
 <p>You&rsquo;re making sense.</p>
 
 <p>That doesn&rsquo;t make sense. (这也太奇怪了。)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android Launcher Notes 1]]></title>
-    <link href="http://ziso.me/blog/2014/07/15/android-launcher-notes-1/"/>
-    <updated>2014-07-15T21:14:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/15/android-launcher-notes-1</id>
-    <content type="html"><![CDATA[<h4>1. 入口</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>        <span class="c1">//接受程序创建 shortcut 的广播</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">(!</span><span class="n">ACTION_INSTALL_SHORTCUT</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">getAction</span><span class="o">()))</span> <span class="o">{</span>
-</span><span class='line'>            <span class="k">return</span><span class="o">;</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>        <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getParcelableExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_SHORTCUT_INTENT</span><span class="o">);</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">(</span><span class="n">intent</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>            <span class="k">return</span><span class="o">;</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>        <span class="c1">// This name is only used for comparisons and notifications, so fall back to activity name</span>
-</span><span class='line'>        <span class="c1">// if not supplied</span>
-</span><span class='line'>        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getStringExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_SHORTCUT_NAME</span><span class="o">);</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">(</span><span class="n">name</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>            <span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>                <span class="n">PackageManager</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getPackageManager</span><span class="o">();</span>
-</span><span class='line'>                <span class="n">ActivityInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="na">getActivityInfo</span><span class="o">(</span><span class="n">intent</span><span class="o">.</span><span class="na">getComponent</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
-</span><span class='line'>                <span class="n">name</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">loadLabel</span><span class="o">(</span><span class="n">pm</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
-</span><span class='line'>            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">PackageManager</span><span class="o">.</span><span class="na">NameNotFoundException</span> <span class="n">nnfe</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>                <span class="k">return</span><span class="o">;</span>
-</span><span class='line'>            <span class="o">}</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>        <span class="c1">// Queue the item up for adding if launcher has not loaded properly yet</span>
-</span><span class='line'>        <span class="kt">boolean</span> <span class="n">launcherNotLoaded</span> <span class="o">=</span> <span class="n">LauncherModel</span><span class="o">.</span><span class="na">getCellCountX</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span>
-</span><span class='line'>                <span class="n">LauncherModel</span><span class="o">.</span><span class="na">getCellCountY</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">;</span>
-</span><span class='line'>        <span class="n">PendingInstallShortcutInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PendingInstallShortcutInfo</span><span class="o">(</span><span class="n">data</span><span class="o">,</span> <span class="n">name</span><span class="o">,</span> <span class="n">intent</span><span class="o">);</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">(</span><span class="n">mUseInstallQueue</span> <span class="o">||</span> <span class="n">launcherNotLoaded</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>            <span class="c1">//进入队列</span>
-</span><span class='line'>            <span class="n">mInstallQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">info</span><span class="o">);</span>
-</span><span class='line'>        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-</span><span class='line'>            <span class="c1">//创建</span>
-</span><span class='line'>            <span class="n">processInstallShortcut</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">info</span><span class="o">);</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>2. 处理快捷方式 Info,并创建</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">processInstallShortcut</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span>
-</span><span class='line'>            <span class="n">PendingInstallShortcutInfo</span> <span class="n">pendingInfo</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>        <span class="n">String</span> <span class="n">spKey</span> <span class="o">=</span> <span class="n">LauncherApplication</span><span class="o">.</span><span class="na">getSharedPreferencesKey</span><span class="o">();</span>
-</span><span class='line'>        <span class="n">SharedPreferences</span> <span class="n">sp</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getSharedPreferences</span><span class="o">(</span><span class="n">spKey</span><span class="o">,</span> <span class="n">Context</span><span class="o">.</span><span class="na">MODE_PRIVATE</span><span class="o">);</span>
-</span><span class='line'>        <span class="kd">final</span> <span class="n">Intent</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pendingInfo</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
-</span><span class='line'>        <span class="kd">final</span> <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">pendingInfo</span><span class="o">.</span><span class="na">launchIntent</span><span class="o">;</span>
-</span><span class='line'>        <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">pendingInfo</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
-</span><span class='line'>        <span class="c1">// Lock on the app so that we don&#39;t try and get the items while apps are being added</span>
-</span><span class='line'>        <span class="n">LauncherApplication</span> <span class="n">app</span> <span class="o">=</span> <span class="o">(</span><span class="n">LauncherApplication</span><span class="o">)</span> <span class="n">context</span><span class="o">.</span><span class="na">getApplicationContext</span><span class="o">();</span>
-</span><span class='line'>        <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="o">{</span><span class="n">INSTALL_SHORTCUT_SUCCESSFUL</span><span class="o">};</span>
-</span><span class='line'>        <span class="kt">boolean</span> <span class="n">found</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-</span><span class='line'>        <span class="kd">synchronized</span> <span class="o">(</span><span class="n">app</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>            <span class="kd">final</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ItemInfo</span><span class="o">&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="n">LauncherModel</span><span class="o">.</span><span class="na">getItemsInLocalCoordinates</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-</span><span class='line'>            <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">exists</span> <span class="o">=</span> <span class="n">LauncherModel</span><span class="o">.</span><span class="na">shortcutExists</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">name</span><span class="o">,</span> <span class="n">intent</span><span class="o">);</span>
-</span><span class='line'>            <span class="c1">// Try adding to the workspace screens incrementally, starting at the default or center</span>
-</span><span class='line'>            <span class="c1">// screen and alternating between +1, -1, +2, -2, etc. (using ~ ceil(i/2f)*(-1)^(i-1))</span>
-</span><span class='line'>            <span class="kd">final</span> <span class="kt">int</span> <span class="n">screen</span> <span class="o">=</span> <span class="n">Launcher</span><span class="o">.</span><span class="na">DEFAULT_SCREEN</span><span class="o">;</span>
-</span><span class='line'>            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Launcher</span><span class="o">.</span><span class="na">SCREEN_COUNT</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">found</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>                <span class="kt">int</span> <span class="n">si</span> <span class="o">=</span> <span class="n">screen</span> <span class="o">+</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">((</span><span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="n">f</span><span class="o">)</span> <span class="o">+</span> <span class="mf">0.5f</span><span class="o">)</span> <span class="o">*</span> <span class="o">((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">);</span>
-</span><span class='line'>                <span class="k">if</span> <span class="o">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">si</span> <span class="o">&amp;&amp;</span> <span class="n">si</span> <span class="o">&lt;</span> <span class="n">Launcher</span><span class="o">.</span><span class="na">SCREEN_COUNT</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>                    <span class="n">found</span> <span class="o">=</span> <span class="n">installShortcut</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">data</span><span class="o">,</span> <span class="n">items</span><span class="o">,</span> <span class="n">name</span><span class="o">,</span> <span class="n">intent</span><span class="o">,</span> <span class="n">si</span><span class="o">,</span> <span class="n">exists</span><span class="o">,</span> <span class="n">sp</span><span class="o">,</span>
-</span><span class='line'>                            <span class="n">result</span><span class="o">);</span>
-</span><span class='line'>                <span class="o">}</span>
-</span><span class='line'>            <span class="o">}</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>        <span class="c1">// We only report error messages (duplicate shortcut or out of space) as the add-animation</span>
-</span><span class='line'>        <span class="c1">// will provide feedback otherwise</span>
-</span><span class='line'>        <span class="k">if</span> <span class="o">(!</span><span class="n">found</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>            <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">INSTALL_SHORTCUT_NO_SPACE</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">context</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">completely_out_of_space</span><span class="o">),</span>
-</span><span class='line'>                        <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</span><span class='line'>            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">INSTALL_SHORTCUT_IS_DUPLICATE</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">context</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">shortcut_duplicate</span><span class="o">,</span> <span class="n">name</span><span class="o">),</span>
-</span><span class='line'>                        <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-</span><span class='line'>            <span class="o">}</span>
-</span><span class='line'>        <span class="o">}</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">installShortcut</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">,</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ItemInfo</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">,</span>
-</span><span class='line'>            <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">screen</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">shortcutExists</span><span class="o">,</span>
-</span><span class='line'>            <span class="kd">final</span> <span class="n">SharedPreferences</span> <span class="n">sharedPrefs</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>        <span class="c1">//寻找位置</span>
-</span><span class='line'>        <span class="o">...</span>
-</span><span class='line'>                    <span class="c1">// Update the Launcher db 更新数据库</span>
-</span><span class='line'>                    <span class="n">LauncherApplication</span> <span class="n">app</span> <span class="o">=</span> <span class="o">(</span><span class="n">LauncherApplication</span><span class="o">)</span> <span class="n">context</span><span class="o">.</span><span class="na">getApplicationContext</span><span class="o">();</span>
-</span><span class='line'>                    <span class="n">ShortcutInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="na">getModel</span><span class="o">().</span><span class="na">addShortcut</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">data</span><span class="o">,</span>
-</span><span class='line'>                            <span class="n">LauncherSettings</span><span class="o">.</span><span class="na">Favorites</span><span class="o">.</span><span class="na">CONTAINER_DESKTOP</span><span class="o">,</span> <span class="n">screen</span><span class="o">,</span>
-</span><span class='line'>                            <span class="n">tmpCoordinates</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">tmpCoordinates</span><span class="o">[</span><span class="mi">1</span><span class="o">],</span> <span class="kc">true</span><span class="o">);</span>
-</span><span class='line'>        <span class="o">...</span>
-</span><span class='line'>        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-</span><span class='line'>    <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>3. LauncherModel.addShortcut(&hellip;) &mdash;&ndash;>  addItemToDatabase(&hellip; notify=true)</h4>
-
-<h4>4. LauncherApplication   ContentObserver  onChange(&hellip;)</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'>    <span class="n">mModel</span><span class="o">.</span><span class="na">resetLoadedState</span><span class="o">(</span><span class="kc">false</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
-</span><span class='line'>    <span class="n">mModel</span><span class="o">.</span><span class="na">startLoaderFromBackground</span><span class="o">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>5. LauncherModel</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="cm">/**</span>
-</span><span class='line'><span class="cm">   * When the launcher is in the background, it&#39;s possible for it to miss</span>
-</span><span class='line'><span class="cm">   * paired configuration changes. So whenever we trigger the loader from the</span>
-</span><span class='line'><span class="cm">   * background tell the launcher that it needs to re-run the loader when it</span>
-</span><span class='line'><span class="cm">   * comes back instead of doing it now.</span>
-</span><span class='line'><span class="cm">   */</span>
-</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startLoaderFromBackground</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>    <span class="o">...</span>
-</span><span class='line'>  <span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
 ]]></content>
   </entry>
   
@@ -4627,7 +4474,7 @@ entrepreneur  企业家</p></li>
 
 <p>许多人遇到外国人的时候就感觉自己十几年英语白读了，不是语言上的问题，只是除了工作上的必要沟通私底下就不知道说什么才好。今天潘吉和 Jenny 要和你聊聊和老外 small talk 的时候要注意些什么，聊什么话题最好？</p>
 
-<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x6d;&#x65;&#101;&#x74;&#117;&#112;&#64;&#x6f;&#112;&#101;&#110;&#x6c;&#97;&#110;&#x67;&#117;&#97;&#x67;&#x65;&#46;&#99;&#x6f;&#x6d;">&#x6d;&#x65;&#101;&#116;&#x75;&#x70;&#x40;&#x6f;&#112;&#101;&#110;&#x6c;&#97;&#110;&#x67;&#117;&#x61;&#x67;&#101;&#46;&#x63;&#x6f;&#x6d;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
+<p>我们 6 月 29 号的英语俱乐部活动也会和大家聊一聊这个话题哦，上海的朋友赶快发送姓名+手机号码到 <a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x6d;&#101;&#101;&#x74;&#117;&#112;&#x40;&#111;&#x70;&#101;&#110;&#x6c;&#x61;&#110;&#103;&#117;&#x61;&#x67;&#x65;&#46;&#x63;&#x6f;&#109;">&#x6d;&#x65;&#101;&#116;&#117;&#x70;&#64;&#x6f;&#112;&#101;&#x6e;&#108;&#97;&#x6e;&#x67;&#117;&#97;&#x67;&#101;&#x2e;&#99;&#x6f;&#109;</a> 报名！我们现在也在招募全国各地的组织者，同样可以发送邮件注明【OpenLanguage 英语俱乐部组织者】写上姓名+手机号码+所在城市报名哦！更多惊喜等着你！
 &ndash; awkward  尴尬</p>
 
 <ul>
@@ -4699,7 +4546,7 @@ religion  宗教信仰</p></li>
 
 <p>潘吉 Jenny 告诉你&mdash;OpenLanguage 英语俱乐部召集组织者</p>
 
-<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x6d;&#101;&#101;&#x74;&#117;&#x70;&#64;&#x6f;&#x70;&#101;&#x6e;&#x6c;&#97;&#110;&#x67;&#x75;&#97;&#103;&#x65;&#46;&#99;&#111;&#x6d;">&#x6d;&#101;&#x65;&#116;&#117;&#112;&#x40;&#x6f;&#x70;&#x65;&#x6e;&#108;&#x61;&#x6e;&#103;&#x75;&#97;&#x67;&#101;&#x2e;&#x63;&#111;&#109;</a> 报名吧！
+<p>OpenLanguage 英语俱乐部开展至今已经举办过几次活动，但都局限在上海，我们希望我们的俱乐部活动能影响到全国各地，让大家在活动中认识更多志同道合的朋友，一起学习共同进步！赶快到 <a href="http://openlanguage.com/meetups/start">http://openlanguage.com/meetups/start</a> 建立本地的英语俱乐部，或是发送【姓名+所在城市+手机号码】到 <a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#x3a;&#109;&#x65;&#x65;&#x74;&#117;&#x70;&#64;&#111;&#112;&#x65;&#110;&#x6c;&#x61;&#x6e;&#103;&#117;&#x61;&#x67;&#x65;&#46;&#99;&#111;&#x6d;">&#109;&#x65;&#x65;&#116;&#x75;&#x70;&#64;&#x6f;&#112;&#101;&#110;&#x6c;&#97;&#x6e;&#x67;&#117;&#x61;&#103;&#101;&#46;&#x63;&#x6f;&#109;</a> 报名吧！
 如果你有意愿成为 OpenLanguage 英语俱乐部的组织者，请发送邮件到 meetup@openlanguage.com，留下您的姓名，电话及所在城市。活动的组织者会有丰厚的奖品及优惠等你拿哦！</p>
 
 <p>独乐乐不如众乐乐，OpenLanguage 英语俱乐部六月活动将于于 6 月 29 号(周六)在上海举办，主题即为“Small Talk 和老外闲话聊聊”，你可以自己前来，或带上你的好友一起前来！</p>
@@ -5506,7 +5353,7 @@ New Zealand  新西兰</li>
 
 <p>潘吉 Jenny 告诉你&mdash;在英语课上用 EnglishPod 中国！</p>
 
-<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#115;&#x75;&#112;&#x70;&#x6f;&#114;&#116;&#64;&#x6f;&#x70;&#x65;&#x6e;&#108;&#97;&#110;&#103;&#x75;&#97;&#x67;&#101;&#x2e;&#99;&#111;&#x6d;">&#x73;&#x75;&#112;&#112;&#111;&#114;&#116;&#64;&#x6f;&#x70;&#101;&#110;&#x6c;&#97;&#110;&#x67;&#x75;&#x61;&#103;&#x65;&#x2e;&#99;&#111;&#x6d;</a> 了解详情。
+<p>EnglishPod 中国最近开始和一些英语学校合作，为他们提供好用、好听又方便的移动英语教材。今天来我们节目做客的就是四川德阳新视界英语学校的校长 Lily 和学生。赶快了解一下他们是如何运用 EnglishPod 中国让英语课变得生动、有效率的。如果你对我们的学校合作计划感兴趣，欢迎拨打 400-012-3381 或发邮件至 <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#115;&#117;&#112;&#x70;&#111;&#x72;&#116;&#x40;&#111;&#112;&#x65;&#110;&#x6c;&#x61;&#x6e;&#x67;&#x75;&#97;&#x67;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#115;&#117;&#112;&#x70;&#x6f;&#114;&#116;&#x40;&#x6f;&#112;&#101;&#x6e;&#108;&#97;&#110;&#103;&#x75;&#x61;&#x67;&#101;&#46;&#99;&#x6f;&#x6d;</a> 了解详情。
 &ndash; internalize  真正掌握知识</p>
 
 <ul>
