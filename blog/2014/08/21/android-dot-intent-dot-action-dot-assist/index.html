@@ -5,7 +5,7 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>About Me  | Faith, Hope, Charity</title>
+	<title>android.intent.action.ASSIST  | Faith, Hope, Charity</title>
 
 <meta name="author" content="Jerome Song"> 
 
@@ -114,45 +114,96 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner"><article class="page">
-    <div class="entry-content"><!-- ![](/images/photos/profile.jpg "profile") -->
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">android.intent.action.ASSIST</h2>
+	<div class="entry-content"><h3>public static final String ACTION_ASSIST</h3>
 
+<h4>Added in API level 16</h4>
 
-<p><img style="float: right" src="/images/photos/profile_photo.jpg" /></p>
+<p>Activity Action: Perform assist action.</p>
 
-<h3>宋志勇(<a href="http://about.me/jerome.song">Jerome Song</a>)</h3>
+<p>Input: EXTRA_ASSIST_PACKAGE, EXTRA_ASSIST_CONTEXT, can provide additional optional contextual information about where the user was when they requested the assist. Output: nothing.</p>
 
-<br>
+<p>Constant Value: &ldquo;android.intent.action.ASSIST&rdquo;</p>
 
+<h3>Register:</h3>
 
-<br>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;intent-filter&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.ASSIST&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/category&gt;</span>
+</span><span class='line'><span class="nt">&lt;/intent-filter&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-
-<br>
-
-
-<h4>Social</h4>
-
-<p>Twitter: <a href="https://twitter.com/#!/song_zhiyong">@song_zhiyong</a></p>
-
-<p>Weibo: <a href="http://weibo.com/zhiyongs">@zhiyongs</a></p>
-
-<br>
-
-
-<br>
-
-
-<br>
-
-
-<h4>Contact Me</h4>
-
-<p>Email: <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#115;&#111;&#x6e;&#103;&#x7a;&#104;&#x69;&#121;&#111;&#110;&#x67;&#49;&#x31;&#50;&#x31;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#115;&#111;&#110;&#x67;&#x7a;&#104;&#x69;&#x79;&#x6f;&#x6e;&#103;&#x31;&#49;&#50;&#x31;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></p>
 </div>
-</article>
 
 
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-21T17:28:00+08:00" pubdate data-updated="true">Aug 21<span>st</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="song_zhiyong">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	</script>
+	
+	
+	<!-- 将此标记放置在你希望显示+1 按钮的位置。 -->
+	<div class="g-plusone" data-size="medium" data-width="300"></div>
+
+	<!-- 将此标记放置在最后一个 +1 按钮 标记之后。 -->
+	<script type="text/javascript">
+  	(function() {
+    	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    	po.src = 'https://apis.google.com/js/platform.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  	})();
+	</script>
+	
+	
+	<div class="fb-like" data-href="http://ziso.me/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
@@ -169,6 +220,22 @@ Powered by Octopress.
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
 
+
+<script type="text/javascript">
+      var disqus_shortname = 'ziso';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ziso.me/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/';
+        var disqus_url = 'http://ziso.me/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 <script type="text/javascript">
