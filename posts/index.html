@@ -124,6 +124,1008 @@ $(document).ready(
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
           <article>
+  <h2><a href="/blog/2015/01/09/android-studio-live-templates/">Android Studio Live Templates</a></h2>
+  
+  <p>
+    <h1>Android Studio Live Templates</h1>
+
+
+
+
+<h3>iterations</h3>
+
+
+
+
+<ul>
+<li><code>fori</code> Create iteration loop</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">$INDEX$</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">$INDEX$</span> <span class="o">&lt;</span> <span class="n">$LIMIT$</span><span class="o">;</span> <span class="n">$INDEX$</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>itar</code> Iterate elements of array</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">$INDEX$</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">$INDEX$</span> <span class="o">&lt;</span> <span class="n">$ARRAY$</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">$INDEX$</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">$ELEMENT_TYPE$</span> <span class="n">$VAR$</span> <span class="o">=</span> <span class="n">$ARRAY$</span><span class="o">[</span><span class="n">$INDEX$</span><span class="o">];</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>itco</code> Iterate elements of java.util.Collection</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span><span class="o">(</span><span class="n">$ITER_TYPE$</span> <span class="n">$ITER$</span> <span class="o">=</span> <span class="n">$COLLECTION$</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span> <span class="n">$ITER$</span><span class="o">.</span><span class="na">hasNext</span><span class="o">();</span> <span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">$ELEMENT_TYPE$</span> <span class="n">$VAR$</span> <span class="o">=</span><span class="n">$CAST$</span> <span class="n">$ITER$</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>iten</code> Iterate java.util.Enumeration</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">while</span><span class="o">(</span><span class="n">$ENUM$</span><span class="o">.</span><span class="na">hasMoreElements</span><span class="o">()){</span>
+</span><span class='line'>  <span class="n">$TYPE$</span> <span class="n">$VAR$</span> <span class="o">=</span> <span class="n">$CAST$</span> <span class="n">$ENUM$</span><span class="o">.</span><span class="na">nextElement</span><span class="o">();</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>iter</code> Iterate Iterable | Array in J2SDK 5.0 syntax</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span> <span class="o">(</span><span class="n">$ELEMENT_TYPE$</span> <span class="n">$VAR$</span> <span class="o">:</span> <span class="n">$ITERABLE_TYPE$</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>itit</code> Iterate java.util.Iterator</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">while</span><span class="o">(</span><span class="n">$ITER$</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>
+</span><span class='line'>  <span class="n">$TYPE$</span> <span class="n">$VAR$</span> <span class="o">=</span> <span class="n">$CAST$</span> <span class="n">$ITER$</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>itli</code> Iterate elements of java.util.List</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">$INDEX$</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">$INDEX$</span> <span class="o">&lt;</span> <span class="n">$LIST$</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">$INDEX$</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">$ELEMENT_TYPE$</span> <span class="n">$VAR$</span> <span class="o">=</span> <span class="n">$CAST$</span> <span class="n">$LIST$</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">$INDEX$</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>ittok</code> Iterate tokens from String</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">StringTokenizer</span> <span class="n">$TOKENIZER$</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">StringTokenizer</span><span class="o">(</span><span class="n">$STRING$</span><span class="o">);</span> <span class="n">$TOKENIZER$</span><span class="o">.</span><span class="na">hasMoreTokens</span><span class="o">();</span> <span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">String</span> <span class="n">$VAR$</span> <span class="o">=</span> <span class="n">$TOKENIZER_COPY$</span><span class="o">.</span><span class="na">nextToken</span><span class="o">();</span>
+</span><span class='line'>    <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>itve</code> Iterate elements of java.util.Vector</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">$INDEX$</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">$INDEX$</span> <span class="o">&lt;</span> <span class="n">$VECTOR$</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">$INDEX$</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">$ELEMENT_TYPE$</span> <span class="n">$VAR$</span> <span class="o">=</span> <span class="n">$CAST$</span> <span class="n">$VECTOR$</span><span class="o">.</span><span class="na">elementAt</span><span class="o">(</span><span class="n">$INDEX$</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<ul>
+<li><code>ritar</code> Iterate elements of array in reverse order</li>
+</ul>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">$INDEX$</span> <span class="o">=</span> <span class="n">$ARRAY$</span><span class="o">.</span><span class="na">length</span> <span class="o">&ndash;</span> <span class="mi">1</span><span class="o">;</span> <span class="n">$INDEX$</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">$INDEX$</span><span class="o">&mdash;)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="n">$ELEMENT_TYPE$</span> <span class="n">$VAR$</span> <span class="o">=</span> <span class="n">$ARRAY$</span><span class="o">[</span><span class="n">$INDEX$</span><span class="o">];</span>
+</span><span class='line'>  <span class="n">$END$</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>other</h3>
+
+
+
+
+<ul>
+<li>geti</li>
+<li>ifn</li>
+<li>inn</li>
+<li>inst</li>
+<li>lazy</li>
+<li>lst</li>
+<li>mn</li>
+<li>mx</li>
+<li>psvm</li>
+<li>toar
+
+<h3>output</h3></li>
+<li>serr</li>
+<li>souf</li>
+<li>sout</li>
+<li>soutm</li>
+<li>soutp</li>
+<li>soutv
+
+<h3>plain</h3></li>
+<li>psf</li>
+<li>psfi</li>
+<li>psfs</li>
+<li>St</li>
+<li>thr</li>
+</ul>
+
+
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-09T21:29:00+08:00" pubdate data-updated="true">Jan 9<span>th</span>, 2015</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android-/'>android,</a>, <a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/12/26/android-hardware-acceleration/">Android&#8211;Hardware Acceleration</a></h2>
+  
+  <p>
+    <p>Android 中的硬件加速
+本文的主要内容来自 SDK 文章的&#8221;Hardware Acceleration”.</p>
+
+
+
+
+<p>从 Android 3.0 开始，Android 的 2D 渲染管线可以更好的支持硬件加速。硬件加速使用 GPU 进行 View 上的绘制操作。</p>
+
+
+
+
+<p>硬件加速可以在一下四个级别开启或关闭：</p>
+
+
+
+
+<p>Application
+Activity
+Window
+View
+Application 级别</p>
+
+
+
+
+<p>往您的应用程序 AndroidManifest.xml 文件为 application 标签添加如下的属性即可为整个应用程序开启硬件加速：</p>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;application android:hardwareAccelerated=&ldquo;true&rdquo; &hellip;/&gt;</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Activity 级别</p>
+
+
+
+
+<p>您还可以控制每个 activity 是否开启硬件加速，只需在 activity 元素中添加 android:hardwareAccelerated 属性即可办到。比如下面的例子，在 application 级别开启硬件加速，但在某个 activity 上关闭硬件加速。</p>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;application android:hardwareAccelerated=&ldquo;true&rdquo;&gt;
+</span><span class='line'>    &lt;activity &hellip; /&gt;
+</span><span class='line'>    &lt;activity android:hardwareAccelerated=&ldquo;false&rdquo; /&gt;
+</span><span class='line'>&lt;/application&gt;</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Window 级别</p>
+
+
+
+
+<p>如果您需要更小粒度的控制，可以使用如下代码开启某个 window 的硬件加速：</p>
+
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">getWindow</span><span class="o">().</span><span class="na">setFlags</span><span class="o">(</span>
+</span><span class='line'>    <span class="n">WindowManager</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">FLAG_HARDWARE_ACCELERATED</span><span class="o">,</span>
+</span><span class='line'>    <span class="n">WindowManager</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">FLAG_HARDWARE_ACCELERATED</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>注：目前还不能在 window 级别关闭硬件加速。</p>
+
+
+
+
+<p>View 级别</p>
+
+
+
+
+<p>您可以在运行时用以下的代码关闭单个 view 的硬件加速：</p>
+
+
+
+
+<p>myView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+注：您不能在 view 级别开启硬件加速</p>
+
+
+
+
+<p>为什么需要这么多级别的控制？</p>
+
+
+
+
+<p>很明显，硬件加速能够带来性能提升，android 为什么要弄出这么多级别的控制，而不是默认就是全部硬件加速呢？原因是并非所有的 2D 绘图操作支持硬件加速，如果您的程序中使用了自定义视图或者绘图调用，程序可能会工作不正常。如果您的程序中只是用了标准的视图和 Drawable，放心大胆的开启硬件加速吧！具体是哪些绘图操作不支持硬件加速呢?以下是已知不支持硬件加速的绘图操作：</p>
+
+
+
+
+<p>Canvas
+clipPath()
+clipRegion()
+drawPicture()
+drawPosText()
+drawTextOnPath()
+drawVertices()
+Paint
+setLinearText()
+setMaskFilter()
+setRasterizer()
+另外还有一些绘图操作，开启和不开启硬件加速，效果不一样：</p>
+
+
+
+
+<p>Canvas
+clipRect()： XOR, Difference 和 ReverseDifference 裁剪模式被忽略，3D 变换将不会应用在裁剪的矩形上。
+drawBitmapMesh()：colors 数组被忽略
+drawLines()：反锯齿不支持
+setDrawFilter()：可以设置，但无效果
+Paint
+setDither()： 忽略
+setFilterBitmap()：过滤永远开启
+setShadowLayer()：只能用在文本上
+ComposeShader
+ComposeShader 只能包含不同类型的 shader (比如一个 BitmapShader 和一个 LinearGradient，但不能是两个 BitmapShader 实例)
+ComposeShader 不能包含 ComposeShader
+如果应用程序受到这些影响，您可以在受影响的部分调用 setLayerType(View.LAYER_TYPE_SOFTWARE, null)，这样在其它地方仍然可以享受硬件加速带来的好处</p>
+
+
+
+
+<p>Android 的绘制模型</p>
+
+
+
+
+<p>开启硬件加速后，Android 框架将采用新的绘制模型。基于软件的绘制模型和基于硬件的绘制模型有和不同呢？</p>
+
+
+
+
+<p>基于软件的绘制模型</p>
+
+
+
+
+<p>在软件绘制模型下，视图按照如下两个步骤绘制：</p>
+
+
+
+
+<ol>
+<li><p>Invalidate the hierarchy（注：hierarchy 怎么翻译？）</p></li>
+<li><p>Draw the hierarchy</p></li>
+</ol>
+
+
+
+
+<p>应用程序调用 invalidate()更新 UI 的某一部分，失效(invalidation)消息将会在整个视图层中传递，计算每个需要重绘的区域（即脏区域）。然后 Android 系统将会重绘所有和脏区域有交集的 view。很明显，这种绘图模式存在缺点：</p>
+
+
+
+
+<ol>
+<li><p>每个绘制操作中会执行不必要的代码。比如如果应用程序调用 invalidate()重绘 button，而 button 又位于另一个 view 之上，即使该 view 没有变化，也会进行重绘。</p></li>
+<li><p>可能会掩盖一些应用程序的 bug。因为 android 系统会重绘与脏区域有交集的 view，所以 view 的内容可能会在没有调用 invalidate()的情况下重绘。这可能会导致一个 view 依赖于其它 view 的失效才得到正确的行为。</p></li>
+</ol>
+
+
+
+
+<p>基于硬件的绘制模型</p>
+
+
+
+
+<p>Android 系统仍然使用 invalidate()和 draw()来绘制 view，但在处理绘制上有所不同。Android 系统记录绘制命令到显示列表，而不是立即执行绘制命令。另一个优化就是 Android 系统只需记录和更新标记为脏（通过 invalidate()）的 view。新的绘制模型包含三个步骤：</p>
+
+
+
+
+<ol>
+<li><p>Invalidate the hierarchy</p></li>
+<li><p>记录和更新显示列表</p></li>
+<li><p>绘制显示列表</p></li>
+</ol>
+
+
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-26T09:55:00+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/12/06/git-log-pretty/">Git Log Pretty</a></h2>
+  
+  <p>
+    <ul>
+<li>%H: commit hash</li>
+<li>%h: 缩短的 commit hash</li>
+<li>%T: tree hash</li>
+<li>%t: 缩短的 tree hash</li>
+<li>%P: parent hashes</li>
+<li>%p: 缩短的 parent hashes</li>
+<li>%an: 作者名字</li>
+<li>%aN: mailmap 的作者名字 (.mailmap 对应，详情参照 git-shortlog(1)或者 git-blame(1))</li>
+<li>%ae: 作者邮箱</li>
+<li>%aE: 作者邮箱 (.mailmap 对应，详情参照 git-shortlog(1)或者 git-blame(1))</li>
+<li>%ad: 日期 (&mdash;date= 制定的格式)</li>
+<li>%aD: 日期, RFC2822 格式</li>
+<li>%ar: 日期, 相对格式(1 day ago)</li>
+<li>%at: 日期, UNIX timestamp</li>
+<li>%ai: 日期, ISO 8601 格式</li>
+<li>%cn: 提交者名字</li>
+<li>%cN: 提交者名字 (.mailmap 对应，详情参照 git-shortlog(1)或者 git-blame(1))</li>
+<li>%ce: 提交者 email</li>
+<li>%cE: 提交者 email (.mailmap 对应，详情参照 git-shortlog(1)或者 git-blame(1))</li>
+<li>%cd: 提交日期 (&mdash;date= 制定的格式)</li>
+<li>%cD: 提交日期, RFC2822 格式</li>
+<li>%cr: 提交日期, 相对格式(1 day ago)</li>
+<li>%ct: 提交日期, UNIX timestamp</li>
+<li>%ci: 提交日期, ISO 8601 格式</li>
+<li>%d: ref 名称</li>
+<li>%e: encoding</li>
+<li>%s: commit 信息标题</li>
+<li>%f: sanitized subject line, suitable for a filename</li>
+<li>%b: commit 信息内容</li>
+<li>%N: commit notes</li>
+<li>%gD: reflog selector, e.g., refs/stash@{1}</li>
+<li>%gd: shortened reflog selector, e.g., stash@{1}</li>
+<li>%gs: reflog subject</li>
+<li>%Cred: 切换到红色</li>
+<li>%Cgreen: 切换到绿色</li>
+<li>%Cblue: 切换到蓝色</li>
+<li>%Creset: 重设颜色</li>
+<li>%C(&hellip;): 制定颜色, as described in color.branch.* config option</li>
+<li>%m: left, right or boundary mark</li>
+<li>%n: 换行</li>
+<li>%%: a raw %</li>
+<li>%x00: print a byte from a hex code</li>
+<li>%w([[,[,]]]): switch line wrapping, like the -w option of git-shortlog(1).</li>
+</ul>
+
+
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-06T19:40:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2014</time>
+    
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/09/23/vim-tips/">Vim Tips</a></h2>
+  
+  <p>
+    <p>1）删除文字</p>
+
+
+
+
+<ul>
+<li><p>「x」：每按一次，删除光标所在位置的“后面”一个字符。</p></li>
+<li><p>「#x」：例如，「6x」表示删除光标所在位置的“后面”6 个字符。</p></li>
+<li><p>「X」：大写的 X，每按一次，删除光标所在位置的“前面”一个字符。</p></li>
+<li><p>「#X」：例如，「20X」表示删除光标所在位置的“前面”20 个字符。</p></li>
+<li><p>「dd」：删除光标所在行。</p></li>
+<li><p>「#dd」：从光标所在行开始删除#行</p></li>
+<li><p>「dG」：全部删除</p></li>
+</ul>
+
+
+
+
+<p>2）复制</p>
+
+
+
+
+<ul>
+<li><p>「yw」：将光标所在之处到字尾的字符复制到缓冲区中。</p></li>
+<li><p>「#yw」：复制#个字到缓冲区</p></li>
+<li><p>「yy」：复制光标所在行到缓冲区。</p></li>
+<li><p>「#yy」：例如，「6yy」表示拷贝从光标所在的该行“往下数”6 行文字。</p></li>
+<li><p>「p」：将缓冲区内的字符贴到光标所在位置。注意：所有与“y”有关的复制命令都必须与“p”配合才能完成复制与粘贴功能。</p></li>
+</ul>
+
+
+
+
+<p>3）替换</p>
+
+
+
+
+<ul>
+<li><p>「r」：替换光标所在处的字符。</p></li>
+<li><p>「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</p></li>
+</ul>
+
+
+
+
+<p>4）回复上一次操作</p>
+
+
+
+
+<ul>
+<li>「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次“u”可以执行多次回复。 &ndash;</li>
+</ul>
+
+
+
+
+<p>5）跳至指定的行</p>
+
+
+
+
+<ul>
+<li><p>「ctrl」+「g」列出光标所在行的行号。</p></li>
+<li><p>「#G」：例如，「15G」，表示移动光标至文章的第 15 行行首。</p></li>
+</ul>
+
+
+
+
+<hr />
+
+
+
+
+<p>Last line mode 下命令简介</p>
+
+
+
+
+<p>　　在使用「last line mode」之前，请记住先按「ESC」键确定您已经处于「command mode」下后，再按「：」冒号即可进入「last line mode」。</p>
+
+
+
+
+<p>A) 列出行号</p>
+
+
+
+
+<ul>
+<li>「set nu」：输入「set nu」后，会在文件中的每一行前面列出行号。</li>
+</ul>
+
+
+
+
+<p>B) 跳到文件中的某一行</p>
+
+
+
+
+<ul>
+<li>「#」：「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字 15，再回车，就会跳到文章的第 15 行。</li>
+</ul>
+
+
+
+
+<p>C) 查找字符</p>
+
+
+
+
+<ul>
+<li><p>「/关键字」：先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</p></li>
+<li><p>「?关键字」：先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</p></li>
+</ul>
+
+
+
+
+<p>D) 保存文件</p>
+
+
+
+
+<ul>
+<li>「w」：在冒号输入字母「w」就可以将文件保存起来。</li>
+</ul>
+
+
+
+
+<p>E) 离开 vi</p>
+
+
+
+
+<ul>
+<li><p>「q」：按「q」就是退出，如果无法离开 vi，可以在「q」后跟一个「!」强制离开 vi。</p></li>
+<li><p>「qw」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。</p></li>
+</ul>
+
+
+
+
+<br>
+
+
+
+
+<hr />
+
+
+
+
+<ul>
+<li>查看并编辑二进制文件</li>
+</ul>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:%!xxd </span></code></pre></td></tr></table></div></figure></p>
+
+<p></p>
+
+
+
+
+<ul>
+<li>返回原文</li>
+</ul>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:%!xxd -r  </span></code></pre></td></tr></table></div></figure></p>
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-23T11:53:00+08:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/09/19/run-lint-in-android-studio/">Run Lint in Android Studio</a></h2>
+  
+  <p>
+    <p>Run lint in Android Studio</p>
+
+
+
+
+<p>As I have just started learning Android developement, I was happy to see lint as such an integral part of the development process.</p>
+
+
+
+
+<p>To runt lint and analyze your project, simply select <code>Analyze &gt; Inspect Code</code>.</p>
+
+
+
+
+<p>In the popup window that appears, you can select the analysis scope, like which projects to analyze and which to skip. For my test project, I just chose to analyze everything and ended up with this nice summary:</p>
+
+
+
+
+<br/><br/>
+
+
+
+
+<p><img src="/images/2014/09/inspect_code.png" title="inspect code" alt="" /><br/><br/></p>
+
+
+
+
+<p>When you browse through the reported items, you will notice that many of them can just be ignored. For instance, spelling, which catches a lot of non-typos in strings. For instance, the project name, is reported as a typo. It also complains about invalid XML in generated files.</p>
+
+
+
+
+<p>However, stuff like the items under Android lint and Declaration redundancy are highly interesting, and will be a great help for a newbie like me.</p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-19T10:52:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/09/15/regex-in-sublime-text-2/">Regex in Sublime Text 2</a></h2>
+  
+  <p>
+    <ul>
+<li>空行： ^[\s]*\n</li>
+<li>偶数行：\n(.*)\n</li>
+</ul>
+
+
+
+
+<hr />
+
+
+
+
+<p>&lsquo;CMD+SHIFT+W&rsquo;  close all without close the window</p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-15T12:11:00+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/09/02/mysql-add-unique-index/">MySQL Add UNIQUE INDEX</a></h2>
+  
+  <p>
+    <p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ALTER TABLE table ENGINE MyISAM;
+</span><span class='line'>
+</span><span class='line'>ALTER IGNORE TABLE table ADD UNIQUE INDEX(uid,name);
+</span><span class='line'>
+</span><span class='line'>ALTER TABLE table ENGINE InnoDB;</span></code></pre></td></tr></table></div></figure></p>
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-02T21:43:00+08:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2014</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/basic/'>basic</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
+  <h2><a href="/blog/2014/08/23/android-r-dot-plurals-dot-name/">Android R.plurals.name</a></h2>
+  
+  <p>
+    <h3>Quantity Strings (Plurals)</h3>
+
+
+
+
+<p>getQuantityString(int id, int quantity)
+getQuantityString(int id, int quantity, Object&hellip; formatArgs)</p>
+
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;plurals name=&ldquo;search_results&rdquo;&gt;
+</span><span class='line'>    &lt;item quantity=&ldquo;one&rdquo;&gt;%1$d result for \&ldquo;%2$s\&rdquo;&lt;/item&gt;
+</span><span class='line'>    &lt;item quantity=&ldquo;other&rdquo;&gt;%1$d results for \&ldquo;%2$s\&rdquo;&lt;/item&gt;
+</span><span class='line'>&lt;/plurals&gt;</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//第一个参数 count 用于选择 xml 中选择那个 item
+</span><span class='line'>//第二个参数用于插入占位符
+</span><span class='line'>//
+</span><span class='line'>String resultHint = getResources().getQuantityString(R.plurals.search_results,                    count,new Object[] { count, query });
+</span></code></pre></td></tr></table></div></figure></p>
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-23T11:06:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2014</time>
+    
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
   <h2><a href="/blog/2014/08/22/learn-english-5/">Learn English (5)</a></h2>
   
   <p>
@@ -5061,7 +6063,7 @@ API：  <a href="http://api.zdoz.net/interfaces.aspx">http://api.zdoz.net/interf
 </div>
 </div>
 		</div>
-		<footer id="footer" class="inner">Copyright &copy; 2014
+		<footer id="footer" class="inner">Copyright &copy; 2015
 
     Jerome Song
 

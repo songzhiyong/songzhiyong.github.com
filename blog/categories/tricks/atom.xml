@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-08-22T10:54:11+08:00</updated>
+  <updated>2015-01-10T23:56:33+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,247 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android Studio Live Templates]]></title>
+    <link href="http://ziso.me/blog/2015/01/09/android-studio-live-templates/"/>
+    <updated>2015-01-09T21:29:00+08:00</updated>
+    <id>http://ziso.me/blog/2015/01/09/android-studio-live-templates</id>
+    <content type="html"><![CDATA[<h1>Android Studio Live Templates</h1>
+
+<h3>iterations</h3>
+
+<ul>
+<li><p><code>fori</code> Create iteration loop
+<code>java
+for(int $INDEX$ = 0; $INDEX$ &lt; $LIMIT$; $INDEX$++) {
+$END$
+}
+</code></p></li>
+<li><p><code>itar</code> Iterate elements of array
+<code>java
+for(int $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.length; $INDEX$++) {
+$ELEMENT_TYPE$ $VAR$ = $ARRAY$[$INDEX$];
+$END$
+}
+</code></p></li>
+<li><p><code>itco</code> Iterate elements of java.util.Collection
+<code>java
+for($ITER_TYPE$ $ITER$ = $COLLECTION$.iterator(); $ITER$.hasNext(); ) {
+$ELEMENT_TYPE$ $VAR$ =$CAST$ $ITER$.next();
+$END$
+}
+</code></p></li>
+<li><p><code>iten</code> Iterate java.util.Enumeration
+<code>java
+while($ENUM$.hasMoreElements()){
+$TYPE$ $VAR$ = $CAST$ $ENUM$.nextElement();
+$END$
+}
+</code></p></li>
+<li><p><code>iter</code> Iterate Iterable | Array in J2SDK 5.0 syntax
+<code>java
+for ($ELEMENT_TYPE$ $VAR$ : $ITERABLE_TYPE$) {
+$END$
+}
+</code></p></li>
+<li><p><code>itit</code> Iterate java.util.Iterator
+<code>java
+while($ITER$.hasNext()){
+$TYPE$ $VAR$ = $CAST$ $ITER$.next();
+$END$
+}
+</code></p></li>
+<li><p><code>itli</code> Iterate elements of java.util.List
+<code>java
+for (int $INDEX$ = 0; $INDEX$ &lt; $LIST$.size(); $INDEX$++) {
+$ELEMENT_TYPE$ $VAR$ = $CAST$ $LIST$.get($INDEX$);
+$END$
+}
+</code></p></li>
+<li><p><code>ittok</code> Iterate tokens from String
+<code>java
+for (java.util.StringTokenizer $TOKENIZER$ = new java.util.StringTokenizer($STRING$); $TOKENIZER$.hasMoreTokens(); ) {
+  String $VAR$ = $TOKENIZER_COPY$.nextToken();
+  $END$
+}
+</code></p></li>
+<li><p><code>itve</code> Iterate elements of java.util.Vector
+<code>java
+for(int $INDEX$ = 0; $INDEX$ &lt; $VECTOR$.size(); $INDEX$++) {
+$ELEMENT_TYPE$ $VAR$ = $CAST$ $VECTOR$.elementAt($INDEX$);
+$END$
+}
+</code></p></li>
+<li><p><code>ritar</code> Iterate elements of array in reverse order
+<code>java
+for(int $INDEX$ = $ARRAY$.length - 1; $INDEX$ &gt;= 0; $INDEX$--) {
+$ELEMENT_TYPE$ $VAR$ = $ARRAY$[$INDEX$];
+$END$
+}
+</code></p>
+
+<h3>other</h3></li>
+<li>geti</li>
+<li>ifn</li>
+<li>inn</li>
+<li>inst</li>
+<li>lazy</li>
+<li>lst</li>
+<li>mn</li>
+<li>mx</li>
+<li>psvm</li>
+<li>toar
+
+<h3>output</h3></li>
+<li>serr</li>
+<li>souf</li>
+<li>sout</li>
+<li>soutm</li>
+<li>soutp</li>
+<li>soutv
+
+<h3>plain</h3></li>
+<li>psf</li>
+<li>psfi</li>
+<li>psfs</li>
+<li>St</li>
+<li>thr</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vim Tips]]></title>
+    <link href="http://ziso.me/blog/2014/09/23/vim-tips/"/>
+    <updated>2014-09-23T11:53:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/09/23/vim-tips</id>
+    <content type="html"><![CDATA[<p>1）删除文字</p>
+
+<ul>
+<li><p>「x」：每按一次，删除光标所在位置的“后面”一个字符。</p></li>
+<li><p>「#x」：例如，「6x」表示删除光标所在位置的“后面”6个字符。</p></li>
+<li><p>「X」：大写的X，每按一次，删除光标所在位置的“前面”一个字符。</p></li>
+<li><p>「#X」：例如，「20X」表示删除光标所在位置的“前面”20个字符。</p></li>
+<li><p>「dd」：删除光标所在行。</p></li>
+<li><p>「#dd」：从光标所在行开始删除#行</p></li>
+<li><p>「dG」：全部删除</p></li>
+</ul>
+
+
+<p>2）复制</p>
+
+<ul>
+<li><p>「yw」：将光标所在之处到字尾的字符复制到缓冲区中。</p></li>
+<li><p>「#yw」：复制#个字到缓冲区</p></li>
+<li><p>「yy」：复制光标所在行到缓冲区。</p></li>
+<li><p>「#yy」：例如，「6yy」表示拷贝从光标所在的该行“往下数”6行文字。</p></li>
+<li><p>「p」：将缓冲区内的字符贴到光标所在位置。注意：所有与“y”有关的复制命令都必须与“p”配合才能完成复制与粘贴功能。</p></li>
+</ul>
+
+
+<p>3）替换</p>
+
+<ul>
+<li><p>「r」：替换光标所在处的字符。</p></li>
+<li><p>「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</p></li>
+</ul>
+
+
+<p>4）回复上一次操作</p>
+
+<ul>
+<li>「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次“u”可以执行多次回复。 &ndash;</li>
+</ul>
+
+
+<p>5）跳至指定的行</p>
+
+<ul>
+<li><p>「ctrl」+「g」列出光标所在行的行号。</p></li>
+<li><p>「#G」：例如，「15G」，表示移动光标至文章的第15行行首。</p></li>
+</ul>
+
+
+<hr />
+
+<p>Last line mode下命令简介</p>
+
+<p>　　在使用「last line mode」之前，请记住先按「ESC」键确定您已经处于「command mode」下后，再按「：」冒号即可进入「last line mode」。</p>
+
+<p>A) 列出行号</p>
+
+<ul>
+<li>「set nu」：输入「set nu」后，会在文件中的每一行前面列出行号。</li>
+</ul>
+
+
+<p>B) 跳到文件中的某一行</p>
+
+<ul>
+<li>「#」：「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。</li>
+</ul>
+
+
+<p>C) 查找字符</p>
+
+<ul>
+<li><p>「/关键字」：先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</p></li>
+<li><p>「?关键字」：先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</p></li>
+</ul>
+
+
+<p>D) 保存文件</p>
+
+<ul>
+<li>「w」：在冒号输入字母「w」就可以将文件保存起来。</li>
+</ul>
+
+
+<p>E) 离开vi</p>
+
+<ul>
+<li><p>「q」：按「q」就是退出，如果无法离开vi，可以在「q」后跟一个「!」强制离开vi。</p></li>
+<li><p>「qw」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。</p></li>
+</ul>
+
+
+<br>
+
+
+<hr />
+
+<ul>
+<li><p>查看并编辑二进制文件
+<code>
+:%!xxd
+</code></p></li>
+<li><p>返回原文
+<code>
+:%!xxd -r  
+</code></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Regex in Sublime Text 2]]></title>
+    <link href="http://ziso.me/blog/2014/09/15/regex-in-sublime-text-2/"/>
+    <updated>2014-09-15T12:11:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/09/15/regex-in-sublime-text-2</id>
+    <content type="html"><![CDATA[<ul>
+<li>空行： ^[\s]*\n</li>
+<li>偶数行：\n(.*)\n</li>
+</ul>
+
+
+<hr />
+
+<p>&lsquo;CMD+SHIFT+W&rsquo;  close all without close the window</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sublime Text 2 Plugin - Text Pastry]]></title>
@@ -151,366 +392,6 @@ editor, press</p>
 <p>Use other items in the list to surround with other constructs.<br/></p>
 
 <p><img src="/images/2014/07/surround.png" alt="" /><br/></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac OS X Efficiency Improvement (2)]]></title>
-    <link href="http://ziso.me/blog/2014/07/04/mac-os-x-efficiency-improvement-2/"/>
-    <updated>2014-07-04T00:34:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/04/mac-os-x-efficiency-improvement-2</id>
-    <content type="html"><![CDATA[<p>输入特殊符号：</p>
-
-<table>
-<thead>
-<tr>
-<th>描述(Desc)        </th>
-<th> 按键（Key）           </th>
-<th>符号(Sign)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>版权符号:       </td>
-<td> Option + G            </td>
-<td> © </td>
-</tr>
-<tr>
-<td>人民币符号:        </td>
-<td> Option + Y            </td>
-<td> ¥ </td>
-</tr>
-<tr>
-<td>商标符号:       </td>
-<td> Option + 2            </td>
-<td> ™ </td>
-</tr>
-<tr>
-<td>已经注册的商标:  </td>
-<td> Option + R            </td>
-<td> ® </td>
-</tr>
-<tr>
-<td>苹果（Apple）符号 </td>
-<td> Option + Shift + K    </td>
-<td> </td>
-</tr>
-<tr>
-<td>Command符号       </td>
-<td> ⌘ + ⌥ + t             </td>
-<td> 字符集</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>数学符号：</p>
-
-<table>
-<thead>
-<tr>
-<th>描述(Desc)        </th>
-<th>       按键（Key）         </th>
-<th> 符号(Sign)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>约等于           </td>
-<td>Option + X                 </td>
-<td>  ≈ </td>
-</tr>
-<tr>
-<td>度数              </td>
-<td>Shift + Option + 8         </td>
-<td>  ° </td>
-</tr>
-<tr>
-<td>除号              </td>
-<td>Option + /                 </td>
-<td>  ÷ </td>
-</tr>
-<tr>
-<td>无穷              </td>
-<td>Option + 5                 </td>
-<td>  ∞</td>
-</tr>
-<tr>
-<td>大于等于            </td>
-<td>Option + ,                 </td>
-<td>  ≤ </td>
-</tr>
-<tr>
-<td>小于等于            </td>
-<td>Option + .                 </td>
-<td>  ≥</td>
-</tr>
-<tr>
-<td>不等于           </td>
-<td>Option + =                 </td>
-<td>  ≠ </td>
-</tr>
-<tr>
-<td>圆周率           </td>
-<td>Option + P                 </td>
-<td>  π </td>
-</tr>
-<tr>
-<td>加减              </td>
-<td>Shift + Option +           </td>
-<td>  ±</td>
-</tr>
-<tr>
-<td>开方              </td>
-<td>Option + V                 </td>
-<td>  √ </td>
-</tr>
-<tr>
-<td>求和符号            </td>
-<td>Option + W                 </td>
-<td>  ∑</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>截图：</p>
-
-<table>
-<thead>
-<tr>
-<th>按键（Key）                 </th>
-<th>   描述(Desc)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Command + Shift + 3         </td>
-<td>   截取整个屏幕，并保存图片到桌面 </td>
-</tr>
-<tr>
-<td>Command + Shift + 4         </td>
-<td>   自定义截图大小，按下 Space 键\n，可以选择窗口截图</td>
-</tr>
-<tr>
-<td>Command + Ctrl + Shift + 3  </td>
-<td>   可以将截图保存至剪切板</td>
-</tr>
-<tr>
-<td>Command + Ctrl + Shift + 4  </td>
-<td>   同上</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>全局：</p>
-
-<table>
-<thead>
-<tr>
-<th>按键(Key)                 </th>
-<th>  描述(Desc)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Command + Tab               </td>
-<td> 在应用程序间切换</td>
-</tr>
-<tr>
-<td>Command + `                 </td>
-<td> 在应用程序中的窗口间切换</td>
-</tr>
-<tr>
-<td>Ctrl + Tab                  </td>
-<td> 同一个应用程序中的页面或工作空间切换</td>
-</tr>
-<tr>
-<td>Ctrl + Shift + Tab          </td>
-<td> 同上，反方向</td>
-</tr>
-<tr>
-<td>Ctrl + Shift + power        </td>
-<td> 关闭显示器</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>Sublime Text 2</p>
-
-<table>
-<thead>
-<tr>
-<th>key                      </th>
-<th>  function </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Alt+Cmd+N</strong>            </td>
-<td> 窗  口  分  成  N  栏</td>
-</tr>
-<tr>
-<td><strong>Cmd+k,b</strong>              </td>
-<td> toogle side bar</td>
-</tr>
-<tr>
-<td><strong>Ctrl+Shift+k</strong>         </td>
-<td> 删除行</td>
-</tr>
-<tr>
-<td><strong>Ctrl+F</strong>&ndash;>Alt+Enter    </td>
-<td> find &ndash;>find all</td>
-</tr>
-<tr>
-<td>Cmd+p                    </td>
-<td>  文件定位</td>
-</tr>
-<tr>
-<td>Cmd+;                    </td>
-<td>  词语定位 #</td>
-</tr>
-<tr>
-<td>Cmd+r                    </td>
-<td>  函数定位 @</td>
-</tr>
-<tr>
-<td>Cmd+g                    </td>
-<td>  行号定位 :</td>
-</tr>
-<tr>
-<td>Cmd+Shift+V              </td>
-<td>  粘贴并格式化</td>
-</tr>
-<tr>
-<td>Cmd+K+U                  </td>
-<td>  大写</td>
-</tr>
-<tr>
-<td>Cmd+K+L                  </td>
-<td>  小写</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>Android Studio</p>
-
-<table>
-<thead>
-<tr>
-<th>key                      </th>
-<th>  function </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Double Shift             </td>
-<td> Search Everywhere</td>
-</tr>
-<tr>
-<td>Cmd Shift O              </td>
-<td> Open a File by name</td>
-</tr>
-<tr>
-<td>Cmd + E                  </td>
-<td> Recent Files</td>
-</tr>
-<tr>
-<td>Cmd + up                 </td>
-<td> Open Navigation Bar</td>
-</tr>
-<tr>
-<td>Cmd + H                  </td>
-<td> Hierarchy Class</td>
-</tr>
-<tr>
-<td>Cmd + D                  </td>
-<td> 复制选中区域</td>
-</tr>
-<tr>
-<td>Cmd + O                  </td>
-<td> 打开Class</td>
-</tr>
-<tr>
-<td>Cmd + Shift +up/down     </td>
-<td> 更换位置 </td>
-</tr>
-<tr>
-<td>Cmd + Shift + F          </td>
-<td> 全局查找</td>
-</tr>
-<tr>
-<td>Cmd + R                  </td>
-<td> 查找替换</td>
-</tr>
-<tr>
-<td>Cmd + Alt + L            </td>
-<td> 格式化代码</td>
-</tr>
-<tr>
-<td>Cmd + Shift + U          </td>
-<td> 切换大小写</td>
-</tr>
-<tr>
-<td>Alt + Shift + left/right </td>
-<td> 选择范围扩大一个word</td>
-</tr>
-</tbody>
-</table>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[高效的使用Google]]></title>
-    <link href="http://ziso.me/blog/2014/07/03/how-use-google-efficiently/"/>
-    <updated>2014-07-03T18:28:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/03/how-use-google-efficiently</id>
-    <content type="html"><![CDATA[<p><img src="/images/2014/07/thumb_google.jpeg" alt="" /><br/></p>
-
-<!-- more -->
-
-
-<p><img src="/images/2014/07/how-to-use-google.jpg" alt="" /><br/></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac OS X Efficiency Improvement (1)]]></title>
-    <link href="http://ziso.me/blog/2014/06/26/mac-os-x-efficiency-improvement-1/"/>
-    <updated>2014-06-26T23:43:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/06/26/mac-os-x-efficiency-improvement-1</id>
-    <content type="html"><![CDATA[<p>怀念Windows系统的Win+D, Win+R, 或许是自己还没习惯Mac OS, 还要继续修炼.</p>
-
-<hr />
-
-<p><strong>Command+Option+M</strong></p>
-
-<p>可以实现快速最小化当前应用程序所有窗口的目的。比如你想一下子最小化多个 Finder 窗口，就可以用该快捷键。</p>
-
-<p><strong>Command+H</strong><br></p>
-
-<p>可以实现快速隐藏当前应用程序所有窗口的目的</p>
-
-<p><strong>Command+Option+H</strong><br></p>
-
-<p>可以实现快速隐藏除当前应用程序之外所有程序窗口的目的<br></p>
-
-<p><strong>Command+Option+M+H</strong><br></p>
-
-<p>可以实现快速隐藏所有应用程序窗口的目的(按四个键，表示很不舒服)<br></p>
-
-<hr />
-
-<p>至于「系统偏好设置——通用」中勾选”连按窗口的标题栏以将窗口最小化”，然后双击窗口标题栏就可以最小化当前窗口。
-这个就更不好改了，跟windows正好相反。<br></p>
-
-<p>Mac上的CheatSheet(<a href="http://www.mediaatelier.com/CheatSheet/">http://www.mediaatelier.com/CheatSheet/</a>)还是很好用的。</p>
-
-<p>Practice makes Perfect!</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2014-08-22T10:54:11+08:00</updated>
+  <updated>2015-01-10T23:56:33+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,150 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Android--Hardware Acceleration]]></title>
+    <link href="http://ziso.me/blog/2014/12/26/android-hardware-acceleration/"/>
+    <updated>2014-12-26T09:55:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/12/26/android-hardware-acceleration</id>
+    <content type="html"><![CDATA[<p>Android中的硬件加速
+本文的主要内容来自SDK文章的"Hardware Acceleration”.</p>
+
+<p>从Android 3.0开始，Android的2D渲染管线可以更好的支持硬件加速。硬件加速使用GPU进行View上的绘制操作。</p>
+
+<p>硬件加速可以在一下四个级别开启或关闭：</p>
+
+<p>Application
+Activity
+Window
+View
+Application级别</p>
+
+<p>往您的应用程序AndroidManifest.xml文件为application标签添加如下的属性即可为整个应用程序开启硬件加速：
+<code>
+&lt;application android:hardwareAccelerated="true" .../&gt;
+</code>
+Activity级别</p>
+
+<p>您还可以控制每个activity是否开启硬件加速，只需在activity元素中添加android:hardwareAccelerated属性即可办到。比如下面的例子，在application级别开启硬件加速，但在某个activity上关闭硬件加速。
+```
+<application android:hardwareAccelerated="true"></p>
+
+<pre><code>&lt;activity ... /&gt;
+&lt;activity android:hardwareAccelerated="false" /&gt;
+</code></pre>
+
+<p></application>
+```
+Window级别</p>
+
+<p>如果您需要更小粒度的控制，可以使用如下代码开启某个window的硬件加速：
+```java
+getWindow().setFlags(</p>
+
+<pre><code>WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
+</code></pre>
+
+<p>```
+注：目前还不能在window级别关闭硬件加速。</p>
+
+<p>View级别</p>
+
+<p>您可以在运行时用以下的代码关闭单个view的硬件加速：</p>
+
+<p>myView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+注：您不能在view级别开启硬件加速</p>
+
+<p>为什么需要这么多级别的控制？</p>
+
+<p>很明显，硬件加速能够带来性能提升，android为什么要弄出这么多级别的控制，而不是默认就是全部硬件加速呢？原因是并非所有的2D绘图操作支持硬件加速，如果您的程序中使用了自定义视图或者绘图调用，程序可能会工作不正常。如果您的程序中只是用了标准的视图和Drawable，放心大胆的开启硬件加速吧！具体是哪些绘图操作不支持硬件加速呢?以下是已知不支持硬件加速的绘图操作：</p>
+
+<p>Canvas
+clipPath()
+clipRegion()
+drawPicture()
+drawPosText()
+drawTextOnPath()
+drawVertices()
+Paint
+setLinearText()
+setMaskFilter()
+setRasterizer()
+另外还有一些绘图操作，开启和不开启硬件加速，效果不一样：</p>
+
+<p>Canvas
+clipRect()： XOR, Difference和ReverseDifference裁剪模式被忽略，3D变换将不会应用在裁剪的矩形上。
+drawBitmapMesh()：colors数组被忽略
+drawLines()：反锯齿不支持
+setDrawFilter()：可以设置，但无效果
+Paint
+setDither()： 忽略
+setFilterBitmap()：过滤永远开启
+setShadowLayer()：只能用在文本上
+ComposeShader
+ComposeShader只能包含不同类型的shader (比如一个BitmapShader和一个LinearGradient，但不能是两个BitmapShader实例)
+ComposeShader不能包含ComposeShader
+如果应用程序受到这些影响，您可以在受影响的部分调用setLayerType(View.LAYER_TYPE_SOFTWARE, null)，这样在其它地方仍然可以享受硬件加速带来的好处</p>
+
+<p>Android的绘制模型</p>
+
+<p>开启硬件加速后，Android框架将采用新的绘制模型。基于软件的绘制模型和基于硬件的绘制模型有和不同呢？</p>
+
+<p>基于软件的绘制模型</p>
+
+<p>在软件绘制模型下，视图按照如下两个步骤绘制：</p>
+
+<ol>
+<li><p>Invalidate the hierarchy（注：hierarchy怎么翻译？）</p></li>
+<li><p>Draw the hierarchy</p></li>
+</ol>
+
+
+<p>应用程序调用invalidate()更新UI的某一部分，失效(invalidation)消息将会在整个视图层中传递，计算每个需要重绘的区域（即脏区域）。然后Android系统将会重绘所有和脏区域有交集的view。很明显，这种绘图模式存在缺点：</p>
+
+<ol>
+<li><p>每个绘制操作中会执行不必要的代码。比如如果应用程序调用invalidate()重绘button，而button又位于另一个view之上，即使该view没有变化，也会进行重绘。</p></li>
+<li><p>可能会掩盖一些应用程序的bug。因为android系统会重绘与脏区域有交集的view，所以view的内容可能会在没有调用invalidate()的情况下重绘。这可能会导致一个view依赖于其它view的失效才得到正确的行为。</p></li>
+</ol>
+
+
+<p>基于硬件的绘制模型</p>
+
+<p>Android系统仍然使用invalidate()和draw()来绘制view，但在处理绘制上有所不同。Android系统记录绘制命令到显示列表，而不是立即执行绘制命令。另一个优化就是Android系统只需记录和更新标记为脏（通过invalidate()）的view。新的绘制模型包含三个步骤：</p>
+
+<ol>
+<li><p>Invalidate the hierarchy</p></li>
+<li><p>记录和更新显示列表</p></li>
+<li><p>绘制显示列表</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Run lint in Android Studio]]></title>
+    <link href="http://ziso.me/blog/2014/09/19/run-lint-in-android-studio/"/>
+    <updated>2014-09-19T10:52:00+08:00</updated>
+    <id>http://ziso.me/blog/2014/09/19/run-lint-in-android-studio</id>
+    <content type="html"><![CDATA[<p>Run lint in Android Studio</p>
+
+<p>As I have just started learning Android developement, I was happy to see lint as such an integral part of the development process.</p>
+
+<p>To runt lint and analyze your project, simply select <code>Analyze &gt; Inspect Code</code>.</p>
+
+<p>In the popup window that appears, you can select the analysis scope, like which projects to analyze and which to skip. For my test project, I just chose to analyze everything and ended up with this nice summary:</p>
+
+<br/><br/>
+
+
+<p><img src="/images/2014/09/inspect_code.png" title="inspect code" alt="" /><br/><br/></p>
+
+<p>When you browse through the reported items, you will notice that many of them can just be ignored. For instance, spelling, which catches a lot of non-typos in strings. For instance, the project name, is reported as a typo. It also complains about invalid XML in generated files.</p>
+
+<p>However, stuff like the items under Android lint and Declaration redundancy are highly interesting, and will be a great help for a newbie like me.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[android.intent.action.ASSIST]]></title>
@@ -108,178 +252,6 @@ new Thread(new Runnable() {</p>
 </code></pre>
 
 <p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[转]Java(Android) 线程池]]></title>
-    <link href="http://ziso.me/blog/2014/07/17/zhuan-java-android-threadpool/"/>
-    <updated>2014-07-17T11:05:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/17/zhuan-java-android-threadpool</id>
-    <content type="html"><![CDATA[<p>转自:<a href="http://www.trinea.cn/android/java-android-thread-pool/">http://www.trinea.cn/android/java-android-thread-pool/</a></p>
-
-<p>介绍new Thread的弊端及Java四种线程池的使用，对Android同样适用。本文是基础篇，后面会分享下线程池一些高级功能。</p>
-
-<h3>1、new Thread的弊端</h3>
-
-<p>执行一个异步任务你还只是如下new Thread吗？
-```java
-new Thread(new Runnable() {</p>
-
-<pre><code>@Override
-public void run() {
-    // TODO Auto-generated method stub
-}
-</code></pre>
-
-<p>}).start();
-```
-那你就out太多了，new Thread的弊端如下：
-&ndash; a. 每次new Thread新建对象性能差。
-&ndash; b. 线程缺乏统一管理，可能无限制新建线程，相互之间竞争，及可能占用过多系统资源导致死机或oom。
-&ndash; c. 缺乏更多功能，如定时执行、定期执行、线程中断。
-相比new Thread，Java提供的四种线程池的好处在于：
-&ndash; a. 重用存在的线程，减少对象创建、消亡的开销，性能佳。
-&ndash; b. 可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。
-&ndash; c. 提供定时执行、定期执行、单线程、并发数控制等功能。</p>
-
-<h3>2、Java 线程池</h3>
-
-<p>Java通过Executors提供四种线程池，分别为：
-&ndash; newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</p>
-
-<ul>
-<li><p>newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。</p></li>
-<li><p>newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。</p></li>
-<li><p>newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。</p></li>
-</ul>
-
-
-<h4>(1). newCachedThreadPool</h4>
-
-<p>创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。示例代码如下：
-```java
-ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
-for (int i = 0; i &lt; 10; i++) {</p>
-
-<pre><code>final int index = i;
-try {
-    Thread.sleep(index * 1000);
-} catch (InterruptedException e) {
-    e.printStackTrace();
-}
-
-cachedThreadPool.execute(new Runnable() {
-
-    @Override
-    public void run() {
-        System.out.println(index);
-    }
-});
-</code></pre>
-
-<p>}
-```
-线程池为无限大，当执行第二个任务时第一个任务已经完成，会复用执行第一个任务的线程，而不用每次新建线程。</p>
-
-<h4>(2). newFixedThreadPool</h4>
-
-<p>创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。示例代码如下：
-```java
-ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
-for (int i = 0; i &lt; 10; i++) {</p>
-
-<pre><code>final int index = i;
-fixedThreadPool.execute(new Runnable() {
-
-    @Override
-    public void run() {
-        try {
-            System.out.println(index);
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-});
-</code></pre>
-
-<p>}
-```
-因为线程池大小为3，每个任务输出index后sleep 2秒，所以每两秒打印3个数字。
-定长线程池的大小最好根据系统资源进行设置。如Runtime.getRuntime().availableProcessors()。可参考PreloadDataCache。</p>
-
-<h4>(3) newScheduledThreadPool</h4>
-
-<p>创建一个定长线程池，支持定时及周期性任务执行。延迟执行示例代码如下：
-```java
-ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(5);
-scheduledThreadPool.schedule(new Runnable() {</p>
-
-<pre><code>@Override
-public void run() {
-    System.out.println("delay 3 seconds");
-}
-</code></pre>
-
-<p>}, 3, TimeUnit.SECONDS);
-```
-表示延迟3秒执行。</p>
-
-<p>定期执行示例代码如下：
-```java
-scheduledThreadPool.scheduleAtFixedRate(new Runnable() {</p>
-
-<pre><code>@Override
-public void run() {
-    System.out.println("delay 1 seconds, and excute every 3 seconds");
-}
-</code></pre>
-
-<p>}, 1, 3, TimeUnit.SECONDS);
-```
-表示延迟1秒后每3秒执行一次。
-ScheduledExecutorService比Timer更安全，功能更强大，后面会有一篇单独进行对比。</p>
-
-<h4>(4)、newSingleThreadExecutor</h4>
-
-<p>创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。示例代码如下：
-```java
-ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-for (int i = 0; i &lt; 10; i++) {</p>
-
-<pre><code>final int index = i;
-singleThreadExecutor.execute(new Runnable() {
-
-    @Override
-    public void run() {
-        try {
-            System.out.println(index);
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-});
-</code></pre>
-
-<p>}
-```
-结果依次输出，相当于顺序执行各个任务。
-现行大多数GUI程序都是单线程的。Android中单线程可用于数据库操作，文件操作，应用批量安装，应用批量删除等不适合并发但可能IO阻塞性及影响UI线程响应的操作。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Dexguard Encrypt Asset File]]></title>
-    <link href="http://ziso.me/blog/2014/07/15/dexguard-encrypt-asset-file/"/>
-    <updated>2014-07-15T14:54:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/15/dexguard-encrypt-asset-file</id>
-    <content type="html"><![CDATA[<p>-encryptassetfiles [file_filter]</p>
-
-<p>Specifies the Android asset files that should be encrypted. Asset files are stored in the assets directory and can contain any data. The obfuscation step can automatically encrypt them and make sure they are decrypted on the fly at run-time. In order for this to work, the asset files must be streamed and their names must be hard-coded. This means that your code must invoke the AsssetManager as follows: open(&ldquo;MyAssetFile&rdquo;). Your configuration can then specify &ldquo;-encryptassetfiles assets/MyAssetFile&rdquo;. Only applicable when obfuscating Android code.</p>
 ]]></content>
   </entry>
   
