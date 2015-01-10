@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2015-01-10T23:56:33+08:00</updated>
+  <updated>2015-01-11T01:13:07+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ziso.me/blog/2015/01/09/android-studio-live-templates/"/>
     <updated>2015-01-09T21:29:00+08:00</updated>
     <id>http://ziso.me/blog/2015/01/09/android-studio-live-templates</id>
-    <content type="html"><![CDATA[<h1>Android Studio Live Templates</h1>
+    <content type="html"><![CDATA[<p><strong>Type the abbrs then click <code>TAB</code>, template codes will be generated automatically.</strong></p>
 
 <h3>iterations</h3>
 
@@ -883,14 +883,23 @@ getQuantityString(int id, int quantity, Object&hellip; formatArgs)</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>那你就 out 太多了，new Thread 的弊端如下：
-&ndash; a. 每次 new Thread 新建对象性能差。
-&ndash; b. 线程缺乏统一管理，可能无限制新建线程，相互之间竞争，及可能占用过多系统资源导致死机或 oom。
-&ndash; c. 缺乏更多功能，如定时执行、定期执行、线程中断。
-相比 new Thread，Java 提供的四种线程池的好处在于：
-&ndash; a. 重用存在的线程，减少对象创建、消亡的开销，性能佳。
-&ndash; b. 可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。
-&ndash; c. 提供定时执行、定期执行、单线程、并发数控制等功能。</p>
+<p>那你就 out 太多了，new Thread 的弊端如下：</p>
+
+<ol>
+<li>每次 new Thread 新建对象性能差。</li>
+<li>线程缺乏统一管理，可能无限制新建线程，相互之间竞争，及可能占用过多系统资源导致死机或 oom。</li>
+<li>缺乏更多功能，如定时执行、定期执行、线程中断。</li>
+</ol>
+
+
+<p>相比 new Thread，Java 提供的四种线程池的好处在于：</p>
+
+<ol>
+<li>重用存在的线程，减少对象创建、消亡的开销，性能佳。</li>
+<li>可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。</li>
+<li>提供定时执行、定期执行、单线程、并发数控制等功能。</li>
+</ol>
+
 
 <h3>2、Java 线程池</h3>
 

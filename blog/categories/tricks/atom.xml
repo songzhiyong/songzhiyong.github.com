@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2015-01-10T23:56:33+08:00</updated>
+  <updated>2015-01-11T01:13:07+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -18,7 +18,7 @@
     <link href="http://ziso.me/blog/2015/01/09/android-studio-live-templates/"/>
     <updated>2015-01-09T21:29:00+08:00</updated>
     <id>http://ziso.me/blog/2015/01/09/android-studio-live-templates</id>
-    <content type="html"><![CDATA[<h1>Android Studio Live Templates</h1>
+    <content type="html"><![CDATA[<p><strong>Type the abbrs then click <code>TAB</code>, template codes will be generated automatically.</strong></p>
 
 <h3>iterations</h3>
 
