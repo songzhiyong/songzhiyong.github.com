@@ -114,6 +114,57 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2015/01/12/sqlite-notes/">
+		
+			SQLite Notes</a>
+	</h2>
+	<div class="entry-content">
+		<p>The Offsets Function of fts</p>
+
+<p>Integer Interpretation</p>
+
+<p>0 The column number that the term instance occurs in (0 for the leftmost column of the FTS table, 1 for the next leftmost, etc.).
+1 The term number of the matching term within the full-text query expression. Terms within a query expression are numbered starting from 0 in the order that they occur.
+2 The byte offset of the matching term within the column.
+3 The size of the matching term in bytes.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-12T14:43:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2015</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/sqlite/'>SQLite</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2015/01/12/sqlite-notes//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2015/01/09/android-studio-live-templates/">
 		
 			Android Studio Live Templates</a>
@@ -711,6 +762,28 @@ ComposeShader 不能包含 ComposeShader
 </pre></td><td class='code'><pre><code class=''><span class='line'>:%!xxd -r  </span></code></pre></td></tr></table></div></figure>
 
 
+<ul>
+<li>ctrl+f        在文件中前移一页（相当于 page down）；</li>
+<li>ctrl+b        在文件中后移一页（相当于 page up）；</li>
+<li><ul>
+<li><pre><code>   当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；
+</code></pre></li>
+</ul>
+</li>
+<li><h1>当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</h1></li>
+<li>( / )        移动到 前/后 句的开始；</li>
+<li>{ / }        跳转到 当 前/下一个 段落的开始。</li>
+<li>g_         到本行最后一个不是 blank 字符的位置。</li>
+<li>fa         到下一个为 a 的字符处，你也可以 fs 到下一个为 s 的字符。</li>
+<li>t,         到逗号前的第一个字符。逗号可以变成其它字符。</li>
+<li>3fa        在当前行查找第三个出现的 a。</li>
+<li>F/T        和 f 和 t 一样，只不过是相反方向;</li>
+<li>gg         将光标定位到文件第一行起始位置；</li>
+<li>G          将光标定位到文件最后一行起始位置；</li>
+<li>NG 或 Ngg    将光标定位到第 N 行的起始位置。</li>
+</ul>
+
+
 		
 		
 	</div>
@@ -1120,75 +1193,6 @@ getQuantityString(int id, int quantity, Object&hellip; formatArgs)</p>
 
 	
 		<span class="comments"><a href="/blog/2014/08/22/learn-english-5//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/">
-		
-			android.intent.action.ASSIST</a>
-	</h2>
-	<div class="entry-content">
-		<h3>public static final String ACTION_ASSIST</h3>
-
-<h4>Added in API level 16</h4>
-
-<p>Activity Action: Perform assist action.</p>
-
-<p>Input: EXTRA_ASSIST_PACKAGE, EXTRA_ASSIST_CONTEXT, can provide additional optional contextual information about where the user was when they requested the assist. Output: nothing.</p>
-
-<p>Constant Value: &ldquo;android.intent.action.ASSIST&rdquo;</p>
-
-<h3>Register:</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;intent-filter&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.ASSIST&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/category&gt;</span>
-</span><span class='line'><span class="nt">&lt;/intent-filter&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-21T17:28:00+08:00" pubdate data-updated="true">Aug 21<span>st</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>android</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/08/21/android-dot-intent-dot-action-dot-assist//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

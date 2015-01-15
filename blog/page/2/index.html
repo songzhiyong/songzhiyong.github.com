@@ -114,6 +114,75 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/">
+		
+			android.intent.action.ASSIST</a>
+	</h2>
+	<div class="entry-content">
+		<h3>public static final String ACTION_ASSIST</h3>
+
+<h4>Added in API level 16</h4>
+
+<p>Activity Action: Perform assist action.</p>
+
+<p>Input: EXTRA_ASSIST_PACKAGE, EXTRA_ASSIST_CONTEXT, can provide additional optional contextual information about where the user was when they requested the assist. Output: nothing.</p>
+
+<p>Constant Value: &ldquo;android.intent.action.ASSIST&rdquo;</p>
+
+<h3>Register:</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;intent-filter&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.ASSIST&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/category&gt;</span>
+</span><span class='line'><span class="nt">&lt;/intent-filter&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-21T17:28:00+08:00" pubdate data-updated="true">Aug 21<span>st</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/08/21/android-dot-intent-dot-action-dot-assist//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/08/18/remoteviews-dot-apply/">
 		
 			RemoteViews.apply</a>
@@ -1329,60 +1398,6 @@ ScheduledExecutorService 比 Timer 更安全，功能更强大，后面会有一
 
 	
 		<span class="comments"><a href="/blog/2014/07/12/sublime-text-plugin-text-pastry//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/11/android-application-class-being-called-twice/">
-		
-			Android Application Class Being Called Twice</a>
-	</h2>
-	<div class="entry-content">
-		<p><a href="http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice">http://stackoverflow.com/questions/3947052/android-application-class-being-called-twice</a></p>
-
-<p>Yes if you used android:process then you have it running in a separate process, so when the service starts a new process is started for it and thus a new Application object for that process needs to be created.</p>
-
-<p>But there is a more fundamental problem &mdash; it is just not right for an Application object to start one of its services. It is important that you don&rsquo;t confuse Application with how you may think of an &ldquo;application&rdquo; in another OS. The Application object does not drive the app. It is just a global of state for the app in that process. In fact, the Application object is completely superfluous &mdash; you never need one to right an Android application. Generally I actually recommend that people don&rsquo;t use it. It is more likely to cause trouble than anything else.</p>
-
-<p>Another way to put this: what really defines an application is its collection of activity, service, receiver, and provider tags. Those are what are &ldquo;launched.&rdquo; All an Application is, is something that is created as part of initializing an application&rsquo;s process. It has no lifecycle of its own, it is just there to serve the other real components in the app.</p>
-
-<p>So just ignore Application when designing your app; it will reduce confusion. (In its place, I prefer to use global singletons for such state.)</p>
-
-<p>Also as a general rule, I recommend not using android:process. There are certainly some uses for it, but the vast majority of the time it is not needed and just makes an application use more RAM, less efficient, and harder to write (since you can&rsquo;t take advantage of globals in a single process). It should be obvious to you if you reach a place where there is actually a good reason to use android:process.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-11T17:50:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>android</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/11/android-application-class-being-called-twice//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

@@ -158,7 +158,7 @@
     </url>
     <url>
         <loc>http://ziso.me/blog/2014/09/23/vim-tips/</loc>
-        <lastmod>2015-01-07T18:56:28+08:00</lastmod>
+        <lastmod>2015-01-11T21:34:55+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/blog/2014/12/06/git-log-pretty/</loc>
@@ -173,28 +173,32 @@
         <lastmod>2015-01-11T01:08:59+08:00</lastmod>
     </url>
     <url>
+        <loc>http://ziso.me/blog/2015/01/12/sqlite-notes/</loc>
+        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://ziso.me/about/</loc>
         <lastmod>2014-07-25T09:55:42+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/archives/</loc>
-        <lastmod>2015-01-11T01:12:30+08:00</lastmod>
+        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/blog/archives/</loc>
-        <lastmod>2015-01-11T01:12:30+08:00</lastmod>
+        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/blog/</loc>
-        <lastmod>2015-01-11T01:12:30+08:00</lastmod>
+        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/</loc>
-        <lastmod>2015-01-11T01:12:30+08:00</lastmod>
+        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/posts/</loc>
-        <lastmod>2015-01-11T01:12:30+08:00</lastmod>
+        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/robots.txt</loc>
