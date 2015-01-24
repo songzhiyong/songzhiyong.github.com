@@ -114,6 +114,395 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/07/14/gradle-build-tips/">
+		
+			Gradle Build Tips</a>
+	</h2>
+	<div class="entry-content">
+		<p>I&rsquo;m lazy. Hopefully you are too. Here&rsquo;s two small conveniences for the Gradle build system you might find useful:</p>
+
+<p>Decomposed Version Name and Code</p>
+
+<p>Break up your version into its logical components and manage them separately. Stop wondering if you&rsquo;ve bumped the version code correctly or updated the version name properly.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def versionMajor = 3
+</span><span class='line'>def versionMinor = 0
+</span><span class='line'>def versionPatch = 0
+</span><span class='line'>def versionBuild = 0 // bump for dogfood builds, public betas, etc.
+</span><span class='line'>
+</span><span class='line'>android {
+</span><span class='line'>  defaultConfig {
+</span><span class='line'>    versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+</span><span class='line'>    versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you have more than 10 patch or minor versions you have other problems. 10 builds? Unlikely, but we&rsquo;ve got a whole int32 to work with here so why not&hellip;</p>
+
+<p>A More Useful BuildConfig</p>
+
+<p>Build config is FINALLY ours to add to. Leverage it for constant information that might otherwise require a Context to obtain.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def gitSha() {
+</span><span class='line'>  return 'git rev-parse --short HEAD'.execute().text.trim()
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>def buildTime() {
+</span><span class='line'>  def df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'")
+</span><span class='line'>  df.setTimeZone(TimeZone.getTimeZone("UTC"))
+</span><span class='line'>  return df.format(new Date())
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>android {
+</span><span class='line'>  defaultConfig {
+</span><span class='line'>    buildConfig """\
+</span><span class='line'>      public static final String GIT_SHA = "${gitSha()}";
+</span><span class='line'>      public static final String BUILD_TIME = "${buildTime()}";
+</span><span class='line'>    """
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Let&rsquo;s get more utility into it! Vote @ <a href="http://b.android.com/59302">http://b.android.com/59302</a></p>
+
+<p>Since Gadle 1.9</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> buildConfigField "String" , "GIT_SHA" ,"\"${gitSha()}\""
+</span><span class='line'> buildConfigField "String","BUILD_TIME","\"${buildTime()}\""</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-14T10:42:00+08:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/14/gradle-build-tips//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/13/android-photoshop-export/">
+		
+			Android Photoshop Export</a>
+	</h2>
+	<div class="entry-content">
+		<p>[脑补一下]：</p>
+
+<ol>
+<li>什么是 Photoshop Action？</li>
+</ol>
+
+
+<p>[答]：Photoshop Action 是从 Photoshop 4.0 开始出现的，它就好比是 Dos 里面的批处理文件，或者 Word 中的宏。它可以把 Photoshop 中每一个操作步骤记录下来然后反复使用，或者存成独立的文件供大家分享。</p>
+
+<ol>
+<li>如何安装及使用 Photoshop Action？</li>
+</ol>
+
+
+<p>[答]：打开 Photoshop，选中“窗口—动作”菜单，打开选中“动作”面板。</p>
+
+<p>Here we go!</p>
+
+<p>下载下面两个任意一个 action 脚本，基本一样，只是一个从小到大，一个从大到小。</p>
+
+<p><a href="http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/">http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/</a></p>
+
+<p><a href="http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/">http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/</a></p>
+
+<p>双击导入到 photoshop, 窗口-动作，找到刚刚导入的 Action,运行即可。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-13T02:04:00+08:00" pubdate data-updated="true">Jul 13<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/13/android-photoshop-export//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/07/12/sublime-text-plugin-text-pastry/">
+		
+			Sublime Text 2 Plugin - Text Pastry</a>
+	</h2>
+	<div class="entry-content">
+		<p>新技能 get</p>
+
+<p>关于 Sublime Text2 的简洁优雅，不做赘述。</p>
+
+<p><a href="https://github.com/duydao/Text-Pastry">Text-Pastry</a> 让 Sublime Text 2 如虎添翼。</p>
+
+<h3>DEMO1</h3>
+
+<h4>From:</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>aaa
+</span><span class='line'>bbb
+</span><span class='line'>ccc
+</span><span class='line'>ddd
+</span><span class='line'>eee</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>To:</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1. aaa
+</span><span class='line'>2. bbb
+</span><span class='line'>3. ccc
+</span><span class='line'>4. ddd
+</span><span class='line'>5. eee</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>TODO</h4>
+
+<p>（快捷键基于 Mac OS，Windows 上略有区别）</p>
+
+<ol>
+<li><p>选中多行</p></li>
+<li><p><code>CMD</code>+<code>SHIFT</code>+<code>L</code>进入多行编辑模式</p></li>
+<li><p>把多个光标同时移动到每行的最前面</p></li>
+<li><p><code>CMD</code>+<code>ALT</code>+<code>T</code>  进入 Text Pastry 命令输入模式</p></li>
+<li><p>选择 \i 回车</p></li>
+<li><p>1-5 的标号已经加上，输入. (空格)</p></li>
+<li><p>DONE</p></li>
+</ol>
+
+
+<h3>DEMO2</h3>
+
+<h4>From:</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nt">&quot;apps&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.fm&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;FM 收音机&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.android.mail&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;邮件&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.qq.qcloud&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;微云&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>To:</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nt">&quot;apps&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;c9e968cc-d122-4162-a502-874cdcfa470c&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.fm&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;FM 收音机&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;4fba9716-29bf-4c06-b22e-75d59622703f&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.android.mail&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;邮件&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;6c3f911a-318b-4aad-82d6-c5f183d8ca00&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.qq.qcloud&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;微云&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>TODO</h4>
+
+<p>目测在每个数据里面加个 uuid 这种需求不会在代码外去实现 :）
+但类似的应该会有，如何秒杀是关键。如果够熟练，估计只需十几秒，即使有上百条数据</p>
+
+<ol>
+<li><p><code>CMD</code>+<code>F</code> 搜索 &ldquo;bundle_id&#8221;，少量也可<code>CMD</code>+<code>D</code></p></li>
+<li><p><code>ALT</code>+<code>ENTER</code> 选中所有”bundle_id“，并进入多行同时编辑模式</p></li>
+<li><p><code>CMD</code>+<code>SHIFT</code>+<code>ENTER</code> 在改行上面插入一空行，多行同时输入&#8221;uuid&#8221;: &ldquo;&rdquo;,让光标在&#8221;&ldquo;中</p></li>
+<li><p><code>CMD</code>+<code>ALT</code>+<code>T</code>  进入 Text Pastry 命令输入模式</p></li>
+<li><p>选择 \uuid(old)或 uuid(new) 回车</p></li>
+<li><p>uuid 已经加上，一直末尾,输入,</p></li>
+<li><p>DONE</p></li>
+</ol>
+
+
+<p><a href="https://github.com/duydao/Text-Pastry#readme">More Info</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-12T16:27:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/tricks/'>tricks</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/12/sublime-text-plugin-text-pastry//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/07/11/android-application-class-being-called-twice/">
 		
 			Android Application Class Being Called Twice</a>
@@ -960,462 +1349,6 @@ editor, press</p>
 
 	
 		<span class="comments"><a href="/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/04/mac-os-x-efficiency-improvement-2/">
-		
-			Mac OS X Efficiency Improvement (2)</a>
-	</h2>
-	<div class="entry-content">
-		<p>输入特殊符号：</p>
-
-<table>
-<thead>
-<tr>
-<th>描述(Desc)        </th>
-<th> 按键（Key）           </th>
-<th>符号(Sign)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>版权符号:       </td>
-<td> Option + G            </td>
-<td> © </td>
-</tr>
-<tr>
-<td>人民币符号:        </td>
-<td> Option + Y            </td>
-<td> ¥ </td>
-</tr>
-<tr>
-<td>商标符号:       </td>
-<td> Option + 2            </td>
-<td> ™ </td>
-</tr>
-<tr>
-<td>已经注册的商标:  </td>
-<td> Option + R            </td>
-<td> ® </td>
-</tr>
-<tr>
-<td>苹果（Apple）符号 </td>
-<td> Option + Shift + K    </td>
-<td> </td>
-</tr>
-<tr>
-<td>Command 符号      </td>
-<td> ⌘ + ⌥ + t             </td>
-<td> 字符集</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>数学符号：</p>
-
-<table>
-<thead>
-<tr>
-<th>描述(Desc)        </th>
-<th>       按键（Key）         </th>
-<th> 符号(Sign)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>约等于           </td>
-<td>Option + X                 </td>
-<td>  ≈ </td>
-</tr>
-<tr>
-<td>度数              </td>
-<td>Shift + Option + 8         </td>
-<td>  ° </td>
-</tr>
-<tr>
-<td>除号              </td>
-<td>Option + /                 </td>
-<td>  ÷ </td>
-</tr>
-<tr>
-<td>无穷              </td>
-<td>Option + 5                 </td>
-<td>  ∞</td>
-</tr>
-<tr>
-<td>大于等于            </td>
-<td>Option + ,                 </td>
-<td>  ≤ </td>
-</tr>
-<tr>
-<td>小于等于            </td>
-<td>Option + .                 </td>
-<td>  ≥</td>
-</tr>
-<tr>
-<td>不等于           </td>
-<td>Option + =                 </td>
-<td>  ≠ </td>
-</tr>
-<tr>
-<td>圆周率           </td>
-<td>Option + P                 </td>
-<td>  π </td>
-</tr>
-<tr>
-<td>加减              </td>
-<td>Shift + Option +           </td>
-<td>  ±</td>
-</tr>
-<tr>
-<td>开方              </td>
-<td>Option + V                 </td>
-<td>  √ </td>
-</tr>
-<tr>
-<td>求和符号            </td>
-<td>Option + W                 </td>
-<td>  ∑</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>截图：</p>
-
-<table>
-<thead>
-<tr>
-<th>按键（Key）                 </th>
-<th>   描述(Desc)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Command + Shift + 3         </td>
-<td>   截取整个屏幕，并保存图片到桌面 </td>
-</tr>
-<tr>
-<td>Command + Shift + 4         </td>
-<td>   自定义截图大小，按下 Space 键\n，可以选择窗口截图</td>
-</tr>
-<tr>
-<td>Command + Ctrl + Shift + 3  </td>
-<td>   可以将截图保存至剪切板</td>
-</tr>
-<tr>
-<td>Command + Ctrl + Shift + 4  </td>
-<td>   同上</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>全局：</p>
-
-<table>
-<thead>
-<tr>
-<th>按键(Key)                 </th>
-<th>  描述(Desc)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Command + Tab               </td>
-<td> 在应用程序间切换</td>
-</tr>
-<tr>
-<td>Command + `                 </td>
-<td> 在应用程序中的窗口间切换</td>
-</tr>
-<tr>
-<td>Ctrl + Tab                  </td>
-<td> 同一个应用程序中的页面或工作空间切换</td>
-</tr>
-<tr>
-<td>Ctrl + Shift + Tab          </td>
-<td> 同上，反方向</td>
-</tr>
-<tr>
-<td>Ctrl + Shift + power        </td>
-<td> 关闭显示器</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>Sublime Text 2</p>
-
-<table>
-<thead>
-<tr>
-<th>key                      </th>
-<th>  function </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Alt+Cmd+N</strong>            </td>
-<td> 窗  口  分  成  N  栏</td>
-</tr>
-<tr>
-<td><strong>Cmd+k,b</strong>              </td>
-<td> toogle side bar</td>
-</tr>
-<tr>
-<td><strong>Ctrl+Shift+k</strong>         </td>
-<td> 删除行</td>
-</tr>
-<tr>
-<td><strong>Ctrl+F</strong>&ndash;>Alt+Enter    </td>
-<td> find &ndash;>find all</td>
-</tr>
-<tr>
-<td>Cmd+p                    </td>
-<td>  文件定位</td>
-</tr>
-<tr>
-<td>Cmd+;                    </td>
-<td>  词语定位 #</td>
-</tr>
-<tr>
-<td>Cmd+r                    </td>
-<td>  函数定位 @</td>
-</tr>
-<tr>
-<td>Cmd+g                    </td>
-<td>  行号定位 :</td>
-</tr>
-<tr>
-<td>Cmd+Shift+V              </td>
-<td>  粘贴并格式化</td>
-</tr>
-<tr>
-<td>Cmd+K+U                  </td>
-<td>  大写</td>
-</tr>
-<tr>
-<td>Cmd+K+L                  </td>
-<td>  小写</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>Android Studio</p>
-
-<table>
-<thead>
-<tr>
-<th>key                      </th>
-<th>  function </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Double Shift             </td>
-<td> Search Everywhere</td>
-</tr>
-<tr>
-<td>Cmd Shift O              </td>
-<td> Open a File by name</td>
-</tr>
-<tr>
-<td>Cmd + E                  </td>
-<td> Recent Files</td>
-</tr>
-<tr>
-<td>Cmd + up                 </td>
-<td> Open Navigation Bar</td>
-</tr>
-<tr>
-<td>Cmd + H                  </td>
-<td> Hierarchy Class</td>
-</tr>
-<tr>
-<td>Cmd + D                  </td>
-<td> 复制选中区域</td>
-</tr>
-<tr>
-<td>Cmd + O                  </td>
-<td> 打开 Class</td>
-</tr>
-<tr>
-<td>Cmd + Shift +up/down     </td>
-<td> 更换位置 </td>
-</tr>
-<tr>
-<td>Cmd + Shift + F          </td>
-<td> 全局查找</td>
-</tr>
-<tr>
-<td>Cmd + R                  </td>
-<td> 查找替换</td>
-</tr>
-<tr>
-<td>Cmd + Alt + L            </td>
-<td> 格式化代码</td>
-</tr>
-<tr>
-<td>Cmd + Shift + U          </td>
-<td> 切换大小写</td>
-</tr>
-<tr>
-<td>Alt + Shift + left/right </td>
-<td> 选择范围扩大一个 word</td>
-</tr>
-</tbody>
-</table>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-04T00:34:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/tricks/'>tricks</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/04/mac-os-x-efficiency-improvement-2//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/03/how-use-google-efficiently/">
-		
-			高效的使用Google</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/2014/07/thumb_google.jpeg" alt="" /><br/></p>
-
-
-		
-		<a href="/blog/2014/07/03/how-use-google-efficiently/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-03T18:28:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/tricks/'>tricks</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/03/how-use-google-efficiently//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/03/learn-english-3/">
-		
-			Learn English (3)</a>
-	</h2>
-	<div class="entry-content">
-		<p>很多工作一段时间的人都想通过读 MBA 来开拓自己的职业生涯，做到高级管理层职位。</p>
-
-<ol>
-<li><p>MBA (Master Of Business Administration)  工商管理学硕士</p></li>
-<li><p>broaden your prospective  拓展你的未来</p></li>
-<li><p>case study  案例分析</p></li>
-<li><p>networks  人脉</p></li>
-<li><p>EMBA (Executive Master Of Business Administration)  高级管理人员工商管理硕士</p></li>
-<li><p>soft skill  软能力</p></li>
-<li><p>leadership development  领导力发展</p></li>
-<li><p>C level  领导层</p></li>
-<li><p>alumni  校友会</p></li>
-<li><p>deadline  最后期限</p></li>
-<li><p>application  申请表</p></li>
-</ol>
-
-
-<hr />
-
-<ul>
-<li>alma mater  母校</li>
-</ul>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-03T10:29:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/english/'>english</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/03/learn-english-3//blog/page/3/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

@@ -162,7 +162,7 @@
     </url>
     <url>
         <loc>http://ziso.me/blog/2014/12/06/git-log-pretty/</loc>
-        <lastmod>2014-12-06T19:41:22+08:00</lastmod>
+        <lastmod>2015-01-20T22:36:28+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/blog/2014/12/26/android-hardware-acceleration/</loc>
@@ -170,11 +170,23 @@
     </url>
     <url>
         <loc>http://ziso.me/blog/2015/01/09/android-studio-live-templates/</loc>
-        <lastmod>2015-01-11T01:08:59+08:00</lastmod>
+        <lastmod>2015-01-22T19:54:10+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/blog/2015/01/12/sqlite-notes/</loc>
         <lastmod>2015-01-12T14:44:47+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ziso.me/blog/2015/01/17/copyonwritearraylist/</loc>
+        <lastmod>2015-01-23T20:51:51+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ziso.me/blog/2015/01/20/how-to-delete-a-remote-git-tag/</loc>
+        <lastmod>2015-01-20T22:37:46+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ziso.me/blog/2015/01/22/best-practices-for-api-versioning/</loc>
+        <lastmod>2015-01-22T19:53:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/about/</loc>
@@ -182,23 +194,23 @@
     </url>
     <url>
         <loc>http://ziso.me/archives/</loc>
-        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
+        <lastmod>2015-01-23T20:51:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/blog/archives/</loc>
-        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
+        <lastmod>2015-01-23T20:51:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/blog/</loc>
-        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
+        <lastmod>2015-01-23T20:51:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/</loc>
-        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
+        <lastmod>2015-01-23T20:51:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/posts/</loc>
-        <lastmod>2015-01-12T14:44:47+08:00</lastmod>
+        <lastmod>2015-01-23T20:51:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://ziso.me/robots.txt</loc>

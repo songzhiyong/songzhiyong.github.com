@@ -114,6 +114,274 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/09/02/mysql-add-unique-index/">
+		
+			MySQL Add UNIQUE INDEX</a>
+	</h2>
+	<div class="entry-content">
+		<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ALTER TABLE table ENGINE MyISAM;
+</span><span class='line'>
+</span><span class='line'>ALTER IGNORE TABLE table ADD UNIQUE INDEX(uid,name);
+</span><span class='line'>
+</span><span class='line'>ALTER TABLE table ENGINE InnoDB;</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-02T21:43:00+08:00" pubdate data-updated="true">Sep 2<span>nd</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/basic/'>basic</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/09/02/mysql-add-unique-index//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/08/23/android-r-dot-plurals-dot-name/">
+		
+			Android R.plurals.name</a>
+	</h2>
+	<div class="entry-content">
+		<h3>Quantity Strings (Plurals)</h3>
+
+<p>getQuantityString(int id, int quantity)
+getQuantityString(int id, int quantity, Object&hellip; formatArgs)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;plurals name="search_results"&gt;
+</span><span class='line'>    &lt;item quantity="one"&gt;%1$d result for \"%2$s\"&lt;/item&gt;
+</span><span class='line'>    &lt;item quantity="other"&gt;%1$d results for \"%2$s\"&lt;/item&gt;
+</span><span class='line'>&lt;/plurals&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//第一个参数 count 用于选择 xml 中选择那个 item
+</span><span class='line'>//第二个参数用于插入占位符
+</span><span class='line'>// 
+</span><span class='line'>String resultHint = getResources().getQuantityString(R.plurals.search_results,                    count,new Object[] { count, query });
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-23T11:06:00+08:00" pubdate data-updated="true">Aug 23<span>rd</span>, 2014</time></div>
+	
+
+
+	
+		<span class="comments"><a href="/blog/2014/08/23/android-r-dot-plurals-dot-name//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/08/22/learn-english-5/">
+		
+			Learn English (5)</a>
+	</h2>
+	<div class="entry-content">
+		<p><img src="/images/2014/08/co-sleeping-family-bed-leigh-pennebaker-baby.jpg" title="baby" alt="baby" /><br/></p>
+
+<h3>睡觉起床</h3>
+
+<ul>
+<li>I’m going to bed for the night. Goodnight!
+我要上床睡觉去了，晚安</li>
+<li>Goodnight.
+晚安。
+-Goodnight, I’m going to sleep.
+晚安，我要去睡觉了。</li>
+<li>Sweet dreams.
+做个好梦</li>
+<li>I think I’ll take a nap.
+我觉得我要睡一会儿。</li>
+<li>I really need to relax and take a nap.
+我真的需要休息睡一会儿。</li>
+<li>Alright, I’ll wake you up in about an hour.
+好的，一小时后我叫醒你。</li>
+<li>I’m going to go crash in my room.
+我要去我房间好好睡一觉。</li>
+<li>Sleep well. You have a lot to do in the morning.
+睡个好觉，你早上还有很多事要做呢。</li>
+<li>You really need a good rest.
+你确实需要好好休息了。</li>
+<li>How early should I set my alarm?
+我该把闹钟定多早呢？</li>
+<li>Try to wake up by 8 am.
+尽量早上 8 点醒来吧。</li>
+<li>Should I set my alarm early?
+我该把闹钟定早点吗？</li>
+<li>Don’t set it any later than 9.
+不能定得晚于 9 点。</li>
+<li>Did you sleep well?
+你睡得还好吗？</li>
+<li>Yes, I slept very well.
+嗯，我睡得挺好的。</li>
+<li>No, I couldn’t fall asleep.
+不好，我几乎没睡着。</li>
+<li>Did you go to bed late last night?
+昨晚你熬夜了？</li>
+<li>Yes, this jetlag is going to kill me!
+是啊，这时差综合症简直要我的命。</li>
+<li>Are you awake?
+你醒了吗？</li>
+<li>Yeah, but I don’t wanna get up.
+是啊，但我真不想起床。</li>
+<li>You were snoring last night.
+昨晚上你打呼噜了。</li>
+<li>Did I keep you up?
+我打扰你睡觉了吗？</li>
+<li>Oh, really? I didn’t hear it.
+哦，是吗？我没听到。</li>
+</ul>
+
+
+<h3>Notes:</h3>
+
+<ul>
+<li><p>晚安：</p></li>
+<li><p>good night</p></li>
+<li><p>sleep tight</p></li>
+<li><p>nighty night</p></li>
+<li><p>sweet dreams</p></li>
+<li><p>sleep well</p></li>
+<li><p>have a nice nap(小睡，午安)</p></li>
+<li><p>Buenos noches mi amor 晚安吾爱（西班牙语）</p></li>
+</ul>
+
+
+<p>Like father, like son  有其父必有其子</p>
+
+<p>plastic surgery  整形手术</p>
+
+<p>judge book by its cover  以貌取人</p>
+
+<p>bail on someone 放某人鸽子</p>
+
+<p>to bail on somebody 背弃</p>
+
+<p>to bail on sb 背弃</p>
+
+<p>floor it  踩油门吧 全速前进</p>
+
+<p>butt out / leave me alone  别管闲事</p>
+
+<p>you gotta just relax and butt out!</p>
+
+<p>another day another dollar/same old same old</p>
+
+<p>what’s the hurry?</p>
+
+<p>what’s new?    nothing much.</p>
+
+<p>playing possum  装傻</p>
+
+<p>take a rain check</p>
+
+<p>let’s take a rain check  改天再约吧</p>
+
+<p>dude,straight up  哥们，老实说。</p>
+
+<p>oh, that stings. 太伤人了</p>
+
+<p>that really stung me.</p>
+
+<p>still calm and collected</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-22T10:08:00+08:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/english/'>english</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/08/22/learn-english-5//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/">
 		
 			android.intent.action.ASSIST</a>
@@ -1009,395 +1277,6 @@ ScheduledExecutorService 比 Timer 更安全，功能更强大，后面会有一
 
 	
 		<span class="comments"><a href="/blog/2014/07/14/aloe-blacc-hello-world//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/14/gradle-build-tips/">
-		
-			Gradle Build Tips</a>
-	</h2>
-	<div class="entry-content">
-		<p>I&rsquo;m lazy. Hopefully you are too. Here&rsquo;s two small conveniences for the Gradle build system you might find useful:</p>
-
-<p>Decomposed Version Name and Code</p>
-
-<p>Break up your version into its logical components and manage them separately. Stop wondering if you&rsquo;ve bumped the version code correctly or updated the version name properly.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def versionMajor = 3
-</span><span class='line'>def versionMinor = 0
-</span><span class='line'>def versionPatch = 0
-</span><span class='line'>def versionBuild = 0 // bump for dogfood builds, public betas, etc.
-</span><span class='line'>
-</span><span class='line'>android {
-</span><span class='line'>  defaultConfig {
-</span><span class='line'>    versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
-</span><span class='line'>    versionName "${versionMajor}.${versionMinor}.${versionPatch}"
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you have more than 10 patch or minor versions you have other problems. 10 builds? Unlikely, but we&rsquo;ve got a whole int32 to work with here so why not&hellip;</p>
-
-<p>A More Useful BuildConfig</p>
-
-<p>Build config is FINALLY ours to add to. Leverage it for constant information that might otherwise require a Context to obtain.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def gitSha() {
-</span><span class='line'>  return 'git rev-parse --short HEAD'.execute().text.trim()
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>def buildTime() {
-</span><span class='line'>  def df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'")
-</span><span class='line'>  df.setTimeZone(TimeZone.getTimeZone("UTC"))
-</span><span class='line'>  return df.format(new Date())
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>android {
-</span><span class='line'>  defaultConfig {
-</span><span class='line'>    buildConfig """\
-</span><span class='line'>      public static final String GIT_SHA = "${gitSha()}";
-</span><span class='line'>      public static final String BUILD_TIME = "${buildTime()}";
-</span><span class='line'>    """
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And if you think BuildConfig is currently under-utilized, you&rsquo;re right. Let&rsquo;s get more utility into it! Vote @ <a href="http://b.android.com/59302">http://b.android.com/59302</a></p>
-
-<p>Since Gadle 1.9</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> buildConfigField "String" , "GIT_SHA" ,"\"${gitSha()}\""
-</span><span class='line'> buildConfigField "String","BUILD_TIME","\"${buildTime()}\""</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-14T10:42:00+08:00" pubdate data-updated="true">Jul 14<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>android</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/14/gradle-build-tips//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/13/android-photoshop-export/">
-		
-			Android Photoshop Export</a>
-	</h2>
-	<div class="entry-content">
-		<p>[脑补一下]：</p>
-
-<ol>
-<li>什么是 Photoshop Action？</li>
-</ol>
-
-
-<p>[答]：Photoshop Action 是从 Photoshop 4.0 开始出现的，它就好比是 Dos 里面的批处理文件，或者 Word 中的宏。它可以把 Photoshop 中每一个操作步骤记录下来然后反复使用，或者存成独立的文件供大家分享。</p>
-
-<ol>
-<li>如何安装及使用 Photoshop Action？</li>
-</ol>
-
-
-<p>[答]：打开 Photoshop，选中“窗口—动作”菜单，打开选中“动作”面板。</p>
-
-<p>Here we go!</p>
-
-<p>下载下面两个任意一个 action 脚本，基本一样，只是一个从小到大，一个从大到小。</p>
-
-<p><a href="http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/">http://www.inpixelitrust.fr/blog/en/android-photoshop-action-export-mdpi-hdpi-xhdpi-xxhdpi-xxxhdpi/</a></p>
-
-<p><a href="http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/">http://blog.mready.net/2013/07/dg-photoshop-action-dpi-resizing/</a></p>
-
-<p>双击导入到 photoshop, 窗口-动作，找到刚刚导入的 Action,运行即可。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-13T02:04:00+08:00" pubdate data-updated="true">Jul 13<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>android</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/13/android-photoshop-export//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/12/sublime-text-plugin-text-pastry/">
-		
-			Sublime Text 2 Plugin - Text Pastry</a>
-	</h2>
-	<div class="entry-content">
-		<p>新技能 get</p>
-
-<p>关于 Sublime Text2 的简洁优雅，不做赘述。</p>
-
-<p><a href="https://github.com/duydao/Text-Pastry">Text-Pastry</a> 让 Sublime Text 2 如虎添翼。</p>
-
-<h3>DEMO1</h3>
-
-<h4>From:</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>aaa
-</span><span class='line'>bbb
-</span><span class='line'>ccc
-</span><span class='line'>ddd
-</span><span class='line'>eee</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>To:</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. aaa
-</span><span class='line'>2. bbb
-</span><span class='line'>3. ccc
-</span><span class='line'>4. ddd
-</span><span class='line'>5. eee</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>TODO</h4>
-
-<p>（快捷键基于 Mac OS，Windows 上略有区别）</p>
-
-<ol>
-<li><p>选中多行</p></li>
-<li><p><code>CMD</code>+<code>SHIFT</code>+<code>L</code>进入多行编辑模式</p></li>
-<li><p>把多个光标同时移动到每行的最前面</p></li>
-<li><p><code>CMD</code>+<code>ALT</code>+<code>T</code>  进入 Text Pastry 命令输入模式</p></li>
-<li><p>选择 \i 回车</p></li>
-<li><p>1-5 的标号已经加上，输入. (空格)</p></li>
-<li><p>DONE</p></li>
-</ol>
-
-
-<h3>DEMO2</h3>
-
-<h4>From:</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="nt">&quot;apps&quot;</span><span class="p">:</span> <span class="p">[</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.fm&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;FM 收音机&quot;</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.android.mail&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;邮件&quot;</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.qq.qcloud&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;微云&quot;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>To:</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="nt">&quot;apps&quot;</span><span class="p">:</span> <span class="p">[</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;c9e968cc-d122-4162-a502-874cdcfa470c&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.fm&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;FM 收音机&quot;</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;4fba9716-29bf-4c06-b22e-75d59622703f&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.htc.android.mail&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;邮件&quot;</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;6c3f911a-318b-4aad-82d6-c5f183d8ca00&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;bundle_id&quot;</span><span class="p">:</span> <span class="s2">&quot;com.qq.qcloud&quot;</span><span class="p">,</span>
-</span><span class='line'>      <span class="nt">&quot;app_name&quot;</span><span class="p">:</span> <span class="s2">&quot;微云&quot;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>TODO</h4>
-
-<p>目测在每个数据里面加个 uuid 这种需求不会在代码外去实现 :）
-但类似的应该会有，如何秒杀是关键。如果够熟练，估计只需十几秒，即使有上百条数据</p>
-
-<ol>
-<li><p><code>CMD</code>+<code>F</code> 搜索 &ldquo;bundle_id&#8221;，少量也可<code>CMD</code>+<code>D</code></p></li>
-<li><p><code>ALT</code>+<code>ENTER</code> 选中所有”bundle_id“，并进入多行同时编辑模式</p></li>
-<li><p><code>CMD</code>+<code>SHIFT</code>+<code>ENTER</code> 在改行上面插入一空行，多行同时输入&#8221;uuid&#8221;: &ldquo;&rdquo;,让光标在&#8221;&ldquo;中</p></li>
-<li><p><code>CMD</code>+<code>ALT</code>+<code>T</code>  进入 Text Pastry 命令输入模式</p></li>
-<li><p>选择 \uuid(old)或 uuid(new) 回车</p></li>
-<li><p>uuid 已经加上，一直末尾,输入,</p></li>
-<li><p>DONE</p></li>
-</ol>
-
-
-<p><a href="https://github.com/duydao/Text-Pastry#readme">More Info</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-12T16:27:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/tricks/'>tricks</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/12/sublime-text-plugin-text-pastry//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
