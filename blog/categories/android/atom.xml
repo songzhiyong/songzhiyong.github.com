@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2015-01-24T13:35:48+08:00</updated>
+  <updated>2015-01-25T15:44:03+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Resource Shrinking]]></title>
+    <link href="http://ziso.me/blog/2015/01/24/resource-shrinking/"/>
+    <updated>2015-01-24T20:33:00+08:00</updated>
+    <id>http://ziso.me/blog/2015/01/24/resource-shrinking</id>
+    <content type="html"><![CDATA[<p><a href="http://tools.android.com/tech-docs/new-build-system/resource-shrinking">http://tools.android.com/tech-docs/new-build-system/resource-shrinking</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Android--Hardware Acceleration]]></title>
@@ -208,48 +217,6 @@ ComposeShader不能包含ComposeShader
 RemoteViews remoteViews = notification.contentView;
 View notiView = previewRemote.apply(context, null);
 &hellip;blablabla</p>
-
-<p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android UI Thread &amp; work Thread]]></title>
-    <link href="http://ziso.me/blog/2014/07/25/android-ui-thread-and-work-thread/"/>
-    <updated>2014-07-25T10:37:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/25/android-ui-thread-and-work-thread</id>
-    <content type="html"><![CDATA[<p>Using <code>wait()</code> and <code>notifyAll()</code> to make UI thread and work thread work one by one</p>
-
-<p>```java
-new Thread(new Runnable() {</p>
-
-<pre><code>      @Override
-      public void run() {
-        synchronized (lock) {
-          for (int i = 0; i &lt; 100; i++) {
-            final int index = i;
-            if (i % 5 == 0) {
-            //on some condition, update UI on UI thread with handler
-              handler.post(new Runnable() {
-                @Override
-                public void run() {
-                  synchronized (lock) {
-                    Log.i(TAG, "ui" + index);
-                    lock.notifyAll();
-                  }
-                }
-              });
-              try {
-                lock.wait();
-              } catch (InterruptedException e) {
-              }
-            }
-            Log.i(TAG, "work" + i);
-          }
-        }
-      }
-    }).start();
-</code></pre>
 
 <p>```</p>
 ]]></content>

@@ -5,7 +5,7 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>CopyOnWriteArrayList  | Faith, Hope, Charity</title>
+	<title>Resource Shrinking  | Faith, Hope, Charity</title>
 
 <meta name="author" content="Jerome Song"> 
 
@@ -115,13 +115,8 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">CopyOnWriteArrayList</h2>
-	<div class="entry-content"><p>A thread-safe variant of ArrayList in which all mutative operations (add, set, and so on) are implemented by making a fresh copy of the underlying array.
-This is ordinarily too costly, but may be more efficient than alternatives when traversal operations vastly outnumber mutations, and is useful when you cannot or don&rsquo;t want to synchronize traversals, yet need to preclude interference among concurrent threads. The &ldquo;snapshot&rdquo; style iterator method uses a reference to the state of the array at the point that the iterator was created. This array never changes during the lifetime of the iterator, so interference is impossible and the iterator is guaranteed not to throw ConcurrentModificationException. The iterator will not reflect additions, removals, or changes to the list since the iterator was created. Element-changing operations on iterators themselves (remove, set, and add) are not supported. These methods throw UnsupportedOperationException.</p>
-
-<p>All elements are permitted, including null.</p>
-
-<p>Memory consistency effects: As with other concurrent collections, actions in a thread prior to placing an object into a CopyOnWriteArrayList happen-before actions subsequent to the access or removal of that element from the CopyOnWriteArrayList in another thread.</p>
+	<h2 class="title">Resource Shrinking</h2>
+	<div class="entry-content"><p><a href="http://tools.android.com/tech-docs/new-build-system/resource-shrinking">http://tools.android.com/tech-docs/new-build-system/resource-shrinking</a></p>
 </div>
 
 
@@ -138,18 +133,18 @@ This is ordinarily too costly, but may be more efficient than alternatives when 
   
 
 
-<time datetime="2015-01-17T22:05:00+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2015</time></div>
+<time datetime="2015-01-24T20:33:00+08:00" pubdate data-updated="true">Jan 24<span>th</span>, 2015</time></div>
 	
 
 <div class="tags">
 
-	<a class='category' href='/blog/categories/java/'>java</a>
+	<a class='category' href='/blog/categories/android/'>android</a>
 
 </div>
 
 
 	
-		<span class="comments"><a href="/blog/2015/01/17/copyonwritearraylist/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2015/01/24/resource-shrinking/#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -173,7 +168,7 @@ This is ordinarily too costly, but may be more efficient than alternatives when 
 	</script>
 	
 	
-	<div class="fb-like" data-href="http://ziso.me/blog/2015/01/17/copyonwritearraylist/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+	<div class="fb-like" data-href="http://ziso.me/blog/2015/01/24/resource-shrinking/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 	
 </div>
 
@@ -206,8 +201,8 @@ Powered by Octopress.
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://ziso.me/blog/2015/01/17/copyonwritearraylist/';
-        var disqus_url = 'http://ziso.me/blog/2015/01/17/copyonwritearraylist/';
+        var disqus_identifier = 'http://ziso.me/blog/2015/01/24/resource-shrinking/';
+        var disqus_url = 'http://ziso.me/blog/2015/01/24/resource-shrinking/';
         var disqus_script = 'embed.js';
       
     (function () {

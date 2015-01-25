@@ -124,15 +124,57 @@ $(document).ready(
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
           <article>
+  <h2><a href="/blog/2015/01/24/resource-shrinking/">Resource Shrinking</a></h2>
+  
+  <p>
+    <p><a href="http://tools.android.com/tech-docs/new-build-system/resource-shrinking">http://tools.android.com/tech-docs/new-build-system/resource-shrinking</a></p>
+
+
+  </p>
+  <span class="meta">
+    written 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-24T20:33:00+08:00" pubdate data-updated="true">Jan 24<span>th</span>, 2015</time>
+    
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+  </span>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <article>
   <h2><a href="/blog/2015/01/22/best-practices-for-api-versioning/">Best Practices for API Versioning</a></h2>
   
   <p>
-    <p>This is a good and a tricky question. The topic of <strong>URI design is</strong> at the same time <strong>the most prominent part of a REST API and</strong>, therefore, a potentially <strong>long-term commitment towards the users of that API</strong>.</p>
+    <p>This is a good and a tricky question. The topic of URI design is at the same time the most prominent part of a REST API and, therefore, a potentially long-term commitment towards the users of that API.</p>
 
 
 
 
-<p>Since evolution of an application and, to a lesser extent, its API is a fact of life and that it&rsquo;s even similar to the evolution of a seemingly complex product like a programming language, the <strong>URI design</strong> should have less <strong>natural constraints</strong> and it <strong>should be preserved over time</strong>. The longer the application&rsquo;s and API&rsquo;s lifespan, the greater the commitment to the users of the application and API.</p>
+<p>Since evolution of an application and, to a lesser extent, its API is a fact of life and that it&rsquo;s even similar to the evolution of a seemingly complex product like a programming language, the URI design should have less natural constraints and it should be preserved over time. The longer the application&rsquo;s and API&rsquo;s lifespan, the greater the commitment to the users of the application and API.</p>
 
 
 
@@ -152,17 +194,17 @@ $(document).ready(
 
 
 
-<p>Furthermore, since embedding of API version into the URI would disrupt the concept of <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_5">hypermedia as the engine of application state</a> (stated in Roy T. Fieldings PhD dissertation) by having a resource address/URI that would change over time, I would conclude that <strong>API versions should not be kept in resource URIs for a long time</strong> meaning that <strong><font color="green">resource URIs that API users can depend on should be permalinks</font></strong>.</p>
+<p>Furthermore, since embedding of API version into the URI would disrupt the concept of <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_1_5">hypermedia as the engine of application state</a> (stated in Roy T. Fieldings PhD dissertation) by having a resource address/URI that would change over time, I would conclude that API versions should not be kept in resource URIs for a long time meaning that <font color="green">resource URIs that API users can depend on should be permalinks</font>.</p>
 
 
 
 
-<p>Sure, <strong>it is possible to embed API version in base URI</strong> but <strong>only for reasonable and restricted uses like debugging a API client</strong> that works with the the new API version. Such versioned APIs should be time-limited and available to limited groups of API users (like during closed betas) only. Otherwise, you commit yourself where you shouldn&rsquo;t.</p>
+<p>Sure, it is possible to embed API version in base URI but only for reasonable and restricted uses like debugging a API client that works with the the new API version. Such versioned APIs should be time-limited and available to limited groups of API users (like during closed betas) only. Otherwise, you commit yourself where you shouldn&rsquo;t.</p>
 
 
 
 
-<p>A couple of thoughts regarding maintenance of API versions that have expiration date on them. All programming platforms/languages commonly used to implement web services (Java, .NET, PHP, Perl, Rails, etc.) allow easy binding of web service end-point(s) to a base URI. This way it&rsquo;s easy to <strong>gather and keep</strong> a collection of files/classes/methods <strong>separate across different API versions</strong>.</p>
+<p>A couple of thoughts regarding maintenance of API versions that have expiration date on them. All programming platforms/languages commonly used to implement web services (Java, .NET, PHP, Perl, Rails, etc.) allow easy binding of web service end-point(s) to a base URI. This way it&rsquo;s easy to gather and keep a collection of files/classes/methods separate across different API versions.</p>
 
 
 
@@ -177,7 +219,7 @@ $(document).ready(
 
 
 
-<p>However, with API versions clearly visible in URI there&rsquo;s a caveat: one might also object this approach since <strong><font color="red">API history becomes visible/aparent in the URI design</font></strong> <strong>and therefore is prone to changes over time</strong> which goes against the guidelines of REST. I agree!</p>
+<p>However, with API versions clearly visible in URI there&rsquo;s a caveat: one might also object this approach since <font color="red">API history becomes visible/aparent in the URI design</font> and therefore is prone to changes over time which goes against the guidelines of REST. I agree!</p>
 
 
 
@@ -188,7 +230,7 @@ $(document).ready(
 
 
 <ul>
-<li><p>develop against the latest one (committing themselves to maintain the application protecting it from eventual API changes that might break their <strong>badly designed API client</strong>).</p></li>
+<li><p>develop against the latest one (committing themselves to maintain the application protecting it from eventual API changes that might break their badly designed API client).</p></li>
 <li><p>bind to a specific version of the API (which becomes apparent) but only for a limited time</p></li>
 </ul>
 
@@ -198,44 +240,32 @@ $(document).ready(
 <p>For example, if API v3.0 is the latest API version, the following two should be aliases (i.e. behave identically to all API requests):</p>
 
 
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;b&gt;<a href="http://shonzilla/api/customers/1234&amp;lt;/b&amp;gt;">http://shonzilla/api/customers/1234&amp;lt;/b&amp;gt;</a>
+</span><span class='line'><a href="http://shonzilla/api/v3.0/customers/1234">http://shonzilla/api/v3.0/customers/1234</a>
+</span><span class='line'><a href="http://shonzilla/api/v3/customers/1234">http://shonzilla/api/v3/customers/1234</a></span></code></pre></td></tr></table></div></figure></p>
+
+<p>In addition, API clients that still try to point to the <em>old</em> API should be informed to use the latest previous API version, if the API version they&rsquo;re using is obsolete or not supported anymore. So accessing any of the obsolete URIs like these:</p>
 
 
-<pre>
-<b>http://shonzilla/api/customers/1234</b>
-http://shonzilla/api<b><font color="red">/v3.0</font></b>/customers/1234
-http://shonzilla/api<b><font color="red">/v3</font></b>/customers/1234
-</pre>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'><a href="http://shonzilla/api/v2.2/customers/1234">http://shonzilla/api/v2.2/customers/1234</a>
+</span><span class='line'><a href="http://shonzilla/api/v2.0/customers/1234">http://shonzilla/api/v2.0/customers/1234</a>
+</span><span class='line'><a href="http://shonzilla/api/v2/customers/1234">http://shonzilla/api/v2/customers/1234</a>
+</span><span class='line'><a href="http://shonzilla/api/v1.1/customers/1234">http://shonzilla/api/v1.1/customers/1234</a>
+</span><span class='line'><a href="http://shonzilla/api/v1/customers/1234">http://shonzilla/api/v1/customers/1234</a></span></code></pre></td></tr></table></div></figure></p>
+
+<p>should return any of the 30x HTTP status codes that indicate redirection that are used in conjunction with <code>Location</code> HTTP header that redirects to the appropriate version of resource URI which remain to be this one:</p>
 
 
-
-
-<p>In addition, API clients that still try to point to the <em>old</em> API should be informed to use the latest previous API version, <strong>if the API version they&rsquo;re using is obsolete or not supported anymore</strong>. So accessing any of the obsolete URIs like these:</p>
-
-
-
-
-<pre>
-http://shonzilla/api<b><font color="red">/v2.2</font></b>/customers/1234
-http://shonzilla/api<b><font color="red">/v2.0</font></b>/customers/1234
-http://shonzilla/api<b><font color="red">/v2</font></b>/customers/1234
-http://shonzilla/api<b><font color="red">/v1.1</font></b>/customers/1234
-http://shonzilla/api<b><font color="red">/v1</font></b>/customers/1234
-</pre>
-
-
-
-
-<p>should return any of the <strong>30x HTTP status codes that indicate redirection</strong> that are used in conjunction with <code>Location</code> HTTP header that redirects to the appropriate version of resource URI which remain to be this one:</p>
-
-
-
-
-<pre>
-<b><font color="green">http://shonzilla/api/customers/1234</font></b>
-</pre>
-
-
-
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;b&gt;&lt;font color=&ldquo;green&rdquo;&gt;<a href="http://shonzilla/api/customers/1234">http://shonzilla/api/customers/1234</a></span></code></pre></td></tr></table></div></figure></p>
 
 <p>There are at least two redirection HTTP status codes that are appropriate for API versioning scenarios:</p>
 
@@ -243,7 +273,7 @@ http://shonzilla/api<b><font color="red">/v1</font></b>/customers/1234
 
 
 <ul>
-<li><p><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2">301 Moved permanently</a> indicating that the resource with a requested URI is moved permanently to another URI (which should be a resource instance permalink that does not contain API version info). This status code can be used to indicate an obsolete/unsupported API version, informing API client that a <strong>versioned resource URI been replaced by a resource permalink</strong>.</p></li>
+<li><p><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2">301 Moved permanently</a> indicating that the resource with a requested URI is moved permanently to another URI (which should be a resource instance permalink that does not contain API version info). This status code can be used to indicate an obsolete/unsupported API version, informing API client that a versioned resource URI been replaced by a resource permalink.</p></li>
 <li><p><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3">302 Found</a> indicating that the requested resource temporarily is located at another location, while requested URI may still supported. This status code may be useful when the version-less URIs are temporarily unavailable and that a request should be repeated using the redirection address (e.g. pointing to the URI with APi version embedded) and we want to tell clients to keep using it (i.e. the permalinks).</p></li>
 <li><p>other scenarios can be found in <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3">Redirection 3xx chapter of HTTP 1.1 specification</a></p></li>
 </ul>
@@ -344,7 +374,19 @@ http://shonzilla/api<b><font color="red">/v1</font></b>/customers/1234
   <h2><a href="/blog/2015/01/17/copyonwritearraylist/">CopyOnWriteArrayList</a></h2>
   
   <p>
-    
+    <p>A thread-safe variant of ArrayList in which all mutative operations (add, set, and so on) are implemented by making a fresh copy of the underlying array.
+This is ordinarily too costly, but may be more efficient than alternatives when traversal operations vastly outnumber mutations, and is useful when you cannot or don&rsquo;t want to synchronize traversals, yet need to preclude interference among concurrent threads. The &ldquo;snapshot&rdquo; style iterator method uses a reference to the state of the array at the point that the iterator was created. This array never changes during the lifetime of the iterator, so interference is impossible and the iterator is guaranteed not to throw ConcurrentModificationException. The iterator will not reflect additions, removals, or changes to the list since the iterator was created. Element-changing operations on iterators themselves (remove, set, and add) are not supported. These methods throw UnsupportedOperationException.</p>
+
+
+
+
+<p>All elements are permitted, including null.</p>
+
+
+
+
+<p>Memory consistency effects: As with other concurrent collections, actions in a thread prior to placing an object into a CopyOnWriteArrayList happen-before actions subsequent to the access or removal of that element from the CopyOnWriteArrayList in another thread.</p>
+
 
   </p>
   <span class="meta">
@@ -362,6 +404,12 @@ http://shonzilla/api<b><font color="red">/v1</font></b>/customers/1234
 
 <time datetime="2015-01-17T22:05:00+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2015</time>
     
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/java/'>java</a>
+
+</div>
 
 
   </span>
