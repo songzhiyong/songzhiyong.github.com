@@ -204,7 +204,7 @@ $(document).ready(
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;b&gt;http://shonzilla/api/customers/1234&lt;/b&gt;
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://shonzilla/api/customers/1234
 </span><span class='line'>http://shonzilla/api/v3.0/customers/1234
 </span><span class='line'>http://shonzilla/api/v3/customers/1234</span></code></pre></td></tr></table></div></figure>
 
@@ -226,7 +226,7 @@ $(document).ready(
 <p>should return any of the 30x HTTP status codes that indicate redirection that are used in conjunction with <code>Location</code> HTTP header that redirects to the appropriate version of resource URI which remain to be this one:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;b&gt;&lt;font color="green"&gt;http://shonzilla/api/customers/1234</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://shonzilla/api/customers/1234</span></code></pre></td></tr></table></div></figure>
 
 
 <p>There are at least two redirection HTTP status codes that are appropriate for API versioning scenarios:</p>
@@ -1037,12 +1037,8 @@ ComposeShader 不能包含 ComposeShader
 <ul>
 <li>ctrl+f        在文件中前移一页（相当于 page down）；</li>
 <li>ctrl+b        在文件中后移一页（相当于 page up）；</li>
-<li><ul>
-<li><pre><code>   当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；
-</code></pre></li>
-</ul>
-</li>
-<li><h1>当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</h1></li>
+<li>*          当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；</li>
+<li>#          当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</li>
 <li>( / )        移动到 前/后 句的开始；</li>
 <li>{ / }        跳转到 当 前/下一个 段落的开始。</li>
 <li>g_         到本行最后一个不是 blank 字符的位置。</li>

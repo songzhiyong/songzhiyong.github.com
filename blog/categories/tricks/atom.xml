@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tricks | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2015-01-25T15:44:03+08:00</updated>
+  <updated>2015-01-31T14:26:46+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -234,12 +234,8 @@ $END$
 </code></p></li>
 <li><p>ctrl+f        在文件中前移一页（相当于 page down）；</p></li>
 <li>ctrl+b        在文件中后移一页（相当于 page up）；</li>
-<li><ul>
-<li><pre><code>   当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；
-</code></pre></li>
-</ul>
-</li>
-<li><h1>当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</h1></li>
+<li>*          当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；</li>
+<li>#          当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</li>
 <li>( / )        移动到 前/后 句的开始；</li>
 <li>{ / }        跳转到 当 前/下一个 段落的开始。</li>
 <li>g_         到本行最后一个不是blank字符的位置。</li>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | Faith, Hope, Charity]]></title>
   <link href="http://ziso.me/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://ziso.me/"/>
-  <updated>2015-01-25T15:44:03+08:00</updated>
+  <updated>2015-01-31T14:26:46+08:00</updated>
   <id>http://ziso.me/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -50,7 +50,7 @@
 
 <p>For example, if API v3.0 is the latest API version, the following two should be aliases (i.e. behave identically to all API requests):
 <code>
-&lt;b&gt;http://shonzilla/api/customers/1234&lt;/b&gt;
+http://shonzilla/api/customers/1234
 http://shonzilla/api/v3.0/customers/1234
 http://shonzilla/api/v3/customers/1234
 </code></p>
@@ -65,7 +65,7 @@ http://shonzilla/api/v1/customers/1234
 </code>
 should return any of the 30x HTTP status codes that indicate redirection that are used in conjunction with <code>Location</code> HTTP header that redirects to the appropriate version of resource URI which remain to be this one:
 <code>
-&lt;b&gt;&lt;font color="green"&gt;http://shonzilla/api/customers/1234
+http://shonzilla/api/customers/1234
 </code>
 There are at least two redirection HTTP status codes that are appropriate for API versioning scenarios:</p>
 
