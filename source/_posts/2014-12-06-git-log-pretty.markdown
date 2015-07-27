@@ -3,7 +3,7 @@ layout: post
 title: "git log pretty"
 date: 2014-12-06 19:40
 comments: true
-categories: 
+categories: git
 ---
 
 - %H: commit hash

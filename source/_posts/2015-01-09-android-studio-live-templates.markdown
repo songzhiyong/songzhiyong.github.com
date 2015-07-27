@@ -3,9 +3,10 @@ layout: post
 title: "Android Studio Live Templates"
 date: 2015-01-09 21:29
 comments: true
-categories: android, tricks
+categories: tricks
 ---
-#Android Studio Live Templates
+
+**Type the abbrs then click `TAB`, template codes will be generated automatically.**
 
 ###iterations
 - `fori` Create iteration loop
