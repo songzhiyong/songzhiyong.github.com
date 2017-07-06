@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: octopress | Faith, Hope, Charity]]></title>
-  <link href="http://ziso.me/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://ziso.me/"/>
-  <updated>2016-01-06T10:41:38+08:00</updated>
-  <id>http://ziso.me/</id>
+  <link href="http://1vn.wang/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2017-07-06T17:33:43+08:00</updated>
+  <id>http://1vn.wang/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
     <email><![CDATA[songzhiyong1121@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://ziso.me/blog/2013/07/06/hello-world/"/>
+    <link href="http://1vn.wang/blog/2013/07/06/hello-world/"/>
     <updated>2013-07-06T09:47:00+08:00</updated>
-    <id>http://ziso.me/blog/2013/07/06/hello-world</id>
+    <id>http://1vn.wang/blog/2013/07/06/hello-world</id>
     <content type="html"><![CDATA[<p><img src="/images/2013/07/hello_world.png" title="helloworld" alt="Hello World" /><br/></p>
 ]]></content>
   </entry>

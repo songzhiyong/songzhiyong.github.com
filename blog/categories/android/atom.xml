@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: android | Faith, Hope, Charity]]></title>
-  <link href="http://ziso.me/blog/categories/android/atom.xml" rel="self"/>
-  <link href="http://ziso.me/"/>
-  <updated>2016-01-06T10:41:38+08:00</updated>
-  <id>http://ziso.me/</id>
+  <link href="http://1vn.wang/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2017-07-06T17:33:43+08:00</updated>
+  <id>http://1vn.wang/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
     <email><![CDATA[songzhiyong1121@gmail.com]]></email>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Resource Shrinking]]></title>
-    <link href="http://ziso.me/blog/2015/01/24/resource-shrinking/"/>
+    <link href="http://1vn.wang/blog/2015/01/24/resource-shrinking/"/>
     <updated>2015-01-24T20:33:00+08:00</updated>
-    <id>http://ziso.me/blog/2015/01/24/resource-shrinking</id>
+    <id>http://1vn.wang/blog/2015/01/24/resource-shrinking</id>
     <content type="html"><![CDATA[<p><a href="http://tools.android.com/tech-docs/new-build-system/resource-shrinking">http://tools.android.com/tech-docs/new-build-system/resource-shrinking</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Android--Hardware Acceleration]]></title>
-    <link href="http://ziso.me/blog/2014/12/26/android-hardware-acceleration/"/>
+    <link href="http://1vn.wang/blog/2014/12/26/android-hardware-acceleration/"/>
     <updated>2014-12-26T09:55:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/12/26/android-hardware-acceleration</id>
+    <id>http://1vn.wang/blog/2014/12/26/android-hardware-acceleration</id>
     <content type="html"><![CDATA[<p>Android中的硬件加速
 本文的主要内容来自SDK文章的"Hardware Acceleration”.</p>
 
@@ -144,9 +144,9 @@ ComposeShader不能包含ComposeShader
   
   <entry>
     <title type="html"><![CDATA[Run lint in Android Studio]]></title>
-    <link href="http://ziso.me/blog/2014/09/19/run-lint-in-android-studio/"/>
+    <link href="http://1vn.wang/blog/2014/09/19/run-lint-in-android-studio/"/>
     <updated>2014-09-19T10:52:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/09/19/run-lint-in-android-studio</id>
+    <id>http://1vn.wang/blog/2014/09/19/run-lint-in-android-studio</id>
     <content type="html"><![CDATA[<p>Run lint in Android Studio</p>
 
 <p>As I have just started learning Android developement, I was happy to see lint as such an integral part of the development process.</p>
@@ -168,9 +168,9 @@ ComposeShader不能包含ComposeShader
   
   <entry>
     <title type="html"><![CDATA[android.intent.action.ASSIST]]></title>
-    <link href="http://ziso.me/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/"/>
+    <link href="http://1vn.wang/blog/2014/08/21/android-dot-intent-dot-action-dot-assist/"/>
     <updated>2014-08-21T17:28:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/08/21/android-dot-intent-dot-action-dot-assist</id>
+    <id>http://1vn.wang/blog/2014/08/21/android-dot-intent-dot-action-dot-assist</id>
     <content type="html"><![CDATA[<h3>public static final String ACTION_ASSIST</h3>
 
 <h4>Added in API level 16</h4>
@@ -199,9 +199,9 @@ ComposeShader不能包含ComposeShader
   
   <entry>
     <title type="html"><![CDATA[RemoteViews.apply]]></title>
-    <link href="http://ziso.me/blog/2014/08/18/remoteviews-dot-apply/"/>
+    <link href="http://1vn.wang/blog/2014/08/18/remoteviews-dot-apply/"/>
     <updated>2014-08-18T21:17:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/08/18/remoteviews-dot-apply</id>
+    <id>http://1vn.wang/blog/2014/08/18/remoteviews-dot-apply</id>
     <content type="html"><![CDATA[<h3>RemoteViews.apply</h3>
 
 <p>View  apply(Context context, ViewGroup parent)</p>

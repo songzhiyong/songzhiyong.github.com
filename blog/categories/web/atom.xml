@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: web | Faith, Hope, Charity]]></title>
-  <link href="http://ziso.me/blog/categories/web/atom.xml" rel="self"/>
-  <link href="http://ziso.me/"/>
-  <updated>2016-01-06T10:41:38+08:00</updated>
-  <id>http://ziso.me/</id>
+  <link href="http://1vn.wang/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2017-07-06T17:33:43+08:00</updated>
+  <id>http://1vn.wang/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
     <email><![CDATA[songzhiyong1121@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Best practices for API versioning]]></title>
-    <link href="http://ziso.me/blog/2015/01/22/best-practices-for-api-versioning/"/>
+    <link href="http://1vn.wang/blog/2015/01/22/best-practices-for-api-versioning/"/>
     <updated>2015-01-22T19:53:00+08:00</updated>
-    <id>http://ziso.me/blog/2015/01/22/best-practices-for-api-versioning</id>
+    <id>http://1vn.wang/blog/2015/01/22/best-practices-for-api-versioning</id>
     <content type="html"><![CDATA[<p>This is a good and a tricky question. The topic of URI design is at the same time the most prominent part of a REST API and, therefore, a potentially long-term commitment towards the users of that API.</p>
 
 <p>Since evolution of an application and, to a lesser extent, its API is a fact of life and that it&rsquo;s even similar to the evolution of a seemingly complex product like a programming language, the URI design should have less natural constraints and it should be preserved over time. The longer the application&rsquo;s and API&rsquo;s lifespan, the greater the commitment to the users of the application and API.</p>

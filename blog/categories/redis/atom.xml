@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: redis | Faith, Hope, Charity]]></title>
-  <link href="http://ziso.me/blog/categories/redis/atom.xml" rel="self"/>
-  <link href="http://ziso.me/"/>
-  <updated>2016-01-06T10:41:38+08:00</updated>
-  <id>http://ziso.me/</id>
+  <link href="http://1vn.wang/blog/categories/redis/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2017-07-06T17:33:43+08:00</updated>
+  <id>http://1vn.wang/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
     <email><![CDATA[songzhiyong1121@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[redis-started]]></title>
-    <link href="http://ziso.me/blog/2014/06/23/redis-started/"/>
+    <link href="http://1vn.wang/blog/2014/06/23/redis-started/"/>
     <updated>2014-06-23T23:41:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/06/23/redis-started</id>
+    <id>http://1vn.wang/blog/2014/06/23/redis-started</id>
     <content type="html"><![CDATA[<h3>Redis installation</h3>
 
 <h5>1)Download</h5>

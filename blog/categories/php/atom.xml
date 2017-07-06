@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: php | Faith, Hope, Charity]]></title>
-  <link href="http://ziso.me/blog/categories/php/atom.xml" rel="self"/>
-  <link href="http://ziso.me/"/>
-  <updated>2016-01-06T10:41:38+08:00</updated>
-  <id>http://ziso.me/</id>
+  <link href="http://1vn.wang/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2017-07-06T17:33:43+08:00</updated>
+  <id>http://1vn.wang/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
     <email><![CDATA[songzhiyong1121@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[13个最佳php框架]]></title>
-    <link href="http://ziso.me/blog/2014/07/02/13-best-php-frameworks/"/>
+    <link href="http://1vn.wang/blog/2014/07/02/13-best-php-frameworks/"/>
     <updated>2014-07-02T01:08:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/02/13-best-php-frameworks</id>
+    <id>http://1vn.wang/blog/2014/07/02/13-best-php-frameworks</id>
     <content type="html"><![CDATA[<p>创建应用程序是一个复杂且耗时的过程，如果开发者能利用好框架，那么就可以在一个统一的结构基础上通过重用通用组件和模块来快速地做好项目。省掉创建通用组件的时间和人力，软件开发者可以把更多的时间投入到具体的项目上去，这样开发者就能专注于开发高质量的代码。</p>
 
 <p>现在，我们就来介绍13个最佳PHP框架来帮助开发者建立互操作或灵活的应用。</p>

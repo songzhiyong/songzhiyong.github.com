@@ -88,7 +88,7 @@ $(document).ready(
 		<div class="container">
 			<form action="http://google.com/search" method="get">
 				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:ziso.me">
+				<input type="hidden" name="q" value="site:1vn.wang">
 			</form>
 		</div>
 	</div>
@@ -109,6 +109,65 @@ $(document).ready(
 	<div id="content-wrap" class="inner">
 		<div id="content-bg" class="inner">
 			<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/09/19/run-lint-in-android-studio/">
+		
+			Run Lint in Android Studio</a>
+	</h2>
+	<div class="entry-content">
+		<p>Run lint in Android Studio</p>
+
+<p>As I have just started learning Android developement, I was happy to see lint as such an integral part of the development process.</p>
+
+<p>To runt lint and analyze your project, simply select <code>Analyze &gt; Inspect Code</code>.</p>
+
+<p>In the popup window that appears, you can select the analysis scope, like which projects to analyze and which to skip. For my test project, I just chose to analyze everything and ended up with this nice summary:</p>
+
+<br/><br/>
+
+
+<p><img src="/images/2014/09/inspect_code.png" title="inspect code" alt="" /><br/><br/></p>
+
+<p>When you browse through the reported items, you will notice that many of them can just be ignored. For instance, spelling, which catches a lot of non-typos in strings. For instance, the project name, is reported as a typo. It also complains about invalid XML in generated files.</p>
+
+<p>However, stuff like the items under Android lint and Declaration redundancy are highly interesting, and will be a great help for a newbie like me.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-19T10:52:00+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/09/19/run-lint-in-android-studio//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -1166,52 +1225,6 @@ ScheduledExecutorService 比 Timer 更安全，功能更强大，后面会有一
 	
 </div></article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/07/15/dexguard-encrypt-asset-file/">
-		
-			Dexguard Encrypt Asset File</a>
-	</h2>
-	<div class="entry-content">
-		<p>-encryptassetfiles [file_filter]</p>
-
-<p>Specifies the Android asset files that should be encrypted. Asset files are stored in the assets directory and can contain any data. The obfuscation step can automatically encrypt them and make sure they are decrypted on the fly at run-time. In order for this to work, the asset files must be streamed and their names must be hard-coded. This means that your code must invoke the AsssetManager as follows: open(&ldquo;MyAssetFile&rdquo;). Your configuration can then specify &ldquo;-encryptassetfiles assets/MyAssetFile&rdquo;. Only applicable when obfuscating Android code.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-15T14:54:00+08:00" pubdate data-updated="true">Jul 15<span>th</span>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/android/'>android</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2014/07/15/dexguard-encrypt-asset-file//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
 <nav id="pagenavi">
     
         <a href="/" class="prev">Prev</a>
@@ -1222,7 +1235,7 @@ ScheduledExecutorService 比 Timer 更安全，功能更强大，后面会有一
     <div class="center"><a href="/archives">Blog Archives</a></div>
 </nav></div>
 		</div>
-		<footer id="footer" class="inner">Copyright &copy; 2016
+		<footer id="footer" class="inner">Copyright &copy; 2017
 
     Jerome Song
 

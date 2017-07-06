@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tricks | Faith, Hope, Charity]]></title>
-  <link href="http://ziso.me/blog/categories/tricks/atom.xml" rel="self"/>
-  <link href="http://ziso.me/"/>
-  <updated>2016-01-06T10:41:38+08:00</updated>
-  <id>http://ziso.me/</id>
+  <link href="http://1vn.wang/blog/categories/tricks/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2017-07-06T17:33:43+08:00</updated>
+  <id>http://1vn.wang/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
     <email><![CDATA[songzhiyong1121@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Android Studio Live Templates]]></title>
-    <link href="http://ziso.me/blog/2015/01/09/android-studio-live-templates/"/>
+    <link href="http://1vn.wang/blog/2015/01/09/android-studio-live-templates/"/>
     <updated>2015-01-09T21:29:00+08:00</updated>
-    <id>http://ziso.me/blog/2015/01/09/android-studio-live-templates</id>
+    <id>http://1vn.wang/blog/2015/01/09/android-studio-live-templates</id>
     <content type="html"><![CDATA[<p><strong>Type the abbrs then click <code>TAB</code>, template codes will be generated automatically.</strong></p>
 
 <h3>iterations</h3>
@@ -125,9 +125,9 @@ $END$
   
   <entry>
     <title type="html"><![CDATA[Vim Tips]]></title>
-    <link href="http://ziso.me/blog/2014/09/23/vim-tips/"/>
+    <link href="http://1vn.wang/blog/2014/09/23/vim-tips/"/>
     <updated>2014-09-23T11:53:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/09/23/vim-tips</id>
+    <id>http://1vn.wang/blog/2014/09/23/vim-tips</id>
     <content type="html"><![CDATA[<p>1）删除文字</p>
 
 <ul>
@@ -253,9 +253,9 @@ $END$
   
   <entry>
     <title type="html"><![CDATA[Regex in Sublime Text 2]]></title>
-    <link href="http://ziso.me/blog/2014/09/15/regex-in-sublime-text-2/"/>
+    <link href="http://1vn.wang/blog/2014/09/15/regex-in-sublime-text-2/"/>
     <updated>2014-09-15T12:11:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/09/15/regex-in-sublime-text-2</id>
+    <id>http://1vn.wang/blog/2014/09/15/regex-in-sublime-text-2</id>
     <content type="html"><![CDATA[<ul>
 <li>空行： ^[\s]*\n</li>
 <li>偶数行：\n(.*)\n</li>
@@ -270,9 +270,9 @@ $END$
   
   <entry>
     <title type="html"><![CDATA[Sublime Text 2 Plugin - Text Pastry]]></title>
-    <link href="http://ziso.me/blog/2014/07/12/sublime-text-plugin-text-pastry/"/>
+    <link href="http://1vn.wang/blog/2014/07/12/sublime-text-plugin-text-pastry/"/>
     <updated>2014-07-12T16:27:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/12/sublime-text-plugin-text-pastry</id>
+    <id>http://1vn.wang/blog/2014/07/12/sublime-text-plugin-text-pastry</id>
     <content type="html"><![CDATA[<p>新技能get</p>
 
 <p>关于Sublime Text2 的简洁优雅，不做赘述。</p>
@@ -391,9 +391,9 @@ eee
   
   <entry>
     <title type="html"><![CDATA[QUICK SURROUND WITH (TRY/CATCH, IF ELSE..)]]></title>
-    <link href="http://ziso.me/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot/"/>
+    <link href="http://1vn.wang/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot/"/>
     <updated>2014-07-08T12:05:00+08:00</updated>
-    <id>http://ziso.me/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot</id>
+    <id>http://1vn.wang/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot</id>
     <content type="html"><![CDATA[<p>When you want to catch exceptions thrown by some code fragment, select it in the
 editor, press</p>
 

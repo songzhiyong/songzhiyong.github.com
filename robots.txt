@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://ziso.me/sitemap.xml 
+Sitemap: http://1vn.wang/sitemap.xml 
