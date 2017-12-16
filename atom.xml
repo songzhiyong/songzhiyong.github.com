@@ -4,7 +4,7 @@
   <title><![CDATA[Faith, Hope, Charity]]></title>
   <link href="http://1vn.wang/atom.xml" rel="self"/>
   <link href="http://1vn.wang/"/>
-  <updated>2017-07-06T17:33:28+08:00</updated>
+  <updated>2017-08-01T10:11:59+08:00</updated>
   <id>http://1vn.wang/</id>
   <author>
     <name><![CDATA[Jerome Song]]></name>
@@ -18,115 +18,64 @@
     <link href="http://1vn.wang/blog/2016/01/06/githug/"/>
     <updated>2016-01-06T11:31:00+08:00</updated>
     <id>http://1vn.wang/blog/2016/01/06/githug</id>
-    <content type="html"><![CDATA[<h1>1: init</h1>
+    <content type="html"><![CDATA[<ol>
+<li>init</li>
+<li>config</li>
+<li>add</li>
+<li>commit</li>
+<li>clone</li>
+<li>clone_to_folder</li>
+<li>ignore</li>
+<li>include</li>
+<li>status</li>
+<li>number_of_files_committed</li>
+<li>rm</li>
+<li>rm_cached</li>
+<li>stash</li>
+<li>rename</li>
+<li>restructure</li>
+<li>log</li>
+<li>tag</li>
+<li>push_tags</li>
+<li>commit_amend</li>
+<li>commit_in_future</li>
+<li>reset</li>
+<li>reset_soft</li>
+<li>checkout_file</li>
+<li>remote</li>
+<li>remote_url</li>
+<li>pull</li>
+<li>remote_add</li>
+<li>push</li>
+<li>diff</li>
+<li>blame</li>
+<li>branch</li>
+<li>checkout</li>
+<li>checkout_tag</li>
+<li>checkout_tag_over_branch</li>
+<li>branch_at</li>
+<li>delete_branch</li>
+<li>push_branch</li>
+<li>merge</li>
+<li>fetch</li>
+<li>rebase</li>
+<li>repack</li>
+<li>cherry-pick</li>
+<li>grep</li>
+<li>rename_commit</li>
+<li>squash</li>
+<li>merge_squash</li>
+<li>reorder</li>
+<li>bisect</li>
+<li>stage_lines</li>
+<li>find_old_branch</li>
+<li>revert</li>
+<li>restore</li>
+<li>conflict</li>
+<li>submodule</li>
+<li>contribute</li>
+</ol>
 
-<h1>2: config</h1>
-
-<h1>3: add</h1>
-
-<h1>4: commit</h1>
-
-<h1>5: clone</h1>
-
-<h1>6: clone_to_folder</h1>
-
-<h1>7: ignore</h1>
-
-<h1>8: include</h1>
-
-<h1>9: status</h1>
-
-<h1>10: number_of_files_committed</h1>
-
-<h1>11: rm</h1>
-
-<h1>12: rm_cached</h1>
-
-<h1>13: stash</h1>
-
-<h1>14: rename</h1>
-
-<h1>15: restructure</h1>
-
-<h1>16: log</h1>
-
-<h1>17: tag</h1>
-
-<h1>18: push_tags</h1>
-
-<h1>19: commit_amend</h1>
-
-<h1>20: commit_in_future</h1>
-
-<h1>21: reset</h1>
-
-<h1>22: reset_soft</h1>
-
-<h1>23: checkout_file</h1>
-
-<h1>24: remote</h1>
-
-<h1>25: remote_url</h1>
-
-<h1>26: pull</h1>
-
-<h1>27: remote_add</h1>
-
-<h1>28: push</h1>
-
-<h1>29: diff</h1>
-
-<h1>30: blame</h1>
-
-<h1>31: branch</h1>
-
-<h1>32: checkout</h1>
-
-<h1>33: checkout_tag</h1>
-
-<h1>34: checkout_tag_over_branch</h1>
-
-<h1>35: branch_at</h1>
-
-<h1>36: delete_branch</h1>
-
-<h1>37: push_branch</h1>
-
-<h1>38: merge</h1>
-
-<h1>39: fetch</h1>
-
-<h1>40: rebase</h1>
-
-<h1>41: repack</h1>
-
-<h1>42: cherry-pick</h1>
-
-<h1>43: grep</h1>
-
-<h1>44: rename_commit</h1>
-
-<h1>45: squash</h1>
-
-<h1>46: merge_squash</h1>
-
-<h1>47: reorder</h1>
-
-<h1>48: bisect</h1>
-
-<h1>49: stage_lines</h1>
-
-<h1>50: find_old_branch</h1>
-
-<h1>51: revert</h1>
-
-<h1>52: restore</h1>
-
-<h1>53: conflict</h1>
-
-<h1>54: submodule</h1>
-
-<h1>55: contribute</h1>
 ]]></content>
   </entry>
   
