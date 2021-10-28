@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<!-- <bgsound src="music/snow_dream.mp3" loop="-1">  -->
+	<title>Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/canvas.css" />
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default-miss.css" type="text/css" rel="stylesheet">
+	<link href="css/canvas.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+	
+</head>
+
+<body>
+	<embed src="music/snow_dream.mp3" autostart="true" loop="true" hidden="true"></embed>
+	<div id="outer">
+		<div id="canvasContainer">
+			<canvas id="mainCanvas" width="1000" height="560"></canvas>
+		</div>
+	</div>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="space"/><span class="keyword">一直以来，我希望遇到一个人，她内心纯粹干净，明媚而单纯，她还愿意相信爱情。</span><br />
+				<span class="space"/><span class="keyword">相信就算有天你老的睁不开眼，我依旧陪在你身边。</span><br />
+				<span class="space"/><span class="keyword">一起去看这世界的风景，一起去享受那碧海蓝天云淡风轻，</span><br />
+				<span class="space"/><span class="keyword">一起去走一个人以前不敢走的路，</span><br />
+				<span class="space"/><span class="keyword">不需要说太多，只要紧紧握住对方的手就好。</span><br />
+				<span class="space"/><span class="keyword">言语都是徒劳的，我们已经过了耳听爱情的年纪，</span><br />
+				<span class="space"/><span class="keyword">陪伴和懂得胜过一切。</span><br />
+				<span class="space"/><span class="keyword">如今，我遇到了你</span><br />
+				<span class="space"/><span class="keyword">对你，移不开眼睛停不下想念，</span><br />
+				<span class="space"/><span class="keyword">在月球黑暗的那一面拼命滋养着爱的植株，</span><br />
+				<span class="space"/><span class="keyword">看着它不断长出完整的茎繁茂的枝最后开出盛大的花朵，</span><br />
+				<span class="space"/><span class="keyword">在花影之下我渺小身形若隐若现。</span><br />
+				<span class="space"/><span class="keyword">暗地里执迷不悔，真正面对时却手足无措，欲言又止</span><br />
+				<span class="space"/><span class="keyword">等一转过身，便开始疯狂地搜集你的所有信息。</span><br />
+				<span class="space"/><span class="keyword">就这样，在你身边潜伏成树木或花草，不动声色，</span><br />
+				<span class="space"/><span class="keyword">直到指缝间关节里滑腻的青苔蔓延出不可收拾的姿态。</span><br />
+				<span class="space"/><span class="keyword">似乎再也走不开了，一步也不行……</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						XX,I have met you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						I Miss You Everyday.<br/>
+
+						<div class="signature"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="copyright">
+			Copyright &copy; 2013 <a href='http://songzhiyong.github.com'>Jerome</a> now-die
+		</div> -->
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2013, 6, 18);
+		together.setHours(8);
+		together.setMinutes(30);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				adjustWordsPosition();
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+	<script type="text/javascript" src="js/particles.js"></script>
+</body>
+</html>

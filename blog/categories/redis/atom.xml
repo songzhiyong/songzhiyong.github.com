@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: redis | Faith, Hope, Charity]]></title>
+  <link href="http://1vn.wang/blog/categories/redis/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2021-10-28T14:46:03+08:00</updated>
+  <id>http://1vn.wang/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[redis-started]]></title>
+    <link href="http://1vn.wang/blog/2014/06/23/redis-started/"/>
+    <updated>2014-06-23T23:41:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/06/23/redis-started</id>
+    <content type="html"><![CDATA[<h3>Redis installation</h3>
+
+<h5>1)Download</h5>
+
+<p>Go to the Redis Download page and find the latest stable version. Download it and unpack:</p>
+
+<pre><code>tar xzf redis-*
+cd redis-*
+</code></pre>
+
+<h5>2)Compile</h5>
+
+<pre><code>make
+sudo make install clean
+</code></pre>
+
+<h5>3)Create config:</h5>
+
+<pre><code>mkdir /etc/redis
+cp redis.conf /etc/redis/redis.conf
+</code></pre>
+
+<h5>4)Start server &amp; Connect</h5>
+
+<pre><code>redis-server /etc/redis/redis.conf
+
+redis-cli
+</code></pre>
+
+<h3>PhpRedis Installation</h3>
+
+<h5>1) Preparation</h5>
+
+<pre><code>sudo apt-get install php5-dev
+</code></pre>
+
+<p>php5-dev provides the dev library as well as the phpize command which is required for the compiling step, if you dont install this package, you would got this error message when you start your step 2:</p>
+
+<pre><code>No command 'phpize' found, did you mean:
+ Command 'phpize5' from package 'php5-dev' (main)
+phpize: command not found
+</code></pre>
+
+<h5>2) Get phpredis source code, should be pretty easy by running</h5>
+
+<pre><code>git clone git://github.com/nicolasff/phpredis.git
+</code></pre>
+
+<h5>3) Compile and install</h5>
+
+<pre><code>cd phpredis
+phpize
+./configure
+make
+sudo -s make install
+</code></pre>
+
+<h5>4) Enable the phpredis extension</h5>
+
+<pre><code>echo "extension=redis.so"&gt;/etc/php5/conf.d/redis.ini
+</code></pre>
+
+<p>for ubuntu PHP5.5, you should create copy this file into</p>
+
+<pre><code>/etc/php5/mods-available
+</code></pre>
+
+<h5>5) Write a simple php script to test (running on cli would be fine if php5-cli is installed)</h5>
+
+<pre><code class="php">&lt;?php
+        // phpredis_set.php
+        $redis=new Redis() or die("Can'f load redis module.");
+        $redis-&gt;connect('127.0.0.1',6379);
+        $redis-&gt;set('test', 'hello world');
+</code></pre>
+
+<p>you can check phpredis with command:</p>
+
+<pre><code> php -r "if (new Redis()==true){echo \"Redis is ready!\"}"
+</code></pre>
+
+<p>Prior to try phpredis I was using Rediska as the php redis client. I did some pretty quick and dirty benchmarking comparison and phpredis is clearly a winner here, not surprisingly because phpredis is a compiled extension written in C while Rediska is a pure php library.</p>
+
+<pre><code>time for i in `seq 1 1000`; do php phpredis_set.php; done
+</code></pre>
+
+<p>real 0m13.072s
+user 0m6.560s
+sys 0m3.620s</p>
+
+<pre><code>time for i in `seq 1 1000`; do php rediska_set.php; done
+</code></pre>
+
+<p>real 0m21.035s
+user 0m12.150s
+sys 0m5.050s</p>
+
+<p>and the source code for rediska_set.php:</p>
+
+<pre><code class="php">&lt;?php
+        require_once 'Rediska/library/Rediska.php';
+        $rediska=new Rediska();
+        $rediska-&gt;set('set_testkey', 1);
+</code></pre>
+
+<h3>Python-Redis installation</h3>
+
+<h5>1)Install</h5>
+
+<pre><code>sudo pip install redis
+</code></pre>
+
+<p>or</p>
+
+<pre><code>sudo easy_install redis
+</code></pre>
+
+<p>or download the source and from source</p>
+
+<pre><code>sudo python setup.py install
+</code></pre>
+
+<h5>2)Getting started</h5>
+
+<pre><code class="python">&gt;&gt;&gt; import redis
+&gt;&gt;&gt; r = redis.StrictRedis(host='localhost', port=6379, db=0)
+&gt;&gt;&gt; r.set('foo', 'bar')
+True
+&gt;&gt;&gt; r.get('foo')
+'bar'
+</code></pre>
+
+<p><--unfinished--></p>
+]]></content>
+  </entry>
+  
+</feed>

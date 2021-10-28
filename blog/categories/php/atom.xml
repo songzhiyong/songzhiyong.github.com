@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: php | Faith, Hope, Charity]]></title>
+  <link href="http://1vn.wang/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2021-10-28T14:46:03+08:00</updated>
+  <id>http://1vn.wang/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[13个最佳php框架]]></title>
+    <link href="http://1vn.wang/blog/2014/07/02/13-best-php-frameworks/"/>
+    <updated>2014-07-02T01:08:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/07/02/13-best-php-frameworks</id>
+    <content type="html"><![CDATA[<p>创建应用程序是一个复杂且耗时的过程，如果开发者能利用好框架，那么就可以在一个统一的结构基础上通过重用通用组件和模块来快速地做好项目。省掉创建通用组件的时间和人力，软件开发者可以把更多的时间投入到具体的项目上去，这样开发者就能专注于开发高质量的代码。</p>
+
+<p>现在，我们就来介绍13个最佳PHP框架来帮助开发者建立互操作或灵活的应用。</p>
+
+<ol>
+<li><p><a href="http://laravel.com/">Laravel</a></p>
+
+<p> 这是一款简洁、“优雅”的PHP开发框架，可谓是为WEB艺术家创造的。它可以让开发者从面条一样杂乱的代码中得到解脱，轻松构建一个完美的网络应用程序，且使得每行代码都简洁、富于表达力。Laravel自带了强大的Eloquent ORM和迁移工具，能够完美地与MySQL、Postgres、SQL Server 和 SQLite协同工作。Laravel从开始就将测试作为重点功能，提供灵活的IoC容器、集成PHPUnit的测试工具。更方便的是Laravel适应所有级别的开发工作。</p></li>
+<li><p>CodeIgniter</p>
+
+<p> CodeIgniter是一个基于MVC模式、小巧但功能强大的PHP框架，作为一个简单而“优雅”的工具包，它可以为PHP程序员建立功能完善的Web应用程序。如果你是一名使用共享主机，且为客户所要求的期限而烦恼的开发人员，如果你已经厌倦了那些傻大笨粗的框架，那么CodeIgniter就是你所需要的。CodeIgniter几乎0配置、不需坚守限制性编码规则、不需使用命令行，并广泛兼容标准主机上的各种PHP版本和配置，有着清晰、完善的文档。</p></li>
+</ol>
+
+
+<!-- more -->
+
+
+<ol>
+<li><p>CakePHP</p>
+
+<p> CakePHP是一个运用了诸如ActiveRecord、Association Data Mapping、Front Controller和MVC等著名设计模式的快速开发框架。该项目主要目标是提供一个可以让各种层次的PHP开发人员快速地开发出健壮的Web应用，而又不失灵活性。</p>
+
+<p> CakePHP框架提供了强大的基础来创建应用。CakePHP框架基于MVC模式，这使得开发者轻松地定制和扩展应用。该框架还提供了一个基本的组织结构，从文件名到数据库表名，使整个应用保持一致性和逻辑性。</p></li>
+<li><p>Symfony</p>
+
+<p> Symfony是一款基于MVC架构的PHP框架，能加速开发者创建与维护Web应用程序。Symfony致力于减少重复代码的编写，以加速Web应用的开发和维护。它给予了开发者强大的功能：从文件结构到外部目录，几乎所有的东西都可以自定义。Symfony使用了大量的设计模式，比如MVC模式，它分离了业务逻辑层和表示层，降低了耦合性，使程序更易于维护。</p></li>
+<li><p>Zend Framework 2</p>
+
+<p> Zend Framework 2是用PHP 5来开发web程序和服务的开源框架，用100%面向对象编码实现。其组件结构独一无二，每个组件几乎不依靠其他组件，这样的松耦合结构可以让开发者独立使用组件。它还提供了强壮而高效的MVC实现，易于使用的数据库摘要和实现HTML表单解析、校验和过滤的表单组件，这样开发者可以通过这些易用的、面向对象的接口联合所有这些操作。</p></li>
+<li><p>Phalcon</p>
+
+<p> Phalcon是一个开源、全堆栈、用C语言写而成的php5框架，专为高性能设计。不需要开发者去专门学习、使用C语言的功能，因为这是一个PHP框架，只不过用C语言写成而已。同时Phalcon是松耦合的，开发者可以根据需要使用其他组件。</p></li>
+<li><p>Yii</p>
+
+<p> Yii是一个基于组件、用于开发大型Web应用的高性能PHP框架。Yii提供了Web 2. 应用开发所需要的几乎一切功能，是最有效率的PHP框架之一。Yii有着强大的组件、丰富的类库、成熟的模式、方便的gii、各式的widget，大大提高了开发者的工作效率。</p></li>
+<li><p>Aura</p>
+
+<p> Aura有着干净的代码、全解耦库及真正独立的包。它提供高质量测试、符合标准的库包，可用任何代码库。</p></li>
+<li><p>Fat-Free</p>
+
+<p> Fat-Free是全栈式Php 5. 微型框架，自带auth、验证码、图表、feed、smtp等一系列功能。此外，它还有着高性能的URL路由、缓存引擎、内置代码高亮等功能，也支持多种语言的应用。</p></li>
+<li><p>PHP-MVC</p>
+
+<p>这是一款基于MVC模式的极其精简的框架，仅使用本地的PHP代码，所以开发者不用再重新学习该框架，极易容易上手。</p></li>
+<li><p>Kohana</p>
+
+<p>这是一款“优雅”的HMVC PHP5的框架，用于构建Web应用程序的组件，它提供了一套丰富类库。它包含许多常见的如翻译工具、数据库访问、代码分析等组件，开发者可以快速地构建应用程序。这是一个严格建立在PHP5类和对象基础上的面向对象的框架。</p></li>
+<li><p>FuelPHP</p>
+
+<p>FuelPHP是一款简单、灵活的PHP 5. 的Web框架，它建立和测试在MVC架构思想下，并且融合了许多已经存在开发框架的概念。</p></li>
+<li><p>Slim</p>
+
+<p>Slim是一款微型的PHP 5框架，可以帮助开发者快速编写简单功能强大的RESTful风格的web应用程序 和APIs。</p></li>
+</ol>
+
+
+<p>以上就是13款PHP开发框架，开发者可以针对不同的项目选择合适的框架。</p>
+]]></content>
+  </entry>
+  
+</feed>

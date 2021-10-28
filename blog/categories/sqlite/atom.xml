@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: SQLite | Faith, Hope, Charity]]></title>
+  <link href="http://1vn.wang/blog/categories/sqlite/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2021-10-28T14:46:03+08:00</updated>
+  <id>http://1vn.wang/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SQLite Notes]]></title>
+    <link href="http://1vn.wang/blog/2015/01/12/sqlite-notes/"/>
+    <updated>2015-01-12T14:43:00+08:00</updated>
+    <id>http://1vn.wang/blog/2015/01/12/sqlite-notes</id>
+    <content type="html"><![CDATA[<p>The Offsets Function of fts</p>
+
+<p>Integer Interpretation</p>
+
+<p>0 The column number that the term instance occurs in (0 for the leftmost column of the FTS table, 1 for the next leftmost, etc.).
+1 The term number of the matching term within the full-text query expression. Terms within a query expression are numbered starting from 0 in the order that they occur.
+2 The byte offset of the matching term within the column.
+3 The size of the matching term in bytes.</p>
+]]></content>
+  </entry>
+  
+</feed>

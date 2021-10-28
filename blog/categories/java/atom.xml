@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java | Faith, Hope, Charity]]></title>
+  <link href="http://1vn.wang/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2021-10-28T14:46:03+08:00</updated>
+  <id>http://1vn.wang/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CopyOnWriteArrayList]]></title>
+    <link href="http://1vn.wang/blog/2015/01/17/copyonwritearraylist/"/>
+    <updated>2015-01-17T22:05:00+08:00</updated>
+    <id>http://1vn.wang/blog/2015/01/17/copyonwritearraylist</id>
+    <content type="html"><![CDATA[<p>A thread-safe variant of ArrayList in which all mutative operations (add, set, and so on) are implemented by making a fresh copy of the underlying array.
+This is ordinarily too costly, but may be more efficient than alternatives when traversal operations vastly outnumber mutations, and is useful when you cannot or don&rsquo;t want to synchronize traversals, yet need to preclude interference among concurrent threads. The &ldquo;snapshot&rdquo; style iterator method uses a reference to the state of the array at the point that the iterator was created. This array never changes during the lifetime of the iterator, so interference is impossible and the iterator is guaranteed not to throw ConcurrentModificationException. The iterator will not reflect additions, removals, or changes to the list since the iterator was created. Element-changing operations on iterators themselves (remove, set, and add) are not supported. These methods throw UnsupportedOperationException.</p>
+
+<p>All elements are permitted, including null.</p>
+
+<p>Memory consistency effects: As with other concurrent collections, actions in a thread prior to placing an object into a CopyOnWriteArrayList happen-before actions subsequent to the access or removal of that element from the CopyOnWriteArrayList in another thread.</p>
+]]></content>
+  </entry>
+  
+</feed>

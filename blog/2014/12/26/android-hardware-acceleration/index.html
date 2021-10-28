@@ -1,0 +1,353 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Android--Hardware Acceleration  | Faith, Hope, Charity</title>
+
+<meta name="author" content="Jerome Song"> 
+
+<meta name="description" content="Keen on the information technology."> <meta name="keywords" content="android , java , ruby , linux , software , programming , web development ,ubuntu">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link href="/atom.xml" rel="alternate" title="Faith, Hope, Charity" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	
+  	<link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<nav id="home-nav">
+    	<ul>
+        	<li>
+         		 <a href="/">
+           	 	<span class="icon-home"></span>
+           	 	<span class="screen-reader-text">Home</span>
+         		 </a>
+      		</li>
+       </ul>
+	</nav>​
+	<header id="header" class="inner"><h1><a href="/">Faith, Hope, Charity</a></h1>
+<h4>Art thou weary, tender heart?</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/archives">Archive</a></li>
+	<li><a href="/timeline">Timeline</a></li>
+	<li><a href="/about">About</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/archives">Archive</a></li>
+	<li><a href="/timeline">Timeline</a></li>
+	<li><a href="/about">About</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:1vn.wang">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Android--Hardware Acceleration</h2>
+	<div class="entry-content"><p>Android 中的硬件加速
+本文的主要内容来自 SDK 文章的&#8221;Hardware Acceleration”.</p>
+
+<p>从 Android 3.0 开始，Android 的 2D 渲染管线可以更好的支持硬件加速。硬件加速使用 GPU 进行 View 上的绘制操作。</p>
+
+<p>硬件加速可以在一下四个级别开启或关闭：</p>
+
+<p>Application
+Activity
+Window
+View
+Application 级别</p>
+
+<p>往您的应用程序 AndroidManifest.xml 文件为 application 标签添加如下的属性即可为整个应用程序开启硬件加速：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;application android:hardwareAccelerated="true" .../&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Activity 级别</p>
+
+<p>您还可以控制每个 activity 是否开启硬件加速，只需在 activity 元素中添加 android:hardwareAccelerated 属性即可办到。比如下面的例子，在 application 级别开启硬件加速，但在某个 activity 上关闭硬件加速。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;application android:hardwareAccelerated="true"&gt;
+</span><span class='line'>    &lt;activity ... /&gt;
+</span><span class='line'>    &lt;activity android:hardwareAccelerated="false" /&gt;
+</span><span class='line'>&lt;/application&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Window 级别</p>
+
+<p>如果您需要更小粒度的控制，可以使用如下代码开启某个 window 的硬件加速：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">getWindow</span><span class="p">().</span><span class="na">setFlags</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">WindowManager</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">.</span><span class="na">FLAG_HARDWARE_ACCELERATED</span><span class="p">,</span>
+</span><span class='line'>    <span class="n">WindowManager</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">.</span><span class="na">FLAG_HARDWARE_ACCELERATED</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>注：目前还不能在 window 级别关闭硬件加速。</p>
+
+<p>View 级别</p>
+
+<p>您可以在运行时用以下的代码关闭单个 view 的硬件加速：</p>
+
+<p>myView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+注：您不能在 view 级别开启硬件加速</p>
+
+<p>为什么需要这么多级别的控制？</p>
+
+<p>很明显，硬件加速能够带来性能提升，android 为什么要弄出这么多级别的控制，而不是默认就是全部硬件加速呢？原因是并非所有的 2D 绘图操作支持硬件加速，如果您的程序中使用了自定义视图或者绘图调用，程序可能会工作不正常。如果您的程序中只是用了标准的视图和 Drawable，放心大胆的开启硬件加速吧！具体是哪些绘图操作不支持硬件加速呢?以下是已知不支持硬件加速的绘图操作：</p>
+
+<p>Canvas
+clipPath()
+clipRegion()
+drawPicture()
+drawPosText()
+drawTextOnPath()
+drawVertices()
+Paint
+setLinearText()
+setMaskFilter()
+setRasterizer()
+另外还有一些绘图操作，开启和不开启硬件加速，效果不一样：</p>
+
+<p>Canvas
+clipRect()： XOR, Difference 和 ReverseDifference 裁剪模式被忽略，3D 变换将不会应用在裁剪的矩形上。
+drawBitmapMesh()：colors 数组被忽略
+drawLines()：反锯齿不支持
+setDrawFilter()：可以设置，但无效果
+Paint
+setDither()： 忽略
+setFilterBitmap()：过滤永远开启
+setShadowLayer()：只能用在文本上
+ComposeShader
+ComposeShader 只能包含不同类型的 shader (比如一个 BitmapShader 和一个 LinearGradient，但不能是两个 BitmapShader 实例)
+ComposeShader 不能包含 ComposeShader
+如果应用程序受到这些影响，您可以在受影响的部分调用 setLayerType(View.LAYER_TYPE_SOFTWARE, null)，这样在其它地方仍然可以享受硬件加速带来的好处</p>
+
+<p>Android 的绘制模型</p>
+
+<p>开启硬件加速后，Android 框架将采用新的绘制模型。基于软件的绘制模型和基于硬件的绘制模型有和不同呢？</p>
+
+<p>基于软件的绘制模型</p>
+
+<p>在软件绘制模型下，视图按照如下两个步骤绘制：</p>
+
+<ol>
+<li><p>Invalidate the hierarchy（注：hierarchy 怎么翻译？）</p></li>
+<li><p>Draw the hierarchy</p></li>
+</ol>
+
+
+<p>应用程序调用 invalidate()更新 UI 的某一部分，失效(invalidation)消息将会在整个视图层中传递，计算每个需要重绘的区域（即脏区域）。然后 Android 系统将会重绘所有和脏区域有交集的 view。很明显，这种绘图模式存在缺点：</p>
+
+<ol>
+<li><p>每个绘制操作中会执行不必要的代码。比如如果应用程序调用 invalidate()重绘 button，而 button 又位于另一个 view 之上，即使该 view 没有变化，也会进行重绘。</p></li>
+<li><p>可能会掩盖一些应用程序的 bug。因为 android 系统会重绘与脏区域有交集的 view，所以 view 的内容可能会在没有调用 invalidate()的情况下重绘。这可能会导致一个 view 依赖于其它 view 的失效才得到正确的行为。</p></li>
+</ol>
+
+
+<p>基于硬件的绘制模型</p>
+
+<p>Android 系统仍然使用 invalidate()和 draw()来绘制 view，但在处理绘制上有所不同。Android 系统记录绘制命令到显示列表，而不是立即执行绘制命令。另一个优化就是 Android 系统只需记录和更新标记为脏（通过 invalidate()）的 view。新的绘制模型包含三个步骤：</p>
+
+<ol>
+<li><p>Invalidate the hierarchy</p></li>
+<li><p>记录和更新显示列表</p></li>
+<li><p>绘制显示列表</p></li>
+</ol>
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-26T09:55:00+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/12/26/android-hardware-acceleration/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="song_zhiyong">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	</script>
+	
+	
+	<!-- 将此标记放置在你希望显示+1 按钮的位置。 -->
+	<div class="g-plusone" data-size="medium" data-width="300"></div>
+
+	<!-- 将此标记放置在最后一个 +1 按钮 标记之后。 -->
+	<script type="text/javascript">
+  	(function() {
+    	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    	po.src = 'https://apis.google.com/js/platform.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  	})();
+	</script>
+	
+	
+	<div class="fb-like" data-href="http://1vn.wang/blog/2014/12/26/android-hardware-acceleration/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2021
+
+    Jerome Song
+
+<br>
+京ICP备18059042号 Powered by Octopress. </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ziso';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://1vn.wang/blog/2014/12/26/android-hardware-acceleration/';
+        var disqus_url = 'http://1vn.wang/blog/2014/12/26/android-hardware-acceleration/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbc6d82df32ac0c05b0381389f892f199' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-52131984-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

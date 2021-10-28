@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Faith, Hope, Charity]]></title>
+  <link href="http://1vn.wang/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2021-10-28T14:46:03+08:00</updated>
+  <id>http://1vn.wang/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Githug秘籍]]></title>
+    <link href="http://1vn.wang/blog/2016/01/06/githug/"/>
+    <updated>2016-01-06T11:31:00+08:00</updated>
+    <id>http://1vn.wang/blog/2016/01/06/githug</id>
+    <content type="html"><![CDATA[<ol>
+<li>init</li>
+<li>config</li>
+<li>add</li>
+<li>commit</li>
+<li>clone</li>
+<li>clone_to_folder</li>
+<li>ignore</li>
+<li>include</li>
+<li>status</li>
+<li>number_of_files_committed</li>
+<li>rm</li>
+<li>rm_cached</li>
+<li>stash</li>
+<li>rename</li>
+<li>restructure</li>
+<li>log</li>
+<li>tag</li>
+<li>push_tags</li>
+<li>commit_amend</li>
+<li>commit_in_future</li>
+<li>reset</li>
+<li>reset_soft</li>
+<li>checkout_file</li>
+<li>remote</li>
+<li>remote_url</li>
+<li>pull</li>
+<li>remote_add</li>
+<li>push</li>
+<li>diff</li>
+<li>blame</li>
+<li>branch</li>
+<li>checkout</li>
+<li>checkout_tag</li>
+<li>checkout_tag_over_branch</li>
+<li>branch_at</li>
+<li>delete_branch</li>
+<li>push_branch</li>
+<li>merge</li>
+<li>fetch</li>
+<li>rebase</li>
+<li>repack</li>
+<li>cherry-pick</li>
+<li>grep</li>
+<li>rename_commit</li>
+<li>squash</li>
+<li>merge_squash</li>
+<li>reorder</li>
+<li>bisect</li>
+<li>stage_lines</li>
+<li>find_old_branch</li>
+<li>revert</li>
+<li>restore</li>
+<li>conflict</li>
+<li>submodule</li>
+<li>contribute</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Delete a remote Git tag]]></title>
+    <link href="http://1vn.wang/blog/2015/01/20/how-to-delete-a-remote-git-tag/"/>
+    <updated>2015-01-20T22:02:00+08:00</updated>
+    <id>http://1vn.wang/blog/2015/01/20/how-to-delete-a-remote-git-tag</id>
+    <content type="html"><![CDATA[<p>You probably won&rsquo;t need to do this often (if ever at all) but just in case, here is how to delete a tag from a remote Git repository.</p>
+
+<p>If you have a tag named &lsquo;demo&rsquo; then you would just do this:</p>
+
+<pre><code>git tag -d demo
+git push origin :refs/tags/demo
+That will remove 'demo' from the remote repository.
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[git log pretty]]></title>
+    <link href="http://1vn.wang/blog/2014/12/06/git-log-pretty/"/>
+    <updated>2014-12-06T19:40:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/12/06/git-log-pretty</id>
+    <content type="html"><![CDATA[<ul>
+<li>%H: commit hash</li>
+<li>%h: 缩短的commit hash</li>
+<li>%T: tree hash</li>
+<li>%t: 缩短的 tree hash</li>
+<li>%P: parent hashes</li>
+<li>%p: 缩短的 parent hashes</li>
+<li>%an: 作者名字</li>
+<li>%aN: mailmap的作者名字 (.mailmap对应，详情参照git-shortlog(1)或者git-blame(1))</li>
+<li>%ae: 作者邮箱</li>
+<li>%aE: 作者邮箱 (.mailmap对应，详情参照git-shortlog(1)或者git-blame(1))</li>
+<li>%ad: 日期 (&ndash;date= 制定的格式)</li>
+<li>%aD: 日期, RFC2822格式</li>
+<li>%ar: 日期, 相对格式(1 day ago)</li>
+<li>%at: 日期, UNIX timestamp</li>
+<li>%ai: 日期, ISO 8601 格式</li>
+<li>%cn: 提交者名字</li>
+<li>%cN: 提交者名字 (.mailmap对应，详情参照git-shortlog(1)或者git-blame(1))</li>
+<li>%ce: 提交者 email</li>
+<li>%cE: 提交者 email (.mailmap对应，详情参照git-shortlog(1)或者git-blame(1))</li>
+<li>%cd: 提交日期 (&ndash;date= 制定的格式)</li>
+<li>%cD: 提交日期, RFC2822格式</li>
+<li>%cr: 提交日期, 相对格式(1 day ago)</li>
+<li>%ct: 提交日期, UNIX timestamp</li>
+<li>%ci: 提交日期, ISO 8601 格式</li>
+<li>%d: ref名称</li>
+<li>%e: encoding</li>
+<li>%s: commit信息标题</li>
+<li>%f: sanitized subject line, suitable for a filename</li>
+<li>%b: commit信息内容</li>
+<li>%N: commit notes</li>
+<li>%gD: reflog selector, e.g., refs/stash@{1}</li>
+<li>%gd: shortened reflog selector, e.g., stash@{1}</li>
+<li>%gs: reflog subject</li>
+<li>%Cred: 切换到红色</li>
+<li>%Cgreen: 切换到绿色</li>
+<li>%Cblue: 切换到蓝色</li>
+<li>%Creset: 重设颜色</li>
+<li>%C(&hellip;): 制定颜色, as described in color.branch.* config option</li>
+<li>%m: left, right or boundary mark</li>
+<li>%n: 换行</li>
+<li>%%: a raw %</li>
+<li>%x00: print a byte from a hex code</li>
+<li>%w([[,[,]]]): switch line wrapping, like the -w option of git-shortlog(1).</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

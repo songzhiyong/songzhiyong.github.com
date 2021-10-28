@@ -1,0 +1,379 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Android SDK Add-on Configure, Compile and Relelease  | Faith, Hope, Charity</title>
+
+<meta name="author" content="Jerome Song"> 
+
+<meta name="description" content="Keen on the information technology."> <meta name="keywords" content="android , java , ruby , linux , software , programming , web development ,ubuntu">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link href="/atom.xml" rel="alternate" title="Faith, Hope, Charity" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	
+  	<link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<nav id="home-nav">
+    	<ul>
+        	<li>
+         		 <a href="/">
+           	 	<span class="icon-home"></span>
+           	 	<span class="screen-reader-text">Home</span>
+         		 </a>
+      		</li>
+       </ul>
+	</nav>​
+	<header id="header" class="inner"><h1><a href="/">Faith, Hope, Charity</a></h1>
+<h4>Art thou weary, tender heart?</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/archives">Archive</a></li>
+	<li><a href="/timeline">Timeline</a></li>
+	<li><a href="/about">About</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/archives">Archive</a></li>
+	<li><a href="/timeline">Timeline</a></li>
+	<li><a href="/about">About</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:1vn.wang">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Android SDK Add-on Configure, Compile and Relelease</h2>
+	<div class="entry-content"><p>转自：<a href="http://www.poemcode.net/2010/09/android-sdk-addon/">http://www.poemcode.net/2010/09/android-sdk-addon/</a></p>
+
+<p>SDK Add-on 是一个比较小众的话题，一是通常厂商不会公开自己的 add-on，二是即便公开了，应用开发者也很少使用。所以通常是厂商自己的技术团队自娱自乐，框架团队抽取公用的控件，制成一个 add-on，然后公布给自家的应用程序开发团队。</p>
+
+<p>由于是小众的，所以网络中关于这方面的资料比较少。这几天由于工作原因，我有幸接触到 Add-on，因此把这方面的知识进行了汇总，整理成如下内容。这些知识来自于我对 sample 示例的理解，并经过项目实践验证，我竭力保证无误，但差错之处也可能存在，如发现，请指正。</p>
+
+<p>以下内容将分成若个步骤：</p>
+
+<ol>
+<li>添加模块；</li>
+<li>添加资源文件；</li>
+<li>加入编译脚本；</li>
+<li>发布；</li>
+</ol>
+
+
+<p>在阅读下面内容前，先假设是对 $ANDROID_HOME/device/sample 进行修改。</p>
+
+<h4>一、添加模块（Add Module）</h4>
+
+<p>在自己 <em>product-name</em> 目录下建立 frameworks 文件夹，从 sample 中拷贝 Android.mk 文件到 frameworks。</p>
+
+<p>依照 sample 的方式，在 frameworks 路径下，建立 PlatformLibrary 文件夹，再次从 sample/frameworks 中拷贝 Android.mk 文件，并将其中的 LOCAL_MODULE 和 LOCAL_DROIDDOC_OPTIONS 修改为自己中意的名字。–这里值得注意的是，LOCAL_MODULE 变量被定义两次，第一次是 library，第二次是 document。</p>
+
+<p>依照 sample/frameworks/com.example.android.platform_library.xml 的形式创建自己的 XML 文件，文件名称、XML 内容中 name 和 file 保持和 LOCAL_MODULE(library) 一致。</p>
+
+<p>完成上述操作之后，建立 java 文件夹，并将自己创建的源文件（java）放入到其中，这里不再赘述。</p>
+
+<h4>二、添加 Overlay(Add Resoruce)</h4>
+
+<p>代码中可能需要访问图片、字符串等资源，但是这些在原有的 Android 中没有，因此需要想办法自行加入，Android 对此提供了两种方式。</p>
+
+<p>第一种就是直接在 $ANDROID_HOME/framework/base/core/res/res 下进行操作，添加文件，追加字符串。这种方式虽然简单，但是破坏了原有的“纯洁性”，因此不予推荐，在第三节修改编译脚本中我采用了第二种方式。</p>
+
+<p>第二种方式就是使用 overlay。在 product-name 目录下建立 overlay 文件夹，依照 framework 的结构建立各级目录，例如想添加图片，可以先依次建立 base/core/res/res/drawable，然后将图片置于其中，同样可以建立 layout 等文件夹。</p>
+
+<p>如果要添加字符串或者 style 资源，就要稍微复杂一点，需要使用 add-resource 来让系统“明白”新添加的内容。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='XML'><span class='line'><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;resources</span> <span class="na">xmlns:xliff=</span><span class="s">&quot;urn:oasis:names:tc:xliff:document:1.2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;add-resource</span> <span class="na">type=</span><span class="s">&quot;string&quot;</span> <span class="na">name=</span><span class="s">&quot;numwheel_year&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="c">&lt;!-- Strings for number wheel --&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">&quot;numwheel_year&quot;</span><span class="nt">&gt;</span>年<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'><span class="nt">&lt;/resources&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果没有 add-resource，则会遇到这样的信息：</p>
+
+<p>完了以后，就可以用使用 <code>com.android.internal.R</code> 来访问这些资源了。</p>
+
+<h4>三、加入编译脚本（Add build script）</h4>
+
+<p>在自己 product-name 目录下建立 sdk_addon 文件夹，并依照 sample/sdk_addon 分别拷贝 manifest.xml 和 hardware.xml，注意 manifest.xml 中的内容必须要根据之前第一步的变更同步修改。</p>
+
+<p>接下来最关键，也是最容易出错的环节到了，那就是修改自己 product 的 mk 文件，需要修改 PRODUCT_PACKAGES、PRODUCT_COPY_FILES、DEVICE_PACKAGE_OVERLAYS 的值，定义 PRODUCT_SDK_ADDON_NAME、PRODUCT_SDK_ADDON_COPY_FILES、PRODUCT_SDK_ADDON_COPY_MODULES 和 PRODUCT_SDK_ADDON_DOC_MODULE。修改和定义的区别就在于，前者使用”+=”，后者使用“:=”。这些变量的值可以参照 sample 示例。</p>
+
+<p>由于 sample 的示例中没有出现 DEVICE_PACKAGE_OVERLAYS，所以我这里特别解释一下它的作用，除了刚才为 add-on 增加资源以外，它还起到的作用就是替换掉原来的 framework 中的资源，比如图片等等，惟一的要求就是必须建立和原来图片位置相同的路径。和 add-on 不同的是，如果你是替换原来资源，那么是不用 add-resource 的。DEVICE_PACKAGE_OVERLAYS 的值就是 overlay 文件夹的路径，不包含 $ANDROID_HOME，到 overlay 一级即可。</p>
+
+<p>完成了修改以后，使用 make PRODUCT-product-name-sdk_addon 进行编译。当然也可以直接执行 make sdk_addon，但是需要注意在此之前，你需要使用 chooseproduct 指定 product-name。执行完毕以后，会得到一个 zip 文件，这个就是 add-on 了。</p>
+
+<h4>四、发布（Relase）</h4>
+
+<p>完成上面的环节以后，剩下临门一脚了。所谓发布，就是通过诸如 HTTPD 一类的 HTTP SERVER 将资源公布出去。从 <a href="http://httpd.apache.org">http://httpd.apache.org</a> 下载 httpd，如何安装以及修改监听端口可参看其 document，在此不予赘述。</p>
+
+<p>现在把刚才生成的 zip 文件，放置到 htdoc 目录下。并且创建一个 repository.xml，其内容和形式参看
+<a href="https://dl-ssl.google.com/android/repository/repository.xml">https://dl-ssl.google.com/android/repository/repository.xml</a> ，我把它删减一下得到以下内容：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='XML'><span class='line'><span></span><span class="nt">&lt;sdk:sdk-repository</span>
+</span><span class='line'>    <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+</span><span class='line'>    <span class="na">xmlns:sdk=</span><span class="s">&quot;http://schemas.android.com/sdk/android/repository/2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;sdk:add-on&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:name&gt;</span>Google APIs<span class="nt">&lt;/sdk:name&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:api-level&gt;</span>3<span class="nt">&lt;/sdk:api-level&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:vendor&gt;</span>Google Inc.<span class="nt">&lt;/sdk:vendor&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:revision&gt;</span>03<span class="nt">&lt;/sdk:revision&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:description&gt;</span>Android + Google APIs<span class="nt">&lt;/sdk:description&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:desc-url&gt;</span>http://developer.android.com/<span class="nt">&lt;/sdk:desc-url&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:uses-license</span> <span class="na">ref=</span><span class="s">&quot;android-sdk-license&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:archives&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;sdk:archive</span> <span class="na">os=</span><span class="s">&quot;any&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:size&gt;</span>34908058<span class="nt">&lt;/sdk:size&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:checksum</span> <span class="na">type=</span><span class="s">&quot;sha1&quot;</span><span class="nt">&gt;</span>1f92abf3a76be66ae8032257fc7620acbd2b2e3a<span class="nt">&lt;/sdk:checksum&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:url&gt;</span>google_apis-3-r03.zip<span class="nt">&lt;/sdk:url&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;/sdk:archive&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/sdk:archives&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;sdk:libs&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;sdk:lib&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:name&gt;</span>com.google.android.maps<span class="nt">&lt;/sdk:name&gt;</span>
+</span><span class='line'>                <span class="nt">&lt;sdk:description&gt;</span>API for Google Maps.<span class="nt">&lt;/sdk:description&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;/sdk:lib&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/sdk:libs&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/sdk:add-on&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;sdk:license</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;android-sdk-license&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        This is the Android Software Development Kit License Agreement.
+</span><span class='line'>    <span class="nt">&lt;/sdk:license&gt;</span>
+</span><span class='line'><span class="nt">&lt;/sdk:sdk-repository&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接下来的事情，就是替换掉里面的 Google 信息为自己，大部分可以从它们的名称中理解其含义，例如 size 是指文件大小，你可以使用 ls –l 来查看文件大小。checksum 则要麻烦一些，执行 sha1sum ZIP.zip，即使用 sha1 对刚才生成 zip 文件生成校验码。</p>
+
+<p>修改完成以后，通过浏览器访问 <code>http://IP-address:port/repository.xml</code>，确认是否 OK。确认以后，打开 Android SDK and AVD Manager，点击左侧 Available Packages，选择 “Add Add-on Sites” 填入 URL，接下来的安装就不费口舌了。完成以后，你可以在 sdk 下的 add-ons 目录下看到刚刚安装的 add-on。</p>
+
+<p>捎带提一下，应用开发方面使用该 add-on 时，调整工程的 Project Build Target 设定即可。</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-04T10:07:00+08:00" pubdate data-updated="true">Jul 4<span>th</span>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/android/'>android</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="song_zhiyong">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	</script>
+	
+	
+	<!-- 将此标记放置在你希望显示+1 按钮的位置。 -->
+	<div class="g-plusone" data-size="medium" data-width="300"></div>
+
+	<!-- 将此标记放置在最后一个 +1 按钮 标记之后。 -->
+	<script type="text/javascript">
+  	(function() {
+    	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    	po.src = 'https://apis.google.com/js/platform.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  	})();
+	</script>
+	
+	
+	<div class="fb-like" data-href="http://1vn.wang/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2021
+
+    Jerome Song
+
+<br>
+京ICP备18059042号 Powered by Octopress. </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ziso';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://1vn.wang/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease/';
+        var disqus_url = 'http://1vn.wang/blog/2014/07/04/android-sdk-add-on-configure-compile-and-relelease/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbc6d82df32ac0c05b0381389f892f199' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-52131984-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

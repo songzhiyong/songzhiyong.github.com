@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: basic | Faith, Hope, Charity]]></title>
+  <link href="http://1vn.wang/blog/categories/basic/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2021-10-28T14:46:03+08:00</updated>
+  <id>http://1vn.wang/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL add UNIQUE INDEX]]></title>
+    <link href="http://1vn.wang/blog/2014/09/02/mysql-add-unique-index/"/>
+    <updated>2014-09-02T21:43:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/09/02/mysql-add-unique-index</id>
+    <content type="html"><![CDATA[<pre><code>ALTER TABLE table ENGINE MyISAM;
+
+ALTER IGNORE TABLE table ADD UNIQUE INDEX(uid,name);
+
+ALTER TABLE table ENGINE InnoDB;
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

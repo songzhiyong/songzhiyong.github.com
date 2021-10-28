@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tricks | Faith, Hope, Charity]]></title>
+  <link href="http://1vn.wang/blog/categories/tricks/atom.xml" rel="self"/>
+  <link href="http://1vn.wang/"/>
+  <updated>2021-10-28T14:46:03+08:00</updated>
+  <id>http://1vn.wang/</id>
+  <author>
+    <name><![CDATA[Jerome Song]]></name>
+    <email><![CDATA[songzhiyong1121@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Android Studio Live Templates]]></title>
+    <link href="http://1vn.wang/blog/2015/01/09/android-studio-live-templates/"/>
+    <updated>2015-01-09T21:29:00+08:00</updated>
+    <id>http://1vn.wang/blog/2015/01/09/android-studio-live-templates</id>
+    <content type="html"><![CDATA[<p><strong>Type the abbrs then click <code>TAB</code>, template codes will be generated automatically.</strong></p>
+
+<h3>iterations</h3>
+
+<ul>
+<li><p><code>fori</code> Create iteration loop
+<code>java
+for(int $INDEX$ = 0; $INDEX$ &lt; $LIMIT$; $INDEX$++) {
+$END$
+}
+</code></p></li>
+<li><p><code>itar</code> Iterate elements of array
+<code>java
+for(int $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.length; $INDEX$++) {
+$ELEMENT_TYPE$ $VAR$ = $ARRAY$[$INDEX$];
+$END$
+}
+</code></p></li>
+<li><p><code>itco</code> Iterate elements of java.util.Collection
+<code>java
+for($ITER_TYPE$ $ITER$ = $COLLECTION$.iterator(); $ITER$.hasNext(); ) {
+$ELEMENT_TYPE$ $VAR$ =$CAST$ $ITER$.next();
+$END$
+}
+</code></p></li>
+<li><p><code>iten</code> Iterate java.util.Enumeration
+<code>java
+while($ENUM$.hasMoreElements()){
+$TYPE$ $VAR$ = $CAST$ $ENUM$.nextElement();
+$END$
+}
+</code></p></li>
+<li><p><code>iter</code> Iterate Iterable | Array in J2SDK 5.0 syntax
+<code>java
+for ($ELEMENT_TYPE$ $VAR$ : $ITERABLE_TYPE$) {
+$END$
+}
+</code></p></li>
+<li><p><code>itit</code> Iterate java.util.Iterator
+<code>java
+while($ITER$.hasNext()){
+$TYPE$ $VAR$ = $CAST$ $ITER$.next();
+$END$
+}
+</code></p></li>
+<li><p><code>itli</code> Iterate elements of java.util.List
+<code>java
+for (int $INDEX$ = 0; $INDEX$ &lt; $LIST$.size(); $INDEX$++) {
+$ELEMENT_TYPE$ $VAR$ = $CAST$ $LIST$.get($INDEX$);
+$END$
+}
+</code></p></li>
+<li><p><code>ittok</code> Iterate tokens from String
+<code>java
+for (java.util.StringTokenizer $TOKENIZER$ = new java.util.StringTokenizer($STRING$); $TOKENIZER$.hasMoreTokens(); ) {
+  String $VAR$ = $TOKENIZER_COPY$.nextToken();
+  $END$
+}
+</code></p></li>
+<li><p><code>itve</code> Iterate elements of java.util.Vector
+<code>java
+for(int $INDEX$ = 0; $INDEX$ &lt; $VECTOR$.size(); $INDEX$++) {
+$ELEMENT_TYPE$ $VAR$ = $CAST$ $VECTOR$.elementAt($INDEX$);
+$END$
+}
+</code></p></li>
+<li><p><code>ritar</code> Iterate elements of array in reverse order
+<code>java
+for(int $INDEX$ = $ARRAY$.length - 1; $INDEX$ &gt;= 0; $INDEX$--) {
+$ELEMENT_TYPE$ $VAR$ = $ARRAY$[$INDEX$];
+$END$
+}
+</code></p>
+
+<h3>other</h3></li>
+<li>geti</li>
+<li>ifn</li>
+<li>inn</li>
+<li>inst</li>
+<li>lazy</li>
+<li>lst</li>
+<li>mn</li>
+<li>mx</li>
+<li>psvm</li>
+<li>toar
+
+<h3>output</h3></li>
+<li>serr</li>
+<li>souf</li>
+<li>sout</li>
+<li>soutm</li>
+<li>soutp</li>
+<li>soutv
+
+<h3>plain</h3></li>
+<li>psf</li>
+<li>psfi</li>
+<li>psfs</li>
+<li>St</li>
+<li>thr</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vim Tips]]></title>
+    <link href="http://1vn.wang/blog/2014/09/23/vim-tips/"/>
+    <updated>2014-09-23T11:53:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/09/23/vim-tips</id>
+    <content type="html"><![CDATA[<p>1）删除文字</p>
+
+<ul>
+<li><p>「x」：每按一次，删除光标所在位置的“后面”一个字符。</p></li>
+<li><p>「#x」：例如，「6x」表示删除光标所在位置的“后面”6个字符。</p></li>
+<li><p>「X」：大写的X，每按一次，删除光标所在位置的“前面”一个字符。</p></li>
+<li><p>「#X」：例如，「20X」表示删除光标所在位置的“前面”20个字符。</p></li>
+<li><p>「dd」：删除光标所在行。</p></li>
+<li><p>「#dd」：从光标所在行开始删除#行</p></li>
+<li><p>「dG」：全部删除</p></li>
+</ul>
+
+
+<p>2）复制</p>
+
+<ul>
+<li><p>「yw」：将光标所在之处到字尾的字符复制到缓冲区中。</p></li>
+<li><p>「#yw」：复制#个字到缓冲区</p></li>
+<li><p>「yy」：复制光标所在行到缓冲区。</p></li>
+<li><p>「#yy」：例如，「6yy」表示拷贝从光标所在的该行“往下数”6行文字。</p></li>
+<li><p>「p」：将缓冲区内的字符贴到光标所在位置。注意：所有与“y”有关的复制命令都必须与“p”配合才能完成复制与粘贴功能。</p></li>
+</ul>
+
+
+<p>3）替换</p>
+
+<ul>
+<li><p>「r」：替换光标所在处的字符。</p></li>
+<li><p>「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</p></li>
+</ul>
+
+
+<p>4）回复上一次操作</p>
+
+<ul>
+<li>「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次“u”可以执行多次回复。 -</li>
+</ul>
+
+
+<p>5）跳至指定的行</p>
+
+<ul>
+<li><p>「ctrl」+「g」列出光标所在行的行号。</p></li>
+<li><p>「#G」：例如，「15G」，表示移动光标至文章的第15行行首。</p></li>
+</ul>
+
+
+<hr />
+
+<p>Last line mode下命令简介</p>
+
+<p>　　在使用「last line mode」之前，请记住先按「ESC」键确定您已经处于「command mode」下后，再按「：」冒号即可进入「last line mode」。</p>
+
+<p>A) 列出行号</p>
+
+<ul>
+<li>「set nu」：输入「set nu」后，会在文件中的每一行前面列出行号。</li>
+</ul>
+
+
+<p>B) 跳到文件中的某一行</p>
+
+<ul>
+<li>「#」：「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。</li>
+</ul>
+
+
+<p>C) 查找字符</p>
+
+<ul>
+<li><p>「/关键字」：先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</p></li>
+<li><p>「?关键字」：先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</p></li>
+</ul>
+
+
+<p>D) 保存文件</p>
+
+<ul>
+<li>「w」：在冒号输入字母「w」就可以将文件保存起来。</li>
+</ul>
+
+
+<p>E) 离开vi</p>
+
+<ul>
+<li><p>「q」：按「q」就是退出，如果无法离开vi，可以在「q」后跟一个「!」强制离开vi。</p></li>
+<li><p>「qw」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。
+<br></p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>查看并编辑二进制文件
+<code>
+:%!xxd
+</code></p></li>
+<li><p>返回原文
+<code>
+:%!xxd -r  
+</code></p></li>
+<li><p>ctrl+f        在文件中前移一页（相当于 page down）；</p></li>
+<li>ctrl+b        在文件中后移一页（相当于 page up）；</li>
+<li>*          当光标停留在一个单词上，* 键会在文件内搜索该单词，并跳转到下一处；</li>
+<li>#          当光标停留在一个单词上，# 在文件内搜索该单词，并跳转到上一处；</li>
+<li>( / )        移动到 前/后 句的开始；</li>
+<li>{ / }        跳转到 当 前/下一个 段落的开始。</li>
+<li>g_         到本行最后一个不是blank字符的位置。</li>
+<li>fa         到下一个为 a 的字符处，你也可以fs到下一个为s的字符。</li>
+<li>t,         到逗号前的第一个字符。逗号可以变成其它字符。</li>
+<li>3fa        在当前行查找第三个出现的 a。</li>
+<li>F/T        和 f 和 t 一样，只不过是相反方向;</li>
+<li>gg         将光标定位到文件第一行起始位置；</li>
+<li>G          将光标定位到文件最后一行起始位置；</li>
+<li>NG或Ngg    将光标定位到第 N 行的起始位置。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Regex in Sublime Text 2]]></title>
+    <link href="http://1vn.wang/blog/2014/09/15/regex-in-sublime-text-2/"/>
+    <updated>2014-09-15T12:11:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/09/15/regex-in-sublime-text-2</id>
+    <content type="html"><![CDATA[<ul>
+<li>空行： ^[\s]*\n</li>
+<li>偶数行：\n(.*)\n</li>
+</ul>
+
+
+<hr />
+
+<p>&lsquo;CMD+SHIFT+W&rsquo;  close all without close the window</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 2 Plugin - Text Pastry]]></title>
+    <link href="http://1vn.wang/blog/2014/07/12/sublime-text-plugin-text-pastry/"/>
+    <updated>2014-07-12T16:27:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/07/12/sublime-text-plugin-text-pastry</id>
+    <content type="html"><![CDATA[<p>新技能get</p>
+
+<p>关于Sublime Text2 的简洁优雅，不做赘述。</p>
+
+<p><a href="https://github.com/duydao/Text-Pastry">Text-Pastry</a>让Sublime Text 2 如虎添翼。</p>
+
+<h3>DEMO1</h3>
+
+<h4>From:</h4>
+
+<pre><code>aaa
+bbb
+ccc
+ddd
+eee
+</code></pre>
+
+<h4>To:</h4>
+
+<pre><code>1. aaa
+2. bbb
+3. ccc
+4. ddd
+5. eee
+</code></pre>
+
+<h4>TODO</h4>
+
+<p>（快捷键基于Mac OS，Windows上略有区别）</p>
+
+<ol>
+<li><p>选中多行</p></li>
+<li><p><code>CMD</code>+<code>SHIFT</code>+<code>L</code>进入多行编辑模式</p></li>
+<li><p>把多个光标同时移动到每行的最前面</p></li>
+<li><p><code>CMD</code>+<code>ALT</code>+<code>T</code>  进入Text Pastry命令输入模式</p></li>
+<li><p>选择 \i 回车</p></li>
+<li><p>1-5的标号已经加上，输入. (空格)</p></li>
+<li><p>DONE</p></li>
+</ol>
+
+
+<h3>DEMO2</h3>
+
+<h4>From:</h4>
+
+<pre><code class="json">{
+  "apps": [
+    { 
+      "bundle_id": "com.htc.fm",
+      "app_name": "FM 收音机"
+    },
+    {
+      "bundle_id": "com.htc.android.mail",
+      "app_name": "邮件"
+    },
+    {
+      "bundle_id": "com.qq.qcloud",
+      "app_name": "微云"
+    }
+  ]
+}
+</code></pre>
+
+<h4>To:</h4>
+
+<pre><code class="json">{
+  "apps": [
+    { 
+      "uuid": "c9e968cc-d122-4162-a502-874cdcfa470c",
+      "bundle_id": "com.htc.fm",
+      "app_name": "FM 收音机"
+    },
+    { 
+      "uuid": "4fba9716-29bf-4c06-b22e-75d59622703f",
+      "bundle_id": "com.htc.android.mail",
+      "app_name": "邮件"
+    },
+    { 
+      "uuid": "6c3f911a-318b-4aad-82d6-c5f183d8ca00",
+      "bundle_id": "com.qq.qcloud",
+      "app_name": "微云"
+    }
+  ]
+}
+</code></pre>
+
+<h4>TODO</h4>
+
+<p>目测在每个数据里面加个uuid这种需求不会在代码外去实现 :）
+但类似的应该会有，如何秒杀是关键。如果够熟练，估计只需十几秒，即使有上百条数据</p>
+
+<ol>
+<li><p><code>CMD</code>+<code>F</code> 搜索 &ldquo;bundle_id"，少量也可<code>CMD</code>+<code>D</code></p></li>
+<li><p><code>ALT</code>+<code>ENTER</code> 选中所有”bundle_id“，并进入多行同时编辑模式</p></li>
+<li><p><code>CMD</code>+<code>SHIFT</code>+<code>ENTER</code> 在改行上面插入一空行，多行同时输入"uuid": &ldquo;&rdquo;,让光标在"&ldquo;中</p></li>
+<li><p><code>CMD</code>+<code>ALT</code>+<code>T</code>  进入Text Pastry命令输入模式</p></li>
+<li><p>选择 \uuid(old)或uuid(new) 回车</p></li>
+<li><p>uuid已经加上，一直末尾,输入,</p></li>
+<li><p>DONE</p></li>
+</ol>
+
+
+<p><a href="https://github.com/duydao/Text-Pastry#readme">More Info</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[QUICK SURROUND WITH (TRY/CATCH, IF ELSE..)]]></title>
+    <link href="http://1vn.wang/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot/"/>
+    <updated>2014-07-08T12:05:00+08:00</updated>
+    <id>http://1vn.wang/blog/2014/07/08/android-studio-tips-quick-surround-with-try-slash-catch-if-else-dot</id>
+    <content type="html"><![CDATA[<p>When you want to catch exceptions thrown by some code fragment, select it in the
+editor, press</p>
+
+<blockquote><p>Ctrl+Alt+T</p></blockquote>
+
+<p>(Code | Surround With) and choose try / catch. The catch blocks for all the exceptions thrown inside the block will be generated automatically.</p>
+
+<p>You can customize the bodies of the generated catch blocks on the Code tab of File | Settings | File Templates.</p>
+
+<p>Use other items in the list to surround with other constructs.<br/></p>
+
+<p><img src="/images/2014/07/surround.png" alt="" /><br/></p>
+]]></content>
+  </entry>
+  
+</feed>
